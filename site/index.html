@@ -26,12 +26,12 @@
 </head>
 <body>
 <!--CONTENT-START-->
+<script>try { document.documentElement.dataset.theme = JSON.parse(localStorage.getItem("polls2:theme")) === "dark" ? "dark" : "light"; } catch (e) { document.documentElement.dataset.theme = "light"; }</script>
 <header class="masthead">
   <div class="wrap masthead-inner">
-    <h1>Are leaders leading in the polls?</h1>
-    <div class="deck">
-      <p class="deck-q">How are Europe's incumbents faring in the polls?</p>
-      <p>Each country is coloured by how far the head of government's party is ahead of its strongest rival or behind it, or by poll share: of the governing party, of the first, second or third party, or of parties of a chosen ideology, now or on any date since the 1990s. <span id="asof"></span></p>
+    <div class="mast-text">
+      <h1>Are leaders leading in the polls?</h1>
+      <p class="deck">How are Europe's incumbents faring in the polls? <span id="asof"></span></p>
     </div>
     <nav class="tabs" role="tablist" aria-label="Views">
       <button class="tab" role="tab" id="tab-map" aria-controls="view-map" aria-selected="true" data-view="map">Map</button>
@@ -57,17 +57,19 @@
       </div>
       <figure class="map-box box">
         <div class="map-head">
-          <div class="textlinks" id="map-mode" role="radiogroup" aria-label="What the map shows"></div>
+          <div class="map-row1">
+            <div class="textlinks" id="map-mode" role="radiogroup" aria-label="What the map shows"></div>
+            <div class="map-scale" id="map-scale" aria-hidden="true"></div>
+          </div>
           <div class="textlinks place-host" id="map-place" role="radiogroup" aria-label="Which party's poll share" hidden></div>
           <div id="map-ideo" class="ideo-host" hidden></div>
           <div class="time-row" id="time-row">
-            <button type="button" class="playbtn" id="map-play" aria-label="Play through the years">Play</button>
+            <button type="button" class="playbtn" id="map-play" aria-label="Time lapse: play the map through the years">Time lapse</button>
             <input type="range" id="map-time" min="0" max="1" step="1" value="1" aria-label="Date shown on the map">
             <output id="map-date" for="map-time"></output>
           </div>
         </div>
         <figcaption class="map-cap">
-          <div class="map-scale" id="map-scale" aria-hidden="true"></div>
           <p class="note" id="map-note"></p>
         </figcaption>
         <div id="map" class="map"></div>
@@ -224,6 +226,7 @@
 <div class="palette-switch">
   <span class="pick" id="pick-leadlag"><label for="palette">Incumbent lead/lag colours (divergent)</label><select id="palette"></select></span>
   <span class="pick" id="pick-share"><label for="hue">Share of intended vote colours (unidirectional)</label><select id="hue"></select></span>
+  <span class="pick" id="pick-theme"><label for="theme">Theme</label><span aria-hidden="true"></span><select id="theme"><option value="light">Light</option><option value="dark">Dark</option></select></span>
 </div>
 <div id="tooltip" class="tooltip" role="status" hidden></div>
 <dialog id="detail" class="detail" aria-labelledby="detail-title">

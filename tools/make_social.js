@@ -66,9 +66,9 @@ const POSTER_CSS = `
   #poster .p-date b { font-size: 21px; font-weight: 700; }
   #poster .p-date span { font-size: 11px; color: var(--muted); }
   #poster .p-map { min-height: 0; display: flex; justify-content: center; align-items: flex-start; }
-  #poster .p-map svg { height: 100%; width: auto; max-width: 100%; display: block; }
+  #poster .p-map svg { height: 100%; width: auto; max-width: 100% !important; display: block; }
   #poster.landscape .p-map { overflow: hidden; align-items: flex-start; }
-  #poster.landscape .p-map svg { height: auto; width: 100%; max-width: none; margin-top: -6px; }
+  #poster.landscape .p-map svg { height: auto; width: 100%; max-width: none !important; margin-top: -6px; }
   #poster.landscape .p-map g[aria-hidden="true"] { display: none; }
   #poster .p-stat { font-size: 14.5px; line-height: 1.35; margin-top: 16px; color: var(--trail-ink); }
   #poster .p-stat b { font-weight: 700; }
@@ -87,6 +87,7 @@ async function openPage(browser, { width, height, mode }) {
   if (process.env.SOCIAL_ROUTES) await require(path.resolve(process.env.SOCIAL_ROUTES))(ctx);
   // a fixed starting state, whatever this browser profile remembered
   await ctx.addInitScript(([m, pal]) => {
+    window.__noFit = true;   // draw the map at the poster's width, not fitted to the window height
     try {
       localStorage.clear();
       const set = (k, v) => localStorage.setItem("polls2:" + k, JSON.stringify(v));

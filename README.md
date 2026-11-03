@@ -7,7 +7,7 @@ An interactive dashboard built from the opinion-polling articles on English Wiki
   points and the time left until the next election. *Poll share by party place*: the poll share of
   the governing party (with its place in the polls) or of the first, second or third party.
   *Poll share of parties by ideology*: the
-  combined poll share of an ideology group (see below). The slider and Play button above the map
+  combined poll share of an ideology group (see below). The slider and *Time lapse* button above the map
   redraw it for any week since 1991 that the intra-country timelines cover. Selecting a country
   opens its full chart.
 * **Country graphs.** One chart per country from the last election to the next. The thick line is
@@ -261,6 +261,10 @@ Party positions: Lehmann et al. (2026), The Manifesto Data Collection, version 2
   pickers name the government and the kind of scale explicitly; the two colour keys line up.
 * Version 7: blue and orange is the default lead/lag palette; the written summary sits above the
   map, which now uses the full width; a third map mode, *Poll share by party place*.
+* Version 8: light theme by default with a light/dark picker beside the colour pickers; a shorter
+  header with the tabs beside the title; a compact summary with flags and "pp"; the colour key next
+  to the map modes; the map sized to fit the window; *Time lapse* instead of *Play*; the date the
+  latest polls were fetched.
 
 ## Known limitations
 

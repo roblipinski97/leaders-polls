@@ -40,6 +40,7 @@
     palette: store.get("palette", "blueorange"),
     mapPlace: store.get("mapPlace", "gov"),        // "place" mode: "gov" (governing party) or "1", "2", "3"
     hue: store.get("hue", "blue"),
+    theme: store.get("theme", "light"),                // light by default, whatever the system setting
   };
 
   function isDark() {
@@ -135,6 +136,7 @@
     parent.replaceChildren();
     for (const p of parts) {
       if (typeof p === "string") { parent.append(document.createTextNode(p)); continue; }
+      if (p instanceof Node) { parent.append(p); continue; }
       const [tag, text, cls, onClick] = p;
       const e = el(tag, cls || null, text);
       if (onClick) { e.type = "button"; e.addEventListener("click", onClick); }
@@ -916,7 +918,7 @@
     const med = d3.median(changes);
     const sm = $("#s-median");
     sm.className = "s-line " + (med < -0.05 ? "neg" : med > 0.05 ? "pos" : "");
-    rich(sm, ["The median change since their election is ", ["b", `${fmtSigned(med)} points`], "."]);
+    rich(sm, ["The median change since their election is ", ["b", `${fmtSigned(med)} pp`], " (percentage points)."]);
     const gained = changes.filter((v) => v > 0).length;
     rich($("#s-gained"), [["b", `${gained} of ${changes.length}`], " have gained support since their election."]);
     const byGap = [...withInc].sort((a, b) => a.stats.gap_now - b.stats.gap_now);
@@ -924,11 +926,10 @@
       const parts = [];
       arr.forEach((c, i) => {
         if (i) parts.push(i === arr.length - 1 ? " and " : ", ");
-        parts.push(["button", c.name, "linkbtn", () => openDetail(c)]);
         const g = c.stats.gap_now;
-        parts.push(` (${shortLabel(c.inc.label)}, `);
-        parts.push(["span", fmt1(Math.abs(g)), g >= 0 ? "up" : "down"]);
-        parts.push(` ${word} ${c.rival ? shortLabel(c.rival.label) : "the rival"})`);
+        const f = flagImg(c.code, "flag flag-inline"); if (f) parts.push(f);
+        parts.push(["button", c.name, "linkbtn " + (g >= 0 ? "up" : "down"), () => openDetail(c)]);
+        parts.push(` (${shortLabel(c.inc.label)}, ${fmt1(Math.abs(g))} pp ${word} ${c.rival ? shortLabel(c.rival.label) : "the rival"})`);
       });
       return parts;
     };
@@ -1272,7 +1273,7 @@
     const host = $("#map");
     let feats;
     try { feats = await loadMap(); } catch (e) { host.replaceChildren(el("p", "note", "The map could not be loaded: " + e.message)); return; }
-    const W = Math.max(300, Math.round(host.clientWidth || 900));
+    const Wfull = Math.max(300, Math.round(host.clientWidth || 900));
     const ideo = state.mapMode === "ideo", place = state.mapMode === "place";
     const at = state.mapAt != null && state.timeline ? state.mapAt : null;
     const tracked = new Map(state.countries.map((c) => [c.code, c]));
@@ -1282,11 +1283,19 @@
     const extra = Object.values(MAP_LABELS).filter((s) => s[2] && s[2].at).flatMap((s) => [[s[2].at[0] + 1.6, s[2].at[1] - 0.9], [s[2].at[0] - 1.6, s[2].at[1] - 0.9]])
       .concat([[-10.6, 39.4]]);   // room for Portugal's label on the left edge
     const fit = { type: "FeatureCollection", features: [...feats.filter((f) => tracked.has(f.id)), { type: "Feature", geometry: { type: "MultiPoint", coordinates: extra } }] };
-    const proj = d3.geoAzimuthalEqualArea().rotate([-11, -53]).fitWidth(W - 12, fit);
-    const path = d3.geoPath(proj);
-    const b = path.bounds(fit);
-    const H = Math.ceil(b[1][1] - b[0][1] + 14);
-    proj.translate([proj.translate()[0] + 6 - b[0][0] + 0, proj.translate()[1] + 7 - b[0][1]]);
+    // as wide as the box allows, but never taller than the window, so the whole map fits on screen
+    const layout = (w) => {
+      const pr = d3.geoAzimuthalEqualArea().rotate([-11, -53]).fitWidth(w - 12, fit);
+      const bb = d3.geoPath(pr).bounds(fit);
+      pr.translate([pr.translate()[0] + 6 - bb[0][0], pr.translate()[1] + 7 - bb[0][1]]);
+      return { proj: pr, H: Math.ceil(bb[1][1] - bb[0][1] + 14) };
+    };
+    let W = Wfull, L0 = layout(W);
+    // the height left under the controls when the page is first opened, but at least 520 pixels
+    const docTop = host.getBoundingClientRect().top + window.scrollY;
+    const maxH = window.__noFit ? Infinity : clamp(window.innerHeight - docTop - 12, 520, Math.max(520, window.innerHeight - 24));
+    if (L0.H > maxH) { W = Math.max(420, Math.floor(W * maxH / L0.H)); L0 = layout(W); }
+    const proj = L0.proj, H = L0.H, path = d3.geoPath(proj);
     const k = W / 1000;
     const numSize = clamp(21 * k, 11, 21), daySize = clamp(11 * k, 8.5, 11.5);
     const showDays = W >= 560;
@@ -1297,6 +1306,7 @@
     };
 
     const svg = d3.create("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "group").attr("class", ideo || place ? "seq" : null)
+      .style("max-width", W < Wfull ? `${W}px` : null)
       .attr("aria-label", ideo ? `Map of Europe: combined poll share of ${groupPhrase()}` : place ? `Map of Europe: poll share of each country's ${PLACES[state.mapPlace]}`
         : "Map of Europe: poll lead or lag of each governing party");
     const id = "m" + (++uid);
@@ -1407,7 +1417,7 @@
       $("#map-note").textContent = "Big figures: the governing party's poll lead (+) or lag (−) against its strongest rival, in percentage points of the poll trend. Small figures: time until the next election, scheduled or legally due" + (at == null ? "" : ", counted from the date shown to the election that followed") + ". Select a country for its polls.";
     }
     const covered = [...datum.values()].filter((d) => d.hasData).length;
-    $("#map-date").textContent = at == null ? "Latest polls" : `${fmtDate(tlDate(at))} (${covered} of ${state.countries.length} countries)`;
+    $("#map-date").textContent = at == null ? `Latest polls, fetched ${fmtDate(parseISO(state.data.generated || state.data.today))}` : `${fmtDate(tlDate(at))} (${covered} of ${state.countries.length} countries)`;
   }
 
   // ---- the controls above the map: what it shows, the ideology group picker, the time slider
@@ -1449,7 +1459,7 @@
       state.mapAt = v >= tl.n ? null : v;
       renderMap();
     });
-    const stop = () => { clearInterval(playTimer); playTimer = null; play.textContent = "Play"; };
+    const stop = () => { clearInterval(playTimer); playTimer = null; play.textContent = "Time lapse"; };
     play.addEventListener("click", async () => {
       if (playTimer) { stop(); return; }
       const tl = await ensure();
@@ -1608,6 +1618,9 @@
   }
 
   // ------------------------------------------------------------------------------- palette picker
+  /** Light or dark: the page follows the picker, not the system setting. */
+  function applyTheme() { document.documentElement.dataset.theme = state.theme === "dark" ? "dark" : "light"; }
+
   /** Show only the colour pickers whose colours are on screen: lead/lag where a government's lead or
    *  lag is coloured, the ideology share colour where an ideology group is. */
   function syncPaletteSwitch() {
@@ -1618,10 +1631,13 @@
       || (v === "correlates" && !!(X.ideo || Y.ideo));
     $("#pick-leadlag").hidden = !lead;
     $("#pick-share").hidden = !share;
-    $(".palette-switch").hidden = !lead && !share;
+
   }
 
   function initPalette() {
+    const th = $("#theme");
+    th.value = state.theme === "dark" ? "dark" : "light";
+    th.addEventListener("change", () => { state.theme = th.value; store.set("theme", th.value); applyTheme(); });
     const hs = $("#hue");
     Object.entries(HUES).forEach(([k, H]) => { const o = el("option", null, H.label); o.value = k; hs.append(o); });
     if (!HUES[state.hue]) state.hue = "blue";
@@ -1917,8 +1933,9 @@
     state.data = data;
     state.today = data.today ? parseISO(data.today) : new Date();
     state.countries = data.countries.map(prepare);
+    applyTheme();
     initPalette();
-    $("#asof").textContent = `Data as of ${fmtDate(state.today)}.`;
+    $("#asof").textContent = `(data as of ${fmtDate(state.today)})`;
     $("#generated").textContent = `Data built ${data.generated.replace("T", " ").slice(0, 16)} UTC from the Wikipedia pages of ${state.countries.length} countries.`;
     const hidden = (data.not_shown || []).map((n) => `${n.name} (${n.note})`);
     $("#not-shown").textContent = hidden.length ? "Not shown: " + hidden.join("; ") : "";
@@ -1946,12 +1963,12 @@
     };
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", rerender);
     new MutationObserver(rerender).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-    let rt, lastW = window.innerWidth;
+    let rt, lastW = window.innerWidth, lastH = window.innerHeight;
     window.addEventListener("resize", () => {
       clearTimeout(rt);
       rt = setTimeout(() => {
-        if (Math.abs(window.innerWidth - lastW) < 8) return;
-        lastW = window.innerWidth;
+        if (Math.abs(window.innerWidth - lastW) < 8 && Math.abs(window.innerHeight - lastH) < 60) return;
+        lastW = window.innerWidth; lastH = window.innerHeight;
         if (state.view === "map") renderMap();
         if (state.view === "correlates") renderScatter();
         if (state.view === "timelines") renderLongRun();
