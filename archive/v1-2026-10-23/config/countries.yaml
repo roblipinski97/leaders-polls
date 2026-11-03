@@ -1,0 +1,571 @@
+# ============================================================================================
+# Countries, Wikipedia pages and incumbents for the polling dashboard
+# ============================================================================================
+# Everything the pipeline needs to know that is NOT in the polling tables lives here.
+# Edit this file when a government changes or an election is called, then re-run:
+#     python -m polls build
+#
+# Per country:
+#   name, region            display only
+#   next_election           date the x-axis ends at (YYYY-MM-DD)
+#   next_election_status    scheduled | expected | deadline   (deadline = latest legal date)
+#   incumbents              who held the head-of-government office, as dated periods.
+#                           `match` lists party keys/labels as they appear in the polling table
+#                           (case-insensitive; the Wikipedia article title of the party, or the
+#                           column label). An empty match = caretaker / non-party PM, no line.
+#                           The thick "incumbent" line follows these periods, so a mid-term
+#                           change of PM party (e.g. Romania 2025) switches the line.
+#   cycles                  Wikipedia pages, newest first. `start` = election that opened the
+#                           cycle; `end` = election that closed it (omit for the running cycle).
+#                           If the running cycle has fewer than `min_polls` polls (an election
+#                           has just happened) the dashboard shows the last completed cycle.
+#   include_headings / exclude_headings / tables   (per cycle, optional) override the automatic
+#                           table selection: regexes matched against "h2 > h3 > h4" headings,
+#                           or explicit table indices (see data/processed/diagnostics.txt).
+#   labels, colors          optional per-party display overrides (key -> text / hex colour)
+#   history                 optional: party lineages for the long-run view (see Poland)
+#
+# Facts verified on 23 Oct 2026 against Wikipedia and news reports (see README for sources).
+# ============================================================================================
+
+title: "Leading and laden leaders: how are incumbents faring in the polls?"
+as_of: 2026-10-23
+
+countries:
+
+  # ---------------------------------------------------------------- Western Europe
+  GB:
+    name: United Kingdom
+    region: Western
+    next_election: 2029-08-15
+    next_election_status: deadline
+    incumbents:
+      - {from: 2024-07-05, match: [Lab, "Labour Party (UK)"], leader: Keir Starmer, title: Prime Minister}
+      - {from: 2026-07-20, match: [Lab, "Labour Party (UK)"], leader: Andy Burnham, title: Prime Minister,
+         note: "Burnham succeeded Starmer as Labour leader and PM on 20 July 2026."}
+    cycles:
+      - {page: Opinion polling for the next United Kingdom general election, start: 2024-07-04}
+
+  IE:
+    name: Ireland
+    region: Western
+    next_election: 2030-01-31
+    next_election_status: deadline
+    incumbents:
+      - {from: 2024-11-29, match: [FG, Fine Gael], leader: Simon Harris, title: Taoiseach}
+      - {from: 2025-01-23, match: [FF, Fianna Fáil], leader: Micheál Martin, title: Taoiseach}
+    cycles:
+      - {page: Next Irish general election, start: 2024-11-29}
+
+  FR:
+    name: France
+    region: Western
+    next_election: 2029-06-17
+    next_election_status: deadline
+    note: "Semi-presidential: the line follows the Prime Minister's camp (Ensemble = Renaissance, MoDem, Horizons). Barnier (LR) was PM Sep–Dec 2024."
+    incumbents:
+      - {from: 2024-06-30, match: [ENS, "Ensemble (political coalition)"], leader: Gabriel Attal, title: Prime Minister}
+      - {from: 2024-09-05, match: [LR, "The Republicans (France)"], leader: Michel Barnier, title: Prime Minister}
+      - {from: 2024-12-13, match: [ENS, "Ensemble (political coalition)"], leader: François Bayrou, title: Prime Minister}
+      - {from: 2025-09-09, match: [ENS, "Ensemble (political coalition)"], leader: Sébastien Lecornu, title: Prime Minister}
+    cycles:
+      - {page: Next French legislative election, start: 2024-06-30}
+
+  NL:
+    name: Netherlands
+    region: Western
+    next_election: 2030-05-15
+    next_election_status: scheduled
+    incumbents:
+      - {from: 2025-10-29, match: [], leader: "Dick Schoof (caretaker, non-party)", title: Prime Minister, caretaker: true}
+      - {from: 2026-02-23, match: [D66, Democrats 66], leader: Rob Jetten, title: Prime Minister}
+    cycles:
+      - {page: Next Dutch general election, start: 2025-10-29}
+      - {page: Opinion polling for the 2025 Dutch general election, start: 2023-11-22, end: 2025-10-29}
+
+  LU:
+    name: Luxembourg
+    region: Western
+    next_election: 2028-10-08
+    next_election_status: deadline
+    incumbents:
+      - {from: 2023-10-08, match: [DP, "Democratic Party (Luxembourg)"], leader: Xavier Bettel, title: Prime Minister}
+      - {from: 2023-11-17, match: [CSV, "Christian Social People's Party"], leader: Luc Frieden, title: Prime Minister}
+    colors:
+      "Christian Social People's Party": "#F18A00"
+      "Luxembourg Socialist Workers' Party": "#E2001A"
+      "Democratic Party (Luxembourg)": "#00529C"
+      "The Greens (Luxembourg)": "#83B000"
+      "Alternative Democratic Reform Party": "#5F8FC8"
+      "Pirate Party Luxembourg": "#3C3C3C"
+      "The Left (Luxembourg)": "#B2003A"
+      "Communist Party of Luxembourg": "#8B0000"
+    cycles:
+      - {page: Next Luxembourg general election, start: 2023-10-08}
+
+  DE:
+    name: Germany
+    region: Western
+    next_election: 2029-03-25
+    next_election_status: deadline
+    incumbents:
+      - {from: 2025-02-23, match: [SPD, Social Democratic Party of Germany], leader: Olaf Scholz (caretaker), title: Chancellor, caretaker: true}
+      - {from: 2025-05-06, match: [Union, CDU/CSU], leader: Friedrich Merz, title: Chancellor}
+    cycles:
+      - {page: Opinion polling for the next German federal election, start: 2025-02-23}
+      - {page: Opinion polling for the 2025 German federal election, start: 2021-09-26, end: 2025-02-23}
+
+  AT:
+    name: Austria
+    region: Western
+    next_election: 2029-10-21
+    next_election_status: deadline
+    incumbents:
+      - {from: 2024-09-29, match: [ÖVP, "Austrian People's Party"], leader: Karl Nehammer, title: Chancellor}
+      - {from: 2025-03-03, match: [ÖVP, "Austrian People's Party"], leader: Christian Stocker, title: Chancellor}
+    cycles:
+      - {page: Next Austrian legislative election, start: 2024-09-29}
+
+  # ---------------------------------------------------------------- Northern Europe
+  DK:
+    name: Denmark
+    region: Northern
+    next_election: 2030-03-23
+    next_election_status: deadline
+    incumbents:
+      - {from: 2026-03-24, match: [Social Democrats (Denmark), A], leader: Mette Frederiksen, title: Prime Minister}
+    cycles:
+      - {page: Next Danish general election, start: 2026-03-24}
+      - {page: Opinion polling for the 2026 Danish general election, start: 2022-11-01, end: 2026-03-24}
+
+  SE:
+    name: Sweden
+    region: Northern
+    next_election: 2030-09-08
+    next_election_status: scheduled
+    note: "Election held 13 Sep 2026; no government formed yet (Kristersson caretaker). Shown: the 2022–26 term."
+    incumbents:
+      - {from: 2022-09-11, match: [S, Swedish Social Democratic Party], leader: Magdalena Andersson (caretaker), title: Prime Minister, caretaker: true}
+      - {from: 2022-10-18, match: [M, Moderate Party], leader: Ulf Kristersson, title: Prime Minister}
+    cycles:
+      - {page: 2030 Swedish general election, start: 2026-09-13}
+      - {page: Opinion polling for the 2026 Swedish general election, start: 2022-09-11, end: 2026-09-13}
+
+  "NO":
+    name: Norway
+    region: Northern
+    next_election: 2029-09-10
+    next_election_status: expected
+    incumbents:
+      - {from: 2025-09-08, match: [Ap, "Labour Party (Norway)"], leader: Jonas Gahr Støre, title: Prime Minister}
+    cycles:
+      - {page: 2029 Norwegian parliamentary election, start: 2025-09-08}
+      - {page: Opinion polling for the 2025 Norwegian parliamentary election, start: 2021-09-13, end: 2025-09-08}
+
+  FI:
+    name: Finland
+    region: Northern
+    next_election: 2027-04-18
+    next_election_status: scheduled
+    incumbents:
+      - {from: 2023-04-02, match: [SDP, Social Democratic Party of Finland], leader: Sanna Marin (caretaker), title: Prime Minister, caretaker: true}
+      - {from: 2023-06-20, match: [KOK, National Coalition Party], leader: Petteri Orpo, title: Prime Minister}
+    cycles:
+      - {page: Opinion polling for the 2027 Finnish parliamentary election, start: 2023-04-02}
+
+  IS:
+    name: Iceland
+    region: Northern
+    next_election: 2028-12-02
+    next_election_status: deadline
+    incumbents:
+      - {from: 2024-11-30, match: [D, "Independence Party (Iceland)"], leader: Bjarni Benediktsson (caretaker), title: Prime Minister, caretaker: true}
+      - {from: 2024-12-21, match: [S, Social Democratic Alliance], leader: Kristrún Frostadóttir, title: Prime Minister}
+    cycles:
+      - {page: Next Icelandic parliamentary election, start: 2024-11-30}
+
+  EE:
+    name: Estonia
+    region: Northern
+    next_election: 2027-03-07
+    next_election_status: scheduled
+    incumbents:
+      - {from: 2023-03-05, match: [Reform, Estonian Reform Party], leader: Kaja Kallas, title: Prime Minister}
+      - {from: 2024-07-23, match: [Reform, Estonian Reform Party], leader: Kristen Michal, title: Prime Minister}
+    cycles:
+      - {page: Opinion polling for the next Estonian parliamentary election, start: 2023-03-05}
+
+  LV:
+    name: Latvia
+    region: Northern
+    next_election: 2030-10-05
+    next_election_status: scheduled
+    note: "Election held 3 Oct 2026; new government not yet formed. Shown: the 2022–26 term."
+    incumbents:
+      - {from: 2022-10-01, match: [JV, New Unity], leader: Krišjānis Kariņš, title: Prime Minister}
+      - {from: 2023-09-15, match: [JV, New Unity], leader: Evika Siliņa, title: Prime Minister}
+      - {from: 2026-05-28, match: [AS, United List (Latvia)], leader: Andris Kulbergs (United List ticket), title: Prime Minister}
+    cycles:
+      - {page: 2026 Latvian parliamentary election, start: 2022-10-01, end: 2026-10-03}
+
+  LT:
+    name: Lithuania
+    region: Northern
+    next_election: 2028-10-08
+    next_election_status: expected
+    incumbents:
+      - {from: 2024-10-13, match: ["TS– LKD", TS-LKD, Homeland Union], leader: Ingrida Šimonytė, title: Prime Minister}
+      - {from: 2024-12-12, match: [LSDP, Social Democratic Party of Lithuania], leader: Gintautas Paluckas, title: Prime Minister}
+      - {from: 2025-08-26, match: [LSDP, Social Democratic Party of Lithuania], leader: Inga Ruginienė, title: Prime Minister}
+      - {from: 2026-07-14, match: [LSDP, Social Democratic Party of Lithuania], leader: Mindaugas Sinkevičius, title: Prime Minister}
+    cycles:
+      - {page: 2028 Lithuanian parliamentary election, start: 2024-10-13}
+
+  # ---------------------------------------------------------------- Southern Europe
+  ES:
+    name: Spain
+    region: Southern
+    next_election: 2026-11-29
+    next_election_status: scheduled
+    note: "Snap election called on 5 Oct 2026 for 29 Nov 2026."
+    incumbents:
+      - {from: 2023-07-23, match: [PSOE], leader: Pedro Sánchez, title: Prime Minister}
+    cycles:
+      - {page: Opinion polling for the 2026 Spanish general election, start: 2023-07-23}
+
+  PT:
+    name: Portugal
+    region: Southern
+    next_election: 2029-10-14
+    next_election_status: deadline
+    incumbents:
+      - {from: 2025-05-18, match: [AD], leader: Luís Montenegro, title: Prime Minister}
+    cycles:
+      - {page: Opinion polling for the next Portuguese legislative election, start: 2025-05-18}
+      - {page: Opinion polling for the 2025 Portuguese legislative election, start: 2024-03-10, end: 2025-05-18}
+
+  IT:
+    name: Italy
+    region: Southern
+    next_election: 2027-12-22
+    next_election_status: deadline
+    incumbents:
+      - {from: 2022-09-25, match: [], leader: Mario Draghi (caretaker), title: Prime Minister, caretaker: true}
+      - {from: 2022-10-22, match: [FdI, Brothers of Italy], leader: Giorgia Meloni, title: Prime Minister}
+    aliases:
+      "Action (Italian political party) + Italia Viva": "Action – Italia Viva"   # Terzo Polo joint list 2022–23
+    cycles:
+      - {page: Opinion polling for the next Italian general election, start: 2022-09-25}
+
+  MT:
+    name: Malta
+    region: Southern
+    next_election: 2031-06-30
+    next_election_status: deadline
+    note: "Election held 30 May 2026; no polls since. Shown: the 2022–26 term."
+    incumbents:
+      - {from: 2022-03-26, match: [PL, "Labour Party (Malta)"], leader: Robert Abela, title: Prime Minister}
+    cycles:
+      - {page: Opinion polling for the 2026 Maltese general election, start: 2022-03-26, end: 2026-05-30,
+         tables: [0]}   # "Expressing a Preference" = shares of decided voters (the main table)
+
+  GR:
+    name: Greece
+    region: Southern
+    next_election: 2027-07-25
+    next_election_status: deadline
+    incumbents:
+      - {from: 2023-06-25, match: [ND, "New Democracy (Greece)"], leader: Kyriakos Mitsotakis, title: Prime Minister}
+    cycles:
+      - {page: Opinion polling for the next Greek parliamentary election, start: 2023-06-25}
+
+  # ---------------------------------------------------------------- Central & Eastern Europe
+  PL:
+    name: Poland
+    region: Central & Eastern
+    next_election: 2027-11-11
+    next_election_status: deadline
+    incumbents:
+      - {from: 1997-10-31, match: [AWS, Solidarity Electoral Action], leader: Jerzy Buzek, title: Prime Minister}
+      - {from: 2001-10-19, match: [SLD, "Democratic Left Alliance (Poland)", "Democratic Left Alliance (Poland) + Labour United"], leader: Leszek Miller, title: Prime Minister}
+      - {from: 2004-05-02, match: [SLD, "Democratic Left Alliance (Poland)"], leader: Marek Belka, title: Prime Minister}
+      - {from: 2005-10-31, match: [PiS, "Law and Justice (Poland)", Law and Justice], leader: Kazimierz Marcinkiewicz, title: Prime Minister}
+      - {from: 2006-07-14, match: [PiS, "Law and Justice (Poland)", Law and Justice], leader: Jarosław Kaczyński, title: Prime Minister}
+      - {from: 2007-11-16, match: [PO, Civic Platform], leader: Donald Tusk, title: Prime Minister}
+      - {from: 2014-09-22, match: [PO, Civic Platform], leader: Ewa Kopacz, title: Prime Minister}
+      - {from: 2015-11-16, match: [PiS, "Law and Justice (Poland)", Law and Justice], leader: Beata Szydło, title: Prime Minister}
+      - {from: 2017-12-11, match: [PiS, United Right, "United Right (Poland)", "Law and Justice (Poland)"], leader: Mateusz Morawiecki, title: Prime Minister}
+      - {from: 2023-10-15, match: [PiS, Law and Justice, United Right], leader: Mateusz Morawiecki, title: Prime Minister}
+      - {from: 2023-12-13, match: [KO, "Civic Coalition (Poland)"], leader: Donald Tusk, title: Prime Minister}
+    colors:
+      "Confederation Liberty and Independence": "#0E5A63"
+    aliases:
+      # joint-list cells in the current cycle -> the list they represent
+      "Poland 2050 + Polish People's Party": "Third Way (Poland)"
+      "The Left (Poland) + Left Together": "The Left (Poland)"
+      "Confederation Liberty and Independence + Confederation of the Polish Crown": "Confederation Liberty and Independence"
+    cycles:
+      - {page: Opinion polling for the next Polish parliamentary election, start: 2023-10-15}
+      - {page: Opinion polling for the 2023 Polish parliamentary election, start: 2019-10-13, end: 2023-10-15}
+      - {page: Opinion polling for the 2019 Polish parliamentary election, start: 2015-10-25, end: 2019-10-13,
+         tables: [0, 1, 2, 3, 4, 5]}   # include the 2019 "Electoral alliances" table (KO, Lewica, KP, Konfederacja)
+      - {page: Opinion polling for the 2015 Polish parliamentary election, start: 2011-10-09, end: 2015-10-25}
+      - {page: Opinion polling for the 2011 Polish parliamentary election, start: 2007-10-21, end: 2011-10-09}
+      - {page: Opinion polling for the 2007 Polish parliamentary election, start: 2005-09-25, end: 2007-10-21}
+      - {page: Opinion polling for the 2005 Polish parliamentary election, start: 2001-09-23, end: 2005-09-25}
+      - {page: Opinion polling for the 2001 Polish parliamentary election, start: 1997-09-21, end: 2001-09-23}
+    history:
+      # A lineage = one political current followed through renames, mergers and joint lists.
+      # members: party keys exactly as parsed (Wikipedia article titles, or joint-list labels).
+      lineages:
+        - id: pis
+          short: "PiS"
+          label: PiS / United Right
+          color: "#263778"
+          names: "PiS (2001–) · Zjednoczona Prawica (United Right) lists"
+          members: ["Law and Justice (Poland)", "Law and Justice", "United Right (Poland)",
+                    "United Right (Poland) + Agreement (political party)", "United Right (Poland) + Kukiz'15"]
+        - id: ko
+          short: "KO"
+          label: PO / KO
+          color: "#F68F2D"
+          names: "Platforma Obywatelska (2001–) · Koalicja Obywatelska (2018–)"
+          members: ["Civic Platform", "Civic Coalition (Poland)", "Civic Platform + Modern (political party)",
+                    "Civic Coalition (Poland) + AGROunia"]
+        - id: left
+          short: "Lewica"
+          label: SLD / Lewica
+          color: "#D7193F"
+          names: "SLD (incl. SLD–UP 2001, LiD 2007, ZL 2015) · Wiosna · Lewica / Nowa Lewica (2019–)"
+          members: ["Democratic Left Alliance (Poland)", "Democratic Left Alliance (Poland) + Labour United",
+                    "Democratic Left Alliance (Poland) + Labour Union (Poland)",
+                    "Democratic Left Alliance (Poland) + Labour Union (Poland) + Social Democracy of Poland + Democratic Party – demokraci.pl",
+                    "Democratic Left Alliance (Poland) + Your Movement", "United Left", "Spring (political party)",
+                    "The Left (Poland)", "The Left (Poland) + Left Together"]
+        - id: psl
+          short: "PSL"
+          label: PSL
+          color: "#1BB100"
+          names: "PSL · Koalicja Polska (2019–23)"
+          members: ["Polish People's Party", "Polish Coalition", "Polish Coalition + Kukiz'15"]
+        - id: td
+          short: "TD"
+          label: Third Way (PSL + Polska 2050)
+          color: "#E1C200"
+          names: "Trzecia Droga joint list, 2023–25"
+          members: ["Third Way", "Third Way (Poland)", "Poland 2050 + Polish People's Party"]
+        - id: pl2050
+          short: "PL2050"
+          label: Polska 2050
+          color: "#F5B800"
+          names: "Polska 2050 (Hołownia, 2020–)"
+          members: ["Poland 2050"]
+        - id: konf
+          short: "Konf."
+          label: Konfederacja
+          color: "#0E5A63"   # Wikipedia uses navy #122746, too close to PiS; dark teal keeps it dark but distinct
+          names: "KNP (2011–15) · KORWiN (2015–19) · Konfederacja (2019–)"
+          members: ["Confederation Liberty and Independence", "Confederation Freedom and Independence", "KORWiN (Poland)", "Congress of the New Right",
+                    "Confederation Liberty and Independence + Confederation of the Polish Crown"]
+        - id: kkp
+          short: "KKP"
+          label: Korona (Braun)
+          color: "#A37919"
+          names: "Konfederacja Korony Polskiej (2025–)"
+          members: ["Confederation of the Polish Crown"]
+        - id: rplus
+          short: "R+"
+          label: "Rozwój+ (R+)"
+          color: "#75BAFF"
+          names: "Development Plus (2026–)"
+          members: ["Development Plus"]
+        - id: razem
+          short: "Razem"
+          label: Razem
+          color: "#870F57"
+          names: "Razem (2015–)"
+          members: ["Razem", "Left Together"]
+        - id: kukiz
+          short: "Kukiz'15"
+          label: "Kukiz'15"
+          color: "#3A3A3A"
+          names: "Kukiz'15 (2015–23)"
+          members: ["Kukiz'15"]
+        - id: nowoczesna
+          short: ".N"
+          label: Nowoczesna
+          color: "#005CA9"
+          names: ".Nowoczesna (2015–19, then within KO)"
+          members: ["Modern (political party)"]
+        - id: srp
+          short: "SRP"
+          label: Samoobrona
+          color: "#C9A200"
+          names: "Samoobrona RP (1997–2011)"
+          members: ["Self-Defence of the Republic of Poland",
+                    "Self-Defence of the Republic of Poland + League of Polish Families"]
+        - id: lpr
+          short: "LPR"
+          label: LPR
+          color: "#2DA0D2"
+          names: "Liga Polskich Rodzin (2001–07)"
+          members: ["League of Polish Families"]
+        - id: aws
+          short: "AWS"
+          label: AWS
+          color: "#8C8C8C"
+          names: "Akcja Wyborcza Solidarność (1996–2001)"
+          members: ["Solidarity Electoral Action"]
+        - id: uw
+          short: "UW/PD"
+          label: UW / PD
+          color: "#2666AE"
+          names: "Unia Wolności (–2005) · Partia Demokratyczna"
+          members: ["Freedom Union (Poland)", "Democratic Party – demokraci.pl"]
+        - id: rp
+          short: "RP/TR"
+          label: Palikot / TR
+          color: "#E36414"
+          names: "Ruch Palikota (2011–13) · Twój Ruch (2013–15)"
+          members: ["Palikot's Movement", "Your Movement"]
+        - id: sdpl
+          short: "SDPL"
+          label: SDPL
+          color: "#B5523B"
+          names: "Socjaldemokracja Polska (2004–07)"
+          members: ["Social Democracy of Poland", "Labour Union (Poland) + Social Democracy of Poland"]
+
+  CZ:
+    name: Czechia
+    region: Central & Eastern
+    next_election: 2029-10-06
+    next_election_status: deadline
+    incumbents:
+      - {from: 2025-10-04, match: [ODS, Civic Democratic Party (Czech Republic)], leader: Petr Fiala (caretaker), title: Prime Minister, caretaker: true}
+      - {from: 2025-12-09, match: [ANO, ANO 2011], leader: Andrej Babiš, title: Prime Minister}
+    cycles:
+      - {page: Next Czech parliamentary election, start: 2025-10-04}
+      - {page: Opinion polling for the 2025 Czech parliamentary election, start: 2021-10-09, end: 2025-10-04}
+
+  SK:
+    name: Slovakia
+    region: Central & Eastern
+    next_election: 2027-09-28
+    next_election_status: deadline
+    incumbents:
+      - {from: 2023-09-30, match: [], leader: "Ľudovít Ódor (caretaker, non-party)", title: Prime Minister, caretaker: true}
+      - {from: 2023-10-25, match: [Smer, Direction – Social Democracy], leader: Robert Fico, title: Prime Minister}
+    cycles:
+      - {page: Opinion polling for the next Slovak parliamentary election, start: 2023-09-30}
+
+  HU:
+    name: Hungary
+    region: Central & Eastern
+    next_election: 2030-04-30
+    next_election_status: expected
+    incumbents:
+      - {from: 2026-04-12, match: [Fidesz–KDNP], leader: Viktor Orbán (caretaker), title: Prime Minister, caretaker: true}
+      - {from: 2026-05-09, match: [TISZA, Tisza], leader: Péter Magyar, title: Prime Minister}
+    cycles:
+      - {page: Opinion polling for the 2030 Hungarian parliamentary election, start: 2026-04-12}
+      - {page: Opinion polling for the 2026 Hungarian parliamentary election, start: 2022-04-03, end: 2026-04-12}
+
+  SI:
+    name: Slovenia
+    region: Central & Eastern
+    next_election: 2030-03-22
+    next_election_status: deadline
+    incumbents:
+      - {from: 2026-03-22, match: [GS, "Freedom Movement (Slovenia)"], leader: Robert Golob (caretaker), title: Prime Minister, caretaker: true}
+      - {from: 2026-06-04, match: [SDS, Slovenian Democratic Party], leader: Janez Janša, title: Prime Minister}
+    cycles:
+      - {page: Opinion polling for the next Slovenian parliamentary election, start: 2026-03-22}
+      - {page: Opinion polling for the 2026 Slovenian parliamentary election, start: 2022-04-24, end: 2026-03-22}
+
+  HR:
+    name: Croatia
+    region: Central & Eastern
+    next_election: 2028-04-30
+    next_election_status: deadline
+    incumbents:
+      - {from: 2024-04-17, match: [HDZ, Croatian Democratic Union], leader: Andrej Plenković, title: Prime Minister}
+    cycles:
+      - {page: Opinion polling for the next Croatian parliamentary election, start: 2024-04-17}
+
+  RO:
+    name: Romania
+    region: Central & Eastern
+    next_election: 2028-11-30
+    next_election_status: deadline
+    note: "Semi-presidential. PSD's Ciolacu led until May 2025, PNL (Predoiu, then Bolojan) until Oct 2026. The new PM Niculescu is non-party; his minority cabinet is PSD-dominated."
+    incumbents:
+      - {from: 2024-12-01, match: [PSD, "Social Democratic Party (Romania)"], leader: Marcel Ciolacu, title: Prime Minister}
+      - {from: 2025-05-06, match: [PNL, "National Liberal Party (Romania)"], leader: Cătălin Predoiu (interim), title: Prime Minister, caretaker: true}
+      - {from: 2025-06-23, match: [PNL, "National Liberal Party (Romania)"], leader: Ilie Bolojan, title: Prime Minister}
+      - {from: 2026-10-20, match: [PSD, "Social Democratic Party (Romania)"], leader: "Luca Niculescu (non-party, PSD-dominated cabinet)", title: Prime Minister}
+    cycles:
+      - {page: Next Romanian parliamentary election, start: 2024-12-01}
+
+  BG:
+    name: Bulgaria
+    region: Central & Eastern
+    next_election: 2030-06-30
+    next_election_status: deadline
+    incumbents:
+      - {from: 2026-04-19, match: [], leader: caretaker government, title: Prime Minister, caretaker: true}
+      - {from: 2026-05-08, match: [PB, Progressive Bulgaria], leader: Rumen Radev, title: Prime Minister}
+    cycles:
+      - {page: Next Bulgarian parliamentary election, start: 2026-04-19}
+      - {page: 2026 Bulgarian parliamentary election, start: 2024-10-27, end: 2026-04-19}
+
+  # ---------------------------------------------------------------- Western Balkans & neighbours
+  RS:
+    name: Serbia
+    region: Balkans & East
+    next_election: 2026-10-25
+    next_election_status: scheduled
+    note: "Snap election on 25 Oct 2026. PM Macut is non-party; the line is the SNS-led list."
+    incumbents:
+      - {from: 2023-12-17, match: [SNS–led coalition, Serbia Must Not Stop, SNS list], leader: Ana Brnabić, title: Prime Minister}
+      - {from: 2024-05-02, match: [SNS–led coalition, Serbia Must Not Stop, SNS list], leader: Miloš Vučević, title: Prime Minister}
+      - {from: 2025-04-16, match: [SNS–led coalition, Serbia Must Not Stop, SNS list], leader: "Đuro Macut (non-party, SNS-backed)", title: Prime Minister}
+    labels: {"Serbia Must Not Stop": "SNS list"}
+    cycles:
+      - {page: Opinion polling for the 2026 Serbian parliamentary election, start: 2023-12-17}
+
+  ME:
+    name: Montenegro
+    region: Balkans & East
+    next_election: 2027-06-30
+    next_election_status: deadline
+    incumbents:
+      - {from: 2023-06-11, match: [URA, United Reform Action], leader: Dritan Abazović (caretaker), title: Prime Minister, caretaker: true}
+      - {from: 2023-10-31, match: [PES, Europe Now], leader: Milojko Spajić, title: Prime Minister}
+    cycles:
+      - {page: Next Montenegrin parliamentary election, start: 2023-06-11}
+
+  MD:
+    name: Moldova
+    region: Balkans & East
+    next_election: 2029-09-30
+    next_election_status: deadline
+    note: "Since Nov 2025 the PMs (Munteanu, then Tofan) are non-party but PAS-backed."
+    incumbents:
+      - {from: 2025-09-28, match: [PAS, Party of Action and Solidarity], leader: Dorin Recean, title: Prime Minister}
+      - {from: 2026-07-22, match: [PAS, Party of Action and Solidarity], leader: "Vasile Tofan (non-party, PAS-backed)", title: Prime Minister}
+    cycles:
+      - {page: Next Moldovan parliamentary election, start: 2025-09-28}
+
+  # ---------------------------------------------------------------- not shown (kept for reference)
+  BE:
+    name: Belgium
+    skip: true
+    note: "No nationwide parties or national polls (polls are by region); no English Wikipedia page for the next cycle."
+  CH:
+    name: Switzerland
+    skip: true
+    note: "Collegial executive (Federal Council of all major parties): no single incumbent."
+  CY:
+    name: Cyprus
+    skip: true
+    note: "Presidential system with an independent president; no incumbent party."

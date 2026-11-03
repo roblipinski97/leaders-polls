@@ -1,0 +1,190 @@
+# ============================================================================================
+# Party key (as in the poll tables / long view) -> Manifesto Project party code(s)
+# ============================================================================================
+# Hand-kept. Only needed where automatic matching on English names and abbreviations fails
+# (python -m polls build reports every match in data/processed/ideology_matches.csv).
+#   key: 92435                      one Manifesto party
+#   key: {codes: [92210, 92022]}    a line that continues several coded parties over time
+#   key: {inherit: other key, note} no manifesto of its own; uses the party it split from or
+#                                   ran inside (marked as "inherited" on the page)
+#   key: null                       no score (new party, or none coded)
+# Codes: MPDS 2026a. Coverage ends at different elections per country (Slovakia 2016,
+# Romania 2016, Bulgaria 2017, Italy 2018, Slovenia 2018, Poland 2019 ...), so parties founded
+# later have no score unless they inherit one.
+# ============================================================================================
+
+AT:
+  Team Stronach: 42951
+BG:
+  GERB–SDS: {inherit: GERB}
+  BSP for Bulgaria: 80221
+  Volya Movement: 80640
+  Alliance for Rights and Freedoms: {inherit: Movement for Rights and Freedoms, note: "DPS faction loyal to Dogan, 2024"}
+  United Patriots: 80071
+CZ:
+  SPOLU: 82050
+  Piráti+STAN: 82040
+  Four-Coalition: 82524
+  Freedom Union – Democratic Union: 82421
+  ODS: 82413
+  ANO: 82430
+  SPD: 82721
+  STAN: 82610
+  Piráti: 82953
+  KSČM: 82220
+  SOCDEM: 82320
+  KDU–ČSL: 82523
+  KDU– ČSL: 82523
+DE:
+  Pirate Party Germany: 41952
+DK:
+  Social Democrats (Denmark): 13320
+  Venstre (Denmark): 13420
+  Green Left (Denmark): 13230
+  Socialist People's Party (Denmark): 13230
+  Red–Green Alliance (Denmark): 13229
+  Red-Green Alliance (Denmark): 13229
+EE:
+  Isamaa: {codes: [83709, 83611]}
+  Pro Patria and Res Publica Union: 83611
+ES:
+  Podemos: {codes: [33210, 33025]}
+  Cs: 33420
+  C's: 33420
+  Sumar: 33021
+  Más País: 33230
+  CiU: {codes: [33611, 33911, 33912]}
+  Junts: 33912
+FI:
+  Social Democratic Party of Finland: 14320
+  National Coalition Party: 14620
+  Green League: 14110
+  Swedish People's Party of Finland: 14901
+  Movement Now: 14440
+FR:
+  National Rally: 31720
+  RN and allies: {inherit: National Rally, note: "RN with Ciotti's LR faction, 2024"}
+  Ensemble (political coalition): {codes: [31425, 31041]}
+  NFP: {inherit: NUPES, note: "NFP (2024) continues the 2022 NUPES alliance"}
+  NUPES: 31022
+  La France Insoumise: 31240
+  Union for a Popular Movement: {codes: [31625, 31626]}
+  The Republicans (France): 31626
+  Union of the Right and Centre: 31061
+  Miscellaneous centre: null
+  Miscellaneous left: null
+  Miscellaneous right: null
+GB:
+  Green parties in the United Kingdom: 51110
+GR:
+  SYRIZA: {codes: [34211, 34020, 34212]}
+  PASOK: {codes: [34313, 34315]}
+HR:
+  Social Democratic Party of Croatia: {codes: [81220, 81032]}
+  SDP: {codes: [81220, 81032]}
+  We Can! (Croatia): 81240
+  Homeland Movement (Croatia): 81714
+HU:
+  Fidesz–KDNP: 86421
+  Together: 86340
+  United for Hungary: 86001
+  Dialogue: 86111
+  Our Homeland Movement: 86711
+IE:
+  Fianna Fáil: 53620
+  Fine Gael: 53520
+  People Before Profit–Solidarity: 53231
+IS:
+  Viðreisn: 15450
+IT:
+  The Union (Italy): 32329
+  Lega (political party): 32720
+  Forza Italia (2013): {codes: [32610, 32061]}
+  New Centre-Right: 32051
+  Free and Equal (Italy): 32031
+  More Europe: 32451
+LT:
+  Homeland Union: {codes: [88620, 88621]}
+  TS– LKD: {codes: [88620, 88621]}
+  TS-LKD: {codes: [88620, 88621]}
+  National Alliance (Lithuania): null   # abbreviation NS collides with New Union (2000)
+  Freedom and Justice: 88460
+  Electoral Action of Poles in Lithuania – Christian Families Alliance: 88951
+LU:
+  Luxembourg Socialist Workers' Party: 23320
+LV:
+  National Alliance (Latvia): 87071
+  Movement For!: 87042
+  AP!: 87042
+  The Conservatives (Latvia): 87640
+  Social Democratic Party "Harmony": 87340
+MD:
+  Party of Action and Solidarity: 90040
+  Dignity and Truth Platform Party: 90040
+  BCS: {inherit: Party of Socialists of the Republic of Moldova, note: "PSRM-PCRM bloc, 2021"}
+MT:
+  AD+PD: null
+NL:
+  GroenLinks–PvdA: {codes: [22110, 22320]}
+  Progressief Nederland: {codes: [22110, 22320]}
+  DENK (political party): 22321
+PL:
+  ko: 92435
+  Civic Coalition (Poland): 92435
+  left: {codes: [92210, 92212, 92021, 92022]}
+  psl: {codes: [92811, 92050]}
+  konf: 92070
+  nowoczesna: 92450
+  kukiz: 92720
+  uw: {codes: [92410, 92434]}
+  up: 92322
+  kpn: 92710
+  bbwr: 92901
+  rop: 92621
+  aws: 92620
+  srp: 92622
+  lpr: 92713
+  rp: 92440
+  pis: 92436
+  kkp: {inherit: konf, note: "Braun's party, split from Konfederacja in 2025"}
+  Confederation of the Polish Crown: {inherit: Confederation Liberty and Independence, note: "Braun's party, split from Konfederacja in 2025"}
+  Confederation Liberty and Independence: 92070
+  razem: {inherit: left, note: "ran on The Left's lists in 2019"}
+  Left Together: {inherit: The Left (Poland), note: "ran on The Left's lists in 2019"}
+  The Left (Poland): 92022
+  Law and Justice (Poland): 92436
+  Polish People's Party: {codes: [92811, 92050]}
+PT:
+  CDU: {codes: [35229, 35220]}
+  AD: {inherit: PSD, note: "PSD-led Democratic Alliance, 2024"}
+  CH: 35720
+  CDS–PP: 35520
+RO:
+  Alliance for the Union of Romanians: null   # founded 2019; abbreviation AUR collides with a 1990 party
+  AUR Alliance: null
+  AUR: null
+  Democratic Union of Hungarians in Romania: 93951
+RS:
+  Democratic Party (Serbia): {codes: [95430, 95044, 95046, 95047]}
+  Serbian Progressive Party: {codes: [95070, 95071]}
+  Serbia Must Not Stop: {codes: [95070, 95071]}
+  Party of Freedom and Justice: {codes: [95047], inherited: true, note: "main party of the Serbia Against Violence list, 2023"}
+  Dveri: {codes: [95066, 95072]}
+  We – Power of the People: 95740
+  Socialist Party of Serbia: 95021
+SE:
+  Swedish Social Democratic Party: 11320
+  Moderate Party: 11620
+SI:
+  Positive Slovenia: 97340
+  NSi, SLS, FOKUS: {codes: [97522], inherited: true, note: "joint list led by NSi, 2026"}
+  Zares: 97440
+  Civic List (Slovenia): 97450
+SK:
+  Ordinary People (Slovakia): 96620
+  Slovakia (political party): 96620
+  OĽaNO and Friends: 96620
+  Most–Híd: 96955
+  Hungarian Alliance (Slovak political party): 96952
+ME:
+  Democratic Front (Montenegro): {codes: [91060, 91090]}

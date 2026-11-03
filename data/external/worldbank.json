@@ -1,0 +1,350 @@
+{
+ "source": "World Bank, World Development Indicators (api.worldbank.org, WDI last updated 2026-10-08)",
+ "fetched": "2026-11-03",
+ "indicators": {
+  "SP.POP.TOTL": "Population, total",
+  "NY.GDP.PCAP.PP.CD": "GDP per capita, PPP (current international $)"
+ },
+ "data": {
+  "AUT": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 9208163
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 76777.5421537618
+   }
+  },
+  "BEL": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 11941781
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 74675.607672673
+   }
+  },
+  "BGR": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 6433302
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 44451.1001576913
+   }
+  },
+  "CHE": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 9092436
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 102513.347221899
+   }
+  },
+  "CYP": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 1370754
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 64574.62109375
+   }
+  },
+  "CZE": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 10886878
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 60487.2877495391
+   }
+  },
+  "DEU": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 83491249
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 75406.6888111618
+   }
+  },
+  "DNK": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 6009169
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 83218.071525634
+   }
+  },
+  "ESP": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 49355143
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 59867.6944716701
+   }
+  },
+  "EST": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 1366475
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 52105.5093433416
+   }
+  },
+  "FIN": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 5646436
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 65884.4876972259
+   }
+  },
+  "FRA": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 68720337
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 63975.353585864
+   }
+  },
+  "GBR": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 69487000
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 64606.4955066338
+   }
+  },
+  "GRC": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 10413962
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 45263.6498511586
+   }
+  },
+  "HRV": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 3876200
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 50946.1671131832
+   }
+  },
+  "HUN": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 9514251
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 49837.6008411067
+   }
+  },
+  "IRL": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 5484367
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 155089.413131749
+   }
+  },
+  "ISL": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 392404
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 83431.2131434311
+   }
+  },
+  "ITA": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 58915656
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 62802.5108384276
+   }
+  },
+  "LTU": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 2888774
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 56837.8067003598
+   }
+  },
+  "LUX": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 686970
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 156542.075847247
+   }
+  },
+  "LVA": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 1847785
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 46136.689377286
+   }
+  },
+  "MDA": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 2360527
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 19995.7590923995
+   }
+  },
+  "MLT": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 579704
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 72210.3392223985
+   }
+  },
+  "MNE": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 623129
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 35422.6449824931
+   }
+  },
+  "NLD": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 18087633
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 87320.1477254029
+   }
+  },
+  "NOR": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 5610870
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 104043.666429243
+   }
+  },
+  "POL": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 36435861
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 54262.4040405236
+   }
+  },
+  "PRT": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 10804871
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 53145.7317498942
+   }
+  },
+  "ROU": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 19020271
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 50895.081617639
+   }
+  },
+  "SRB": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 6549143
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 33909.7605745332
+   }
+  },
+  "SVK": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 5413813
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 49308.7048471448
+   }
+  },
+  "SVN": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 2130986
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 59244.7106359661
+   }
+  },
+  "SWE": {
+   "SP.POP.TOTL": {
+    "year": 2025,
+    "value": 10596620
+   },
+   "NY.GDP.PCAP.PP.CD": {
+    "year": 2025,
+    "value": 72528.8892631159
+   }
+  }
+ }
+}

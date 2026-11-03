@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Are Leaders Leading in the Polls?</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Are leaders leading in the polls? How far each European governing party leads or trails its strongest rival, and the poll share of parties by ideology, from Wikipedia's opinion-polling pages and the Manifesto Project.">
+<!-- link previews on social media; the GitHub workflow replaces __SITE_URL__ with the site's address -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Are leaders leading in the polls?">
+<meta property="og:description" content="How are Europe's incumbents faring in the polls? A map of every governing party's lead or lag, and the poll share of parties by ideology, now and since the 1990s.">
+<meta property="og:url" content="__SITE_URL__">
+<meta property="og:image" content="__SITE_URL__assets/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Map of Europe coloured by how far each governing party leads or trails its strongest rival in the polls">
+<meta name="twitter:card" content="summary_large_image">
+<!-- visitor counts (optional): sign up at goatcounter.com, put your code in the address and remove the comment marks
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!--CONTENT-START-->
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <h1>Are leaders leading in the polls?</h1>
+    <div class="deck">
+      <p class="deck-q">How are Europe's incumbents faring in the polls?</p>
+      <p>Each country is coloured by how far the head of government's party is ahead of its strongest rival or behind it, or by poll share: of the governing party, of the first, second or third party, or of parties of a chosen ideology, now or on any date since the 1990s. <span id="asof"></span></p>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Views">
+      <button class="tab" role="tab" id="tab-map" aria-controls="view-map" aria-selected="true" data-view="map">Map</button>
+      <button class="tab" role="tab" id="tab-graphs" aria-controls="view-graphs" aria-selected="false" data-view="graphs">Country graphs</button>
+      <button class="tab" role="tab" id="tab-correlates" aria-controls="view-correlates" aria-selected="false" data-view="correlates">Correlates</button>
+      <button class="tab" role="tab" id="tab-timelines" aria-controls="view-timelines" aria-selected="false" data-view="timelines">Intra-country timelines</button>
+      <button class="tab" role="tab" id="tab-method" aria-controls="view-method" aria-selected="false" data-view="method">Method and sources</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ======================================================== map -->
+  <section id="view-map" class="view" role="tabpanel" aria-labelledby="tab-map">
+    <div class="wrap map-layout">
+      <div class="summary box" id="summary">
+        <p class="s-line s-trail" id="s-trailing"></p>
+        <p class="s-line" id="s-median"></p>
+        <p class="s-line s-lead" id="s-gained"></p>
+        <p class="s-line" id="s-behind"></p>
+        <p class="s-line" id="s-ahead"></p>
+        <p class="s-line s-quiet" id="s-polls"></p>
+      </div>
+      <figure class="map-box box">
+        <div class="map-head">
+          <div class="textlinks" id="map-mode" role="radiogroup" aria-label="What the map shows"></div>
+          <div class="textlinks place-host" id="map-place" role="radiogroup" aria-label="Which party's poll share" hidden></div>
+          <div id="map-ideo" class="ideo-host" hidden></div>
+          <div class="time-row" id="time-row">
+            <button type="button" class="playbtn" id="map-play" aria-label="Play through the years">Play</button>
+            <input type="range" id="map-time" min="0" max="1" step="1" value="1" aria-label="Date shown on the map">
+            <output id="map-date" for="map-time"></output>
+          </div>
+        </div>
+        <figcaption class="map-cap">
+          <div class="map-scale" id="map-scale" aria-hidden="true"></div>
+          <p class="note" id="map-note"></p>
+        </figcaption>
+        <div id="map" class="map"></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================================================== country graphs -->
+  <section id="view-graphs" class="view" role="tabpanel" aria-labelledby="tab-graphs" hidden>
+    <div class="wrap">
+
+      <div class="controls" role="group" aria-label="Filters">
+        <div class="textlinks" id="region-links" role="radiogroup" aria-label="Region"></div>
+        <div class="control-row">
+          <label class="select" for="sort">
+            <span>Sort</span>
+            <select id="sort">
+              <option value="gap">Furthest behind first</option>
+              <option value="gap-desc">Furthest ahead first</option>
+              <option value="change">Biggest loss since the election</option>
+              <option value="next">Next election soonest</option>
+              <option value="term">Most of term elapsed</option>
+              <option value="name">Country name</option>
+              <option value="bloc">Largest ideology group share</option>
+            </select>
+          </label>
+          <label class="check"><input type="checkbox" id="opt-trends"><span>Trends only</span></label>
+          <label class="check"><input type="checkbox" id="opt-shared"><span>Same scale</span></label>
+          <label class="check"><input type="checkbox" id="opt-minor"><span>Minor parties</span></label>
+          <label class="check"><input type="checkbox" id="opt-ideo"><span>Compare with an ideology group</span></label>
+          <span class="textlinks view-switch" role="radiogroup" aria-label="Display">
+            <button type="button" id="show-charts" class="tl" role="radio" aria-checked="true">Charts</button>
+            <button type="button" id="show-table" class="tl" role="radio" aria-checked="false">Table</button>
+          </span>
+        </div>
+        <div id="cn-ideo" class="ideo-host" hidden></div>
+        <details class="country-picker" id="country-picker">
+          <summary>Choose countries <span id="country-count"></span></summary>
+          <div class="picker-actions textlinks">
+            <button type="button" class="tl" id="pick-all">Select all</button>
+            <button type="button" class="tl" id="pick-none">Clear</button>
+          </div>
+          <div id="country-checks" class="country-checks"></div>
+        </details>
+      </div>
+
+      <div class="legend-key" aria-hidden="true">
+        <span class="lk"><svg width="28" height="10"><line x1="2" y1="5" x2="26" y2="5" class="lk-inc"/></svg>Governing party</span>
+        <span class="lk"><svg width="28" height="10"><line x1="2" y1="5" x2="26" y2="5" class="lk-other"/></svg>Other parties</span>
+        <span class="lk"><svg width="12" height="10"><circle cx="6" cy="5" r="2.2" class="lk-dot"/></svg>Individual polls</span>
+        <span class="lk"><i class="sw sw-lead"></i>Ahead of the strongest rival</span>
+        <span class="lk"><i class="sw sw-trail"></i>Behind</span>
+        <span class="lk"><i class="sw sw-future"></i>Time left until the election</span>
+        <span class="lk lk-bloc-item" hidden><svg width="28" height="10"><line x1="2" y1="5" x2="26" y2="5" class="lk-bloc"/></svg>Ideology group, combined</span>
+      </div>
+
+      <div id="grid" class="grid" aria-live="polite"></div>
+      <div id="table-wrap" class="table-wrap box" hidden></div>
+      <p id="not-shown" class="not-shown"></p>
+    </div>
+  </section>
+
+  <!-- ======================================================== correlates -->
+  <section id="view-correlates" class="view" role="tabpanel" aria-labelledby="tab-correlates" hidden>
+    <div class="wrap">
+      <div class="controls sc-controls">
+        <div class="control-row">
+          <label class="select" for="sc-y"><span>Up the side</span><select id="sc-y"></select></label>
+          <label class="select" for="sc-x"><span>Along the bottom</span><select id="sc-x"></select></label>
+          <button type="button" class="tl" id="sc-swap">Swap axes</button>
+        </div>
+        <div id="sc-ideo" class="ideo-host" hidden></div>
+      </div>
+      <figure class="quadrant-box box">
+        <figcaption>
+          <span class="fig-title" id="sc-title"></span>
+          <span class="fig-sub" id="sc-sub"></span>
+        </figcaption>
+        <div id="quadrant" class="quadrant"></div>
+      </figure>
+      <p class="note sc-sources" id="sc-sources"></p>
+    </div>
+  </section>
+
+  <!-- ======================================================== intra-country timelines -->
+  <section id="view-timelines" class="view" role="tabpanel" aria-labelledby="tab-timelines" hidden>
+    <div class="wrap">
+      <div class="lr-head">
+        <div class="lr-head-text">
+          <h2 id="lr-title">Intra-country timelines</h2>
+          <p class="lr-deck" id="lr-deck"></p>
+        </div>
+        <label class="select" for="lr-country"><span>Country</span><select id="lr-country"></select></label>
+      </div>
+      <div class="controls lr-controls">
+        <div class="textlinks" id="lr-ranges" role="radiogroup" aria-label="Period"></div>
+        <div class="control-row">
+          <label class="check"><input type="checkbox" id="lr-trends"><span>Trends only</span></label>
+          <label class="check"><input type="checkbox" id="lr-govt" checked><span>Head of government</span></label>
+          <label class="check"><input type="checkbox" id="lr-minor"><span>Minor parties</span></label>
+        </div>
+      </div>
+      <figure class="lr-box box">
+        <div id="lr-chart" class="lr-chart"></div>
+        <div id="lr-overview" class="lr-overview" aria-label="Drag to zoom"></div>
+        <figcaption class="lr-legend" id="lr-legend"></figcaption>
+      </figure>
+      <p class="note lr-sources" id="lr-sources"></p>
+      <div id="lr-lineages" class="lr-lineages"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================== method -->
+  <section id="view-method" class="view" role="tabpanel" aria-labelledby="tab-method" hidden>
+    <div class="wrap prose">
+      <h2>How this is made</h2>
+      <h3>Data</h3>
+      <p>All poll numbers come from the opinion-polling articles on English Wikipedia, for example <a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Polish_parliamentary_election" target="_blank" rel="noopener">Opinion polling for the next Polish parliamentary election</a>. A Python pipeline downloads each page through the MediaWiki API, finds the national voting-intention tables and reads every row. It skips seat projections, regional polls, hypothetical line-ups, exit polls and approval ratings. Each chart links to the exact page revision it used. Wikipedia text and tables are available under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+      <h3>Incumbents</h3>
+      <p>The highlighted party is the party of the head of government (prime minister, chancellor, taoiseach) on each date. When the office changed hands within a term, the thick line switches party at the handover, as in Romania in 2025 and France in 2024. Caretaker and non-party prime ministers draw no thick line. Where the prime minister is formally non-party, the governing camp is used: Serbia's SNS-led list, Moldova's PAS and Romania's PSD since October 2026. Belgium has no national polls, Switzerland has a collegial executive and Cyprus a presidential one, so they are left out.</p>
+      <h3>When an election has just been held</h3>
+      <p>The polling window then closes at the election and the result becomes the final point. Until the next page has five polls, the country shows the completed term, with the result in place of the trend (Serbia after its 25 October 2026 election, for example). The outgoing government counts as caretaker until a new one is entered.</p>
+      <h3>Trend lines</h3>
+      <p>Lines are a local linear regression (a LOESS-type smoother) through the individual polls. Each poll is weighted by the square root of its sample size and by a Gaussian kernel in time. The bandwidth widens where polls are sparse: about three weeks in Germany, several months in Luxembourg. Where polls are far apart the line holds its level instead of extending a slope, and it never leaves the range of the polls around it. The election result counts as a very heavy poll, so each line starts at the actual result. Where a pollster reports undecided voters inside the 100%, shares are re-based to decided voters. Polled joint lists (for example Third Way in Poland) are joined to their continuing party.</p>
+      <h3>Intra-country timelines</h3>
+      <p>The intra-country timelines chain every polling page back to the 1990s where Wikipedia has one, and the "Opinion polls" section of election articles where it does not. Parties keep one line through renames and direct successors (PO to KO, the Brexit Party to Reform UK, SYRIZA's predecessor Synaspismos); the list of these joins is kept by hand. Pages that report seat projections instead of vote shares are converted to shares of seats for the Netherlands and left out elsewhere; pages whose numbers do not add up to vote shares are left out too. The band above the chart shows the head of government's party: from <a href="https://www.parlgov.org/" target="_blank" rel="noopener">ParlGov</a> (Döring, Huber and Manow) up to 2020, then from Wikipedia's lists of heads of government.</p>
+      <h3>The map through time</h3>
+      <p>The slider above the map redraws it for any week since 1991 that the intra-country timelines cover. For each week it takes the poll trend of every party, the party of the head of government on that date, and the time left until the election that actually followed. Countries without polls on Wikipedia for that week are left grey; coverage thins out before about 2010.</p>
+      <h3>Poll share by party place</h3>
+      <p>This map mode shows one party's poll share in each country: by default the head of government's party, with its place in the polls as the small figure, or else the party in first, second or third place. It helps to read the lead/lag map, since a gap means more in a fragmented field than in a two-party contest: a 9-point lag is large where the leading party polls 22%, and small where two parties share 90% of the vote. Shares are those of the poll trend; for a country whose election has just been held, the result.</p>
+      <h3>Ideology groups</h3>
+      <p>Parties are classified with the <a href="https://manifesto-project.wzb.eu/" target="_blank" rel="noopener">Manifesto Project</a> data (Lehmann and others, version 2026a), which codes every sentence of each party's election manifesto into 56 categories. The map, the country graphs and the correlates can group parties by one of these:</p>
+      <ul>
+        <li><b>Party family</b>, as recorded by the Manifesto Project (ecological, socialist or other left, social democratic, liberal, Christian democratic, conservative, nationalist and radical right, agrarian, ethnic and regional, special issue, electoral alliance). One or several families can be ticked.</li>
+        <li><b>Left–right (RILE)</b>: the share of the manifesto spent on 13 right-wing themes (for example free enterprise, law and order, military strength, traditional morality) minus 13 left-wing ones (for example market regulation, welfare expansion, peace, internationalism), from −100 to +100.</li>
+        <li><b>Market regulation and planning</b> (categories 403, 404, 412), <b>free market economy</b> (401, 414), <b>welfare state and equality</b> (503, 504), <b>peace and anti-militarism</b> (102, 105, 106), <b>law and order</b> (605) and <b>environmental protection</b> (501): the share of the manifesto on each, in per cent.</li>
+        <li><b>European Union</b> (108 minus 110), <b>national way of life</b> (601 minus 602) and <b>multiculturalism</b> (607 minus 608): statements for minus statements against, in per cent of the manifesto.</li>
+      </ul>
+      <p>For a measure, the group is every party whose score falls in the chosen range. The preset ranges for left–right are fixed; for the other measures they are the bottom and top quarters and tenths of the parties in today's polls. A party is placed by the manifesto in force on the date shown, so its score can move from one election to the next; its family does not change.</p>
+      <p>The measures have known limits. They record what manifestos talk about, not how radical a party is, so some radical-right parties score near the centre on RILE and some economically liberal parties score far right; the party family is often the clearer guide. The families are the Manifesto Project's own and some are debatable: Croatia's HDZ and Germany's BSW, for example, are coded as nationalist and radical right. Coverage also stops at different elections (Slovakia and Romania after 2016, Bulgaria 2017, Italy 2018, Slovenia 2018, Poland 2019), so newer parties such as Tisza, Progressive Bulgaria or AUR have no score or family and are never counted; the page says how much of the vote that is. A few new parties that split from, or ran inside, a coded party carry that party's data and are marked as inherited (Konfederacja Korony Polskiej from Konfederacja, for example). The list of matches is in the project's <code>data/processed/ideology_matches.csv</code>.</p>
+      <h3>Correlates</h3>
+      <p>Population and GDP per capita at purchasing power parity (current international dollars) are the World Bank's World Development Indicators for 2025. Days to the next election count to the scheduled date or, where none is set, the legal deadline. The correlation shown is Pearson's r on the plotted values (on the logarithm for population), across the countries shown; with about 30 countries it describes these data and says nothing about cause.</p>
+      <h3>Colours, map and flags</h3>
+      <p>Each party keeps the colour Wikipedia uses for it, because readers already know those colours. When two parties share a colour family, the smaller one is nudged in lightness or hue until the pair is clearly distinguishable in a perceptual colour space (OKLab). The two pickers at the bottom left change only the other colours: <i>incumbent lead/lag colours</i>, a diverging pair for a government's lead or lag, and <i>share of intended vote colours</i>, a single colour for the poll share of an ideology group, which runs from white (0%) to the full colour (60% or more). Each picker appears only when its colours are on screen. Colour is never the only cue: the governing party is drawn thicker, line ends carry labels, and every chart has a legend, a tooltip and a table view. Map shapes are Natural Earth (public domain) at 1:50 million.</p>
+      <h3>Keeping it current</h3>
+      <p>Running <code>python -m polls update</code> refetches every page, notices elections held since the configuration was written, closes that polling window, opens the next one when Wikipedia has a page for it, and rebuilds the data. The project's README has the details.</p>
+      <h3>Caveats</h3>
+      <p>Wikipedia tables are maintained by volunteers. Pollsters differ in method and in whether they report undecided voters, and some rows carry errors. The tracker reports the trend, not a forecast. Election dates described as due are legal deadlines, and an early election can be called at any time.</p>
+      <p class="generated" id="generated"></p>
+    </div>
+  </section>
+</main>
+
+<div class="palette-switch">
+  <span class="pick" id="pick-leadlag"><label for="palette">Incumbent lead/lag colours (divergent)</label><select id="palette"></select></span>
+  <span class="pick" id="pick-share"><label for="hue">Share of intended vote colours (unidirectional)</label><select id="hue"></select></span>
+</div>
+<div id="tooltip" class="tooltip" role="status" hidden></div>
+<dialog id="detail" class="detail" aria-labelledby="detail-title">
+  <div class="detail-head">
+    <div class="detail-title-row">
+      <img id="detail-flag" class="flag flag-lg" alt="" hidden>
+      <div>
+        <h2 id="detail-title"></h2>
+        <p class="detail-sub" id="detail-kicker"></p>
+      </div>
+    </div>
+    <button type="button" class="close" id="detail-close" aria-label="Close">Close</button>
+  </div>
+  <div id="detail-body"></div>
+</dialog>
+<!--CONTENT-END-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="assets/flags.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

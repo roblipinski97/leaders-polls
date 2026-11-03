@@ -1,0 +1,255 @@
+# ============================================================================================
+# Long-run view: which party keys are the same political current across Wikipedia pages
+# ============================================================================================
+# Hand-curated. Each Wikipedia page names parties its own way (article titles change, parties
+# rename, joint lists come and go), so the long view would otherwise break one line into many.
+#   merge:   key as parsed  ->  key whose line it continues   (only renames / direct successors)
+#   labels:  key -> label shown in the long view
+#   drop:    keys that are not parties (stray columns)
+# Poland is curated in countries.yaml (history.lineages) instead.
+# ============================================================================================
+
+AT:
+  merge:
+    "The Greens – The Green Alternative": "The Greens (Austria)"
+    "NEOS – The New Austria and Liberal Forum": "NEOS (Austria)"
+    "Liberal Forum": "NEOS (Austria)"
+BG:
+  merge:
+    "GERB–SDS": "GERB"
+    "GERB—SDS": "GERB"
+    "BSP for Bulgaria": "Bulgarian Socialist Party"
+    "BSP–OL": "Bulgarian Socialist Party"
+    "BSP – United Left": "Bulgarian Socialist Party"
+    "There Is Such a People": "There Is Such A People"
+    "There is Such a People": "There Is Such A People"
+    "DPS – A New Beginning": "Movement for Rights and Freedoms"
+  labels:
+    "GERB": "GERB"
+    "Bulgarian Socialist Party": "BSP"
+    "Movement for Rights and Freedoms": "DPS"
+  drop: ["None of the above", "List of political parties in Bulgaria"]
+CZ:
+  merge:
+    "ANO": "ANO 2011"
+    "ODS": "Civic Democratic Party (Czech Republic)"
+    "KDU– ČSL": "Christian and Democratic Union – Czechoslovak People's Party"
+    "KDU–ČSL": "Christian and Democratic Union – Czechoslovak People's Party"
+    "KDU-ČSL": "Christian and Democratic Union – Czechoslovak People's Party"
+    "KSČM": "Communist Party of Bohemia and Moravia"
+    "Piráti": "Czech Pirate Party"
+    "SPD": "Freedom and Direct Democracy"
+    "STAN": "Mayors and Independents"
+    "SOCDEM": "Czech Social Democratic Party"
+    "Tricolour": "Tricolour Citizens' Movement"
+    "Svobodní": "Party of Free Citizens"
+  labels:
+    "ANO 2011": "ANO"
+    "Czech Social Democratic Party": "ČSSD / SOCDEM"
+    "Communist Party of Bohemia and Moravia": "KSČM"
+DE:
+  merge:
+    "Christian Democratic Union (Germany)": "CDU/CSU"
+    "Alliance '90/The Greens": "Alliance 90/The Greens"
+DK:
+  merge:
+    "Red-Green Alliance (Denmark)": "Red–Green Alliance (Denmark)"
+    "Socialist People's Party (Denmark)": "Green Left (Denmark)"
+    "The Alternative (Political Party)": "The Alternative (Denmark)"
+    "The New Right (Denmark)": "New Right (Denmark)"
+  labels:
+    "Social Democrats (Denmark)": "Social Democrats"
+    "Venstre (Denmark)": "Venstre"
+    "Danish People's Party": "Danish People's Party"
+    "Green Left (Denmark)": "SF / Green Left"
+EE:
+  merge:
+    "Pro Patria and Res Publica Union": "Isamaa"
+    "Pro Patria (Estonian political party)": "Isamaa"
+    "Pro Patria Union": "Isamaa"
+    "Eesti Vabaerakond": "Estonian Free Party"
+  drop: ["No preference"]
+ES:
+  merge:
+    "IU–LV": "IU"
+    "IU–UPeC": "IU"
+    "UPYD": "UPyD"
+    "C's": "Cs"
+    "CS": "Cs"
+    "Unidos Podemos": "Podemos"
+    "Unidas Podemos": "Podemos"
+    "ERC–CatSí": "ERC"
+    "ERC–Sobiranistes": "ERC"
+    "CDC": "CiU"
+    "DiL": "CiU"
+    "PDeCAT": "CiU"
+    "Junts": "CiU"
+  labels:
+    "CiU": "CiU / Junts"
+    "Podemos": "Podemos / UP"
+  drop: ["Question"]
+FR:
+  merge:
+    "Union for the Presidential Majority": "Union for a Popular Movement"
+    "The Republicans (France)": "Union for a Popular Movement"
+    "The Republicans (France) (2)": "Union for a Popular Movement"
+    "National Front (France)": "National Rally"
+    "RN and allies": "National Rally"
+    "Ensemble Citoyens": "Ensemble (political coalition)"
+    "Together (coalition)": "Ensemble (political coalition)"
+    "Green politics": "Europe Ecology – The Greens"
+    "The Greens (France)": "Europe Ecology – The Greens"
+    "Political ecology in France": "Europe Ecology – The Greens"
+    "NUPES": "NFP"
+  labels:
+    "Union for a Popular Movement": "RPR / UMP / LR"
+    "National Rally": "FN / RN"
+    "Ensemble (political coalition)": "Ensemble"
+    "Europe Ecology – The Greens": "Greens / EELV"
+    "NFP": "NUPES / NFP"
+  drop: ["Sans étiquette", "EXG", "Regionalism in France"]
+GB:
+  merge:
+    "UKIP": "United Kingdom Independence Party"
+    "UK Independence Party": "United Kingdom Independence Party"
+    "Green Parties in the United Kingdom": "Green parties in the United Kingdom"
+    "Green Party of England and Wales": "Green parties in the United Kingdom"
+    "Lib Dems": "Liberal Democrats (UK)"
+    "Brexit Party": "Reform UK"
+  labels:
+    "Reform UK": "Brexit / Reform"
+GR:
+  merge:
+    "ND": "New Democracy (Greece)"
+    "Syriza": "SYRIZA"
+    "Synaspismos": "SYRIZA"
+    "KKE": "Communist Party of Greece"
+    "XA": "Golden Dawn (political party)"
+    "PASOK – Movement for Change": "PASOK"
+    "Movement for Change (Greece)": "PASOK"
+    "Democratic Coalition (Greece, 2015)": "PASOK"
+    "Niki (Greek political party)": "Victory (Greek political party)"
+  labels:
+    "PASOK": "PASOK / KINAL"
+HR:
+  merge:
+    "Bandić Milan 365 - Labour and Solidarity Party": "Milan Bandić 365 - The Party of Labour and Solidarity"
+    "We can! (Croatia)": "We Can! (Croatia)"
+    "Bridge of Independent Lists": "The Bridge (Croatia)"
+    "Miroslav Škoro Homeland Movement": "Homeland Movement (Croatia)"
+HU:
+  merge:
+    "Fidesz-KDNP": "Fidesz–KDNP"
+    "MSZP": "Hungarian Socialist Party"
+    "LMP": "Politics Can Be Different"
+    "P": "Dialogue"
+    "Together 2014": "Together"
+    "MM": "Momentum"
+  result_merge:
+    # the 2026 page prints the joint opposition's 2022 result in DK's column
+    "DK": "United for Hungary"
+IE:
+  merge:
+    "Solidarity–People Before Profit": "People Before Profit–Solidarity"
+  drop: ["Ind./Others"]
+IS:
+  merge:
+    "Socialist Party of Iceland": "Icelandic Socialist Party"
+IT:
+  merge:
+    "Forza Italia (1994)": "Forza Italia (2013)"
+    "The People of Freedom": "Forza Italia (2013)"
+    "Lega Nord": "Lega (political party)"
+    "The Olive Tree (Italy)": "Democratic Party (Italy)"
+    "Union of the Centre (2002)": "Union of the Centre (2008)"
+    "Popular Area": "New Centre-Right"
+    "Popular Alternative": "New Centre-Right"
+    "Action – Italia Viva": "Action (Italian political party)"
+  labels:
+    "Forza Italia (2013)": "FI / PdL"
+    "Lega (political party)": "Lega"
+    "Democratic Party (Italy)": "PD / Ulivo"
+LT:
+  merge:
+    "Liberal Movement (Lithuania)": "Liberals' Movement (Lithuania)"
+    "Order and Justice": "Freedom and Justice"
+LV:
+  merge:
+    "Harmony Centre": "Social Democratic Party \"Harmony\""
+    "Development/For!": "Movement For!"
+MD:
+  merge:
+    "Dignity and Truth Platform": "Dignity and Truth Platform Party"
+  drop: ["List of political parties in Moldova", "Others"]
+ME:
+  merge:
+    "ZBCG": "Democratic Front (Montenegro)"
+  labels:
+    "Democratic Front (Montenegro)": "DF / ZBCG"
+MT:
+  merge:
+    "Democratic Alternative (Malta)": "AD+PD"
+    "Democratic Party (Malta)": "AD+PD"
+  labels:
+    "AD+PD": "AD / ADPD"
+NL:
+  merge:
+    "DENK (political party)": "Denk (political party)"
+    "GL–PvdA": "GroenLinks–PvdA"
+    "GL/PvdA": "GroenLinks–PvdA"
+    "Progressief Nederland": "GroenLinks–PvdA"
+    "50Plus": "50PLUS"
+  labels:
+    "GroenLinks–PvdA": "GL–PvdA"
+NO:
+  merge:
+    "Conservative Party of Norway": "Conservative Party (Norway)"
+    "Liberal Party of Norway": "Liberal Party (Norway)"
+    "Norwegian Labour Party": "Labour Party (Norway)"
+PT:
+  merge:
+    "PSD/CDS": "PSD"
+    "Democratic Alliance (Portugal, 2024)": "PSD"
+    "AD": "PSD"
+  labels:
+    "PSD": "PSD / AD"
+RO:
+  merge:
+    "Social Democratic Party (Romania) (2)": "Social Democratic Party (Romania)"
+    "PSD – UNPR – PC": "Social Democratic Party (Romania)"
+    "AUR Alliance": "Alliance for the Union of Romanians"
+    "USR PLUS": "Save Romania Union"
+    "Democratic Alliance of Hungarians in Romania": "Democratic Union of Hungarians in Romania"
+  drop: ["List of political parties in Romania"]
+RS:
+  merge:
+    "Aleksandar Vučić — For Our Children": "Serbian Progressive Party"
+    "Together We Can Do Everything": "Serbian Progressive Party"
+    "Serbia Must Not Stop": "Serbian Progressive Party"
+    "United Serbia (2026 coalition)": "Serbian Progressive Party"
+  labels:
+    "Serbian Progressive Party": "SNS lists"
+SE:
+  merge:
+    "Liberal People's Party (Sweden)": "Liberals (Sweden)"
+SI:
+  merge:
+    "Slovene National Party": "Slovenian National Party"
+    "Party of Miro Cerar": "Modern Centre Party"
+    "Alliance of Alenka Bratušek": "Party of Alenka Bratušek"
+    "United Left (Slovenia)": "The Left (Slovenia)"
+  drop: ["Won't Answer"]
+SK:
+  merge:
+    "Ordinary People and Independent Personalities": "Ordinary People (Slovakia)"
+    "OĽaNO and Friends": "Ordinary People (Slovakia)"
+    "Slovakia (political party)": "Ordinary People (Slovakia)"
+    "Kotleba – People's Party Our Slovakia": "People's Party Our Slovakia"
+    "Good Choice": "Good Choice (Slovakia)"
+    "REPUBLIC (Slovakia)": "Republic (Slovakia)"
+    "Hlas": "Voice – Social Democracy"
+    "MKÖ–MKS": "Hungarian Alliance (Slovak political party)"
+    "Party of the Hungarian Community": "Hungarian Alliance (Slovak political party)"
+    "Alliance": "Hungarian Alliance (Slovak political party)"
+  labels:
+    "Ordinary People (Slovakia)": "OĽaNO / Slovensko"

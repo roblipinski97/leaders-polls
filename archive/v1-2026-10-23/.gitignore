@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+dist/
+# raw Wikipedia HTML is re-downloaded by the pipeline (keeps the git history small)
+data/raw/

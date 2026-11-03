@@ -1,0 +1,624 @@
+country,key,label,max_share,how,manifesto,family,rile_latest,rile_year
+AT,Austrian People's Party,ÖVP,44.02,name,42520 Austrian People’s Party (ÖVP),Christian democratic,2.09,2019
+AT,Freedom Party of Austria,FPÖ,39.26,abbreviation,42420 Freedom Movement (FPÖ),Nationalist and radical right,2.7,2019
+AT,Social Democratic Party of Austria,SPÖ,36.5,abbreviation,42320 Austrian Social Democratic Party (SPÖ),Social democratic,-39.42,2019
+AT,The Greens (Austria),Grüne,17.59,name,42110 The Greens (GRÜNE),Ecological,-21.66,2019
+AT,NEOS (Austria),NEOS,12.92,abbreviation,42430 The New Austria and Liberal Forum (NEOS),Liberal,-10.08,2019
+AT,Alliance for the Future of Austria,BZÖ,10.92,name,42710 Alliance for the Future of Austria (BZÖ),Nationalist and radical right,-8.72,2008
+AT,Team Stronach,Stronach,9.84,override,42951 Team Stronach for Austria (TS),Special issue,0.97,2013
+AT,Pirate Party of Austria,Pirates,6.95,no match,,,,
+AT,FRITZ,FRITZ,6.59,no match,,,,
+AT,Communist Party of Austria,KPÖ,6.57,abbreviation,42220 Austrian Communist Party (KPÖ),Socialist or other left,-17.39,2008
+AT,The Beer Party (Austria),BIER,6.29,no match,,,,
+AT,MFG Austria – People Freedom Fundamental Rights,MFG,6.18,no match,,,,
+AT,Peter Pilz List,PILZ,5.3,name,42120 Peter Pilz List (PILZ),Ecological,-7.04,2017
+AT,Hans-Peter Martin's List,MATIN,4.79,no match,,,,
+AT,Team HC Strache – Alliance for Austria,HC,3.4,no match,,,,
+BG,Progressive Bulgaria,PB,44.51,no match,,,,
+BG,GERB,GERB,34.76,abbreviation,80510 Citizens for European Development of Bulgaria (GERB),Christian democratic,7.73,2017
+BG,Bulgarian Socialist Party,BSP,30.14,name,80220 Bulgarian Socialist Party (BSP),Social democratic,-38.11,2013
+BG,We Continue the Change,PP,26.11,no match,,,,
+BG,PP–DB,PP–DB,25.91,no match,,,,
+BG,There Is Such A People,ITN,23.24,no match,,,,
+BG,Movement for Rights and Freedoms,DPS,16.02,name,80951 Movement for Rights and Freedoms (DPS),Ethnic and regional,0.94,2017
+BG,Revival (Bulgaria),Revival,15.12,no match,,,,
+BG,GERB–SDS,GERB–SDS,13.81,inherited from GERB,80510 Citizens for European Development of Bulgaria (GERB),Christian democratic,7.73,2017
+BG,Democratic Bulgaria,DB,12.34,no match,,,,
+BG,United Patriots,OP,10.32,override,80071 United Patriots (OP),Nationalist and radical right,24.49,2017
+BG,Alliance for Rights and Freedoms,APS,9.44,"inherited from Movement for Rights and Freedoms: DPS faction loyal to Dogan, 2024",80951 Movement for Rights and Freedoms (DPS),Ethnic and regional,0.94,2017
+BG,Volya Movement,Volya,7.74,override,80640 Will,Conservative,8.33,2017
+BG,Bulgarian Rise,BV,6.84,no match,,,,
+BG,"Morality, Unity, Honour",MECh,5.74,no match,,,,
+BG,"Stand Up! Mafia, Get Out!",ISMV,5.18,no match,,,,
+BG,BP,BP,5.06,no match,,,,
+BG,Velichie,Veli.,4.65,no match,,,,
+BG,Reformist Bloc,RB,4.28,name,80061 Reformist bloc,Conservative,-6.59,2014
+BG,Stand Up.BG,IS.BG,3.69,no match,,,,
+BG,Solidary Bulgaria,SBG,3.12,no match,,,,
+BG,Alternative for Bulgarian Revival,ABV,3.11,name,80330 Alternative for Bulgarian Revival (ABV),Social democratic,-1.58,2014
+BG,Siyanie,Siy.,2.96,no match,,,,
+BG,Bulgarian Summer,BL,2.87,no match,,,,
+BG,Blue Bulgaria,SB,2.54,no match,,,,
+BG,The Left (Bulgaria),Left,2.15,no match,,,,
+CZ,Czech Social Democratic Party,ČSSD / SOCDEM,38.16,name,82320 Czech Social Democratic Party (ČSSD),Social democratic,-67.24,2021
+CZ,Civic Democratic Party (Czech Republic),ODS,36.94,name,82413 Civic Democratic Party (ODS),Conservative,2.19,2017
+CZ,ANO,ANO,34.57,override,82430 ANO 2011 (ANO),Liberal,-14.29,2021
+CZ,ANO 2011,ANO,34.57,name,82430 ANO 2011 (ANO),Liberal,-14.29,2021
+CZ,SPOLU,SPOLU,27.8,override,82050 Together,Christian democratic,-11.46,2021
+CZ,Four-Coalition,4K,25.16,override,82524 Christian and Democratic Union - Czech People's Party -  Freedom Union - Democratic Union (KDU-ČSL-US-DEU),Conservative,8.29,2002
+CZ,Piráti+STAN,Piráti+STAN,25.12,override,82040 Pirates and Mayors (PirStan),Liberal,-13.02,2021
+CZ,Communist Party of Bohemia and Moravia,KSČM,18.62,name,82220 Communist Party of Bohemia and Moravia (KSČM),Socialist or other left,-39.7,2021
+CZ,Czech Pirate Party,Piráti,17.93,name,82953 Czech Pirate Party (Piráti),Special issue,-21.08,2017
+CZ,STAN,STAN,16.65,override,82610 Mayors and Independents (STAN),Conservative,-22.68,2017
+CZ,Mayors and Independents,STAN,16.65,name,82610 Mayors and Independents (STAN),Conservative,-22.68,2017
+CZ,TOP 09,TOP 09,15.9,abbreviation,"82530 Tradition, Responsibility, Prosperity 09 (TOP09)",Christian democratic,-6.0,2017
+CZ,ODS,ODS,14.99,override,82413 Civic Democratic Party (ODS),Conservative,2.19,2017
+CZ,Christian and Democratic Union – Czechoslovak People's Party,KDU-ČSL,14.14,abbreviation,82523 Christian and Democratic Union - Czech People's Party (KDU-ČSL),Christian democratic,-21.34,2017
+CZ,Freedom and Direct Democracy,SPD,13.03,name,82721 Freedom and Direct Democracy (SPD),Nationalist and radical right,-7.51,2021
+CZ,Public Affairs (political party),VV,11.19,name,82952 Public Affairs (VV),Ethnic and regional,0.83,2010
+CZ,Green Party (Czech Republic),SZ,8.87,name,82110 Green Party (SZ),Ecological,-30.25,2013
+CZ,Piráti,Piráti,8.78,override,82953 Czech Pirate Party (Piráti),Special issue,-21.08,2017
+CZ,Stačilo!,Stačilo!,8.35,no match,,,,
+CZ,SPD,SPD,7.87,override,82721 Freedom and Direct Democracy (SPD),Nationalist and radical right,-7.51,2021
+CZ,Dawn - National Coalition,ÚSVIT,6.93,abbreviation,82720 Tomio Okamura's Dawn of Direct Democracy (Úsvit),Nationalist and radical right,5.5,2013
+CZ,Motorists for Themselves,Motorists for Themselves,6.72,no match,,,,
+CZ,PRO,PRO,4.92,no match,,,,
+CZ,Přísaha,Přísaha,4.87,no match,,,,
+CZ,Freedom Union – Democratic Union,US-DEU,4.34,override,82421 Freedom Union (US),Conservative,6.73,1998
+CZ,Tricolour Citizens' Movement,T,4.32,no match,,,,
+CZ,Our Czechia,Our Czechia,3.8,no match,,,,
+CZ,T – S – SsČR,T – S – SsČR,3.77,no match,,,,
+CZ,KDU–ČSL,KDU–ČSL,3.11,override,82523 Christian and Democratic Union - Czech People's Party (KDU-ČSL),Christian democratic,-21.34,2017
+CZ,Party of Free Citizens,SVOBODNÍ,2.95,no match,,,,
+CZ,KSČM,KSČM,2.54,override,82220 Communist Party of Bohemia and Moravia (KSČM),Socialist or other left,-39.7,2021
+CZ,Independents (political party),NEZ,2.49,no match,,,,
+CZ,SNK European Democrats,SNK-ED,2.15,no match,,,,
+CZ,Z,Z,2.12,no match,,,,
+CZ,Svobodní,Svobodní,1.31,no match,,,,
+CZ,SOCDEM,SOCDEM,1.2,override,82320 Czech Social Democratic Party (ČSSD),Social democratic,-67.24,2021
+CZ,Tricolour,Tricolour,0.37,no match,,,,
+DE,CDU/CSU,Union,42.5,abbreviation,41521 Christian Democratic Union/Christian Social Union (CDU/CSU),Christian democratic,15.85,2025
+DE,Social Democratic Party of Germany,SPD,39.28,name,41320 Social Democratic Party of Germany (SPD),Social democratic,-16.44,2025
+DE,Alternative for Germany,AfD,28.56,name,41953 Alternative for Germany (AfD),Nationalist and radical right,29.02,2025
+DE,Alliance 90/The Greens,Grüne,24.55,name,41113 Alliance‘90/Greens (90/Greens),Ecological,-12.86,2025
+DE,Free Democratic Party (Germany),FDP,14.7,name,41420 Free Democratic Party (FDP),Liberal,14.85,2025
+DE,The Left (Germany),Linke,12.61,name,41223 The Left (LINKE),Socialist or other left,-40.52,2025
+DE,Pirate Party Germany,Piraten,10.17,override,41952 Pirates,Special issue,-12.65,2013
+DE,Sahra Wagenknecht Alliance,BSW,8.27,abbreviation,41730 Sahra Wagenknecht Alliance – Reason and Justice (BSW),Nationalist and radical right,-23.69,2025
+DE,Free Voters,FW,3.42,no match,,,,
+DK,Social Democrats (Denmark),Social Democrats,34.22,override,13320 Social Democratic Party (SD),Social democratic,-18.48,2019
+DK,Venstre (Denmark),Venstre,33.54,override,13420 Liberals (V),Liberal,-17.48,2019
+DK,Danish People's Party,Danish People's Party,21.09,name,13720 Danish People’s Party (DF),Nationalist and radical right,32.98,2019
+DK,Green Left (Denmark),SF / Green Left,18.6,override,13230 Socialist People’s Party (SF),Socialist or other left,-29.03,2019
+DK,Conservative People's Party (Denmark),C,16.04,name,13620 Conservative People’s Party (KF),Conservative,-7.2,2019
+DK,Liberal Alliance (Denmark),I,14.87,name,13001 Liberal Alliance (NY),Liberal,15.53,2019
+DK,Red–Green Alliance (Denmark),Ø,12.85,override,13229 Red-Green Unity List (EL),Socialist or other left,-38.18,2019
+DK,Denmark Democrats,Æ,11.21,no match,,,,
+DK,Danish Social Liberal Party,B,9.93,name,13410 Danish Social-Liberal Party (RV),Liberal,-19.52,2019
+DK,Moderates (Denmark),M,9.53,no match,,,,
+DK,New Right (Denmark),D,8.93,name,13730 The New Right,Nationalist and radical right,2.93,2019
+DK,The Alternative (Denmark),Å,7.38,similar name (alternativ),13110 Alternativ,Socialist or other left,-34.95,2019
+DK,Hard Line (party),P,3.35,no match,,,,
+DK,Citizens' Party (Denmark),H,2.46,no match,,,,
+EE,Estonian Reform Party,Ref,35.26,name,83430 Estonian Reform Party (ER),Liberal,-2.62,2019
+EE,Estonian Centre Party,Kesk,29.42,similar name (estonian center party),83411 Estonian Center Party (K),Liberal,-8.32,2019
+EE,Isamaa,Isamaa,29.05,override,83709 Pro Patria Union (I/ERSP); 83611 Pro Patria (IRL),Conservative,17.67,2019
+EE,Social Democratic Party (Estonia),SDE,25.39,name,83410 Social Democratic Party (SDE),Social democratic,-13.43,2019
+EE,Conservative People's Party of Estonia,EKRE,25.35,name,83720 Conservative People's Party of Estonia (EKRE),Nationalist and radical right,31.82,2019
+EE,Estonia 200,E200,19.04,no match,,,,
+EE,Estonian Free Party,EVA,13.8,abbreviation,83440 Free Party (EVA),Conservative,-7.33,2015
+EE,People's Union of Estonia,ERL,12.62,abbreviation,83612 Estonian People’s Union (ERL),Agrarian,0.0,2011
+EE,Parempoolsed,Parem,7.19,no match,,,,
+EE,Estonian Greens,Green,4.0,name,83110 Estonian Greens (EER),Ecological,-5.78,2011
+EE,Estonian Nationalists and Conservatives,ERK,3.0,no match,,,,
+EE,Together (Estonian political party),Koos,1.98,no match,,,,
+EE,Estonian United Left Party,EÜVP,1.27,no match,,,,
+EE,Left Alliance (Estonia),VL,0.06,no match,,,,
+ES,PP,PP,46.36,abbreviation,33610 People's Party (PP),Conservative,-6.08,2023
+ES,PSOE,PSOE,44.46,abbreviation,33320 Spanish Socialist Workers’ Party (PSOE),Social democratic,-20.55,2023
+ES,Podemos,Podemos / UP,25.88,override,33210 We can; 33025 United We Can,Socialist or other left,-37.63,2019
+ES,Cs,Cs,25.76,override,33420 Citizens - Party of the Citizens (C's),Liberal,-15.29,2019
+ES,Vox,Vox,20.84,abbreviation,33710 Voice (VOX),Nationalist and radical right,11.49,2023
+ES,Sumar,Sumar,14.66,override,33021 Unite,Socialist or other left,-25.88,2023
+ES,IU,IU–LV,14.51,abbreviation,33220 United Left (IU),Socialist or other left,-31.84,2023
+ES,UPyD,UPyD,10.94,abbreviation,"33440 Union, Progress and Democracy (UPyD)",Liberal,-22.22,2011
+ES,FA,FA,6.74,no match,,,,
+ES,Más País,Más País,6.03,override,33230 More Country - Equo,Socialist or other left,-30.07,2019
+ES,CiU,CiU / Junts,4.98,override,33611 Convergence and Union (CiU); 33911 Democratic Convergence of Catalonia (CDC); 33912 Together for Catalonia (JxCat),Ethnic and regional,-13.43,2023
+ES,ERC,ERC,3.97,abbreviation,33905 Catalan Republican Left (ERC),Ethnic and regional,-16.72,2023
+ES,Se Acabó La Fiesta,SALF,3.84,no match,,,,
+ES,Democratic Party of the New Left,NI / IC,2.04,no match,,,,
+ES,Junts,Junts,1.83,override,33912 Together for Catalonia (JxCat),Ethnic and regional,-13.43,2023
+ES,EH Bildu,EH Bildu,1.49,abbreviation,33095 Basque Country Unite (EH Bildu),Ethnic and regional,-18.24,2023
+ES,Adelante Andalucía (2021),Adelante Andalucía,1.31,no match,,,,
+ES,PNV,PNV,1.26,no match,,,,
+ES,FV,FV,1.19,no match,,,,
+ES,Aliança.cat,Aliança.cat,1.17,no match,,,,
+ES,BNG,BNG,0.96,abbreviation,33908 Galician Nationalist Bloc (BNG),Ethnic and regional,-19.94,2023
+ES,CCa,CCa,0.47,no match,,,,
+ES,UPN,UPN,0.2,abbreviation,33910 Navarrese People's Union (UPN),Ethnic and regional,8.65,2023
+FI,Social Democratic Party of Finland,SDP,25.04,override,14320 Finnish Social Democrats (SSDP),Social democratic,-23.41,2019
+FI,Centre Party (Finland),KESK,24.89,name,14810 Finnish Centre (SK),Agrarian,-21.69,2019
+FI,National Coalition Party,KOK,23.9,override,14620 National Coalition (KK),Conservative,1.2,2019
+FI,Finns Party,PS,21.9,abbreviation,14820 True Finns (PS),Nationalist and radical right,-13.81,2019
+FI,Green League,VIHR,15.77,override,14110 Green Union (VL),Ecological,-38.6,2019
+FI,Left Alliance (Finland),VAS,11.86,abbreviation,14223 Left Wing Alliance (VAS),Socialist or other left,-41.02,2019
+FI,Swedish People's Party of Finland,SFP,4.8,override,14901 Swedish People’s Party (RKP/SFP),Ethnic and regional,-14.2,2019
+FI,Christian Democrats (Finland),KD,4.16,abbreviation,14520 Christian Democrats in Finland (KD),Christian democratic,-9.48,2019
+FI,Movement Now,LIIK,2.32,override,14440 Movement Now,Liberal,-32.22,2019
+FI,Blue Reform,SIN,2.07,no match,,,,
+FR,Union for a Popular Movement,RPR / UMP / LR,41.07,override,31625 Rally for the Republic (RPR); 31626 The Republicans (UMP),Conservative,13.62,2017
+FR,National Rally,FN / RN,34.06,override,31720 National Front (FN),Nationalist and radical right,21.37,2022
+FR,RN and allies,RN and allies,33.37,"inherited from National Rally: RN with Ciotti's LR faction, 2024",31720 National Front (FN),Nationalist and radical right,21.37,2022
+FR,Miscellaneous centre,DVC,32.3,override: none,,,,
+FR,Socialist Party (France),PS,30.99,name,31320 Socialist Party (PS),Social democratic,-27.3,2022
+FR,Miscellaneous left,DVG,30.0,override: none,,,,
+FR,NFP,NUPES / NFP,28.78,inherited from NUPES: NFP (2024) continues the 2022 NUPES alliance,31022 New Ecologic and Social People's Union,Socialist or other left,-32.63,2022
+FR,Ensemble (political coalition),Ensemble,27.94,override,31425 Renaissance (LREM); 31041 Together for the Republic,Liberal,-5.98,2022
+FR,Union of Democrats and Independents,UDI,23.71,name,31430 Union of Democrats and Independents (UDI),Liberal,-25.41,2022
+FR,Union of the Right and Centre,UDC,18.8,override,31061 Union of the Right and Centre,Conservative,12.0,2022
+FR,Union for French Democracy,UDF,16.66,name,31624 Democratic Movement (MoDem),Conservative,-18.79,2022
+FR,La France Insoumise,FI,15.76,override,31240 Indomitable France,Socialist or other left,-30.02,2017
+FR,Rally for France,RPF,14.86,no match,,,,
+FR,Democratic Movement (France),MoDem,13.95,name,31624 Democratic Movement (MoDem),Conservative,-18.79,2022
+FR,Liberal Democracy (France),DL,13.47,no match,,,,
+FR,The Republicans (France),LR,12.01,override,31626 The Republicans (UMP),Conservative,13.62,2017
+FR,Left Front (France),FG,10.34,name,31021 Left Front (FDG),Socialist or other left,-47.92,2012
+FR,National Republican Movement,MNR / MN,10.2,no match,,,,
+FR,French Communist Party,PCF,9.94,name,31220 French Communist Party (PCF),Socialist or other left,-16.67,2017
+FR,Miscellaneous right,DVD,8.5,override: none,,,,
+FR,Europe Ecology – The Greens,Greens / EELV,8.41,name,31110 Europe Ecology - The Greens (EÉLV),Ecological,-8.64,2017
+FR,Reconquête,REC,6.24,no match,,,,
+FR,Revolutionary Communist League (France),LCR,4.44,no match,,,,
+FR,Union of the Right for the Republic,UDR,3.96,no match,,,,
+FR,"Hunting, Fishing, Nature and Traditions",CPNT,3.68,no match,,,,
+FR,Lutte Ouvrière,LO,3.41,no match,,,,
+FR,Debout la France,DLF,3.07,no match,,,,
+FR,Movement for France,MPF,2.84,no match,,,,
+FR,Republican Pole,PR / MDC,2.27,no match,,,,
+FR,Animalist Party,PA,2.01,no match,,,,
+FR,Far-left politics in France,EXG,1.37,no match,,,,
+GB,Labour Party (UK),Lab,57.25,name,51320 Labour Party (Labour),Social democratic,-16.91,2024
+GB,Conservative Party (UK),Con,50.71,name,51620 Conservative Party (Conservatives),Conservative,4.23,2024
+GB,Reform UK,Ref,30.63,name,51701 Reform UK,Nationalist and radical right,24.26,2024
+GB,Liberal Democrats (UK),LD,28.11,name,51421 Liberal Democrats (LibDems),Liberal,-23.16,2024
+GB,United Kingdom Independence Party,UKIP,16.23,name,51951 United Kingdom Independence Party (UKIP),Special issue,2.04,2017
+GB,Green parties in the United Kingdom,Grn,16.18,override,51110 Green Party of England and Wales (GPEW),Ecological,-32.58,2024
+GB,Change UK,Chg,9.04,no match,,,,
+GB,Scottish National Party,SNP,5.47,name,51902 Scottish National Party (SNP),Ethnic and regional,-30.22,2024
+GB,Restore Britain,RB,4.97,no match,,,,
+GB,British National Party,BNP,3.52,no match,,,,
+GB,Referendum Party,Rfr,2.68,no match,,,,
+GB,Plaid Cymru,PC,1.22,abbreviation,51901 The Party of Wales (PC),Ethnic and regional,-31.22,2024
+GR,New Democracy (Greece),ND,49.03,name,34511 New Democracy (ND),Christian democratic,-17.23,2023
+GR,PASOK,PASOK / KINAL,45.74,override,34313 Panhellenic Socialist Movement (PASOK); 34315 PASOK – Movement for Change (PASOK-KINAL),Social democratic,-6.26,2023
+GR,SYRIZA,SYRIZA,43.7,override,34211 Progressive Left Coalition (SYN); 34020 Coalition of the Radical Left (SYRIZA); 34212 Coalition of the Radical Left (SYRIZA),Socialist or other left,-40.95,2023
+GR,Movement of Free Citizens (Greece),KEP,18.23,no match,,,,
+GR,PASOK – Movement for Change,PASOK,18.09,name,34315 PASOK – Movement for Change (PASOK-KINAL),Social democratic,-6.26,2023
+GR,Greek Left Alliance,ELAS,17.24,no match,,,,
+GR,Course of Freedom,PE,14.71,no match,,,,
+GR,DIMAR,DIMAR,14.06,abbreviation,34213 Democratic Left (DIMAR),Socialist or other left,-6.71,2012
+GR,Golden Dawn (political party),XA,12.99,name,34720 Golden Dawn (XA),Nationalist and radical right,16.67,2019
+GR,Communist Party of Greece,KKE,12.33,name,34210 Communist Party of Greece (KKE),Socialist or other left,13.29,2023
+GR,Hope for Democracy,ELPIDA,11.44,no match,,,,
+GR,The River (Greece),Potami,11.02,name,34340 The River,Social democratic,-12.92,2015
+GR,Greek Solution,EL,10.65,name,34711 Greek Solution (EL),Nationalist and radical right,15.79,2023
+GR,Independent Greeks,ANEL,10.21,name,34730 Independent Greeks (ANEL),Nationalist and radical right,46.15,2015
+GR,Popular Orthodox Rally,LAOS,8.18,name,34710 Popular Orthodox Rally (LAOS),Nationalist and radical right,7.02,2012
+GR,Democratic Social Movement,DIKKI,6.78,name,34314 Democratic Social Movement (DIKKI),Social democratic,-17.17,1996
+GR,LAE,LAE,6.67,abbreviation,34214 Popular Unity (LAE),Socialist or other left,-40.43,2015
+GR,Voice of Reason (political party),FL,6.3,no match,,,,
+GR,OP,OP,5.94,no match,,,,
+GR,Movement for Democracy (Greece),DPK,5.17,no match,,,,
+GR,Spartans (Greek political party),SP,4.69,no match,,,,
+GR,EK,EK,4.52,abbreviation,34410 Union of Centrists (EK),Liberal,-1.39,2015
+GR,MeRA25,MeRA25,4.22,abbreviation,34215 European Realistic Disobedience Front (MeRA25),Socialist or other left,-22.5,2023
+GR,National Party – Greeks,EKE,4.11,no match,,,,
+GR,Victory (Greek political party),NIKI,4.07,no match,,,,
+GR,SE,SE,3.93,no match,,,,
+GR,New Left (Greece),NA,3.25,no match,,,,
+GR,DISY,DISY,3.23,no match,,,,
+GR,Political Spring,POLAN,2.9,name,34512 Political Spring (Pola),Christian democratic,16.62,1996
+GR,Movement of Democratic Socialists,Kinima,2.62,no match,,,,
+GR,Recreate Greece,DIXA,2.37,no match,,,,
+GR,Panhellenic Citizen Chariot,PARMAP,2.32,no match,,,,
+HR,Croatian Democratic Union,HDZ,37.27,name,81711 Croatian Democratic Union (HDZ),Nationalist and radical right,-2.14,2020
+HR,Social Democratic Party of Croatia,SDP,34.0,override,81220 Social Democratic Party of Croatia (SDP); 81032 Restart Coalition (Kukuriku),Social democratic,-11.44,2020
+HR,We Can! (Croatia),Možemo,16.96,override,81240 We can!-political platform,Socialist or other left,-28.21,2020
+HR,Human Shield (political party),Živi zid,14.19,name,81960 Human Shield,Special issue,-41.01,2015
+HR,Homeland Movement (Croatia),DP,14.07,override,81714 Miroslav Škoro Homeland Movement (DPMŠ),Nationalist and radical right,14.24,2020
+HR,The Bridge (Croatia),Most,12.21,abbreviation,81460 Bridge of Independent Lists (MOST),Liberal,-26.1,2020
+HR,Mislav Kolakušić,NLMK,6.9,no match,,,,
+HR,Party with a First and Last Name,SSIP,5.03,no match,,,,
+HR,Croatian Souverainists,HS,4.74,no match,,,,
+HR,Independents for Croatia,NHR,4.58,no match,,,,
+HR,Focus (Croatian political party),Fokus,3.97,no match,,,,
+HR,Milan Bandić 365 - The Party of Labour and Solidarity,MB 365,3.82,name,81961 Milan Bandić 365 - The Party of Labour and Solidarity,Special issue,16.39,2015
+HR,Croatian Peasant Party,HSS,3.47,name,81810 Croatian Peasant Party (HSS),Agrarian,-8.8,2011
+HR,Civic Liberal Alliance,GLAS,3.17,no match,,,,
+HR,Croatian Party of Pensioners,HSU,3.1,name,81957 Croatian Party of Pensioners (HSU),Special issue,-24.41,2003
+HR,Croatian People's Party – Liberal Democrats,HNS,2.82,name,81712 Croatian People’s Party - Liberal Democrats (HNS),Liberal,2.58,2020
+HR,Social Democrats (Croatia),SD,2.79,no match,,,,
+HR,Drito (political party),Drito,2.77,no match,,,,
+HR,Pametno,P,2.69,no match,,,,
+HR,Croatian Growth,Hrast,2.64,no match,,,,
+HR,Home and National Rally,DOMiNO,2.49,no match,,,,
+HR,The Key of Croatia,KH,2.22,no match,,,,
+HR,Istrian Democratic Assembly,IDS,2.18,name,81953 Istrian Democratic Assembly (IDS),Ethnic and regional,-5.79,2007
+HR,Centre (Croatian political party),Centar,1.78,no match,,,,
+HR,Law and Justice (Croatia),PiP,1.36,no match,,,,
+HR,Croatian Sovereignists,HS,1.36,no match,,,,
+HR,Independent Platform of the North,NPS,1.22,no match,,,,
+HR,Workers' Front (Croatia),RF,1.07,name,81245 Workers' Front (RF),Socialist or other left,-48.25,2020
+HU,TISZA,TISZA,66.79,no match,,,,
+HU,Fidesz–KDNP,Fidesz–KDNP,54.68,override,86421 Alliance of Federation of Young Democrats - Christian Democratic People's Party (FiDeSz-KDNP),Nationalist and radical right,38.89,2022
+HU,United for Hungary,EM,49.24,override,86001 United for Hungary,Electoral alliance of diverse origin,-16.55,2022
+HU,Hungarian Socialist Party,MSZP,30.4,name,86220 Hungarian Socialist Party (MSzP),Social democratic,-19.82,2018
+HU,Unity (Hungary),Unity,29.67,no match,,,,
+HU,Jobbik,Jobbik,25.96,abbreviation,86710 Movement for a Better Hungary (Jobbik),Nationalist and radical right,-15.12,2018
+HU,DK,DK,17.62,abbreviation,86221 Democratic Coalition (DK),Socialist or other left,-12.65,2018
+HU,Momentum,MM,11.51,no match,,,,
+HU,Together,E14 – PM,9.98,override,86340 Together 2014 -Dialogue for Hungary Electoral Alliance (E14-PM),Socialist or other left,-15.63,2018
+HU,Our Homeland Movement,MH,9.11,override,86711 Our Homeland Movement,Nationalist and radical right,14.87,2022
+HU,MKKP,MKKP,7.8,no match,,,,
+HU,Politics Can Be Different,LMP,7.09,name,86110 Politics Can Be Different (LMP),Ecological,-20.09,2018
+HU,Democratic Coalition (Hungary),DK,5.63,name,86221 Democratic Coalition (DK),Socialist or other left,-12.65,2018
+HU,NP,NP,2.89,no match,,,,
+HU,Second Reform Era Party,2RK,2.44,no match,,,,
+HU,Dialogue,Dialogue,2.43,override,86111 Dialogue for Hungary (PM),Socialist or other left,-36.05,2018
+HU,MMM,MMM,2.3,no match,,,,
+IE,Fianna Fáil,FF,41.35,override,53620 Soldiers of Destiny,Conservative,-19.84,2020
+IE,Fine Gael,FG,36.94,override,53520 Family of the Irish,Christian democratic,-15.22,2020
+IE,Sinn Féin,SF,35.33,abbreviation,53951 We Ourselves (SF),Special issue,-39.55,2020
+IE,Labour Party (Ireland),Lab,25.48,name,53320 Labour Party (Labour),Social democratic,-34.41,2020
+IE,Social Democrats (Ireland),SD,10.52,name,53321 Social Democrats,Social democratic,-45.26,2020
+IE,Aontú,Aon,7.76,no match,,,,
+IE,Green Party (Ireland),GP,7.62,name,53110 Green Party (Greens),Ecological,-17.3,2020
+IE,Independent Ireland,II,6.49,no match,,,,
+IE,Independent Alliance (Ireland),IA,4.5,name,53981 Independent Alliance,Special issue,15.07,2016
+IE,People Before Profit–Solidarity,PBP–S,4.28,override,53231 People Before Profit (PBP),Socialist or other left,-43.35,2020
+IS,Independence Party (Iceland),D,38.29,name,15620 Independence Party (Sj),Conservative,32.84,2024
+IS,Pirate Party (Iceland),P,36.43,name,15952 Pirate Party (Þ),Special issue,-24.83,2021
+IS,Social Democratic Alliance,S,31.43,abbreviation,15328 The Alliance - Social Democratic Party of Iceland (S),Social democratic,-24.35,2024
+IS,Progressive Party (Iceland),B,27.75,name,15810 Progressive Party (F),Agrarian,-9.07,2024
+IS,Left-Green Movement,V,27.08,name,15111 Left Green Movement (VGF),Ecological,-21.36,2021
+IS,Centre Party (Iceland),M,18.64,name,15630 Centre Party (Mf),Conservative,44.78,2024
+IS,Viðreisn,C,17.28,override,15450 Reform Party (V),Liberal,-4.07,2024
+IS,Bright Future (Iceland),A,16.56,name,15440 Bright Future (Bf),Liberal,-14.71,2017
+IS,People's Party (Iceland),F,13.12,name,15953 People’s Party (FF),Special issue,-40.69,2024
+IS,Solidarity (Iceland),C,10.36,no match,,,,
+IS,Icelandic Socialist Party,J,6.85,no match,,,,
+IS,Socialist Party of Iceland,J,4.85,no match,,,,
+IS,Dawn (Iceland),T,3.27,no match,,,,
+IS,Right-Green Movement (Iceland),G,3.09,no match,,,,
+IS,Iceland Democratic Party,L,2.8,no match,,,,
+IT,The Union (Italy),Unione,51.93,override,32329 Olive Tree,Social democratic,-17.71,2006
+IT,House of Freedoms,CdL,49.28,similar name (house of freedom),32629 House of Freedom,Conservative,48.19,2006
+IT,Democratic Party (Italy),PD / Ulivo,41.83,name,32440 Democratic Party (PD),Social democratic,-8.28,2018
+IT,Forza Italia (2013),FI / PdL,41.31,override,32610 Go Italy (FI); 32061 People of Freedom (PdL),Conservative,15.62,2018
+IT,Lega (political party),Lega,36.24,override,32720 League (L),Nationalist and radical right,4.66,2018
+IT,Five Star Movement,M5S,33.72,name,32956 Five Star Movement (M5S),Special issue,-7.43,2018
+IT,Brothers of Italy,FdI,30.29,name,32630 Brothers of Italy (FDI),Nationalist and radical right,7.69,2018
+IT,National Alliance (Italy),AN,12.17,name,32710 National Alliance (AN),Nationalist and radical right,48.19,2006
+IT,The Left – The Rainbow,SA,9.72,no match,,,,
+IT,Civic Choice,SC,9.24,name,32460 Civic Choice (SC),Liberal,1.19,2013
+IT,Italy of Values,IdV,8.46,abbreviation,32902 List Di Pietro - Italy of Values (IdV),Special issue,9.3,2008
+IT,Action (Italian political party),A,8.06,no match,,,,
+IT,Action – Italia Viva,A–IV,8.06,no match,,,,
+IT,Union of the Centre (2008),UdC,7.85,abbreviation,32530 Union of the Center (UdC),Christian democratic,33.65,2013
+IT,Left Ecology Freedom,SEL,7.8,name,32230 Left Ecology Freedom (SEL),Socialist or other left,-19.43,2013
+IT,New Centre-Right,AP,7.5,override,32051 Popular Civic List (CP),Christian democratic,-5.86,2018
+IT,National Future,FN,7.47,no match,,,,
+IT,Greens and Left Alliance,AVS,6.67,no match,,,,
+IT,Free and Equal (Italy),LeU,6.56,override,32031 Free and Equal (LeU),Social democratic,-18.53,2018
+IT,Future and Freedom,FLI,6.55,no match,,,,
+IT,Toward the Third Republic,VTR,6.04,no match,,,,
+IT,Communist Refoundation Party,PRC,5.85,name,32212 Communist Refoundation Party (PRC),Socialist or other left,-17.71,2006
+IT,United States of Europe (electoral list),SUE,5.24,no match,,,,
+IT,Italia Viva,IV,4.91,no match,,,,
+IT,More Europe,+E,4.68,override,32451 More Europe (E),Liberal,-2.07,2018
+IT,Civil Revolution,RC,4.49,name,32021 Civil Revolution (RC),Socialist or other left,-20.53,2013
+IT,Article One (political party),Art.1,4.38,no match,,,,
+IT,Italian Left,SI,4.29,no match,,,,
+IT,Progressive Camp,CP / AP,3.91,no match,,,,
+IT,Federation of the Greens,FdV,2.69,abbreviation,32110 Green Federation (FdV),Ecological,-17.71,2006
+IT,Italexit (political party),Italexit,2.66,no match,,,,
+IT,The Right (Italy),LD,2.56,no match,,,,
+IT,Party of Italian Communists,PdCI,2.36,name,32213 Party of Italian Communists (PdCI),Socialist or other left,-17.71,2006
+IT,Us Moderates,NM,2.33,no match,,,,
+IT,Us with Italy,NcI,2.22,name,32055 Us with Italy (NcL),Christian democratic,11.8,2018
+IT,Green Europe,EV,2.19,no match,,,,
+IT,Peace Land Dignity,PTD,2.07,no match,,,,
+IT,Power to the People (Italy),PaP,2.06,no match,,,,
+IT,Civic Commitment,IC,2.05,no match,,,,
+IT,Coraggio Italia,CI,2.02,no match,,,,
+IT,Freedom (electoral list),Libertà,2.01,no match,,,,
+IT,People's Union (Italy),UP,1.68,no match,,,,
+IT,Sovereign Popular Democracy,DSP,1.55,no match,,,,
+IT,South calls North,ScN,1.52,no match,,,,
+IT,Liberal Democratic Party (Italy),PLD,1.39,no match,,,,
+IT,Sovereign and Popular Italy,ISP,1.39,no match,,,,
+IT,Popular Alternative,AP,0.79,no match,,,,
+LT,Lithuanian Farmers and Greens Union,LVŽS,35.71,abbreviation,88820 Lithuanian Peasant and Green Union (LVŽS),Agrarian,-17.24,2020
+LT,Homeland Union,TS-LKD,26.6,override,88620 Homeland Union (TS); 88621 Homeland Union - Lithuanian Christian Democrats (TS-LKD),Conservative,-10.73,2020
+LT,Social Democratic Party of Lithuania,LSDP,25.74,abbreviation,88320 Lithuanian Social Democratic Party (LSDP),Social democratic,-31.36,2020
+LT,"Union of Democrats ""For Lithuania""",DSVL,16.74,no match,,,,
+LT,Dawn of Nemunas,NA,16.22,no match,,,,
+LT,Liberals' Movement (Lithuania),LS,10.87,similar name (liberal movement),88450 Liberal Movement (LRLS),Liberal,-13.72,2020
+LT,Freedom and Justice,LT,10.73,override,88460 Order and Justice (PTT),Nationalist and radical right,-12.21,2016
+LT,Labour Party (Lithuania),DP,10.64,name,88440 Labour Party (DP),Liberal,-23.36,2020
+LT,Freedom Party (Lithuania),Laisves,9.93,name,88451 Freedom Party (LP),Liberal,-10.98,2020
+LT,Social Democratic Labour Party of Lithuania,LSDDP,6.8,name,88322 Social Democratic Labour Party of Lithuania (LSDDP),Social democratic,-20.31,2020
+LT,National Alliance (Lithuania),NS,6.44,override: none,,,,
+LT,Electoral Action of Poles in Lithuania – Christian Families Alliance,LLRA,6.03,override,88951 Election Action of Lithuania’s Poles (LLRA/AWPL),Ethnic and regional,-3.14,2020
+LT,Lithuanian Centre Party,LCP,5.85,no match,,,,
+LT,Lithuanian Regions Party,LRP,4.86,no match,,,,
+LT,People and Justice Union,TTS,2.51,no match,,,,
+LU,Christian Social People's Party,CSV,29.22,name,23520 Christian Social People’s Party (CSV/PCS),Christian democratic,-20.4,2018
+LU,Democratic Party (Luxembourg),DP,21.77,name,23420 Democratic Party (DP/PD),Liberal,-21.51,2018
+LU,Luxembourg Socialist Workers' Party,LSAP,19.65,override,23320 Socialist Workers’ Party of Luxembourg (LSAP/POSL),Social democratic,-25.32,2018
+LU,The Greens (Luxembourg),DG,15.39,name,23113 The Greens (DG),Ecological,-27.07,2018
+LU,Alternative Democratic Reform Party,ADR,12.76,abbreviation,23951 Alternative Democatic Reform Party (ADR),Special issue,-14.35,2018
+LU,Pirate Party Luxembourg,PPLU,10.01,name,23952 Pirate Party Luxembourg (Piraten),Special issue,-31.69,2018
+LU,The Left (Luxembourg),DL,6.52,name,23230 The Left (DL),Socialist or other left,-38.68,2018
+LU,Fokus (Luxembourg),Fokus,2.77,no match,,,,
+LU,Liberté - Fräiheet!,Liberté - Fräiheet!,1.85,no match,,,,
+LU,Communist Party of Luxembourg,KPL,0.68,name,23220 Communist Party of Luxembourg (KPL/PCL),Socialist or other left,-41.04,1989
+LU,Volt Luxembourg,Volt,0.43,no match,,,,
+LU,The Conservatives (Luxembourg),DK,0.4,no match,,,,
+LV,United List (Latvia),AS,24.07,name,87011 United List (AS),Ecological,18.46,2022
+LV,"Social Democratic Party ""Harmony""",S,22.92,override,"87340 Social Democartic Party ""Harmony"" (SDPS)",Social democratic,-29.09,2022
+LV,New Unity,JV,19.63,name,87063 New Unity (JV),Conservative,21.62,2022
+LV,National Alliance (Latvia),NA,16.28,override,87071 National Alliance ‘All For Latvia!' – ‘For Fatherland and Freedom - Latvian National Independence Movement',Nationalist and radical right,10.14,2022
+LV,Latvia First,LPV,14.47,name,87736 Latvia First (LPV),Nationalist and radical right,28.57,2022
+LV,For a Humane Latvia,KPV LV,14.37,abbreviation,87730 Who owns the state? (KPV LV),Nationalist and radical right,44.83,2018
+LV,Sovereign Power (Latvia),SV,13.99,no match,,,,
+LV,Movement For!,KP,13.9,override,87042 Development/For!,Liberal,-16.67,2018
+LV,New Conservative Party (Latvia),JKP,13.82,name,87640 New Conservative Party,Conservative,20.0,2018
+LV,Union of Greens and Farmers,ZZS,13.04,abbreviation,87110 Greens' and Farmers’ Union (ZZS),Agrarian,-24.29,2022
+LV,The Progressives (Latvia),PRO,12.71,name,87312 The Progressives,Social democratic,-13.16,2022
+LV,For Stability!,ST!,8.12,name,87735 For Stability (S!),Nationalist and radical right,-8.96,2022
+LV,We Change the Rules,MMN,6.51,no match,,,,
+LV,The Conservatives (Latvia),K,5.92,override,87640 New Conservative Party,Conservative,20.0,2018
+LV,Law and Order (Latvia),LuK / KuK,5.34,no match,,,,
+LV,AP!,AP!,5.26,override,87042 Development/For!,Liberal,-16.67,2018
+LV,Latvian Association of Regions,LRA,4.96,name,87901 Latvian Association of Regions,Ethnic and regional,25.0,2014
+LV,Latvian Russian Union,LKS,4.65,no match,,,,
+LV,Harmony Centre,SC,3.53,abbreviation,87021 Concord Centre (SC),Socialist or other left,17.07,2011
+LV,Platform 21,P21,3.45,no match,,,,
+LV,For Latvia's Development,LA,3.4,no match,,,,
+LV,PLV,PLV,2.67,no match,,,,
+LV,Rising Sun for Latvia,ASL,2.66,no match,,,,
+LV,Republic (Latvia),R,2.21,no match,,,,
+LV,Gobzems' List,GS,1.41,no match,,,,
+MD,Party of Action and Solidarity,PAS,53.16,override,90040 Electoral bloc NOW  Platform DA and PAS (ACUM),Liberal,-11.46,2019
+MD,Party of Socialists of the Republic of Moldova,PSRM,46.08,name,90231 Party of Socialists of the Republic of Moldova (PSRM),Socialist or other left,-11.11,2019
+MD,Party of Communists of the Republic of Moldova,PCRM,39.15,name,90221 Party of Communists of the Republic of Moldova (PCRM),Socialist or other left,-10.46,2014
+MD,BCS,BCS,36.23,"inherited from Party of Socialists of the Republic of Moldova: PSRM-PCRM bloc, 2021",90231 Party of Socialists of the Republic of Moldova (PSRM),Socialist or other left,-11.11,2019
+MD,Liberal Democratic Party of Moldova,PLDM,24.41,name,90430 Liberal Democratic Party of Moldova (PLDM),Liberal,3.09,2014
+MD,Democratic Party of Moldova,PDM,21.51,name,90330 Democratic Party of Moldova (PDM),Social democratic,-20.0,2019
+MD,Our Party (Moldova),PN,20.65,similar name (or party),90630 Șor Party (ȘOR),Conservative,-20.0,2019
+MD,Șor Party,Șor,17.72,name,90630 Șor Party (ȘOR),Conservative,-20.0,2019
+MD,Chance Political Party,PPȘ,16.11,no match,,,,
+MD,Dignity and Truth Platform Party,DA,13.33,override,90040 Electoral bloc NOW  Platform DA and PAS (ACUM),Liberal,-11.46,2019
+MD,Democracy at Home Party,PPDA,13.04,no match,,,,
+MD,Liberal Party (Moldova),PL,11.51,name,90620 Liberal Party (PL),Conservative,0.38,2019
+MD,European People's Party of Moldova,PPEM,10.89,no match,,,,
+MD,Alternative,Alternative,10.14,no match,,,,
+MD,National Alternative Movement,MAN,4.95,no match,,,,
+MD,Party of Development and Consolidation of Moldova,PDCM,3.84,no match,,,,
+MD,Heart of Moldova Party,PRIM,3.51,no match,,,,
+MD,Revival Party (Moldova),PR,2.68,no match,,,,
+MD,European Social Democratic Party,PSDE,2.1,no match,,,,
+MD,Future of Moldova Party,PVM,1.86,no match,,,,
+MD,PNM,PNM,1.04,no match,,,,
+MD,CUB,CUB,0.82,no match,,,,
+MD,LOC,LOC,0.7,no match,,,,
+ME,Democratic Party of Socialists of Montenegro,DPS,42.91,name,91220 Democratic Party of Socialists of Montenegro (DPS CG),Socialist or other left,-2.75,2020
+ME,Europe Now,PES!,27.07,no match,,,,
+ME,Democratic Montenegro,DCG,22.27,name,91440 Democratic Montenegro (DCG),Liberal,0.81,2016
+ME,ZBCG,ZBCG,21.02,abbreviation,91090 For the Future of Montenegro (ZBCG),Ethnic and regional,29.03,2023
+ME,Democratic Front (Montenegro),DF / ZBCG,21.02,override,91060 Democratic Front (DF); 91090 For the Future of Montenegro (ZBCG),Ethnic and regional,29.03,2023
+ME,Socialist People's Party of Montenegro,SNP,18.66,name,91224 Socialist People’s Party of Montenegro (SNP CG),Social democratic,-10.58,2012
+ME,New Serb Democracy,NSD,17.82,similar name (new serbian democracy),91910 New Serbian Democracy (NOVA),Ethnic and regional,18.75,2009
+ME,United Reform Action,URA,7.8,name,91322 United Reform Action (URA),Social democratic,-31.87,2020
+ME,Movement for Changes,PzP,7.17,name,91430 Movement for Changes (PzP),Conservative,-14.85,2009
+ME,Bosniak Party,BS,7.11,name,91920 Bosniak Party (BS),Ethnic and regional,-3.38,2023
+ME,ES,ES,6.85,no match,,,,
+ME,DEMOS (Montenegro),Demos,6.44,abbreviation,91610 Democratic Alliance (DEMOS),Conservative,3.21,2016
+ME,Social Democratic Party of Montenegro,SDP,4.75,name,91321 Social Democratic Party of Montenegro (SDP CG),Social democratic,17.32,2020
+ME,Social Democrats of Montenegro,SD,4.51,name,91324 Social Democrats of Montenegro (SDCG),Social democratic,-23.46,2020
+ME,Albanian Alternative,ASh,2.91,no match,,,,
+ME,Positive Montenegro,PCG,2.59,name,91330 Positive Montenegro (PCG),Social democratic,19.81,2012
+ME,True Montenegro,PCG,2.49,abbreviation,91330 Positive Montenegro (PCG),Social democratic,19.81,2012
+MT,Labour Party (Malta),PL,63.0,name,54320 Labour Party (PL),Social democratic,-22.83,2022
+MT,Nationalist Party (Malta),PN,47.46,name,54620 Nationalist Party (PN),Conservative,-8.22,2022
+MT,AD+PD,AD+PD,7.42,override: none,,,,
+MT,Momentum (political party),M,3.43,no match,,,,
+NL,Labour Party (Netherlands),PvdA,30.5,name,22320 Labour Party (PvdA),Social democratic,-27.91,2021
+NL,Christian Democratic Appeal,CDA,29.33,name,22521 Christian Democratic Appeal (CDA),Christian democratic,-0.37,2021
+NL,People's Party for Freedom and Democracy,VVD,27.83,name,22420 People’s Party for Freedom and Democracy (VVD),Liberal,3.59,2021
+NL,Party for Freedom,PVV,27.75,abbreviation,22722 Party of Freedom (PVV),Nationalist and radical right,9.09,2021
+NL,Socialist Party (Netherlands),SP,21.83,name,22220 Socialist Party (SP),Socialist or other left,-35.93,2021
+NL,New Social Contract,NSC,19.84,no match,,,,
+NL,Progressief Nederland,PRO,18.0,override,22110 Green Left (GL); 22320 Labour Party (PvdA),Social democratic,-27.04,2021
+NL,GroenLinks–PvdA,GL–PvdA,18.0,override,22110 Green Left (GL); 22320 Labour Party (PvdA),Social democratic,-27.04,2021
+NL,Democrats 66,D66,17.54,name,22330 Democrats‘66 (D’66),Liberal,-20.26,2021
+NL,Forum for Democracy,FvD,12.48,name,22730 Forum for Democracy (FvD),Nationalist and radical right,10.59,2021
+NL,Farmer–Citizen Movement,BBB,12.34,name,22820 Farmer-Citizen Movement (BBB),Agrarian,-12.81,2021
+NL,GroenLinks,GL,11.37,abbreviation,22110 Green Left (GL),Ecological,-26.16,2021
+NL,JA21,JA21,10.59,abbreviation,22731 Right Answer 21 (JA21),Nationalist and radical right,7.4,2021
+NL,50PLUS,50+,8.7,name,22953 50Plus (50PLUS),Special issue,-16.74,2021
+NL,GreenLeft,GL,6.6,abbreviation,22110 Green Left (GL),Ecological,-26.16,2021
+NL,Party for the Animals,PvdD,5.86,name,22951 Party for the Animals (PvdD),Special issue,-21.13,2021
+NL,Christian Union (Netherlands),CU,5.83,name,22526 Christian Union (CU),Christian democratic,-7.78,2021
+NL,Volt Netherlands,Volt,4.57,name,22235 Volt Netherlands (Volt),Socialist or other left,-18.45,2021
+NL,ChristianUnion,CU,3.86,abbreviation,22526 Christian Union (CU),Christian democratic,-7.78,2021
+NL,50Plus,50+,3.64,name,22953 50Plus (50PLUS),Special issue,-16.74,2021
+NL,Reformed Political Party,SGP,3.12,name,22952 Reformed Political Party (SGP),Special issue,38.28,2021
+NL,Denk (political party),DENK,2.66,name,22321 DENK (DENK),Social democratic,-23.65,2021
+NO,Labour Party (Norway),Ap,41.56,name,12320 Labour Party (Ap),Social democratic,-29.79,2017
+NO,Progress Party (Norway),FrP,33.4,name,12951 Progress Party (FrP),Nationalist and radical right,14.16,2017
+NO,Norwegian Labour Party,DNA,32.68,name,12320 Labour Party (Ap),Social democratic,-29.79,2017
+NO,Conservative Party (Norway),H,32.36,name,12620 Conservative Party (H),Conservative,-7.81,2017
+NO,Centre Party (Norway),Sp,20.55,name,12810 Centre Party (Sp),Agrarian,-16.7,2017
+NO,Conservative Party of Norway,H,14.33,abbreviation,12620 Conservative Party (H),Conservative,-7.81,2017
+NO,Christian Democratic Party (Norway),KrF,13.85,abbreviation,12520 Christian People’s Party (KrF),Christian democratic,-12.33,2017
+NO,Socialist Left Party (Norway),SV,12.09,name,12221 Socialist Left Party (SV),Socialist or other left,-28.93,2017
+NO,Red Party (Norway),R,8.17,name,12230 Red Party,Socialist or other left,-32.34,2017
+NO,Green Party (Norway),MDG,6.61,name,12110 Green Party (MDG),Ecological,-11.05,2017
+NO,Liberal Party (Norway),V,5.9,name,12420 Liberal Party (V),Liberal,-13.38,2017
+NO,Liberal Party of Norway,V,5.66,abbreviation,12420 Liberal Party (V),Liberal,-13.38,2017
+NO,Industry and Business Party,INP,3.94,no match,,,,
+PL,ko,KO,51.6,override,92435 Civic Platform (PO),Liberal,-17.28,2019
+PL,left,Lewica,48.28,override,92210 Democratic Left Alliance (SLD); 92212 Coalion of the Democratic Left Alliance and the Union of Labour (SLD-UP); 92021 Left and Democrats (LiD); 92022 The Left (ZL),Social democratic,-28.18,2019
+PL,pis,PiS,44.56,override,92436 Law and Justice (PiS),Nationalist and radical right,11.18,2019
+PL,Law and Justice,PiS,35.33,name,92436 Law and Justice (PiS),Nationalist and radical right,11.18,2019
+PL,Civic Coalition (Poland),KO,35.13,override,92435 Civic Platform (PO),Liberal,-17.28,2019
+PL,aws,AWS,34.23,override,92620 Electoral Action ‘Solidarity' (AWS),Christian democratic,17.02,1997
+PL,srp,SRP,24.65,override,92622 Self-Defence of the Polish Republic (SRP),Agrarian,-5.64,2005
+PL,uw,UW/PD,21.54,override,92410 Democratic Union (UD); 92434 Freedom Union (UW),Liberal,-1.99,1997
+PL,pl2050,PL2050,21.41,no match,,,,
+PL,nowoczesna,.N,20.67,override,92450 Modern (.N),Liberal,4.35,2015
+PL,kukiz,Kukiz'15,19.41,override,92720 Kukiz'15,Nationalist and radical right,-1.55,2015
+PL,psl,PSL,18.16,override,92811 Polish Peasants' Party (PSL); 92050 Polish Coalition (PSL),Christian democratic,-13.45,2019
+PL,Confederation Liberty and Independence,Konfederacja,17.8,override,92070 Confederation Liberty and Independence (KWiN),Nationalist and radical right,37.3,2019
+PL,konf,Konf.,17.8,override,92070 Confederation Liberty and Independence (KWiN),Nationalist and radical right,37.3,2019
+PL,Third Way (Poland),TD,16.61,no match,,,,
+PL,td,TD,16.61,no match,,,,
+PL,lpr,LPR,13.46,override,92713 League of Polish Families (LPR),Christian democratic,8.33,2005
+PL,bbwr,BBWR,13.18,override,92901 Non-Party Bloc in Support of Reforms (BBWR),Special issue,6.49,1993
+PL,rop,ROP,11.32,override,92621 Movement for the Reconstruction of Poland (ROP),Liberal,8.12,1997
+PL,rp,RP/TR,11.02,override,92440 Palikot's Movement (RP),Liberal,6.12,2011
+PL,Confederation of the Polish Crown,KKP,9.85,"inherited from Confederation Liberty and Independence: Braun's party, split from Konfederacja in 2025",92070 Confederation Liberty and Independence (KWiN),Nationalist and radical right,37.3,2019
+PL,kkp,KKP,9.85,"inherited from konf: Braun's party, split from Konfederacja in 2025",92070 Confederation Liberty and Independence (KWiN),Nationalist and radical right,37.3,2019
+PL,kpn,KPN,9.53,override,92710 Confederation for an Independent Poland (KPN),Nationalist and radical right,0.0,1993
+PL,The Left (Poland),Lewica,9.49,override,92022 The Left (ZL),Social democratic,-28.18,2019
+PL,up,UP,9.07,override,92322 Union of Labour (UP),Social democratic,-13.16,1997
+PL,sdpl,SDPL,7.74,no match,,,,
+PL,Development Plus,R+,6.93,no match,,,,
+PL,rplus,R+,6.93,no match,,,,
+PL,Left Together,Razem,4.62,inherited from The Left (Poland): ran on The Left's lists in 2019,92022 The Left (ZL),Social democratic,-28.18,2019
+PL,razem,Razem,4.62,inherited from left: ran on The Left's lists in 2019,92210 Democratic Left Alliance (SLD); 92212 Coalion of the Democratic Left Alliance and the Union of Labour (SLD-UP); 92021 Left and Democrats (LiD); 92022 The Left (ZL),Social democratic,-28.18,2019
+PL,Poland 2050,Polska 2050,4.57,no match,,,,
+PL,Polish People's Party,PSL,3.89,override,92811 Polish Peasants' Party (PSL); 92050 Polish Coalition (PSL),Christian democratic,-13.45,2019
+PL,Bezpartyjni Samorządowcy,BS,3.0,no match,,,,
+PL,There is One Poland,PJJ,1.66,no match,,,,
+PT,PS,PS,45.93,abbreviation,35311 Socialist Party (PS),Social democratic,-17.75,2022
+PT,PSD,PSD / AD,40.22,abbreviation,35313 Social Democratic Party (PSD),Conservative,-6.8,2022
+PT,AD,AD,31.58,"inherited from PSD: PSD-led Democratic Alliance, 2024",35313 Social Democratic Party (PSD),Conservative,-6.8,2022
+PT,CH,CH,27.81,override,35720 Enough,Nationalist and radical right,43.51,2022
+PT,CDU,CDU,12.18,override,35229 Unified Democratic Coalition (CDU); 35220 Portuguese Communist Party (PCP),Socialist or other left,-27.95,2022
+PT,BE,BE,11.92,abbreviation,35211 Left Bloc (BE),Socialist or other left,-40.02,2022
+PT,CDS–PP,CDS–PP,11.68,override,35520 Social Democratic Center-Popular Party (CDS-PP),Christian democratic,20.0,2022
+PT,IL,IL,7.25,abbreviation,35410 Liberal Iniciative (IL),Liberal,-9.25,2022
+PT,L,L,5.67,abbreviation,35130 Free (L),Ecological,-27.54,2022
+PT,MPT,MPT,5.1,no match,,,,
+PT,PAN,PAN,4.33,abbreviation,35120 People-Animals-Nature (PAN),Ecological,-23.71,2022
+PT,PDR,PDR,3.24,no match,,,,
+PT,A,A,2.61,no match,,,,
+PT,L/TDA,L/TDA,2.04,no match,,,,
+RO,Social Democratic Party (Romania),PSD,45.69,name,93223 Social Democratic Party (PSD),Socialist or other left,-17.8,2016
+RO,Alliance for the Union of Romanians,AUR,37.09,override: none,,,,
+RO,National Liberal Party (Romania),PNL,37.05,name,93430 National Liberal Party (PNL),Liberal,1.47,2016
+RO,Save Romania Union,USR,20.46,name,93440 Save Romania Union (USR),Liberal,-25.05,2016
+RO,Force of the Right,FD,11.61,no match,,,,
+RO,Alliance of Liberals and Democrats (Romania),ALDE,10.52,name,93420 Alliance of Liberals and Democrats (ALDE),Liberal,26.67,2016
+RO,PRO Romania,PRO,8.15,no match,,,,
+RO,S.O.S. Romania,SOS,7.41,no match,,,,
+RO,Party of Young People,POT,6.66,no match,,,,
+RO,"Freedom, Unity and Solidarity Party",PLUS,6.55,no match,,,,
+RO,Democratic Union of Hungarians in Romania,UDMR,6.14,override,93951 Hungarian Democratic Alliance of Romania (UDMR/RMDSz),Ethnic and regional,-15.28,2016
+RO,People's Movement Party,PMP,5.35,name,93540 People's Movement Party (PMP),Christian democratic,-1.0,2016
+RO,Social Liberal Humanist Party,PUSL,3.15,no match,,,,
+RS,Serbian Progressive Party,SNS lists,55.18,override,95070 Let's get Serbia moving - Tomislav Nikolic; 95071 Aleksandar Vučić – Serbia Must Not Stop (AV–SNSDS),Nationalist and radical right,-26.21,2023
+RS,Student List,SL,49.92,no match,,,,
+RS,Serbia Must Not Stop,SNS list,49.08,override,95070 Let's get Serbia moving - Tomislav Nikolic; 95071 Aleksandar Vučić – Serbia Must Not Stop (AV–SNSDS),Nationalist and radical right,-26.21,2023
+RS,Democratic Party (Serbia),DS,38.45,override,"95430 Democratic Party (DS); 95044 For a just Serbia (DS, Nova, DSHV, ZZS); 95046 United for the Victory of Serbia (UZPS); 95047 Serbia Against Violence (SPN)",Liberal,18.75,2023
+RS,Serbian Radical Party,SRS,29.47,name,95711 Serbian Radical Party (SRS),Nationalist and radical right,-10.0,2016
+RS,Socialist Party of Serbia,SPS – JS,14.51,override,95021 Ivica Dačić — Prime Minister of Serbia (SPS/JS/ZS),Socialist or other left,26.47,2023
+RS,Alliance for Serbia,SZS,12.16,no match,,,,
+RS,Democratic Party of Serbia,DSS,11.62,name,95712 Democratic Party of Serbia (DSS),Conservative,-16.67,2014
+RS,Movement of Free Citizens (Serbia),PSG,10.19,no match,,,,
+RS,Social Democratic Party (Serbia),NDS,8.51,no match,,,,
+RS,Party of Freedom and Justice,SSP,7.99,"inherited: main party of the Serbia Against Violence list, 2023",95047 Serbia Against Violence (SPN),Liberal,18.75,2023
+RS,Liberal Democratic Party (Serbia),LDP,7.33,name,95431 Liberal Democratic Party (LDP),Liberal,4.71,2008
+RS,Enough is Enough (party),DJB,6.96,abbreviation,95440 Now it’s enough – Sasa Radulovic (DJB),Liberal,-20.55,2016
+RS,New Democratic Party of Serbia,NDSS,6.18,similar name (democratic party of serbia),95712 Democratic Party of Serbia (DSS),Conservative,-16.67,2014
+RS,United Regions of Serbia,URS,5.8,abbreviation,95451 United Regions of Serbia – Mlađan Dinkić (URS),Liberal,4.14,2012
+RS,Kreni-Promeni,KP,5.59,no match,,,,
+RS,Dveri,Dveri,5.51,override,95066 Dveri – DPS – Sanda Raskovic Ivic – Bosko Obradovic (Dveri/DSS); 95072 Serbian Movement Dveri - Movement for the Restoration of the Kingdom of Seria (Dveri-POKS),Nationalist and radical right,-17.89,2022
+RS,People's Movement of Serbia,NPS,5.29,no match,,,,
+RS,Serbia Centre,SRCE,5.29,no match,,,,
+RS,NADA,NADA,5.2,abbreviation,95067 National Democratic Alternative (NADA),Conservative,33.33,2023
+RS,We – Power of the People,MI–SN,5.06,override,95740 We–The Voice from the People (MI–GIN),Nationalist and radical right,27.54,2023
+RS,PES,PES,5.0,no match,,,,
+RS,Serbian Patriotic Alliance,SPAS,4.95,abbreviation,95730 Serbian Partiotic Alliance (SPAS),Nationalist and radical right,-3.12,2020
+RS,Ecological Uprising,EU,4.02,no match,,,,
+RS,Together (Serbia),Together,4.0,no match,,,,
+RS,Serbian Party Oathkeepers,SSZ,3.77,no match,,,,
+RS,Do not let Belgrade drown,NDB / ZLF,3.11,no match,,,,
+RS,United Democratic Serbia,UDS,2.85,no match,,,,
+RS,Green–Left Front,ZLF,2.75,no match,,,,
+RS,"People's Party (Serbia, 2017)",Narodna,2.64,no match,,,,
+RS,POKS,POKS,0.82,no match,,,,
+SE,Swedish Social Democratic Party,S,37.07,override,11320 Social Democratic Labour Party (SAP),Social democratic,-5.11,2022
+SE,Moderate Party,M,34.42,override,11620 Moderate Coalition Party (MSP),Conservative,18.19,2022
+SE,Sweden Democrats,SD,24.13,name,11710 Sweden Democrats (SD),Nationalist and radical right,4.29,2022
+SE,Centre Party (Sweden),C,12.41,name,11810 Centre Party (CP),Agrarian,4.7,2022
+SE,Green Party (Sweden),MP,11.69,abbreviation,11110 Green Ecology Party (MP),Ecological,-5.38,2022
+SE,Christian Democrats (Sweden),KD,11.18,name,11520 Christian Democrats (Kd),Christian democratic,-5.56,2022
+SE,Left Party (Sweden),V,10.93,name,11220 Left Party (V),Socialist or other left,-36.67,2022
+SE,Liberals (Sweden),L,7.7,name,11420 Liberals (L),Liberal,10.62,2022
+SE,Feminist Initiative (Sweden),Fi,3.26,no match,,,,
+SI,Freedom Movement (Slovenia),GS,38.69,no match,,,,
+SI,Slovenian Democratic Party,SDS,36.14,name,97330 Slovenian Democratic Party (SDS),Conservative,16.35,2018
+SI,Modern Centre Party,SMC,34.27,name,97461 Modern Centre Party (SMC),Liberal,-8.66,2018
+SI,Social Democrats (Slovenia),SD,30.5,abbreviation,97322 Social Democratic Party (SD),Social democratic,-10.12,2018
+SI,Positive Slovenia,LZJ,28.5,override,97340 Zoran Janković's List - Positive Slovenia (PS),Social democratic,14.03,2011
+SI,Gregor Virant List,LGV,21.77,abbreviation,97450 Gregor Virant's Civic List (LGV),Liberal,0.0,2011
+SI,List of Marjan Šarec,LMŠ,20.59,name,97341 List of Marjan Šarec (LMŠ),Liberal,2.8,2018
+SI,The Left (Slovenia),Levica,11.81,name,97230 The Left,Socialist or other left,-39.69,2018
+SI,Democratic Party of Pensioners of Slovenia,DeSUS,11.19,name,97951 Democratic Party of Pensioners of Slovenia (DeSUS),Special issue,-28.52,2018
+SI,"NSi, SLS, FOKUS",NSF,10.1,"inherited: joint list led by NSi, 2026",97522 New Slovenian Christian People’s Party (Nsi),Christian democratic,10.54,2018
+SI,New Slovenia,NSi,9.56,abbreviation,97522 New Slovenian Christian People’s Party (Nsi),Christian democratic,10.54,2018
+SI,Zares,Zares,9.4,override,97440 For Real,Liberal,-10.43,2011
+SI,Civic List (Slovenia),DL,8.4,override,97450 Gregor Virant's Civic List (LGV),Liberal,0.0,2011
+SI,Democrats. of Anže Logar,DEM,7.69,no match,,,,
+SI,Slovenian People's Party,SLS,6.89,name,97521 Slovenian People's Party (SLS),Christian democratic,-3.42,2011
+SI,Resni.ca,RES,6.41,no match,,,,
+SI,Slovenian National Party,SNS,6.38,name,97710 Slovenian National Party (SNS),Nationalist and radical right,7.94,2018
+SI,Liberal Democracy of Slovenia,LDS,6.16,name,97421 Liberal Democracy of Slovenia (LDS),Liberal,3.84,2011
+SI,Let's Connect Slovenia,POS,6.03,no match,,,,
+SI,Prerod,PVP,5.32,no match,,,,
+SI,Vesna – Green Party,Vesna,5.15,no match,,,,
+SI,Party of Alenka Bratušek,SAB,4.82,name,97460 Party of Alenka Bratušek (SAB),Liberal,-8.4,2018
+SI,Our Country (Slovenia),ND,3.69,no match,,,,
+SI,Pirate Party (Slovenia),PIR,3.68,no match,,,,
+SI,Greens of Slovenia,ZS,3.4,name,97110 Greens of Slovenia (ZS),Ecological,-15.68,1992
+SI,TRS,TRS,2.61,no match,,,,
+SI,Voice of Pensioners,GU,2.48,no match,,,,
+SI,"We, Socialists!",MI!,2.17,no match,,,,
+SK,Direction – Social Democracy,Smer,44.4,name,96423 Direction-Social Democracy (Smer),Social democratic,-8.33,2016
+SK,Ordinary People (Slovakia),OĽaNO / Slovensko,25.44,override,96620 Ordinary People and Independent Personalities (OľaNO),Conservative,-2.54,2016
+SK,Progressive Slovakia,PS,23.15,no match,,,,
+SK,Voice – Social Democracy,Hlas,22.21,no match,,,,
+SK,NETWORK (Slovak party),SIEŤ,16.46,name,96630 Network,Conservative,0.86,2016
+SK,Freedom and Solidarity,SaS,15.64,name,96440 Freedom and Solidarity (SaS),Liberal,28.32,2016
+SK,Slovak National Party,SNS,12.8,name,96710 Slovak National Party (SNS),Nationalist and radical right,12.95,2016
+SK,Republic (Slovakia),Republika,12.14,no match,,,,
+SK,Christian Democratic Movement,KDH,12.13,name,96521 Christian Democratic Movement (KDH),Christian democratic,-9.85,2016
+SK,People's Party Our Slovakia,ĽSNS,11.85,abbreviation,96720 Kotleba – People's Party Our Slovakia (ĽSNS),Nationalist and radical right,8.99,2016
+SK,For the People (Slovakia),ZĽ,9.74,no match,,,,
+SK,Slovak Democratic and Christian Union – Democratic Party,SDKÚ–DS,9.4,similar name (slovak democratic and christian union democartic party),96523 Slovak Democratic and Christian Union - Democartic Party (SDKÚ-DS),Christian democratic,6.03,2012
+SK,We Are Family (Slovakia),SR,9.35,name,96725 We Are Family,Nationalist and radical right,2.11,2016
+SK,Slovakia (political party),Slovakia,9.26,override,96620 Ordinary People and Independent Personalities (OľaNO),Conservative,-2.54,2016
+SK,OĽaNO and Friends,OĽaNO and Friends,8.53,override,96620 Ordinary People and Independent Personalities (OľaNO),Conservative,-2.54,2016
+SK,Most–Híd,Most–Híd,7.45,override,96955 Bridge,Special issue,0.44,2016
+SK,Hungarian Alliance (Slovak political party),SMK–MKP,6.16,override,96952 Party of the Hungarian Coalition (SMK/MKP),Ethnic and regional,-7.27,2006
+SK,Democrats (Slovakia),Democrats,5.71,no match,,,,
+SK,TOGETHER - Civic Democracy,SPOLU,4.05,no match,,,,
+SK,ALI,ALI,3.98,no match,,,,
+SK,Good Choice (Slovakia),DV,3.6,no match,,,,
+SK,Homeland (Slovak political party),Vlasť,2.93,no match,,,,
+SK,Christian Union (Slovakia),KÚ,0.87,no match,,,,

@@ -1,0 +1,2160 @@
+[GB] Opinion polling for the next United Kingdom general election  (rev 1383556886)  window 2024-07-04 .. open
+   + T00 rows= 274 [National poll results > 2026] selected
+   + T01 rows= 290 [National poll results > 2025] selected
+   + T02 rows=  54 [National poll results > 2024] selected
+     T03 rows=  15 [Sub-national poll results > Wales] excluded heading
+     T06 rows=   8 [Sub-national poll results > England > London] excluded heading
+     polls kept: 604  | start result: yes
+[GB] Opinion polling for the next United Kingdom general election  (rev 1383556886)  window 2024-07-04 .. open
+   + T00 rows= 274 [National poll results > 2026] selected
+   + T01 rows= 290 [National poll results > 2025] selected
+   + T02 rows=  54 [National poll results > 2024] selected
+     T03 rows=  15 [Sub-national poll results > Wales] excluded heading
+     T06 rows=   8 [Sub-national poll results > England > London] excluded heading
+     polls kept: 604  | start result: yes
+[GB] Opinion polling for the 2024 United Kingdom general election  (rev 1363820081)  window 2019-12-12 .. 2024-07-04
+   + T00 rows= 329 [National poll results > 2024] selected
+   + T01 rows= 403 [National poll results > 2023] selected
+   + T02 rows= 369 [National poll results > 2022] selected
+   + T03 rows= 277 [National poll results > 2021] selected
+   + T04 rows= 171 [National poll results > 2020] selected
+     T05 rows=   7 [Non-geographical samples > Ethnic minority voters] not similar to main table (overlap 1.00, same section False)
+     T06 rows=   9 [Non-geographical samples > Muslim voters] not similar to main table (overlap 1.00, same section False)
+     T09 rows=   6 [Non-geographical samples > Young voters] not similar to main table (overlap 1.00, same section False)
+     T12 rows=  49 [Seat projections > National seat projections] excluded heading
+     T13 rows=   9 [Exit poll] no date column
+     T14 rows=   9 [Exit poll > BBC updated forecasts] no date column
+     polls kept: 1510  | start result: yes | end result: yes
+[GB] Opinion polling for the 2019 United Kingdom general election  (rev 1374586459)  window 2017-06-08 .. 2019-12-12
+   + T00 rows= 271 [National poll results > 2019] selected
+   + T01 rows= 147 [National poll results > 2018] selected
+   + T02 rows=  64 [National poll results > 2017] selected
+     T03 rows=  24 [Seat projections] excluded heading
+     T05 rows=   9 [Exit poll] no date column
+     T06 rows=  42 [Sub-national poll results > Scotland] excluded heading
+     T07 rows=  27 [Sub-national poll results > Wales] excluded heading
+     T08 rows=  10 [Sub-national poll results > Northern Ireland] excluded heading
+     T09 rows=  13 [Sub-national poll results > London] excluded heading
+     T10 rows=   5 [Sub-national poll results > North East England] excluded heading
+     T11 rows=   5 [Sub-national poll results > North West England] excluded heading
+     T12 rows=   5 [Sub-national poll results > Yorkshire and the Humber] excluded heading
+     T13 rows=   5 [Sub-national poll results > East Midlands] excluded heading
+     T14 rows=   5 [Sub-national poll results > West Midlands] excluded heading
+     T27 rows=   5 [Individual constituency polling > London > Cities of London and Westmi] excluded heading
+     T28 rows=   7 [Individual constituency polling > London > Finchley and Golders Green] excluded heading
+     T30 rows=   5 [Individual constituency polling > London > Kensington] excluded heading
+     T31 rows=   5 [Individual constituency polling > London > Putney] excluded heading
+     polls kept: 451  | start result: yes | end result: yes
+[GB] Opinion polling for the 2017 United Kingdom general election  (rev 1369302253)  window 2015-05-07 .. 2017-06-08
+   + T00 rows= 127 [National poll results > 2017] selected
+   + T01 rows= 108 [National poll results > 2016] selected
+   + T02 rows=  47 [National poll results > 2015] selected
+     T03 rows=   9 [YouGov model] not similar to main table (overlap 1.00, same section False)
+     T04 rows=  10 [Seat projections > Final projections from aggregators] no date column
+     T05 rows=   9 [Exit poll] no date column
+     T06 rows=  25 [Sub-national poll results > Scotland] excluded heading
+     T07 rows=  21 [Sub-national poll results > Wales] excluded heading
+     T08 rows=   7 [Sub-national poll results > Northern Ireland] excluded heading
+     T10 rows=   5 [Sub-national poll results > English regions > North West England] excluded heading
+     T11 rows=   5 [Sub-national poll results > English regions > Yorkshire and the Humber] excluded heading
+     T15 rows=  11 [Sub-national poll results > English regions > London] excluded heading
+     T23 rows=  51 [Preferred prime minister polling > May vs Corbyn > 2017] excluded heading
+     T24 rows=  21 [Preferred prime minister polling > May vs Corbyn > 2016] excluded heading
+     polls kept: 257  | start result: yes | end result: yes
+[GB] Opinion polling for the 2015 United Kingdom general election  (rev 1373535755)  window 2010-05-06 .. 2015-05-07
+   + T00 rows= 233 [National poll results > 2015] selected
+   + T01 rows= 486 [National poll results > 2014] selected
+   + T02 rows= 410 [National poll results > 2013] selected
+   + T03 rows= 340 [National poll results > 2012] selected
+   + T04 rows= 325 [National poll results > 2011] selected
+   + T05 rows= 196 [National poll results > 2010] selected
+     T06 rows=   8 [Exit poll] no date column
+     polls kept: 1967  | start result: yes | end result: yes
+[GB] Opinion polling for the 2010 United Kingdom general election  (rev 1378009101)  window 2005-05-05 .. 2010-05-06
+   + T00 rows= 175 [National poll results > 2010] selected
+   + T01 rows= 136 [National poll results > 2009] selected
+   + T02 rows= 110 [National poll results > 2008] selected
+   + T03 rows=  96 [National poll results > 2007] selected
+   + T04 rows=  82 [National poll results > 2006] selected
+   + T05 rows=  42 [National poll results > 2005] selected
+     T06 rows=  26 [Seat projections] only 1 party columns
+     T07 rows=   5 [Exit poll] no date column
+     T08 rows=  37 [Sub-national poll results > Scotland] excluded heading
+     T09 rows=  12 [Sub-national poll results > Wales] excluded heading
+     T17 rows=   6 [Individual constituency poll results > Crewe and Nantwich] excluded heading
+     T18 rows=   5 [Individual constituency poll results > Glasgow East] excluded heading
+     T23 rows=   7 [Hypothetical scenarios > Alternative Labour Party leaders] excluded heading
+     polls kept: 614  | start result: yes | end result: yes
+[GB] Opinion polling for the 2005 United Kingdom general election  (rev 1360328940)  window 2001-06-07 .. 2005-05-05
+   + T00 rows=  97 [National poll results > 2005] selected
+   + T01 rows=  75 [National poll results > 2004] selected
+   + T02 rows=  80 [National poll results > 2003] selected
+   + T03 rows=  57 [National poll results > 2002] selected
+   + T04 rows=  17 [National poll results > 2001] selected
+     T05 rows=   5 [Exit poll] no date column
+     T06 rows=  42 [Sub-national poll results > Scotland] excluded heading
+     T07 rows=   5 [Sub-national poll results > Wales] excluded heading
+     T08 rows=   5 [Sub-national poll results > South West England] excluded heading
+     polls kept: 310  | start result: yes | end result: yes
+[GB] Opinion polling for the 2001 United Kingdom general election  (rev 1367908352)  window 1997-05-01 .. 2001-06-07
+   + T00 rows=  59 [National poll results > 2001] selected
+   + T01 rows=  69 [National poll results > 2000] selected
+   + T02 rows=  46 [National poll results > 1999] selected
+   + T03 rows=  43 [National poll results > 1998] selected
+   + T04 rows=  26 [National poll results > 1997] selected
+     T05 rows=   5 [Exit polls] no date column
+     T06 rows=   7 [Sub-national poll results > Northern Ireland] only 0 party columns
+     T07 rows=  34 [Sub-national poll results > Scotland] excluded heading
+     T08 rows=  18 [Sub-national poll results > Wales] excluded heading
+     polls kept: 217  | start result: yes | end result: yes
+[GB] Opinion polling for the 1997 United Kingdom general election  (rev 1370461330)  window 1992-04-09 .. 1997-05-01
+   + T00 rows=  87 [National poll results > 1997] selected
+   + T01 rows=  74 [National poll results > 1996] selected
+   + T02 rows=  58 [National poll results > 1995] selected
+   + T03 rows=  58 [National poll results > 1994] selected
+   + T04 rows=  49 [National poll results > 1993] selected
+   + T05 rows=  48 [National poll results > 1992] selected
+     T06 rows=  15 [Sub-national poll results > Scotland] excluded heading
+     T12 rows=   6 [Individual constituency poll results > Wirral South] excluded heading
+     polls kept: 347  | start result: yes | end result: yes
+     joint lists: United Kingdom Independence Party + Green parties in the Uni x30 -> None
+     joint lists: Scottish National Party + Green Parties in the United Kingdo x1 -> None
+     joint lists: Scottish National Party + UK Independence Party + Green part x14 -> None; Scottish National Party + Plaid Cymru x70 -> Scottish National Party
+[GB] history: 9 cycles, 6277 polls, 11 series, 10 government periods (10 matched to a series)
+[IE] Next Irish general election  (rev 1383111583)  window 2024-11-29 .. open
+     T00 rows=  12 [] no date column
+   + T02 rows=  46 [Opinion polls > Polls] selected
+     polls kept: 45  | start result: yes
+[IE] Next Irish general election  (rev 1383111583)  window 2024-11-29 .. open
+     T00 rows=  12 [] no date column
+   + T02 rows=  46 [Opinion polls > Polls] selected
+     polls kept: 45  | start result: yes
+[IE] Opinion polling for the 2024 Irish general election  (rev 1364790748)  window 2020-02-08 .. 2024-11-29
+   + T01 rows= 164 [National polls] selected
+     polls kept: 149  | start result: yes | end result: yes
+[IE] Opinion polling for the 2020 Irish general election  (rev 1333958146)  window 2016-02-26 .. 2020-02-08
+   + T01 rows= 112 [National opinion polls] selected
+     polls kept: 110  | start result: yes | end result: yes
+[IE] Opinion polling for the 2016 Irish general election  (rev 1319811783)  window 2011-02-25 .. 2016-02-26
+     T01 rows=  19 [2016] not similar to main table (overlap 1.00, same section False)
+   + T02 rows= 128 [2011–2015 > Poll results] selected
+     polls kept: 128  | start result: MISSING | end result: MISSING
+[IE] Opinion polling for the 2011 Irish general election  (rev 1328092886)  window 2007-05-24 .. 2011-02-25
+   + T01 rows=  71 [Polls] selected
+     polls kept: 66  | start result: yes | end result: yes
+[IE] 2007 Irish general election  (rev 1375209604)  window 2002-05-17 .. 2007-05-24
+     T00 rows=   6 [Results] no date column
+     T01 rows=  19 [Results] no date column
+     T02 rows=  60 [Dáil membership changes] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[IE] history: 5 cycles, 498 polls, 10 series, 10 government periods (10 matched to a series)
+[FR] Next French legislative election  (rev 1382371918)  window 2024-06-30 .. open
+   + T00 rows=  30 [Opinion polls] selected
+     polls kept: 10  | start result: yes
+     joint lists: La France Insoumise + The Ecologists + French Communist Part x1 -> None
+[FR] Next French legislative election  (rev 1382371918)  window 2024-06-30 .. open
+   + T00 rows=  30 [Opinion polls] selected
+     polls kept: 10  | start result: yes
+[FR] Opinion polling for the 2024 French legislative election  (rev 1255865981)  window 2022-06-12 .. 2024-06-30
+   + T00 rows=  54 [National polling > First round] selected
+     T01 rows=  46 [Seat projections] excluded heading
+     T02 rows=  20 [By second round configuration] excluded heading
+     T03 rows=   7 [By second round configuration > By first round vote > NFP–ENS–RN] excluded heading
+     T04 rows=   7 [By second round configuration > By first round vote > NFP–RN] excluded heading
+     T06 rows=   8 [By second round configuration > By first round vote > NFP–RN > LFI–RN] excluded heading
+     T09 rows=  11 [By second round configuration > By first round vote > ENS–RN] excluded heading
+     T10 rows=   7 [By second round configuration > By first round vote > LR–RN] excluded heading
+     polls kept: 49  | start result: MISSING | end result: MISSING
+[FR] Opinion polling for the 2022 French legislative election  (rev 1310486728)  window 2017-06-11 .. 2022-06-12
+   + T00 rows=  44 [First round > Party alliances standings] selected
+     T01 rows=  45 [Second round > Seat projections] excluded heading
+     polls kept: 38  | start result: yes | end result: MISSING
+[FR] Opinion polling for the 2017 French legislative election  (rev 1306316201)  window 2012-06-10 .. 2017-06-11
+   + T00 rows=  28 [First round] selected
+     T01 rows=  18 [Second round seat projections] excluded heading
+     polls kept: 26  | start result: yes | end result: yes
+[FR] Opinion polling for the 2012 French legislative election  (rev 1345364325)  window 2007-06-10 .. 2012-06-10
+   + T00 rows=  26 [First round] selected
+     T01 rows=  15 [Second round seat projections] excluded heading
+     T44 rows=   5 [By constituency > Second round > Ain's 5th] excluded heading
+     T50 rows=   7 [By constituency > Second round > Aude's 2nd] excluded heading
+     T53 rows=   7 [By constituency > Second round > Charente-Maritime's 1st] excluded heading
+     T62 rows=   8 [By constituency > Second round > Pas-de-Calais's 11th] excluded heading
+     T63 rows=   8 [By constituency > Second round > Pyrénées-Atlantiques's 2nd] excluded heading
+     T68 rows=   5 [By constituency > Second round > Rhône's 1st] excluded heading
+     T71 rows=   5 [By constituency > Second round > Seine-et-Marne's 6th] excluded heading
+     T79 rows=   6 [By constituency > Second round > Hauts-de-Seine's 9th] excluded heading
+     polls kept: 24  | start result: yes | end result: yes
+[FR] Opinion polling for the 2007 French legislative election  (rev 1341378134)  window 2002-06-09 .. 2007-06-10
+   + T00 rows=  39 [First round] selected
+     T01 rows=  26 [Second round seat projections] excluded heading
+     T02 rows=  19 [By second round configuration > PS/PCF/LV–UMP/NC] excluded heading
+     T03 rows=   5 [By second round configuration > PS/PCF/LV–MoDem–UMP] excluded heading
+     T16 rows=   5 [By constituency > Second round > Drôme's 2nd] excluded heading
+     T19 rows=   6 [By constituency > Second round > Isère's 1st] excluded heading
+     polls kept: 37  | start result: yes | end result: yes
+[FR] Opinion polling for the 2002 French legislative election  (rev 1265058594)  window 1997-06-01 .. 2002-06-09
+   + T00 rows=  60 [First round] selected
+     T02 rows=  10 [Second round seat projections] excluded heading
+     T03 rows=  11 [By second round configuration > PS/PCF/LV–UMP/UDF] excluded heading
+     T06 rows=   9 [By second round configuration > PS/PCF/LV–UMP/UDF–FN] excluded heading
+     T25 rows=   5 [By constituency > Second round > Bouches-du-Rhône's 4th] excluded heading
+     polls kept: 58  | start result: yes | end result: yes
+     joint lists: Lutte Ouvrière + Revolutionary Communist League (France) + E x58 -> None; Socialist Party (France) + Radical Party of the Left x8 -> None; Union for the Presidential Majority + Liberal Democracy (Fra x9 -> Liberal Democracy (France); Rally for France + Movement for France x3 -> None; Socialist Party (France) + Radical Party of the Left + Misce x47 -> None; Miscellaneous right + Rally for France + Movement for France x3 -> None; Union for French Democracy + Union for the Presidential Majo x6 -> Union for French Democracy; Union for French Democracy + Union for the Presidential Majo x1 -> None; National Front (France) + National Republican Movement x35 -> National Republican Movement; The Greens (France) + Political ecology in France x1 -> None; Union for French Democracy + Union for the Presidential Majo x1 -> None; Republican Pole + Socialist Party (France) + Radical Party o x2 -> None; Republican Pole + Socialist Party (France) + Radical Party o x1 -> None
+     joint lists: Lutte Ouvrière + Revolutionary Communist League (France) x32 -> Revolutionary Communist League (France); Citizen and Republican Movement + Socialist Party (France) + x16 -> Miscellaneous left; New Centre + Union for a Popular Movement x17 -> Union for a Popular Movement; Citizen and Republican Movement + Socialist Party (France) + x21 -> None; National Front (France) + National Republican Movement x2 -> None
+     joint lists: Lutte Ouvrière + New Anticapitalist Party x12 -> Lutte Ouvrière; Citizen and Republican Movement + Socialist Party (France) + x1 -> None; New Centre + Union for a Popular Movement + Miscellaneous ri x1 -> None; Socialist Party (France) + Radical Party of the Left x6 -> Socialist Party (France); Citizen and Republican Movement + Socialist Party (France) + x3 -> None; Radical Party (France) + New Centre + Union for a Popular Mo x4 -> None; Socialist Party (France) + Radical Party of the Left + Misce x6 -> Socialist Party (France); Centrist Alliance + Radical Party (France) + New Centre + Un x3 -> None; Union for a Popular Movement + Miscellaneous right x1 -> None; Citizen and Republican Movement + Socialist Party (France) + x1 -> None; Radical Party (France) + New Centre + Union for a Popular Mo x3 -> None; Radical Party of the Left + Miscellaneous left x1 -> None; National Front (France) + Far-right in France x1 -> None; Radical Party (France) + New Centre x2 -> None; Socialist Party (France) + Radical Party of the Left + Misce x1 -> None
+     joint lists: Socialist Party (France) + Radical Party of the Left + Misce x5 -> Miscellaneous left; La République En Marche! + Democratic Movement (France) x26 -> None; Union of Democrats and Independents + The Republicans (Franc x5 -> Union of Democrats and Independents; Political ecology in France + Europe Ecology – The Greens x4 -> None; Socialist Party (France) + Radical Party of the Left x18 -> None; Union of Democrats and Independents + The Republicans (Franc x20 -> Union of Democrats and Independents; Regionalism in France + Sans étiquette x2 -> None; Europe Ecology – The Greens + Socialist Party (France) + Rad x3 -> None; French Communist Party + La France Insoumise x1 -> None
+     joint lists: Political ecology in France + Animalist Party x2 -> None; Union of the Right and Centre + Miscellaneous right x21 -> Union of the Right and Centre; Regionalism in France + Sans étiquette x21 -> None; Miscellaneous left + Political ecology in France x1 -> None; Ensemble Citoyens + Miscellaneous centre x25 -> Miscellaneous centre; French Communist Party + La France insoumise + Ecologist Pol x4 -> None; Socialist Party (France) + Miscellaneous left x3 -> None
+     joint lists: Together (coalition) + Miscellaneous centre x2 -> None; Miscellaneous right + The Republicans (France) x17 -> Miscellaneous right; La France insoumise + French Communist Party + The Ecologist x1 -> None; Sovereigntist Right (French politics) + Miscellaneous right x1 -> None; The Republicans (France) + The Republicans (France) (2) x14 -> None; Miscellaneous right + The Republicans (France) + The Republi x1 -> None
+     joint lists: La France Insoumise + The Ecologists + French Communist Part x1 -> None
+[FR] history: 7 cycles, 242 polls, 27 series, 16 government periods (16 matched to a series)
+[NL] Next Dutch general election  (rev 1382582310)  window 2025-10-29 .. open
+     T00 rows=  15 [] no date column
+     T01 rows=  50 [Opinion polls > Seats] excluded heading
+   + T02 rows=  18 [Opinion polls > Vote share] selected
+     polls kept: 17  | start result: yes
+[NL] Next Dutch general election  (rev 1382582310)  window 2025-10-29 .. open
+     T00 rows=  15 [] no date column
+     T01 rows=  50 [Opinion polls > Seats] excluded heading
+   + T02 rows=  18 [Opinion polls > Vote share] selected
+     polls kept: 17  | start result: yes
+[NL] Opinion polling for the 2025 Dutch general election  (rev 1381269072)  window 2023-11-22 .. 2025-10-29
+     T00 rows= 103 [Projections > Seats] excluded heading
+   + T01 rows=  52 [Projections > Vote share] selected
+     polls kept: 49  | start result: yes | end result: yes
+[NL] Opinion polling for the 2023 Dutch general election  (rev 1361043944)  window 2021-03-17 .. 2023-11-22
+     T00 rows= 184 [Projections > Seats] excluded heading
+   + T01 rows=  78 [Projections > Vote share] selected
+     T05 rows=  13 [Projections > Hypothetical scenarios > Pieter Omtzigt's party] excluded heading
+     polls kept: 74  | start result: yes | end result: yes
+[NL] Opinion polling for the 2021 Dutch general election  (rev 1378337571)  window 2017-03-15 .. 2021-03-17
+     T00 rows= 297 [Projections > Seats] excluded heading
+   + T01 rows=  70 [Projections > Vote share] selected
+     polls kept: 66  | start result: yes | end result: MISSING
+[NL] Opinion polling for the 2017 Dutch general election  (rev 1319379066)  window 2012-09-12 .. 2017-03-15
+   + T00 rows= 401 [Projections > Seats] selected
+     T01 rows=  52 [Projections > Seats > LISS panel] no pollster/sample column
+     396 rows were seat projections (of 150): converted to % of seats
+     polls kept: 394  | start result: yes | end result: yes
+[NL] 2012 Dutch general election  (rev 1374218799)  window 2010-06-09 .. 2012-09-12
+     T00 rows=  11 [] no date column
+     T01 rows=  21 [Participating parties] no date column
+   + T02 rows=  24 [Polls] selected
+     T03 rows=  28 [Results] no date column
+     T04 rows=  13 [Results > By province] no date column
+     polls kept: 22  | start result: yes | end result: MISSING
+[NL] 2010 Dutch general election  (rev 1374219251)  window 2006-11-22 .. 2010-06-09
+     T00 rows=  10 [] no date column
+     T01 rows=  13 [Opinion polls] no date column
+     T02 rows=  25 [Results] no date column
+     T03 rows=  12 [Results > By province] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[NL] 2006 Dutch general election  (rev 1382126396)  window 2003-01-22 .. 2006-11-22
+     T00 rows=  10 [] no date column
+     T01 rows=   6 [Public debates > NOS debates > Summary] no pollster/sample column
+   + T02 rows=   5 [Opinion polls] selected
+     T03 rows=  31 [Results] no date column
+     T04 rows=  12 [Results > By province] no date column
+     4 rows were seat projections (of 150): converted to % of seats
+     polls kept: 3  | start result: yes | end result: MISSING
+[NL] 2003 Dutch general election  (rev 1382906269)  window 2002-05-15 .. 2003-01-22
+     T00 rows=   9 [] no date column
+     T02 rows=  26 [Results] no date column
+     T03 rows=  12 [Results > By province] no date column
+     T04 rows=   5 [Results > 5 largest municipalities] no date column
+     T05 rows=  10 [Results > By prior vote] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[NL] 2002 Dutch general election  (rev 1378631322)  window 1998-05-06 .. 2002-05-15
+     T00 rows=  10 [] no date column
+     T01 rows=  18 [Campaign > Municipal elections (6 March 2002)] no date column
+   + T02 rows=   6 [Opinion polls] selected
+     T03 rows=  23 [Result] no date column
+     T04 rows=  12 [Result > By province] no date column
+     T05 rows=   5 [Result > Five largest municipalities] no date column
+     T06 rows=  13 [Result > By policy issue] no date column
+     T07 rows=  11 [Result > By prior vote] no date column
+     6 rows were seat projections (of 150): converted to % of seats
+     polls kept: 5  | start result: yes | end result: MISSING
+[NL] history: 8 cycles, 630 polls, 20 series, 16 government periods (14 matched to a series)
+[LU] Next Luxembourg general election  (rev 1380533998)  window 2023-10-08 .. open
+     T00 rows=   7 [] no date column
+   + T01 rows=   8 [Opinion polls > Voting intention] selected
+     T02 rows=   8 [Opinion polls > Seat projections] excluded heading
+     polls kept: 5  | start result: yes
+[LU] Next Luxembourg general election  (rev 1380533998)  window 2023-10-08 .. open
+     T00 rows=   7 [] no date column
+   + T01 rows=   8 [Opinion polls > Voting intention] selected
+     T02 rows=   8 [Opinion polls > Seat projections] excluded heading
+     polls kept: 5  | start result: yes
+[LU] 2023 Luxembourg general election  (rev 1380998104)  window 2018-10-14 .. 2023-10-08
+     T00 rows=   7 [] no date column
+     T01 rows=  12 [Contesting parties] no date column
+   + T02 rows=  13 [Opinion polls > Voting intention] selected
+     T03 rows=  12 [Opinion polls > Seat projections] excluded heading
+     T04 rows=  20 [Results] no date column
+     polls kept: 9  | start result: yes | end result: yes
+[LU] 2018 Luxembourg general election  (rev 1342098798)  window 2013-10-20 .. 2018-10-14
+     T00 rows=   7 [] no date column
+     T01 rows=   8 [Opinion polls > Seat projections] excluded heading
+     T02 rows=  10 [Parties] no date column
+     T03 rows=  17 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LU] 2013 Luxembourg general election  (rev 1369670909)  window 2009-06-07 .. 2013-10-20
+     T00 rows=   6 [] no date column
+     T01 rows=   9 [Parties] no date column
+     T03 rows=   9 [Opinion polls > Seat projections] excluded heading
+     T04 rows=  16 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LU] 2009 Luxembourg general election  (rev 1369673520)  window 2004-06-13 .. 2009-06-07
+     T00 rows=   6 [] no date column
+     T01 rows=   8 [Parties] no date column
+     T02 rows=  11 [Opinion polls > Seat projections] excluded heading
+     T03 rows=  15 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LU] 2004 Luxembourg general election  (rev 1369674589)  window 1999-06-13 .. 2004-06-13
+     T00 rows=   5 [] no date column
+     T01 rows=   8 [Candidates] no date column
+     T03 rows=  15 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LU] history: 2 cycles, 14 polls, 8 series, 3 government periods (3 matched to a series)
+[DE] Opinion polling for the next German federal election  (rev 1383041852)  window 2025-02-23 .. open
+   + T00 rows= 208 [Poll results > 2026] selected
+   + T01 rows= 206 [Poll results > 2025] selected
+     T02 rows=  81 [Poll results > CDU and CSU] excluded heading
+     T07 rows=   6 [By state > Mecklenburg-Vorpommern] excluded heading
+     T09 rows=  31 [By Western and Eastern Germany > Western Germany] excluded heading
+     T10 rows=  32 [By Western and Eastern Germany > Eastern Germany] excluded heading
+     T11 rows=   9 [Chancellor polling > Merz vs. Weidel] not similar to main table (overlap 0.00, same section False)
+     T15 rows=   6 [Preferred coalition] excluded heading
+     T16 rows=  49 [Constituency projections > Constituency pluralities] excluded heading
+     T17 rows=  21 [Constituency projections > By probability] excluded heading
+     T18 rows=  20 [Constituency projections > Second place] excluded heading
+     polls kept: 412  | start result: yes
+[DE] Opinion polling for the next German federal election  (rev 1383041852)  window 2025-02-23 .. open
+   + T00 rows= 208 [Poll results > 2026] selected
+   + T01 rows= 206 [Poll results > 2025] selected
+     T02 rows=  81 [Poll results > CDU and CSU] excluded heading
+     T07 rows=   6 [By state > Mecklenburg-Vorpommern] excluded heading
+     T09 rows=  31 [By Western and Eastern Germany > Western Germany] excluded heading
+     T10 rows=  32 [By Western and Eastern Germany > Eastern Germany] excluded heading
+     T11 rows=   9 [Chancellor polling > Merz vs. Weidel] not similar to main table (overlap 0.00, same section False)
+     T15 rows=   6 [Preferred coalition] excluded heading
+     T16 rows=  49 [Constituency projections > Constituency pluralities] excluded heading
+     T17 rows=  21 [Constituency projections > By probability] excluded heading
+     T18 rows=  20 [Constituency projections > Second place] excluded heading
+     polls kept: 412  | start result: yes
+[DE] Opinion polling for the 2025 German federal election  (rev 1374042937)  window 2021-09-26 .. 2025-02-23
+   + T00 rows=  70 [Poll results > 2025] selected
+   + T01 rows= 263 [Poll results > 2024] selected
+   + T02 rows= 306 [Poll results > 2023] selected
+   + T03 rows= 321 [Poll results > 2022] selected
+   + T04 rows=  83 [Poll results > 2021] selected
+     T05 rows= 177 [Poll results > CDU and CSU] excluded heading
+     T06 rows=  10 [Poll results > Scenario polls > New party scenarios] excluded heading
+     T16 rows=   5 [By state > Baden-Württemberg] excluded heading
+     T17 rows=  13 [By state > Bavaria] excluded heading
+     T19 rows=   7 [By state > Brandenburg] excluded heading
+     T20 rows=   5 [By state > Hamburg] excluded heading
+     T22 rows=  13 [By state > Mecklenburg-Vorpommern] excluded heading
+     T23 rows=  13 [By state > North Rhine-Westphalia] excluded heading
+     T24 rows=   5 [By state > Rhineland-Palatinate] excluded heading
+     T28 rows=   5 [By state > Thuringia] excluded heading
+     T29 rows=  18 [By Western and Eastern Germany > Western Germany] excluded heading
+     T30 rows=  20 [By Western and Eastern Germany > Eastern Germany] excluded heading
+     polls kept: 1035  | start result: yes | end result: yes
+[DE] Opinion polling for the 2021 German federal election  (rev 1366735446)  window 2017-09-24 .. 2021-09-26
+   + T00 rows= 251 [Poll results > 2021] selected
+   + T01 rows= 225 [Poll results > 2020] selected
+   + T02 rows= 233 [Poll results > 2019] selected
+   + T03 rows= 252 [Poll results > 2018] selected
+   + T04 rows=  67 [Poll results > 2017] selected
+     T05 rows= 211 [Poll results > CDU and CSU] excluded heading
+     T10 rows=  24 [By state > Bavaria] excluded heading
+     T11 rows=  30 [By state > Berlin] excluded heading
+     T12 rows=   6 [By state > Brandenburg] excluded heading
+     T13 rows=   8 [By state > Hamburg] excluded heading
+     T15 rows=  16 [By state > Mecklenburg-Vorpommern] excluded heading
+     T16 rows=   5 [By state > Lower Saxony] excluded heading
+     T17 rows=   6 [By state > North Rhine-Westphalia] excluded heading
+     T18 rows=   7 [By state > Rhineland-Palatinate] excluded heading
+     T19 rows=   5 [By state > Saxony] excluded heading
+     T21 rows=  27 [By West and East Germany > West Germany] not similar to main table (overlap 0.83, same section False)
+     T22 rows=  32 [By West and East Germany > East Germany] not similar to main table (overlap 0.83, same section False)
+     T23 rows=  68 [Preferred coalition] excluded heading
+     polls kept: 1017  | start result: yes | end result: yes
+[DE] Opinion polling for the 2017 German federal election  (rev 1372993918)  window 2013-09-22 .. 2017-09-24
+   + T00 rows= 221 [Poll results > 2017] selected
+   + T01 rows= 227 [Poll results > 2016] selected
+   + T02 rows= 220 [Poll results > 2015] selected
+   + T03 rows= 217 [Poll results > 2014] selected
+   + T04 rows=  55 [Poll results > 2013] selected
+     T22 rows= 127 [Subnational polling > By state] excluded heading
+     T23 rows=  73 [Subnational polling > West Germany] excluded heading
+     T24 rows=  75 [Subnational polling > East Germany] excluded heading
+     polls kept: 938  | start result: yes | end result: yes
+[DE] Opinion polling for the 2013 German federal election  (rev 1345414315)  window 2009-09-27 .. 2013-09-22
+   + T00 rows= 193 [Party polling > 2013] selected
+   + T01 rows= 210 [Party polling > 2012] selected
+   + T02 rows= 176 [Party polling > 2011] selected
+   + T03 rows= 172 [Party polling > 2010] selected
+   + T04 rows=  44 [Party polling > 2009] selected
+     T05 rows=  63 [Preferred Chancellor] excluded heading
+     T06 rows=  27 [Preferred Chancellor > Prior polling] excluded heading
+     T07 rows=  53 [Preferred coalition] excluded heading
+     polls kept: 793  | start result: yes | end result: yes
+[DE] 2009 German federal election  (rev 1332035416)  window 2005-09-18 .. 2009-09-27
+   + T00 rows=  11 [Opinion polls] selected
+     T01 rows=  36 [Results] no date column
+     T02 rows=  16 [Results > Results by state] no date column
+     T03 rows=  17 [Results > Results by state > Constituency seats] no date column
+     T04 rows=  17 [Results > Results by state > List seats] no date column
+     polls kept: 11  | start result: MISSING | end result: MISSING
+[DE] 2005 German federal election  (rev 1379196151)  window 2002-09-22 .. 2005-09-18
+     T00 rows=   6 [Contesting parties] no date column
+   + T01 rows=   8 [Opinion polls] selected
+     T02 rows=  38 [Results] no date column
+     T03 rows=  16 [Results > Results by state] no date column
+     T04 rows=  17 [Results > Results by state > Constituency seats] no date column
+     T05 rows=  17 [Results > Results by state > List seats] no date column
+     polls kept: 6  | start result: yes | end result: yes
+[DE] 2002 German federal election  (rev 1378809500)  window 1998-09-27 .. 2002-09-22
+     T00 rows=   6 [Contesting parties] no date column
+   + T01 rows=   8 [Opinion polls] selected
+     T02 rows=  36 [Results] no date column
+     T03 rows=  16 [Results > Results by state] no date column
+     T04 rows=  17 [Results > Results by state > Constituency seats] no date column
+     T05 rows=  17 [Results > Results by state > List seats] no date column
+     polls kept: 7  | start result: MISSING | end result: yes
+[DE] history: 8 cycles, 4219 polls, 9 series, 8 government periods (8 matched to a series)
+[AT] Next Austrian legislative election  (rev 1380707968)  window 2024-09-29 .. open
+   + T00 rows=  42 [Opinion polls > Nationwide > 2026] selected
+   + T01 rows=  51 [Opinion polls > Nationwide > 2025] selected
+   + T02 rows=  20 [Opinion polls > Nationwide > 2024] selected
+     polls kept: 110  | start result: yes
+[AT] Next Austrian legislative election  (rev 1380707968)  window 2024-09-29 .. open
+   + T00 rows=  42 [Opinion polls > Nationwide > 2026] selected
+   + T01 rows=  51 [Opinion polls > Nationwide > 2025] selected
+   + T02 rows=  20 [Opinion polls > Nationwide > 2024] selected
+     polls kept: 110  | start result: yes
+[AT] Opinion polling for the 2024 Austrian legislative election  (rev 1322567643)  window 2019-09-29 .. 2024-09-29
+   + T00 rows=  33 [Poll results > From June 2024 to now] selected
+   + T01 rows= 122 [Poll results > From April 2023 to June 2024] selected
+   + T02 rows=  58 [Poll results > October 2022 to April 2023] selected
+   + T03 rows=  70 [Poll results > September 2021 to October 2022] selected
+   + T04 rows=  55 [Poll results > January to September 2021] selected
+   + T05 rows=  95 [Poll results > 2019 to 2020] selected
+     T11 rows=  37 [Preferred Chancellor] excluded heading
+     T12 rows=  13 [Preferred coalition] excluded heading
+     polls kept: 399  | start result: yes | end result: yes
+[AT] Opinion polling for the 2019 Austrian legislative election  (rev 1306341504)  window 2017-10-15 .. 2019-09-29
+   + T00 rows= 147 [Poll results] selected
+     T01 rows= 108 [Preferred Chancellor] excluded heading
+     T02 rows=  20 [Preferred coalition] excluded heading
+     polls kept: 145  | start result: yes | end result: yes
+[AT] Opinion polling for the 2017 Austrian legislative election  (rev 1335280764)  window 2013-09-29 .. 2017-10-15
+   + T00 rows=  84 [Poll results > 2017] selected
+   + T01 rows= 178 [Poll results > 2016 and earlier] selected
+     T02 rows=   8 [Hypothetical polls with Kurz as ÖVP leader] excluded heading
+     polls kept: 242  | start result: yes | end result: yes
+[AT] 2013 Austrian legislative election  (rev 1369094764)  window 2008-09-28 .. 2013-09-29
+     T00 rows=   5 [Contesting parties] no date column
+   + T01 rows=  25 [Opinion polling > Recent opinion polls] selected
+   + T02 rows=  76 [Opinion polling > Older opinion polls] selected
+     T03 rows=  21 [Results] no date column
+     T04 rows=  12 [Results > Results by state] no date column
+     T05 rows=  10 [Results > Preference votes] no date column
+     polls kept: 101  | start result: MISSING | end result: MISSING
+[AT] Opinion polling for the 2008 Austrian legislative election  (rev 1370229829)  window 2006-10-01 .. 2008-09-28
+   + T00 rows=  50 [Opinion polling] selected
+     T01 rows=  23 [Opinion polling] not similar to main table (overlap 0.00, same section True)
+     polls kept: 48  | start result: yes | end result: yes
+[AT] 2006 Austrian legislative election  (rev 1368722235)  window 2002-11-24 .. 2006-10-01
+   + T01 rows=  23 [Opinion polling] selected
+     T02 rows=  19 [Results] no date column
+     T03 rows=  12 [Results > Results by state] no date column
+     polls kept: 21  | start result: yes | end result: yes
+[AT] 2002 Austrian legislative election  (rev 1361912725)  window 1999-10-03 .. 2002-11-24
+     T01 rows=  16 [Results] no date column
+     T02 rows=  12 [Results > Results by state] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[AT] history: 7 cycles, 1066 polls, 15 series, 12 government periods (11 matched to a series)
+[DK] Next Danish general election  (rev 1383373027)  window 2026-03-24 .. open
+     T00 rows=  18 [] no date column
+   + T02 rows=  38 [Opinion polls > Nationwide polls] selected
+     polls kept: 37  | start result: yes
+[DK] Next Danish general election  (rev 1383373027)  window 2026-03-24 .. open
+     T00 rows=  18 [] no date column
+   + T02 rows=  38 [Opinion polls > Nationwide polls] selected
+     polls kept: 37  | start result: yes
+[DK] Opinion polling for the 2026 Danish general election  (rev 1351589086)  window 2022-11-01 .. 2026-03-24
+   + T01 rows=  36 [Opinion polls > 2026] selected
+   + T02 rows=  64 [Opinion polls > 2025] selected
+   + T03 rows=  62 [Opinion polls > 2024] selected
+   + T04 rows=  49 [Opinion polls > 2023] selected
+   + T05 rows=   9 [Opinion polls > 2022] selected
+     T06 rows=  11 [Seat projections > 2026] excluded heading
+     T07 rows=  51 [Seat projections > 2025] excluded heading
+     T08 rows=  59 [Seat projections > 2024] excluded heading
+     T09 rows=  54 [Seat projections > 2023] excluded heading
+     T10 rows=   7 [Seat projections > 2022] excluded heading
+     T11 rows=   5 [Regional polls > Bornholm Constituency] excluded heading
+     polls kept: 207  | start result: yes | end result: yes
+[DK] Opinion polling for the 2022 Danish general election  (rev 1324451229)  window 2019-06-05 .. 2022-11-01
+   + T00 rows=  79 [Opinion polls > 2022] selected
+   + T01 rows=  71 [Opinion polls > 2021] selected
+   + T02 rows=  70 [Opinion polls > 2020] selected
+   + T03 rows=  26 [Opinion polls > 2019] selected
+     T04 rows=   7 [Opinion polls > Faroe Islands] not similar to main table (overlap 0.00, same section True)
+     T07 rows=  15 [Preferred prime minister > Frederiksen vs. Pape Poulsen vs. Ellemann-J] excluded heading
+     polls kept: 232  | start result: yes | end result: yes
+[DK] Opinion polling for the 2019 Danish general election  (rev 1326886832)  window 2015-06-18 .. 2019-06-05
+   + T00 rows= 107 [Poll results > 2019] selected
+   + T01 rows=  55 [Poll results > 2018] selected
+   + T02 rows=  71 [Poll results > 2017] selected
+   + T03 rows= 105 [Poll results > 2016] selected
+   + T04 rows=   5 [Poll results > 2015] selected
+     T05 rows=  10 [Poll results > Faroe Islands] not similar to main table (overlap 0.00, same section True)
+     T06 rows=   7 [Poll results > Greenland] not similar to main table (overlap 0.00, same section True)
+     polls kept: 330  | start result: yes | end result: yes
+[DK] Opinion polling for the 2015 Danish general election  (rev 1226393672)  window 2011-09-15 .. 2015-06-18
+   + T00 rows= 149 [Poll results] selected
+   + T01 rows= 249 [Poll results] selected
+     dropped rows: {'outside window': 53}
+     polls kept: 338  | start result: yes | end result: yes
+[DK] 2011 Danish general election  (rev 1363622579)  window 2007-11-13 .. 2011-09-15
+     T00 rows=  14 [] no date column
+     T01 rows=  21 [Contesting parties] no date column
+   + T02 rows=  15 [Opinion polls] selected
+     T03 rows=  42 [Results] no date column
+     polls kept: 14  | start result: yes | end result: MISSING
+[DK] 2007 Danish general election  (rev 1375064274)  window 2005-02-08 .. 2007-11-13
+     T00 rows=  14 [] no date column
+     T01 rows=  21 [Contesting parties] no date column
+     T02 rows=  41 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[DK] 2005 Danish general election  (rev 1351313547)  window 2001-11-20 .. 2005-02-08
+     T00 rows=  13 [] no date column
+     T01 rows=  44 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[DK] 2001 Danish general election  (rev 1351313528)  window 1998-03-11 .. 2001-11-20
+     T00 rows=  14 [] no date column
+     T01 rows=  42 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[DK] history: 6 cycles, 1158 polls, 14 series, 6 government periods (6 matched to a series)
+[SE] 2030 Swedish general election  (rev 1383251434)  window 2026-09-13 .. open
+     T00 rows=   8 [Political parties] no date column
+   + T01 rows=   7 [Opinion polls > 2026] selected
+     polls kept: 6  | start result: yes
+[SE] 2030 Swedish general election  (rev 1383251434)  window 2026-09-13 .. open
+     T00 rows=   8 [Political parties] no date column
+   + T01 rows=   7 [Opinion polls > 2026] selected
+     polls kept: 6  | start result: yes
+[SE] Opinion polling for the 2026 Swedish general election  (rev 1382865107)  window 2022-09-11 .. 2026-09-13
+   + T00 rows=  52 [Opinion polls > 2026] selected
+   + T01 rows=  45 [Opinion polls > 2025] selected
+   + T02 rows=  27 [Opinion polls > 2024] selected
+   + T03 rows=  52 [Opinion polls > 2023] selected
+   + T04 rows=  18 [Opinion polls > 2022] selected
+     T26 rows=  11 [Voting by groups > Vote share by gender] not similar to main table (overlap 0.00, same section False)
+     T27 rows=  20 [Voting by groups > Vote share by gender and age] not similar to main table (overlap 1.00, same section False)
+     T28 rows=  10 [Voting by groups > Vote share by income level] not similar to main table (overlap 1.00, same section False)
+     T29 rows=   6 [Voting by groups > Vote share by living arrangement] not similar to main table (overlap 1.00, same section False)
+     T30 rows=  10 [Voting by groups > Vote share by ethnic background] not similar to main table (overlap 1.00, same section False)
+     T31 rows=  17 [Leadership polling > Approval ratings > Confidence] excluded heading
+     T32 rows=  32 [Leadership polling > Preferred prime minister] excluded heading
+     T33 rows=  11 [Government approval rating] excluded heading
+     T34 rows=   7 [Other polling > NATO membership] only 1 party columns
+     T36 rows=  10 [Other polling > Membership of the Eurozone] not similar to main table (overlap 0.00, same section False)
+     polls kept: 189  | start result: yes | end result: yes
+[SE] Opinion polling for the 2022 Swedish general election  (rev 1324451249)  window 2018-09-09 .. 2022-09-11
+   + T00 rows= 331 [Opinion polls > Vote share] selected
+     T01 rows=  69 [Seat distribution > Seat projection] excluded heading
+     T02 rows=   7 [Regional polling > Stockholm municipality > Vote share in regional ele] excluded heading
+     T03 rows=   7 [Regional polling > Stockholm County > Vote share in regional election] excluded heading
+     T04 rows=   7 [Regional polling > Gothenburg municipality > Vote share in regional el] excluded heading
+     T05 rows=   7 [Regional polling > West Sweden > Vote share in regional election] excluded heading
+     T06 rows=   7 [Regional polling > Greater Malmö > Vote share in regional election] excluded heading
+     T07 rows=   7 [Regional polling > Southern Sweden > Vote share in regional election] excluded heading
+     T08 rows=   7 [Regional polling > Småland and the islands > Vote share in regional el] excluded heading
+     T10 rows=   7 [Regional polling > Eastern Central Sweden > Vote share in regional ele] excluded heading
+     T14 rows=   7 [Regional polling > Northern Central Sweden > Vote share in regional el] excluded heading
+     T15 rows=   7 [Regional polling > Northern Sweden > Vote share in regional election] excluded heading
+     T16 rows=  10 [Municipal polling > Graphical summary > Vote share] not similar to main table (overlap 1.00, same section False)
+     T18 rows=   8 [Municipal polling > Gothenburg municipality > Vote share in municipal ] not similar to main table (overlap 1.00, same section False)
+     T24 rows=  53 [Leadership polling > Approval ratings > Share] excluded heading
+     polls kept: 328  | start result: yes | end result: yes
+[SE] Opinion polling for the 2018 Swedish general election  (rev 1373291632)  window 2014-09-14 .. 2018-09-09
+   + T00 rows= 385 [Poll results > Parties] selected
+     T01 rows= 384 [Poll results > Coalitions] only 0 party columns
+     polls kept: 383  | start result: yes | end result: yes
+[SE] Opinion polling for the 2014 Swedish general election  (rev 1369321751)  window 2010-09-19 .. 2014-09-14
+   + T00 rows= 343 [Poll results] selected
+     dropped rows: {'outside window': 22}
+     polls kept: 313  | start result: yes | end result: yes
+[SE] 2010 Swedish general election  (rev 1378385408)  window 2006-09-17 .. 2010-09-19
+     T00 rows=  45 [Results] no date column
+     T01 rows=  31 [Results > Seat distribution] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[SE] 2006 Swedish general election  (rev 1374656945)  window 2002-09-15 .. 2006-09-17
+     T00 rows=  12 [Opinion polls > Temo] no date column
+     T01 rows=  12 [Opinion polls > Sifo] no date column
+     T02 rows=  10 [Opinion polls > Demoskop] no date column
+     T03 rows=  11 [Opinion polls > Skop] no date column
+     T04 rows=  11 [Opinion polls > Ruab] no date column
+     T06 rows=  49 [Results] no date column
+     T07 rows=  31 [Results > Seat distribution] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[SE] 2002 Swedish general election  (rev 1356045411)  window 1998-09-20 .. 2002-09-15
+     T01 rows=  62 [Results] no date column
+     T02 rows=  31 [Results > Seat distribution] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[SE] history: 5 cycles, 1219 polls, 9 series, 7 government periods (7 matched to a series)
+[NO] 2029 Norwegian parliamentary election  (rev 1382178496)  window 2025-09-08 .. open
+     T00 rows=   9 [Political parties > Parliamentary parties] no date column
+   + T01 rows=  66 [Opinion polls > 2026] selected
+   + T02 rows=  21 [Opinion polls > 2025] selected
+     polls kept: 85  | start result: yes
+[NO] 2029 Norwegian parliamentary election  (rev 1382178496)  window 2025-09-08 .. open
+     T00 rows=   9 [Political parties > Parliamentary parties] no date column
+   + T01 rows=  66 [Opinion polls > 2026] selected
+   + T02 rows=  21 [Opinion polls > 2025] selected
+     polls kept: 85  | start result: yes
+[NO] Opinion polling for the 2025 Norwegian parliamentary election  (rev 1335903283)  window 2021-09-13 .. 2025-09-08
+     T00 rows=  13 [National poll results > Averages] no date column
+   + T02 rows=  77 [National poll results > 2025] selected
+   + T03 rows=  83 [National poll results > 2024] selected
+   + T04 rows=  86 [National poll results > 2023] selected
+   + T05 rows=  93 [National poll results > 2022] selected
+   + T06 rows=  28 [National poll results > 2021] selected
+     T07 rows=   5 [By electoral district > Akershus] not similar to main table (overlap 1.00, same section False)
+     T08 rows=   8 [By electoral district > Aust–Agder] not similar to main table (overlap 1.00, same section False)
+     T09 rows=   8 [By electoral district > Buskerud] not similar to main table (overlap 1.00, same section False)
+     T10 rows=  11 [By electoral district > Finnmark] not similar to main table (overlap 1.00, same section False)
+     T11 rows=   7 [By electoral district > Hedmark] not similar to main table (overlap 1.00, same section False)
+     T12 rows=  17 [By electoral district > Hordaland] not similar to main table (overlap 1.00, same section False)
+     T13 rows=   9 [By electoral district > Møre og Romsdal] not similar to main table (overlap 1.00, same section False)
+     T14 rows=  14 [By electoral district > Nord–Trøndelag] not similar to main table (overlap 1.00, same section False)
+     T15 rows=  10 [By electoral district > Nordland] not similar to main table (overlap 1.00, same section False)
+     T16 rows=   9 [By electoral district > Oppland] not similar to main table (overlap 1.00, same section False)
+     T17 rows=  14 [By electoral district > Oslo] not similar to main table (overlap 1.00, same section False)
+     T18 rows=  11 [By electoral district > Rogaland] not similar to main table (overlap 1.00, same section False)
+     T19 rows=   7 [By electoral district > Sogn og Fjordane] not similar to main table (overlap 1.00, same section False)
+     T20 rows=   7 [By electoral district > Sør–Trøndelag] not similar to main table (overlap 1.00, same section False)
+     T21 rows=   7 [By electoral district > Telemark] not similar to main table (overlap 1.00, same section False)
+     T22 rows=  10 [By electoral district > Troms] not similar to main table (overlap 1.00, same section False)
+     T23 rows=   8 [By electoral district > Vest–Agder] not similar to main table (overlap 1.00, same section False)
+     T24 rows=   8 [By electoral district > Vestfold] not similar to main table (overlap 1.00, same section False)
+     T25 rows=   7 [By electoral district > Østfold] not similar to main table (overlap 1.00, same section False)
+     polls kept: 361  | start result: yes | end result: yes
+[NO] Opinion polling for the 2021 Norwegian parliamentary election  (rev 1251546710)  window 2017-09-11 .. 2021-09-13
+   + T00 rows=  90 [Poll results > 2021] selected
+   + T01 rows=  93 [Poll results > 2020] selected
+   + T02 rows=  89 [Poll results > 2019] selected
+   + T03 rows=  94 [Poll results > 2018] selected
+   + T04 rows=  25 [Poll results > 2017] selected
+     T05 rows=  12 [By electoral district > Akershus] not similar to main table (overlap 1.00, same section False)
+     T06 rows=  11 [By electoral district > Aust-Agder] not similar to main table (overlap 1.00, same section False)
+     T07 rows=  11 [By electoral district > Buskerud] not similar to main table (overlap 1.00, same section False)
+     T08 rows=  21 [By electoral district > Finnmark] not similar to main table (overlap 1.00, same section False)
+     T09 rows=  14 [By electoral district > Hedmark] not similar to main table (overlap 1.00, same section False)
+     T10 rows=  28 [By electoral district > Hordaland] not similar to main table (overlap 1.00, same section False)
+     T11 rows=  12 [By electoral district > Møre og Romsdal] not similar to main table (overlap 1.00, same section False)
+     T12 rows=  19 [By electoral district > Nord-Trøndelag] not similar to main table (overlap 1.00, same section False)
+     T13 rows=  15 [By electoral district > Nordland] not similar to main table (overlap 1.00, same section False)
+     T14 rows=  13 [By electoral district > Oppland] not similar to main table (overlap 1.00, same section False)
+     T15 rows=  22 [By electoral district > Oslo] not similar to main table (overlap 1.00, same section False)
+     T16 rows=  11 [By electoral district > Rogaland] not similar to main table (overlap 1.00, same section False)
+     T17 rows=  14 [By electoral district > Sogn og Fjordane] not similar to main table (overlap 1.00, same section False)
+     T18 rows=  18 [By electoral district > Sør-Trøndelag] not similar to main table (overlap 1.00, same section False)
+     T19 rows=  11 [By electoral district > Telemark] not similar to main table (overlap 1.00, same section False)
+     T20 rows=  13 [By electoral district > Troms] not similar to main table (overlap 1.00, same section False)
+     T21 rows=  11 [By electoral district > Vest-Agder] not similar to main table (overlap 1.00, same section False)
+     T22 rows=  12 [By electoral district > Vestfold] not similar to main table (overlap 1.00, same section False)
+     T23 rows=  13 [By electoral district > Østfold] not similar to main table (overlap 1.00, same section False)
+     polls kept: 384  | start result: yes | end result: yes
+[NO] Opinion polling for the 2017 Norwegian parliamentary election  (rev 1226394777)  window 2013-09-08 .. 2017-09-11
+   + T00 rows= 413 [Vote share] selected
+     polls kept: 411  | start result: yes | end result: yes
+[NO] 2013 Norwegian parliamentary election  (rev 1379869100)  window 2009-09-13 .. 2013-09-08
+     T00 rows=  19 [Electoral system] no date column
+     T01 rows=   9 [Campaign > Slogans] no date column
+     T02 rows=   9 [Campaign > Donations] no date column
+     T04 rows=  25 [Opinion polls] no pollster/sample column
+     T05 rows=  25 [Opinion polls > Seat predictions] no pollster/sample column
+     T06 rows=  28 [Results] no date column
+     T07 rows=  18 [Results > Voter demographics] no date column
+     T08 rows=  21 [Results > Seat distribution] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[NO] Opinion polling for the 2009 Norwegian parliamentary election  (rev 1373534930)  window 2005-09-11 .. 2009-09-13
+   + T00 rows=  58 [Poll results] selected
+     T01 rows=   9 [Average polling] no date column
+     T02 rows=   8 [Average polling] no date column
+     T03 rows=  16 [NRK polling] no date column
+     dropped rows: {'outside window': 3}
+     polls kept: 20  | start result: MISSING | end result: MISSING
+[NO] 2005 Norwegian parliamentary election  (rev 1348770250)  window 2001-09-09 .. 2005-09-11
+     T00 rows=   8 [Contesting parties] no date column
+     T01 rows=   9 [Campaign > Slogans] no date column
+     T03 rows=  28 [Results] no date column
+     T04 rows=  18 [Results > Voter demographics] no date column
+     T05 rows=  21 [Results > Seat distribution] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[NO] 2001 Norwegian parliamentary election  (rev 1360479417)  window 1997-09-14 .. 2001-09-09
+     T00 rows=   8 [Contesting parties] no date column
+     T01 rows=   9 [Campaign > Slogans] no date column
+   + T02 rows=  23 [Opinion polls] selected
+     T03 rows=  41 [Results] no date column
+     T04 rows=  18 [Results > Voter demographics] no date column
+     T05 rows=  21 [Results > Seat distribution] no date column
+     dropped rows: {'outside window': 3}
+     polls kept: 18  | start result: yes | end result: yes
+[NO] history: 6 cycles, 1279 polls, 13 series, 8 government periods (8 matched to a series)
+[FI] Opinion polling for the 2027 Finnish parliamentary election  (rev 1381272144)  window 2023-04-02 .. open
+   + T00 rows=  20 [National opinion polls > Vote share > 2026] selected
+   + T01 rows=  24 [National opinion polls > Vote share > 2025] selected
+   + T02 rows=  27 [National opinion polls > Vote share > 2024] selected
+   + T03 rows=  23 [National opinion polls > Vote share > 2023] selected
+     polls kept: 81  | start result: yes
+[FI] Opinion polling for the 2027 Finnish parliamentary election  (rev 1381272144)  window 2023-04-02 .. open
+   + T00 rows=  20 [National opinion polls > Vote share > 2026] selected
+   + T01 rows=  24 [National opinion polls > Vote share > 2025] selected
+   + T02 rows=  27 [National opinion polls > Vote share > 2024] selected
+   + T03 rows=  23 [National opinion polls > Vote share > 2023] selected
+     polls kept: 81  | start result: yes
+[FI] Opinion polling for the 2023 Finnish parliamentary election  (rev 1306405566)  window 2019-04-14 .. 2023-04-02
+   + T00 rows= 102 [Opinion polls > Vote share] selected
+     polls kept: 96  | start result: yes | end result: yes
+[FI] Opinion polling for the 2019 Finnish parliamentary election  (rev 1306346731)  window 2015-04-19 .. 2019-04-14
+   + T00 rows= 113 [Poll results] selected
+     T01 rows=   6 [Poll results > Seats] excluded heading
+     T02 rows=   9 [Preferred prime minister polling] excluded heading
+     polls kept: 107  | start result: yes | end result: MISSING
+[FI] Opinion polling for the 2015 Finnish parliamentary election  (rev 1231841854)  window 2011-04-17 .. 2015-04-19
+   + T00 rows=  71 [Poll results] selected
+     T01 rows=   8 [Poll results > Seats] excluded heading
+     polls kept: 66  | start result: yes | end result: MISSING
+[FI] Opinion polling for the 2011 Finnish parliamentary election  (rev 1367022740)  window 2007-03-18 .. 2011-04-17
+     T00 rows=   9 [Polls] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[FI] 2007 Finnish parliamentary election  (rev 1375208812)  window 2003-03-16 .. 2007-03-18
+     T00 rows=  28 [Results] no date column
+     T01 rows=  20 [Results > By region] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[FI] 2003 Finnish parliamentary election  (rev 1375614037)  window 1999-03-21 .. 2003-03-16
+     T00 rows=  30 [Results] no date column
+     T01 rows=  21 [Results > By region] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[FI] history: 4 cycles, 350 polls, 10 series, 8 government periods (8 matched to a series)
+[IS] Next Icelandic parliamentary election  (rev 1372389405)  window 2024-11-30 .. open
+     T00 rows=   6 [] no date column
+   + T01 rows=  37 [Opinion polls] selected
+     polls kept: 36  | start result: yes
+[IS] Next Icelandic parliamentary election  (rev 1372389405)  window 2024-11-30 .. open
+     T00 rows=   6 [] no date column
+   + T01 rows=  37 [Opinion polls] selected
+     polls kept: 36  | start result: yes
+[IS] 2024 Icelandic parliamentary election  (rev 1377749798)  window 2021-09-25 .. 2024-11-30
+     T00 rows=   6 [] no date column
+     T01 rows=  11 [Political parties] no date column
+   + T02 rows=  94 [Opinion polls] selected
+     T03 rows=  19 [Results] no date column
+     T04 rows=   6 [Results > By constituency] no date column
+     T05 rows=   6 [Results > By constituency] no date column
+     polls kept: 92  | start result: yes | end result: yes
+[IS] Opinion polling for the 2021 Icelandic parliamentary election  (rev 1324451223)  window 2017-10-28 .. 2021-09-25
+   + T00 rows= 130 [Polls] selected
+     polls kept: 128  | start result: yes | end result: yes
+[IS] 2017 Icelandic parliamentary election  (rev 1380684596)  window 2016-10-29 .. 2017-10-28
+     T00 rows=   8 [] no date column
+     T01 rows=   9 [Participating parties > Parties with a list for all constituencies] no date column
+   + T03 rows=  54 [Opinion polls] selected
+     T04 rows=  18 [Results] no date column
+     T05 rows=   7 [Results > By constituency] no date column
+     polls kept: 52  | start result: yes | end result: yes
+[IS] 2016 Icelandic parliamentary election  (rev 1380684635)  window 2013-04-27 .. 2016-10-29
+     T00 rows=   7 [] no date column
+   + T01 rows=  99 [Opinion polls] selected
+     T02 rows=  19 [Results] no date column
+     polls kept: 97  | start result: yes | end result: MISSING
+[IS] 2013 Icelandic parliamentary election  (rev 1380684716)  window 2009-04-25 .. 2013-04-27
+     T00 rows=   6 [] no date column
+     T01 rows=   9 [Incumbent parliament] no date column
+     T02 rows=   7 [Constituencies] no date column
+   + T03 rows=  57 [Opinion polls] selected
+     T04 rows=  22 [Results] no date column
+     T06 rows=   6 [Results > Elected MPs] no date column
+     polls kept: 56  | start result: yes | end result: MISSING
+[IS] 2009 Icelandic parliamentary election  (rev 1380684825)  window 2007-05-12 .. 2009-04-25
+     T00 rows=   5 [] no date column
+     T01 rows=   7 [Constituencies] no date column
+   + T02 rows=   9 [Opinion polls] selected
+     T03 rows=  14 [Results] no date column
+     T05 rows=   6 [Results > Elected MPs] no date column
+     polls kept: 8  | start result: yes | end result: MISSING
+[IS] 2007 Icelandic parliamentary election  (rev 1380684869)  window 2003-05-10 .. 2007-05-12
+     T00 rows=   5 [] no date column
+     T01 rows=   7 [Constituencies] no date column
+     T02 rows=  13 [Results] no date column
+     T03 rows=   7 [Results > By constituency] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[IS] 2003 Icelandic parliamentary election  (rev 1380684917)  window 1999-05-08 .. 2003-05-10
+     T00 rows=   5 [] no date column
+     T01 rows=   7 [Constituencies] no date column
+     T02 rows=  14 [Results] no date column
+     T03 rows=   7 [Results > By constituency] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[IS] history: 7 cycles, 469 polls, 14 series, 11 government periods (11 matched to a series)
+[EE] Opinion polling for the next Estonian parliamentary election  (rev 1383403441)  window 2023-03-05 .. open
+   + T00 rows=  60 [Polling results > 2026] selected
+   + T01 rows=  76 [Polling results > 2025] selected
+   + T02 rows=  76 [Polling results > 2024] selected
+   + T03 rows=  61 [Polling results > 2023] selected
+     T04 rows=  23 [Demographics > Estonians] excluded heading
+     T05 rows=  24 [Demographics > Other nationalities] excluded heading
+     polls kept: 264  | start result: yes
+[EE] Opinion polling for the next Estonian parliamentary election  (rev 1383403441)  window 2023-03-05 .. open
+   + T00 rows=  60 [Polling results > 2026] selected
+   + T01 rows=  76 [Polling results > 2025] selected
+   + T02 rows=  76 [Polling results > 2024] selected
+   + T03 rows=  61 [Polling results > 2023] selected
+     T04 rows=  23 [Demographics > Estonians] excluded heading
+     T05 rows=  24 [Demographics > Other nationalities] excluded heading
+     polls kept: 264  | start result: yes
+[EE] Opinion polling for the 2023 Estonian parliamentary election  (rev 1375859751)  window 2019-03-03 .. 2023-03-05
+   + T00 rows=  21 [Polling results > 2023] selected
+   + T01 rows=  30 [Polling results > 2022] selected
+   + T02 rows=  48 [Polling results > 2022] selected
+   + T03 rows=  75 [Polling results > 2021] selected
+   + T04 rows=  26 [Polling results > 2020] selected
+   + T05 rows=  48 [Polling results > 2020] selected
+   + T06 rows=  66 [Polling results > 2019] selected
+     T07 rows=  11 [Demographics > Estonians] excluded heading
+     T08 rows=  11 [Demographics > Other nationalities] excluded heading
+     polls kept: 301  | start result: yes | end result: yes
+[EE] Opinion polling for the 2019 Estonian parliamentary election  (rev 1306346084)  window 2015-03-01 .. 2019-03-03
+   + T00 rows=  15 [Polling Results > 2019] selected
+   + T01 rows=  24 [Polling Results > 2018] selected
+   + T02 rows=  23 [Polling Results > 2017] selected
+   + T03 rows=   5 [Polling Results > 2016] selected
+   + T04 rows=  17 [Polling Results > 2016] selected
+   + T05 rows=  15 [Polling Results > 2015] selected
+     polls kept: 95  | start result: yes | end result: yes
+[EE] 2015 Estonian parliamentary election  (rev 1366534818)  window 2011-03-06 .. 2015-03-01
+     T00 rows=  12 [Electoral system > Seats by electoral district] no date column
+     T01 rows=  11 [Contesting parties] no date column
+   + T02 rows=  54 [Opinion polls] selected
+     T03 rows=  18 [Results] no date column
+     polls kept: 51  | start result: yes | end result: yes
+[EE] 2011 Estonian parliamentary election  (rev 1366534953)  window 2007-03-04 .. 2011-03-06
+     T00 rows=  12 [Seats by electoral district] no date column
+   + T01 rows=   5 [Opinion polls] selected
+     T02 rows=  10 [Contesting parties] no date column
+     T03 rows=  17 [Results] no date column
+     polls kept: 4  | start result: MISSING | end result: yes
+[EE] 2007 Estonian parliamentary election  (rev 1375208708)  window 2003-03-02 .. 2007-03-04
+     T00 rows=  12 [Electoral system > Seats by electoral district] no date column
+     T01 rows=  12 [Contesting parties] no date column
+     T02 rows=  19 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[EE] 2003 Estonian parliamentary election  (rev 1368292001)  window 1999-03-07 .. 2003-03-02
+     T00 rows=  12 [Electoral system] no date column
+     T01 rows=  12 [Contesting parties] no date column
+   + T02 rows=  31 [Opinion polls] selected
+     T03 rows=  19 [Results] no date column
+     polls kept: 23  | start result: yes | end result: yes
+     [EE] government parties not matched to a series: ['Siimann (Estonian Coalition Party)']
+[EE] history: 6 cycles, 738 polls, 11 series, 10 government periods (9 matched to a series)
+[LV] 2026 Latvian parliamentary election  (rev 1383556707)  window 2022-10-01 .. 2026-10-03
+     T00 rows=   6 [] no date column
+     T01 rows=   6 [Electoral system > Seat redistribution] no date column
+     T02 rows=  14 [Parties > Overview] no date column
+     T03 rows=  14 [Parties > Party candidates] no pollster/sample column
+   + T04 rows=  11 [Opinion polls > 2026] selected
+   + T05 rows=   8 [Opinion polls > 2025] selected
+   + T06 rows=   8 [Opinion polls > 2024] selected
+   + T07 rows=  11 [Opinion polls > 2023] selected
+   + T08 rows=   4 [Opinion polls > 2022] selected
+     T09 rows=  21 [Results] no date column
+     T10 rows=   6 [Results > By constituency] no date column
+     T11 rows=   6 [Results > Seat distribution] no date column
+     polls kept: 40  | start result: yes | end result: MISSING
+     joint lists: The Progressives (Latvia) + Movement For! x5 -> The Progressives (Latvia)
+[LV] 2026 Latvian parliamentary election  (rev 1383556707)  window 2022-10-01 .. 2026-10-03
+     T00 rows=   6 [] no date column
+     T01 rows=   6 [Electoral system > Seat redistribution] no date column
+     T02 rows=  14 [Parties > Overview] no date column
+     T03 rows=  14 [Parties > Party candidates] no pollster/sample column
+   + T04 rows=  11 [Opinion polls > 2026] selected
+   + T05 rows=   8 [Opinion polls > 2025] selected
+   + T06 rows=   8 [Opinion polls > 2024] selected
+   + T07 rows=  11 [Opinion polls > 2023] selected
+   + T08 rows=   4 [Opinion polls > 2022] selected
+     T09 rows=  21 [Results] no date column
+     T10 rows=   6 [Results > By constituency] no date column
+     T11 rows=   6 [Results > Seat distribution] no date column
+     polls kept: 40  | start result: yes | end result: MISSING
+[LV] Opinion polling for the 2022 Latvian parliamentary election  (rev 1323755846)  window 2018-10-06 .. 2022-10-01
+   + T00 rows=   8 [Opinion polls > Vote share] selected
+   + T01 rows=  28 [Opinion polls > Vote share] selected
+   + T02 rows=  18 [Opinion polls > Vote share] selected
+   + T03 rows=  50 [Opinion polls > Vote share] selected
+     T04 rows=  11 [Opinion polls > Turnout] only 0 party columns
+     polls kept: 92  | start result: yes | end result: MISSING
+[LV] 2018 Latvian parliamentary election  (rev 1374216804)  window 2014-10-04 .. 2018-10-06
+     T00 rows=   7 [] no date column
+     T01 rows=  10 [Prime Minister candidates] no date column
+     T02 rows=  16 [Leading candidate by constituency] no date column
+   + T03 rows=  59 [Opinion polls] selected
+     T04 rows=  23 [Results] no date column
+     polls kept: 57  | start result: MISSING | end result: MISSING
+     (history) 2018 Latvian parliamentary election: dropped, median poll total 62% (not vote shares?)
+[LV] 2014 Latvian parliamentary election  (rev 1340626871)  window 2011-09-17 .. 2014-10-04
+     T00 rows=   6 [] no date column
+     T01 rows=  20 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LV] 2011 Latvian parliamentary election  (rev 1340626766)  window 2010-10-02 .. 2011-09-17
+     T00 rows=   5 [] no date column
+     T01 rows=  20 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LV] 2010 Latvian parliamentary election  (rev 1373710686)  window 2006-10-07 .. 2010-10-02
+     T00 rows=   5 [] no date column
+     T01 rows=  20 [Results] no date column
+     T02 rows= 101 [Results > List of elected Deputies] no pollster/sample column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LV] 2006 Latvian parliamentary election  (rev 1368945759)  window 2002-10-05 .. 2006-10-07
+     T00 rows=   7 [] no date column
+     T01 rows=  26 [Results] no date column
+     T02 rows= 101 [Results > List of elected Deputies] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LV] 2002 Latvian parliamentary election  (rev 1368945735)  window 1998-10-03 .. 2002-10-05
+     T00 rows=   6 [] no date column
+     T01 rows=  27 [Results] no date column
+     T02 rows= 101 [Results > List of elected Deputies] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: The Progressives (Latvia) + Movement For! x5 -> The Progressives (Latvia)
+[LV] history: 2 cycles, 132 polls, 22 series, 5 government periods (5 matched to a series)
+[LT] 2028 Lithuanian parliamentary election  (rev 1381156943)  window 2024-10-13 .. open
+     T00 rows=  10 [] no date column
+     T01 rows=  10 [Political parties] no date column
+   + T02 rows=  22 [Opinion polls > 2026] selected
+   + T03 rows=  36 [Opinion polls > 2025] selected
+   + T04 rows=   7 [Opinion polls > 2024] selected
+     polls kept: 47  | start result: yes
+[LT] 2028 Lithuanian parliamentary election  (rev 1381156943)  window 2024-10-13 .. open
+     T00 rows=  10 [] no date column
+     T01 rows=  10 [Political parties] no date column
+   + T02 rows=  22 [Opinion polls > 2026] selected
+   + T03 rows=  36 [Opinion polls > 2025] selected
+   + T04 rows=   7 [Opinion polls > 2024] selected
+     polls kept: 47  | start result: yes
+[LT] 2024 Lithuanian parliamentary election  (rev 1381886061)  window 2020-10-11 .. 2024-10-13
+     T00 rows=  10 [] no date column
+     T02 rows=  17 [Campaign > Participating parties] no date column
+     T03 rows=  15 [Campaign > Debates > Television debates] no pollster/sample column
+     T04 rows=  12 [Campaign > Debates > Radio debates] no pollster/sample column
+   + T05 rows= 110 [Opinion polls] selected
+     T06 rows=  25 [Results] no date column
+     T09 rows=  75 [Results > Elected members > By constituency] no date column
+     T10 rows=   5 [Results > Elected members > By proportional representation] no date column
+     T11 rows=  10 [Results > Preference votes] no date column
+     polls kept: 107  | start result: yes | end result: MISSING
+[LT] 2020 Lithuanian parliamentary election  (rev 1358439478)  window 2016-10-09 .. 2020-10-11
+     T00 rows=  11 [] no date column
+     T01 rows=  18 [Parties] no date column
+   + T02 rows=  12 [Opinion polls > Party vote] selected
+   + T03 rows= 127 [Opinion polls > Party vote] selected
+   + T04 rows=   4 [Opinion polls > Party vote] selected
+     T05 rows=  26 [Results] no date column
+     T06 rows=  10 [Results > Preference votes] no date column
+     dropped rows: {'outside window': 1}
+     polls kept: 134  | start result: yes | end result: MISSING
+[LT] 2016 Lithuanian parliamentary election  (rev 1353331294)  window 2012-10-14 .. 2016-10-09
+     T00 rows=  11 [] no date column
+     T01 rows=  40 [Opinion polls] no date column
+     T02 rows=  16 [Campaign > Participating parties] no date column
+     T07 rows=  24 [Results] no date column
+     T08 rows=  10 [Results > Preference votes] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LT] 2012 Lithuanian parliamentary election  (rev 1330358540)  window 2008-10-12 .. 2012-10-14
+     T00 rows=   9 [] no date column
+     T01 rows=  14 [Opinion polls] no date column
+     T02 rows=  30 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LT] 2008 Lithuanian parliamentary election  (rev 1264024521)  window 2004-10-10 .. 2008-10-12
+     T00 rows=  11 [] no date column
+     T01 rows=  26 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LT] 2004 Lithuanian parliamentary election  (rev 1368450952)  window 2000-10-08 .. 2004-10-10
+     T00 rows=   8 [] no date column
+     T01 rows=  28 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[LT] 2000 Lithuanian parliamentary election  (rev 1345042310)  window 1996-11-10 .. 2000-10-08
+     T00 rows=  14 [] no date column
+     T01 rows=  35 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: Social Democratic Party of Lithuania + Social Democratic Lab x53 -> Social Democratic Party of Lithuania
+[LT] history: 3 cycles, 288 polls, 15 series, 7 government periods (7 matched to a series)
+[ES] Opinion polling for the 2026 Spanish general election  (rev 1383431757)  window 2023-07-23 .. open
+   + T00 rows=  18 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T01 rows= 158 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T02 rows= 178 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T03 rows= 169 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T04 rows=  74 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+     T05 rows= 210 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T07 rows=   6 [Electoral polling > Nationwide polling > Senate projections] excluded heading
+     T08 rows=   6 [Electoral polling > Nationwide polling > Hypothetical scenarios > Suma] excluded heading
+     polls kept: 586  | start result: yes
+     joint lists: FA + FV x8 -> None
+[ES] Opinion polling for the 2026 Spanish general election  (rev 1383431757)  window 2023-07-23 .. open
+   + T00 rows=  18 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T01 rows= 158 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T02 rows= 178 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T03 rows= 169 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T04 rows=  74 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+     T05 rows= 210 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T07 rows=   6 [Electoral polling > Nationwide polling > Senate projections] excluded heading
+     T08 rows=   6 [Electoral polling > Nationwide polling > Hypothetical scenarios > Suma] excluded heading
+     polls kept: 586  | start result: yes
+[ES] Opinion polling for the 2023 Spanish general election  (rev 1381583414)  window 2019-11-10 .. 2023-07-23
+   + T00 rows= 169 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T01 rows=  53 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T02 rows=  58 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T03 rows= 257 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+     T04 rows= 206 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T06 rows=  52 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     polls kept: 517  | start result: MISSING | end result: yes
+[ES] Opinion polling for the November 2019 Spanish general election  (rev 1381587097)  window 2019-04-28 .. 2019-11-10
+   + T00 rows= 167 [Electoral polling > Nationwide polling > Voting intention estimates] selected
+     T01 rows=  41 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T04 rows=  11 [Electoral polling > Nationwide polling > Senate projections] excluded heading
+     T05 rows=   8 [Electoral polling > Hypothetical scenarios > Errejón's party] excluded heading
+     T06 rows=   5 [Electoral polling > Hypothetical scenarios > España Suma] excluded heading
+     polls kept: 157  | start result: yes | end result: yes
+[ES] Opinion polling for the April 2019 Spanish general election  (rev 1381587138)  window 2016-06-26 .. 2019-04-28
+   + T00 rows= 129 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T01 rows= 132 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T02 rows=  94 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T03 rows=  52 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+     T04 rows= 123 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T05 rows=   6 [Electoral polling > Nationwide polling > Victory preferences] excluded heading
+     T06 rows=   8 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     T07 rows=  11 [Electoral polling > Nationwide polling > Senate projections] excluded heading
+     T11 rows=   6 [Electoral polling > Hypothetical scenarios > PSOE candidates] excluded heading
+     polls kept: 399  | start result: yes | end result: yes
+[ES] Opinion polling for the 2016 Spanish general election  (rev 1381312708)  window 2015-12-20 .. 2016-06-26
+   + T00 rows= 159 [Electoral polling > Nationwide polling > Voting intention estimates] selected
+     T01 rows=  50 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T02 rows=  11 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     T03 rows=  16 [Electoral polling > Hypothetical scenarios > Podemos–IU alliance (befo] excluded heading
+     polls kept: 148  | start result: yes | end result: yes
+[ES] Opinion polling for the 2015 Spanish general election  (rev 1381312709)  window 2011-11-20 .. 2015-12-20
+   + T00 rows= 199 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T01 rows=  78 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T02 rows=  83 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T03 rows=  59 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+   + T04 rows=   4 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+     T05 rows= 122 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T06 rows=   8 [Electoral polling > Nationwide polling > Victory preference] excluded heading
+     T07 rows=  26 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     polls kept: 410  | start result: yes | end result: yes
+[ES] Opinion polling for the 2011 Spanish general election  (rev 1370712366)  window 2008-03-09 .. 2011-11-20
+   + T00 rows= 352 [Electoral polling > Nationwide polling > Voting intention estimates] selected
+     T01 rows= 120 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T02 rows=  34 [Electoral polling > Nationwide polling > Victory preference] excluded heading
+     T03 rows=  67 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     T04 rows=  13 [Electoral polling > Alternative scenarios > PSOE candidates] excluded heading
+     polls kept: 335  | start result: yes | end result: yes
+[ES] Opinion polling for the 2008 Spanish general election  (rev 1379344276)  window 2004-03-14 .. 2008-03-09
+   + T00 rows= 346 [Electoral polling > Nationwide polling > Voting intention estimates] selected
+     T01 rows= 129 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T02 rows=  19 [Electoral polling > Nationwide polling > Victory preference] excluded heading
+     T03 rows=  18 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     polls kept: 334  | start result: yes | end result: yes
+[ES] Opinion polling for the 2004 Spanish general election  (rev 1370712349)  window 2000-03-12 .. 2004-03-14
+   + T00 rows= 240 [Electoral polling > Nationwide polling > Voting intention estimates] selected
+     T01 rows= 128 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T02 rows=  41 [Electoral polling > Nationwide polling > Victory preference] excluded heading
+     T03 rows=  43 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     T04 rows=  15 [Electoral polling > Sub-national polling > Catalonia] excluded heading
+     polls kept: 232  | start result: yes | end result: yes
+[ES] Opinion polling for the 2000 Spanish general election  (rev 1370712339)  window 1996-03-03 .. 2000-03-12
+   + T00 rows= 158 [Electoral polling > Nationwide polling > Voting intention estimates] selected
+     T01 rows= 102 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T03 rows=   7 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     polls kept: 143  | start result: yes | end result: yes
+[ES] Opinion polling for the 1996 Spanish general election  (rev 1370712334)  window 1993-06-06 .. 1996-03-03
+   + T00 rows=  92 [Electoral polling > Nationwide polling > Voting intention estimates] selected
+     T01 rows=  96 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T02 rows=  14 [Electoral polling > Nationwide polling > Victory preference] excluded heading
+     T03 rows=  14 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     T04 rows=   9 [Electoral polling > Sub-national polling > Catalonia] excluded heading
+     polls kept: 83  | start result: yes | end result: yes
+     joint lists: FA + FV x8 -> None
+[ES] history: 11 cycles, 3344 polls, 14 series, 10 government periods (10 matched to a series)
+[PT] Opinion polling for the next Portuguese legislative election  (rev 1382685835)  window 2025-05-18 .. open
+   + T00 rows=  48 [Nationwide polling > Polling] selected
+     T02 rows=  28 [Leadership polls > Preferred prime minister] excluded heading
+     T03 rows=  28 [Leadership polls > Party leaders' approval/disapproval ratings] excluded heading
+     T04 rows=  15 [Leadership polls > Party leaders' ratings] excluded heading
+     T05 rows=  34 [Leadership polls > Cabinet approval/disapproval ratings] excluded heading
+     polls kept: 44  | start result: yes
+[PT] Opinion polling for the next Portuguese legislative election  (rev 1382685835)  window 2025-05-18 .. open
+   + T00 rows=  48 [Nationwide polling > Polling] selected
+     T02 rows=  28 [Leadership polls > Preferred prime minister] excluded heading
+     T03 rows=  28 [Leadership polls > Party leaders' approval/disapproval ratings] excluded heading
+     T04 rows=  15 [Leadership polls > Party leaders' ratings] excluded heading
+     T05 rows=  34 [Leadership polls > Cabinet approval/disapproval ratings] excluded heading
+     polls kept: 44  | start result: yes
+[PT] Opinion polling for the 2025 Portuguese legislative election  (rev 1376000176)  window 2024-03-10 .. 2025-05-18
+   + T00 rows=  73 [Nationwide polling > Polling] selected
+     T01 rows=   8 [Constituency polling > Faro] excluded heading
+     T02 rows=   8 [Constituency polling > Santarém] excluded heading
+     T03 rows=   8 [Constituency polling > Setúbal] excluded heading
+     T04 rows=  20 [Leadership polls > Preferred prime minister] excluded heading
+     T05 rows=  24 [Leadership polls > Party leaders' approval/disapproval ratings] excluded heading
+     T06 rows=  18 [Leadership polls > Party leaders' ratings] excluded heading
+     T07 rows=  32 [Leadership polls > Cabinet approval/disapproval ratings] excluded heading
+     polls kept: 66  | start result: yes | end result: yes
+[PT] Opinion polling for the 2024 Portuguese legislative election  (rev 1375843928)  window 2022-01-30 .. 2024-03-10
+   + T00 rows=  93 [Nationwide polling > Polling] selected
+     T07 rows=   9 [Constituency polling > Madeira] excluded heading
+     T08 rows=  12 [Leadership polls > Preferred prime minister > Pedro Nuno Santos vs Luí] excluded heading
+     T09 rows=   9 [Leadership polls > Preferred prime minister > António Costa vs Luís Mo] excluded heading
+     T12 rows=  31 [Leadership polls > Party leaders' ratings] excluded heading
+     T13 rows=  43 [Leadership polls > Cabinet approval/disapproval ratings > Polling] excluded heading
+     polls kept: 86  | start result: yes | end result: yes
+[PT] Opinion polling for the 2022 Portuguese legislative election  (rev 1375781188)  window 2019-10-06 .. 2022-01-30
+   + T00 rows= 128 [Nationwide polling > Polling] selected
+     T02 rows=   7 [Constituency polling > Madeira] excluded heading
+     T03 rows=  21 [Leadership polls > Preferred prime minister > António Costa vs Rui Rio] excluded heading
+     T04 rows=  66 [Leadership polls > Cabinet approval/disapproval ratings > Polling] excluded heading
+     polls kept: 121  | start result: yes | end result: yes
+[PT] Opinion polling for the 2019 Portuguese legislative election  (rev 1375781388)  window 2015-10-04 .. 2019-10-06
+   + T00 rows= 134 [Nationwide polling > Polling] selected
+     T01 rows=   8 [Constituency polling > Lisbon] excluded heading
+     T02 rows=   7 [Constituency polling > Madeira] excluded heading
+     T03 rows=   8 [Constituency polling > Porto] excluded heading
+     T04 rows=  25 [Leadership polls > Preferred prime minister > António Costa vs Rui Rio] excluded heading
+     T05 rows=  23 [Leadership polls > Preferred prime minister > António Costa vs Passos ] excluded heading
+     T06 rows=   6 [Leadership polls > Preferred prime minister > António Costa vs Santana] excluded heading
+     T07 rows=  47 [Leadership polls > Cabinet approval/disapproval ratings > Polling] excluded heading
+     polls kept: 126  | start result: yes | end result: yes
+[PT] Opinion polling for the 2015 Portuguese legislative election  (rev 1375781326)  window 2011-06-05 .. 2015-10-04
+   + T00 rows= 206 [Party vote] selected
+     T01 rows=   7 [Constituency polling > Azores] excluded heading
+     T02 rows=   7 [Constituency polling > Coimbra] excluded heading
+     T03 rows=  16 [Leadership polls > Preferred prime minister > Passos Coelho vs Costa] excluded heading
+     T04 rows=  36 [Leadership polls > Preferred prime minister > Passos Coelho vs Seguro] excluded heading
+     T05 rows=  77 [Leadership polls > Cabinet approval/disapproval ratings] excluded heading
+     polls kept: 195  | start result: yes | end result: yes
+[PT] Opinion polling for the 2011 Portuguese legislative election  (rev 1375781526)  window 2009-09-27 .. 2011-06-05
+   + T00 rows= 106 [Nationwide polling > Polling] selected
+     T01 rows=  14 [Leadership polls > Preferred prime minister > Sócrates vs Passos Coelh] excluded heading
+     T02 rows=  23 [Leadership polls > Cabinet approval/disapproval ratings] excluded heading
+     polls kept: 99  | start result: yes | end result: yes
+[PT] Opinion polling for the 2009 Portuguese legislative election  (rev 1375781587)  window 2005-02-20 .. 2009-09-27
+   + T00 rows= 175 [Nationwide polling > Polling] selected
+     T01 rows=  15 [Leadership polls > Preferred prime minister > Sócrates vs Ferreira Lei] excluded heading
+     T02 rows=   5 [Leadership polls > Cabinet approval/disapproval ratings] excluded heading
+     polls kept: 167  | start result: yes | end result: yes
+[PT] Opinion polling for the 2005 Portuguese legislative election  (rev 1372484263)  window 2002-03-17 .. 2005-02-20
+   + T00 rows=  83 [Nationwide polling > Polling] selected
+     polls kept: 76  | start result: yes | end result: yes
+     joint lists: PSD + CDS–PP x4 -> None
+[PT] history: 9 cycles, 980 polls, 13 series, 9 government periods (9 matched to a series)
+[IT] Opinion polling for the next Italian general election  (rev 1383447645)  window 2022-09-25 .. open
+     T00 rows=  10 [Polling aggregations > Party vote aggregations] no pollster/sample column
+   + T05 rows=  21 [Party vote > 2026] selected
+   + T06 rows= 217 [Party vote > 2026] selected
+   + T07 rows= 220 [Party vote > 2025] selected
+   + T08 rows= 114 [Party vote > 2024] selected
+   + T09 rows=  54 [Party vote > 2024] selected
+   + T10 rows=  84 [Party vote > 2024] selected
+   + T11 rows= 395 [Party vote > 2023] selected
+   + T12 rows=  84 [Party vote > 2022] selected
+     T13 rows=   7 [Seat projections > Seat projections with the Rosatellum electoral law ] excluded heading
+     T16 rows=  25 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
+     T17 rows=  13 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
+     T23 rows=  73 [Government approval rating > 2026] excluded heading
+     T24 rows=  59 [Government approval rating > 2025] excluded heading
+     T25 rows=   5 [Government approval rating > 2024] excluded heading
+     T33 rows=   5 [Preferred Prime Minister > Meloni vs. Schlein] excluded heading
+     T40 rows=  42 [Centre-left coalition primaries > Leadership election] excluded heading
+     T41 rows=  10 [Centre-left coalition primaries > Leadership election] excluded heading
+     T42 rows=   9 [Centre-left coalition primaries > Under Schlein vs. Conte leadership] excluded heading
+     T45 rows=   5 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
+     T47 rows=  10 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
+     T48 rows=   5 [Hypothetical polls > Polling by age > Polling among 18–24-year-olds] excluded heading
+     T60 rows=   5 [Hypothetical polls > Polling by football team supported] excluded heading
+     T61 rows=   5 [Hypothetical polls > Polling by football team supported] excluded heading
+     T72 rows=  11 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T73 rows=   5 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T74 rows=  25 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T76 rows=  14 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     polls kept: 1149  | start result: yes
+[IT] Opinion polling for the next Italian general election  (rev 1383447645)  window 2022-09-25 .. open
+     T00 rows=  10 [Polling aggregations > Party vote aggregations] no pollster/sample column
+   + T05 rows=  21 [Party vote > 2026] selected
+   + T06 rows= 217 [Party vote > 2026] selected
+   + T07 rows= 220 [Party vote > 2025] selected
+   + T08 rows= 114 [Party vote > 2024] selected
+   + T09 rows=  54 [Party vote > 2024] selected
+   + T10 rows=  84 [Party vote > 2024] selected
+   + T11 rows= 395 [Party vote > 2023] selected
+   + T12 rows=  84 [Party vote > 2022] selected
+     T13 rows=   7 [Seat projections > Seat projections with the Rosatellum electoral law ] excluded heading
+     T16 rows=  25 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
+     T17 rows=  13 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
+     T23 rows=  73 [Government approval rating > 2026] excluded heading
+     T24 rows=  59 [Government approval rating > 2025] excluded heading
+     T25 rows=   5 [Government approval rating > 2024] excluded heading
+     T33 rows=   5 [Preferred Prime Minister > Meloni vs. Schlein] excluded heading
+     T40 rows=  42 [Centre-left coalition primaries > Leadership election] excluded heading
+     T41 rows=  10 [Centre-left coalition primaries > Leadership election] excluded heading
+     T42 rows=   9 [Centre-left coalition primaries > Under Schlein vs. Conte leadership] excluded heading
+     T45 rows=   5 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
+     T47 rows=  10 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
+     T48 rows=   5 [Hypothetical polls > Polling by age > Polling among 18–24-year-olds] excluded heading
+     T60 rows=   5 [Hypothetical polls > Polling by football team supported] excluded heading
+     T61 rows=   5 [Hypothetical polls > Polling by football team supported] excluded heading
+     T72 rows=  11 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T73 rows=   5 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T74 rows=  25 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T76 rows=  14 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     polls kept: 1149  | start result: yes
+[IT] Opinion polling for the 2022 Italian general election  (rev 1382690771)  window 2018-03-04 .. 2022-09-25
+     T00 rows=   5 [Polling aggregation] no date column
+     T01 rows=   6 [Polling aggregation] no date column
+   + T04 rows=  63 [Party vote > 2022] selected
+   + T05 rows= 168 [Party vote > 2022] selected
+   + T06 rows= 159 [Party vote > 2021] selected
+   + T07 rows= 150 [Party vote > 2021] selected
+   + T08 rows= 317 [Party vote > 2020] selected
+   + T09 rows= 262 [Party vote > 2019] selected
+   + T10 rows= 102 [Party vote > 2019] selected
+   + T11 rows= 236 [Party vote > 2018] selected
+     T23 rows=  42 [Coalition vote > 2022] not similar to main table (overlap 0.25, same section False)
+     T24 rows=  12 [Seat projections > Chamber of Deputies] excluded heading
+     T25 rows=  11 [Seat projections > Senate of the Republic] excluded heading
+     polls kept: 1454  | start result: yes | end result: yes
+[IT] Opinion polling for the 2018 Italian general election  (rev 1369313456)  window 2013-02-24 .. 2018-03-04
+   + T00 rows=  66 [Party vote > 2018] selected
+   + T01 rows= 319 [Party vote > 2017] selected
+   + T02 rows= 243 [Party vote > 2016] selected
+   + T03 rows= 326 [Party vote > 2015] selected
+   + T04 rows= 269 [Party vote > 2014] selected
+   + T05 rows= 271 [Party vote > 2013] selected
+     T06 rows=  64 [Coalition vote > 2018] not similar to main table (overlap 0.50, same section False)
+     T07 rows=  67 [Coalition vote > 2017] not similar to main table (overlap 0.50, same section False)
+     T08 rows=  32 [Seat projections > Chamber of Deputies] only 1 party columns
+     T09 rows=  13 [Seat projections > Senate of the Republic] excluded heading
+     polls kept: 1485  | start result: yes | end result: yes
+[IT] Opinion polling for the 2013 Italian general election  (rev 1337787919)  window 2008-04-13 .. 2013-02-24
+   + T00 rows= 111 [Party vote > 2013] selected
+   + T01 rows= 266 [Party vote > 2012] selected
+   + T02 rows= 188 [Party vote > 2011] selected
+   + T03 rows= 159 [Party vote > 2010] selected
+   + T04 rows=  87 [Party vote > 2009] selected
+   + T05 rows=  48 [Party vote > 2008] selected
+     T06 rows=  99 [Coalition vote > 2013] not similar to main table (overlap 0.20, same section False)
+     polls kept: 856  | start result: yes | end result: yes
+[IT] Opinion polling for the 2008 Italian general election  (rev 1308694548)  window 2006-04-09 .. 2008-04-13
+   + T00 rows=  38 [Party vote > 2008] selected
+   + T01 rows=  22 [Party vote > 2007] selected
+   + T02 rows=  12 [Party vote > 2006] selected
+     polls kept: 70  | start result: yes | end result: yes
+[IT] Opinion polling for the 2006 Italian general election  (rev 1226393028)  window 2001-05-13 .. 2006-04-09
+   + T00 rows=  53 [Coalition vote > 2006] selected
+   + T01 rows=  19 [Coalition vote > 2005] selected
+     polls kept: 71  | start result: MISSING | end result: yes
+[IT] 2001 Italian general election  (rev 1383246404)  window 1996-04-21 .. 2001-05-13
+     T00 rows=  16 [Main coalitions and parties] no date column
+     T01 rows=  21 [Results > Chamber of Deputies > Overall results] no date column
+     T02 rows=  35 [Results > Chamber of Deputies > Proportional and FPTP results] no date column
+     T03 rows=  38 [Results > Chamber of Deputies > Proportional and FPTP results] no date column
+     T04 rows=  28 [Results > Chamber of Deputies > FPTP and proportional results by const] no date column
+     T05 rows=  27 [Results > Chamber of Deputies > FPTP and proportional results by const] no date column
+     T06 rows=  53 [Results > Senate of the Republic > Overall results] no date column
+     T07 rows=  21 [Results > Senate of the Republic > FPTP and proportional results by co] no date column
+     T08 rows=  19 [Results > Senate of the Republic > FPTP and proportional results by co] no date column
+     T09 rows=   8 [Results > Leaders' races] no pollster/sample column
+     T10 rows=   7 [Results > Leaders' races] no pollster/sample column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: Together (Italy) + Popular Civic List x1 -> None; More Europe + Together (Italy) + Popular Civic List x4 -> None; Article One (political party) + Progressive Camp x1 -> None
+     joint lists: Italian Left + Green Europe x35 -> None; Article One (political party) + Italian Left x50 -> None
+[IT] history: 6 cycles, 5085 polls, 40 series, 12 government periods (7 matched to a series)
+[MT] Opinion polling for the 2026 Maltese general election  (rev 1362550523)  window 2022-03-26 .. 2026-05-30
+   + T00 rows=  31 [Party polling > Expressing a Preference] selected
+     T01 rows=  14 [Party polling > Complete Data] 
+     T02 rows=  16 [Leader trust] 
+     polls kept: 26  | start result: yes | end result: yes
+     joint lists: AD+PD + Momentum (political party) x15 -> AD+PD
+[MT] Opinion polling for the 2026 Maltese general election  (rev 1362550523)  window 2022-03-26 .. 2026-05-30
+   + T00 rows=  31 [Party polling > Expressing a Preference] selected
+     T01 rows=  14 [Party polling > Complete Data] 
+     T02 rows=  16 [Leader trust] 
+     polls kept: 26  | start result: yes | end result: yes
+[MT] Opinion polling for the 2022 Maltese general election  (rev 1357950770)  window 2017-06-03 .. 2022-03-26
+     T00 rows=  69 [Opinion polls > Expressing a preference] excluded heading
+   + T01 rows=  49 [Opinion polls > Complete data] selected
+     T02 rows=  13 [Opinion polls > Preferred prime minister > Abela and Grech] excluded heading
+     T03 rows=   5 [Opinion polls > Preferred prime minister > Abela and Delia] excluded heading
+     T04 rows=  22 [Opinion polls > Preferred prime minister > Muscat and Delia] excluded heading
+     polls kept: 47  | start result: yes | end result: MISSING
+[MT] Opinion polling for the 2017 Maltese general election  (rev 1324451189)  window 2013-03-09 .. 2017-06-03
+   + T00 rows=  16 [Party vote > 2017] selected
+   + T01 rows=   6 [Party vote > 2016] selected
+   + T02 rows=   4 [Party vote > 2015] selected
+   + T03 rows=   8 [Party vote > 2014] selected
+   + T04 rows=  10 [Party vote > 2013] selected
+     polls kept: 42  | start result: yes | end result: MISSING
+[MT] 2013 Maltese general election  (rev 1371533530)  window 2008-03-08 .. 2013-03-09
+   + T00 rows=   5 [Opinion polls] selected
+     T01 rows=  13 [Results] no date column
+     polls kept: 5  | start result: MISSING | end result: MISSING
+[MT] 2008 Maltese general election  (rev 1370654989)  window 2003-04-12 .. 2008-03-08
+     T00 rows=  16 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[MT] 2003 Maltese general election  (rev 1277242356)  window 1998-09-05 .. 2003-04-12
+     T00 rows=  11 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: Democratic Party (Malta) + Democratic Alternative (Malta) x18 -> None
+     joint lists: AD+PD + Momentum (political party) x15 -> AD+PD
+[MT] history: 4 cycles, 120 polls, 4 series, 4 government periods (4 matched to a series)
+[GR] Opinion polling for the next Greek parliamentary election  (rev 1383451956)  window 2023-06-25 .. open
+   + T00 rows= 338 [Voting intention estimates > Polling] selected
+     T02 rows=   5 [Polling aggregations] no date column
+     polls kept: 333  | start result: yes
+[GR] Opinion polling for the next Greek parliamentary election  (rev 1383451956)  window 2023-06-25 .. open
+   + T00 rows= 338 [Voting intention estimates > Polling] selected
+     T02 rows=   5 [Polling aggregations] no date column
+     polls kept: 333  | start result: yes
+[GR] Opinion polling for the June 2023 Greek parliamentary election  (rev 1267596607)  window 2023-05-21 .. 2023-06-25
+   + T00 rows=  36 [Voting intention estimates > Polling] selected
+     polls kept: 30  | start result: yes | end result: yes
+[GR] Opinion polling for the May 2023 Greek parliamentary election  (rev 1324451274)  window 2019-07-07 .. 2023-05-21
+   + T00 rows= 319 [Voting intention estimates > Polling] selected
+     polls kept: 313  | start result: yes | end result: yes
+[GR] Opinion polling for the 2019 Greek parliamentary election  (rev 1306348599)  window 2015-09-20 .. 2019-07-07
+   + T00 rows= 195 [Voting intention estimates > Polling] selected
+     polls kept: 187  | start result: yes | end result: yes
+[GR] Opinion polling for the September 2015 Greek parliamentary election  (rev 1306508935)  window 2015-01-25 .. 2015-09-20
+   + T00 rows= 117 [Election polling > Vote] selected
+     polls kept: 111  | start result: yes | end result: yes
+[GR] Opinion polling for the January 2015 Greek parliamentary election  (rev 1324451261)  window 2012-06-17 .. 2015-01-25
+   + T00 rows= 307 [Election polling > Vote] selected
+     T01 rows=  56 [Election polling > Seat projections] excluded heading
+     T02 rows= 236 [Voting preferences] excluded heading
+     polls kept: 299  | start result: yes | end result: yes
+[GR] Opinion polling for the June 2012 Greek parliamentary election  (rev 1306504448)  window 2012-05-06 .. 2012-06-17
+   + T00 rows=  45 [Voting intention estimates] selected
+     polls kept: 39  | start result: yes | end result: yes
+[GR] Opinion polling for the May 2012 Greek parliamentary election  (rev 1344591318)  window 2009-10-04 .. 2012-05-06
+   + T00 rows= 203 [Voting intention estimates] selected
+     polls kept: 196  | start result: yes | end result: yes
+[GR] Opinion polling for the 2009 Greek parliamentary election  (rev 1341665500)  window 2007-09-16 .. 2009-10-04
+   + T00 rows= 192 [Voting intention estimates > Polling] selected
+     polls kept: 185  | start result: yes | end result: yes
+[GR] Opinion polling for the 2007 Greek parliamentary election  (rev 1267595523)  window 2004-03-07 .. 2007-09-16
+   + T00 rows= 157 [Voting intention estimates > Polling] selected
+     polls kept: 151  | start result: yes | end result: yes
+[GR] Opinion polling for the 2004 Greek parliamentary election  (rev 1296346301)  window 2000-04-09 .. 2004-03-07
+   + T00 rows=  68 [Voting intention estimates > Polling] selected
+     polls kept: 62  | start result: yes | end result: yes
+[GR] 2000 Greek parliamentary election  (rev 1366879426)  window 1996-09-22 .. 2000-04-09
+   + T00 rows=  42 [Opinion polls] selected
+     T01 rows=  32 [Results] no date column
+     polls kept: 29  | start result: yes | end result: yes
+[GR] history: 12 cycles, 1935 polls, 31 series, 10 government periods (7 matched to a series)
+[PL] Opinion polling for the next Polish parliamentary election  (rev 1383484402)  window 2023-10-15 .. open
+   + T02 rows= 121 [Poll results > 2026] selected
+   + T03 rows= 141 [Poll results > 2025] selected
+   + T04 rows= 108 [Poll results > 2024] selected
+   + T05 rows=  18 [Poll results > 2023] selected
+     T06 rows=  16 [Poll results > Alternative scenarios] excluded heading
+     T07 rows=   6 [Local sample > Kraków] excluded heading
+     T09 rows= 115 [Seat projection] excluded heading
+     T10 rows=   5 [Senate seats projection] excluded heading
+     T11 rows=  58 [Government approval ratings > President Karol Nawrocki] excluded heading
+     T12 rows=  47 [Government approval ratings > Prime Minister Donald Tusk] excluded heading
+     T13 rows=  73 [Government approval ratings > Third Tusk government] excluded heading
+     T14 rows=   9 [Government approval ratings > School grade scale rankings] excluded heading
+     T15 rows=  14 [Leadership polling > Law and Justice prime ministerial candidate prefe] excluded heading
+     T16 rows=   6 [Leadership polling > Right-wing prime ministerial candidate preference] excluded heading
+     polls kept: 360  | start result: yes
+[PL] Opinion polling for the next Polish parliamentary election  (rev 1383484402)  window 2023-10-15 .. open
+   + T02 rows= 121 [Poll results > 2026] selected
+   + T03 rows= 141 [Poll results > 2025] selected
+   + T04 rows= 108 [Poll results > 2024] selected
+   + T05 rows=  18 [Poll results > 2023] selected
+     T06 rows=  16 [Poll results > Alternative scenarios] excluded heading
+     T07 rows=   6 [Local sample > Kraków] excluded heading
+     T09 rows= 115 [Seat projection] excluded heading
+     T10 rows=   5 [Senate seats projection] excluded heading
+     T11 rows=  58 [Government approval ratings > President Karol Nawrocki] excluded heading
+     T12 rows=  47 [Government approval ratings > Prime Minister Donald Tusk] excluded heading
+     T13 rows=  73 [Government approval ratings > Third Tusk government] excluded heading
+     T14 rows=   9 [Government approval ratings > School grade scale rankings] excluded heading
+     T15 rows=  14 [Leadership polling > Law and Justice prime ministerial candidate prefe] excluded heading
+     T16 rows=   6 [Leadership polling > Right-wing prime ministerial candidate preference] excluded heading
+     polls kept: 360  | start result: yes
+[PL] Opinion polling for the 2023 Polish parliamentary election  (rev 1357240189)  window 2019-10-13 .. 2023-10-15
+   + T00 rows=  58 [Poll results > Electoral alliances] selected
+   + T01 rows= 185 [Poll results > 2023] selected
+   + T02 rows= 208 [Poll results > 2022] selected
+   + T03 rows= 244 [Poll results > 2021] selected
+   + T04 rows= 182 [Poll results > 2020] selected
+   + T05 rows=  32 [Poll results > 2019] selected
+     T06 rows=  43 [Poll results > Alternative scenarios] excluded heading
+     T07 rows=  39 [Poll results > Alternative scenarios] excluded heading
+     T08 rows=  14 [Poll results > Parties] not similar to main table (overlap 0.38, same section True)
+     T09 rows=  24 [Poll results > Parties] not similar to main table (overlap 0.38, same section True)
+     T10 rows=  68 [Seat projection] excluded heading
+     T11 rows= 119 [Seat projection] excluded heading
+     T12 rows=  41 [Seat projection] excluded heading
+     T13 rows=  75 [Alternative seat projections > 2021] excluded heading
+     T14 rows= 212 [Government approval ratings > President Andrzej Duda] excluded heading
+     T15 rows=  50 [Government approval ratings > Prime Minister Mateusz Morawiecki] excluded heading
+     T16 rows=  92 [Government approval ratings > Law and Justice government] excluded heading
+     T19 rows=   8 [Other polls > Government preparation and dealing with COVID-19 pandemi] excluded heading (weak, deepest)
+     polls kept: 821  | start result: yes | end result: yes
+[PL] Opinion polling for the 2019 Polish parliamentary election  (rev 1357240277)  window 2015-10-25 .. 2019-10-13
+   + T00 rows=  62 [Poll results > 2019 > Electoral alliances] selected
+   + T01 rows=  67 [Poll results > 2019 > Parties] selected
+   + T02 rows=  91 [Poll results > 2018] selected
+   + T03 rows=  97 [Poll results > 2017] selected
+   + T04 rows= 102 [Poll results > 2016] selected
+   + T05 rows=  23 [Poll results > 2015] selected
+     T06 rows=  58 [Poll results > Alternative scenarios] 
+     T07 rows=  82 [Seat projections] 
+     polls kept: 430  | start result: yes | end result: yes
+[PL] Opinion polling for the 2015 Polish parliamentary election  (rev 1381640149)  window 2011-10-09 .. 2015-10-25
+   + T00 rows= 139 [Opinion polls > First round > 2015] selected
+   + T01 rows=  77 [Opinion polls > First round > 2014] selected
+   + T02 rows=  78 [Opinion polls > First round > 2013] selected
+   + T03 rows=  58 [Opinion polls > First round > 2012] selected
+   + T04 rows=  19 [Opinion polls > First round > 2011] selected
+     polls kept: 364  | start result: yes | end result: yes
+[PL] Opinion polling for the 2011 Polish parliamentary election  (rev 1357240456)  window 2007-10-21 .. 2011-10-09
+   + T00 rows=  55 [Opinion polls > 2011] selected
+   + T01 rows=  37 [Opinion polls > 2010] selected
+   + T02 rows=  32 [Opinion polls > 2009] selected
+   + T03 rows=  27 [Opinion polls > 2008] selected
+   + T04 rows=   8 [Opinion polls > 2007] selected
+     dropped rows: {'outside window': 1}
+     polls kept: 152  | start result: yes | end result: yes
+[PL] Opinion polling for the 2007 Polish parliamentary election  (rev 1357240512)  window 2005-09-25 .. 2007-10-21
+   + T00 rows=  67 [Opinion polls > 2007] selected
+   + T01 rows=  55 [Opinion polls > 2006] selected
+   + T02 rows=  11 [Opinion polls > 2005] selected
+     polls kept: 127  | start result: yes | end result: yes
+[PL] Opinion polling for the 2005 Polish parliamentary election  (rev 1357240573)  window 2001-09-23 .. 2005-09-25
+   + T00 rows=  66 [Opinion polls > 2005] selected
+   + T01 rows=  53 [Opinion polls > 2004] selected
+   + T02 rows=  36 [Opinion polls > 2003] selected
+   + T03 rows=  34 [Opinion polls > 2002] selected
+   + T04 rows=  12 [Opinion polls > 2001] selected
+     polls kept: 195  | start result: yes | end result: yes
+[PL] Opinion polling for the 2001 Polish parliamentary election  (rev 1357240641)  window 1997-09-21 .. 2001-09-23
+   + T00 rows=  72 [Sejm > 2001] selected
+   + T01 rows=  55 [Sejm > 2000] selected
+   + T02 rows=  41 [Sejm > 1999] selected
+   + T03 rows=  36 [Sejm > 1998] selected
+   + T04 rows=   5 [Sejm > 1997] selected
+     T05 rows=  24 [Sejm > Seat projections] excluded heading
+     T06 rows=   7 [Senate] excluded heading
+     dropped rows: {'outside window': 1}
+     polls kept: 204  | start result: yes | end result: yes
+[PL] Opinion polling for the 1997 Polish parliamentary election  (rev 1357240706)  window 1993-09-19 .. 1997-09-21
+   + T00 rows=  29 [Poll results > 1997] selected
+   + T01 rows=  31 [Poll results > 1996] selected
+   + T02 rows=  22 [Poll results > 1995] selected
+   + T03 rows=  15 [Poll results > 1994] selected
+     polls kept: 93  | start result: yes | end result: yes
+[PL] Opinion polling for the 1993 Polish parliamentary election  (rev 1357240907)  window 1991-10-27 .. 1993-09-19
+   + T00 rows=  22 [Opinion polls] selected
+     T01 rows=   7 [Seat projection] excluded heading
+     polls kept: 18  | start result: yes | end result: yes
+[PL] history: unmapped party keys (top): [('Agreement (political party)', 210), ('United Poland', 175), ('Nonpartisan Local Government Activists', 69), ('AGROunia', 66), ('Poland Comes First', 55), ('Polish Coalition + Poland 2050', 53), ('Poland Together', 50), ('There is One Poland', 39), ('Solidarity (Polish trade union)', 36), ('AGROunia + Agreement (political party)', 36), ('Bezpartyjni Samorządowcy', 25), ('National Party of Retirees and Pensioners', 23), ('Centre Agreement', 17), ("Solidarity Citizens' Committee", 17), ('Liberal Democratic Congress', 17), ('Party X', 17), ('Movement for the Republic', 16), ("Peasants' Agreement", 16), ('Real Politics Union', 13), ('Nonpartisan local government activists', 13), ('Christian National Union', 11), ('Christian-Peasant Party', 9), ('Party of Christian Democrats', 9), ('Christian National Union + Christian-Peasant Party + Party of Christian Democrats + Conservative Party (Poland)', 6), ('Conservative Party (Poland)', 6)]
+     [PL] government parties not matched to a series: ['Bielecki (Liberal Democratic Congress)']
+[PL] history: 10 cycles, 2764 polls, 22 series, 18 government periods (16 matched to a series)
+[CZ] Next Czech parliamentary election  (rev 1380198620)  window 2025-10-04 .. open
+     T00 rows=   9 [Background > 2025 election] no date column
+   + T01 rows=  26 [Opinion polls > Party polls] selected
+     T02 rows=   6 [Opinion polls > Coalition polls] excluded heading (weak, deepest)
+     polls kept: 25  | start result: yes
+[CZ] Next Czech parliamentary election  (rev 1380198620)  window 2025-10-04 .. open
+     T00 rows=   9 [Background > 2025 election] no date column
+   + T01 rows=  26 [Opinion polls > Party polls] selected
+     T02 rows=   6 [Opinion polls > Coalition polls] excluded heading (weak, deepest)
+     polls kept: 25  | start result: yes
+[CZ] Opinion polling for the 2025 Czech parliamentary election  (rev 1334119810)  window 2021-10-09 .. 2025-10-04
+   + T02 rows= 187 [Party and election coalition polling > Polls] selected
+     T03 rows=  82 [Party and election coalition polling > Seat projections] excluded heading
+     T05 rows=  12 [Hypothetical scenarios > Polls including SPOLU] excluded heading
+     T06 rows=  11 [Hypothetical scenarios > Polls without alliances] excluded heading
+     T07 rows=  12 [Hypothetical scenarios > Polls including SPOLU and PirSTAN > Polls] excluded heading
+     T08 rows=   6 [Hypothetical scenarios > Seat projections] excluded heading
+     polls kept: 172  | start result: yes | end result: yes
+[CZ] Opinion polling for the 2021 Czech parliamentary election  (rev 1357783569)  window 2017-10-20 .. 2021-10-08
+   + T00 rows=  77 [Percentage > 2021] selected
+   + T01 rows=  35 [Percentage > 2020] selected
+   + T02 rows=  52 [Percentage > 2019] selected
+   + T03 rows=  57 [Percentage > 2018 and 2017] selected
+     T05 rows=  21 [Seats > 2017–2020] excluded heading
+     polls kept: 182  | start result: yes | end result: yes
+[CZ] Opinion polling for the 2017 Czech parliamentary election  (rev 1306316131)  window 2013-10-25 .. 2017-10-20
+     T00 rows=   8 [Percentage > Aggregate polls] excluded heading
+   + T01 rows=   9 [Percentage > Election Potential] selected
+   + T02 rows= 230 [Percentage > Individual polls] selected
+     T03 rows=  70 [Seats] excluded heading
+     dropped rows: {'outside window': 9}
+     polls kept: 213  | start result: yes | end result: MISSING
+[CZ] Opinion polling for the 2013 Czech parliamentary election  (rev 1358627276)  window 2010-05-28 .. 2013-10-25
+     T00 rows=  19 [Percentage] no pollster/sample column
+     T01 rows= 151 [Percentage > Previous polls] no pollster/sample column
+     T02 rows= 109 [Seats] no pollster/sample column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[CZ] Opinion polling for the 2010 Czech parliamentary election  (rev 1341667914)  window 2006-06-02 .. 2010-05-28
+   + T00 rows=  54 [Opinion polls] selected
+     T01 rows=  10 [Seats] excluded heading
+     T02 rows=   6 [Preferred prime minister polling] excluded heading
+     polls kept: 50  | start result: yes | end result: yes
+[CZ] Opinion polling for the 2006 Czech parliamentary election  (rev 1230130115)  window 2002-06-14 .. 2006-06-02
+   + T00 rows=  80 [Opinion polls] selected
+     T01 rows=  80 [Opinion polls > Coalitions] excluded heading (weak, deepest)
+     T02 rows=  19 [Seats] excluded heading
+     T03 rows=  19 [Seats > Coalitions] only 1 party columns
+     polls kept: 73  | start result: yes | end result: yes
+[CZ] Opinion polling for the 2002 Czech parliamentary election  (rev 1230130000)  window 1998-06-19 .. 2002-06-14
+   + T00 rows=  26 [Opinion polls] selected
+     polls kept: 24  | start result: yes | end result: yes
+     joint lists: Christian and Democratic Union – Czechoslovak People's Party x2 -> None
+     joint lists: Tricolour + Svobodní x1 -> None
+[CZ] history: 7 cycles, 739 polls, 27 series, 15 government periods (12 matched to a series)
+[SK] Opinion polling for the next Slovak parliamentary election  (rev 1381571452)  window 2023-09-30 .. open
+   + T00 rows= 122 [Electoral polling > Voting intention estimates] selected
+     T01 rows=   6 [Electoral polling > Voting intention estimates > Scenario Polls] excluded heading
+     T02 rows=   6 [Electoral polling > Voting intention estimates > Scenario Polls] excluded heading
+     T03 rows= 110 [Seat projections] excluded heading
+     polls kept: 120  | start result: yes
+     joint lists: Slovakia (political party) + For the People (Slovakia) x6 -> Slovakia (political party)
+[SK] Opinion polling for the next Slovak parliamentary election  (rev 1381571452)  window 2023-09-30 .. open
+   + T00 rows= 122 [Electoral polling > Voting intention estimates] selected
+     T01 rows=   6 [Electoral polling > Voting intention estimates > Scenario Polls] excluded heading
+     T02 rows=   6 [Electoral polling > Voting intention estimates > Scenario Polls] excluded heading
+     T03 rows= 110 [Seat projections] excluded heading
+     polls kept: 120  | start result: yes
+[SK] Opinion polling for the 2023 Slovak parliamentary election  (rev 1375776510)  window 2020-02-29 .. 2023-09-30
+   + T00 rows=  70 [Electoral polling > Voting intention estimates > 2023] selected
+   + T01 rows=  29 [Electoral polling > Voting intention estimates > 2022] selected
+   + T02 rows=  43 [Electoral polling > Voting intention estimates > 2020–2021] selected
+     polls kept: 122  | start result: yes | end result: yes
+[SK] Opinion polling for the 2020 Slovak parliamentary election  (rev 1374205343)  window 2016-03-05 .. 2020-02-29
+   + T00 rows=  19 [Party vote > Voting intention estimates] selected
+   + T01 rows=  89 [Party vote > Voting intention estimates] selected
+     T02 rows=   9 [Seat projections] excluded heading
+     T03 rows=  77 [Seat projections] excluded heading
+     T04 rows=  12 [Special pollings] not similar to main table (overlap 1.00, same section False)
+     polls kept: 100  | start result: yes | end result: yes
+[SK] Opinion polling for the 2016 Slovak parliamentary election  (rev 1374207003)  window 2012-03-10 .. 2016-03-05
+   + T00 rows=  53 [Party vote] selected
+     dropped rows: {'outside window': 22}
+     polls kept: 25  | start result: yes | end result: MISSING
+[SK] 2012 Slovak parliamentary election  (rev 1375248558)  window 2010-06-12 .. 2012-03-10
+     T00 rows=   6 [Participating parties] no date column
+     T01 rows=  12 [Opinion polls] no date column
+     T02 rows=  33 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[SK] 2010 Slovak parliamentary election  (rev 1374206773)  window 2006-06-17 .. 2010-06-12
+     T00 rows=   6 [Participating parties] no date column
+     T01 rows=   8 [Opinion polls] no date column
+     T02 rows=  25 [Results] no date column
+     T03 rows=  13 [Results > Results by region] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[SK] 2006 Slovak parliamentary election  (rev 1374206850)  window 2002-09-20 .. 2006-06-17
+     T00 rows=   6 [Participating parties] no date column
+     T01 rows=  28 [Results] no date column
+     T02 rows=  13 [Results > Results by region] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[SK] 2002 Slovak parliamentary election  (rev 1378175140)  window 1998-09-25 .. 2002-09-20
+     T00 rows=   7 [Participating parties] no date column
+     T01 rows=  32 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: Progressive Slovakia + TOGETHER - Civic Democracy x38 -> Progressive Slovakia
+     joint lists: Party of the Hungarian Community + Hungarian Community Co-op x20 -> Most–Híd; Modrí + Democrats (Slovakia) x4 -> None; Party of the Hungarian Community + Ö-S + Most–Híd x18 -> Most–Híd; Hungarian Forum + Party of the Hungarian Community + Ö-S x2 -> None
+     joint lists: Slovakia (political party) + For the People (Slovakia) x6 -> For the People (Slovakia)
+[SK] history: 4 cycles, 367 polls, 20 series, 8 government periods (6 matched to a series)
+[HU] Opinion polling for the 2030 Hungarian parliamentary election  (rev 1381579412)  window 2026-04-12 .. open
+     T00 rows=  16 [Pollster bias] no date column
+   + T01 rows=  31 [Polling > 2026] selected
+     T02 rows=   6 [Preferred prime minister > Suitability as Prime Minister > Péter Magya] excluded heading
+     T03 rows=   7 [Preferred prime minister > Suitability as Prime Minister > Viktor Orbá] excluded heading
+     polls kept: 29  | start result: yes
+[HU] Opinion polling for the 2030 Hungarian parliamentary election  (rev 1381579412)  window 2026-04-12 .. open
+     T00 rows=  16 [Pollster bias] no date column
+   + T01 rows=  31 [Polling > 2026] selected
+     T02 rows=   6 [Preferred prime minister > Suitability as Prime Minister > Péter Magya] excluded heading
+     T03 rows=   7 [Preferred prime minister > Suitability as Prime Minister > Viktor Orbá] excluded heading
+     polls kept: 29  | start result: yes
+[HU] Opinion polling for the 2026 Hungarian parliamentary election  (rev 1374350543)  window 2022-04-03 .. 2026-04-12
+     T00 rows=  16 [Pollster bias > Pollsters] no date column
+   + T01 rows=  55 [Polling > 2026] selected
+   + T02 rows=  75 [Polling > 2025] selected
+   + T03 rows=  79 [Polling > 2024] selected
+   + T04 rows=  70 [Polling > 2022–2023] selected
+     T05 rows=  11 [Coalition scenario polling] excluded heading
+     T06 rows= 113 [Seat projections] no pollster/sample column
+     T07 rows=  13 [Regional polling > Budapest] excluded heading
+     T08 rows=   5 [Regional polling > Budapest > Budapest VIII.] excluded heading
+     T09 rows=   5 [Regional polling > Budapest > Budapest XIV.] excluded heading
+     T10 rows=   5 [Regional polling > Debrecen] excluded heading
+     T12 rows=   5 [Diaspora polling] excluded heading
+     T24 rows=   5 [Electoral district polling > Budapest OEVK 4] not similar to main table (overlap 1.00, same section False)
+     T25 rows=   6 [Electoral district polling > Budapest OEVK 6] not similar to main table (overlap 1.00, same section False)
+     T31 rows=   6 [Electoral district polling > Jász-Nagykun-Szolnok OEVK 2] not similar to main table (overlap 1.00, same section False)
+     T41 rows=   6 [Electoral district polling > Vas OEVK 1] not similar to main table (overlap 1.00, same section False)
+     T46 rows=  14 [Prime Minister polling > Hungary] not similar to main table (overlap 0.00, same section False)
+     T48 rows=   9 [Prime Minister polling > Suitability as Prime Minister > Viktor Orbán] not similar to main table (overlap 0.00, same section False)
+     T50 rows=   7 [Prime Minister polling > Suitability as Prime Minister > Péter Magyar] not similar to main table (overlap 0.00, same section False)
+     polls kept: 252  | start result: yes | end result: yes
+[HU] Opinion polling for the 2022 Hungarian parliamentary election  (rev 1369327362)  window 2018-04-08 .. 2022-04-03
+   + T00 rows= 104 [National polling results > United Opposition list] selected
+   + T01 rows= 173 [National polling results > Individual parties] selected
+     T02 rows=  17 [National polling results > No party preferences] only 1 party columns
+     T03 rows=  16 [National polling results > Uncertainty polling] only 0 party columns
+     T04 rows=  28 [Seat projections] excluded heading
+     T05 rows=   9 [Regional polling results > Budapest] excluded heading
+     T07 rows=  35 [Preferred prime minister > Total] excluded heading
+     dropped rows: {'outside window': 1}
+     polls kept: 273  | start result: yes | end result: yes
+[HU] Opinion polling for the 2018 Hungarian parliamentary election  (rev 1372593758)  window 2014-04-06 .. 2018-04-08
+   + T00 rows= 232 [Poll results] selected
+     T10 rows=   5 [Constituency polls] excluded heading
+     T15 rows=   5 [Constituency polls] excluded heading
+     T16 rows=   7 [Constituency polls] excluded heading
+     T22 rows=   8 [Constituency polls] excluded heading
+     T27 rows=   5 [Constituency polls] excluded heading
+     T36 rows=   7 [Constituency polls] excluded heading
+     T38 rows=   6 [Constituency polls] excluded heading
+     T39 rows=   5 [Constituency polls] excluded heading
+     T47 rows=   6 [Constituency polls] excluded heading
+     T60 rows=   5 [Constituency polls] excluded heading
+     T61 rows=   5 [Constituency polls] excluded heading
+     T70 rows=   5 [Constituency polls] excluded heading
+     T73 rows=   6 [Constituency polls] excluded heading
+     T88 rows=   5 [Constituency polls] excluded heading
+     T94 rows=   6 [Constituency polls] excluded heading
+     T97 rows=   5 [Constituency polls] excluded heading
+     T102 rows=   5 [Constituency polls] excluded heading
+     T106 rows=   6 [Constituency polls] excluded heading
+     T107 rows=   5 [Party preference by age group] excluded heading
+     T108 rows=   9 [Preferred prime minister] excluded heading
+     polls kept: 225  | start result: yes | end result: yes
+[HU] 2014 Hungarian parliamentary election  (rev 1377466463)  window 2010-04-11 .. 2014-04-06
+     T00 rows=  10 [Background > Party splits after 2010 election] no date column
+     T02 rows=  73 [Candidates > Registered parties] no date column
+     T03 rows=  23 [Candidates > Individual candidates] no pollster/sample column
+   + T05 rows=  83 [Opinion polls] selected
+     T07 rows=  74 [Results] no date column
+     T08 rows=  25 [Results > Party list results by county and in the diaspora] no date column
+     polls kept: 81  | start result: MISSING | end result: MISSING
+[HU] 2010 Hungarian parliamentary election  (rev 1374994119)  window 2006-04-09 .. 2010-04-11
+     T00 rows=  23 [Opinion polls] no date column
+     T01 rows=  27 [Results] no date column
+     T02 rows=  22 [Results > Party list results by county] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[HU] 2006 Hungarian parliamentary election  (rev 1367804574)  window 2002-04-07 .. 2006-04-09
+     T00 rows=   9 [Opinion polling] no date column
+     T01 rows=  33 [Results] no date column
+     T02 rows=  22 [Results > Party list results by county] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[HU] 2002 Hungarian parliamentary election  (rev 1355332041)  window 1998-05-10 .. 2002-04-07
+     T00 rows=  31 [Results] no date column
+     T01 rows=  22 [Results > Party list results by county] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: MSZP + P x68 -> None
+     joint lists: DK + MSZP + Dialogue x24 -> DK
+[HU] history: 5 cycles, 860 polls, 17 series, 5 government periods (4 matched to a series)
+[SI] Opinion polling for the next Slovenian parliamentary election  (rev 1382980388)  window 2026-03-22 .. open
+   + T00 rows=  35 [Poll results > 2026] selected
+     T01 rows=  10 [Seat projection > MRP polls] excluded heading
+     polls kept: 27  | start result: yes
+     joint lists: The Left (Slovenia) + Vesna – Green Party x13 -> The Left (Slovenia)
+[SI] Opinion polling for the next Slovenian parliamentary election  (rev 1382980388)  window 2026-03-22 .. open
+   + T00 rows=  35 [Poll results > 2026] selected
+     T01 rows=  10 [Seat projection > MRP polls] excluded heading
+     polls kept: 27  | start result: yes
+[SI] Opinion polling for the 2026 Slovenian parliamentary election  (rev 1361928969)  window 2022-04-24 .. 2026-03-22
+   + T00 rows=  45 [Poll results > 2026] selected
+   + T01 rows=  72 [Poll results > 2025] selected
+   + T02 rows=  45 [Poll results > 2024] selected
+   + T03 rows=  45 [Poll results > 2023] selected
+   + T04 rows=  38 [Poll results > 2022] selected
+     T05 rows=  76 [Seat projection > MRP polls] excluded heading
+     T07 rows= 100 [Leadership polls > Cabinet approval/disapproval ratings] excluded heading
+     polls kept: 205  | start result: yes | end result: yes
+[SI] Opinion polling for the 2022 Slovenian parliamentary election  (rev 1370496002)  window 2018-06-03 .. 2022-04-24
+   + T00 rows=  46 [Poll results > 2022] selected
+   + T01 rows=  32 [Poll results > 2021] selected
+   + T02 rows= 109 [Poll results > 2020] selected
+     T03 rows=  27 [Hypothetical Scenarios] excluded heading
+     polls kept: 183  | start result: yes | end result: yes
+[SI] Opinion polling for the 2018 Slovenian parliamentary election  (rev 1306339205)  window 2014-07-13 .. 2018-06-03
+   + T00 rows= 184 [Poll results] selected
+     polls kept: 176  | start result: yes | end result: yes
+     (history) Opinion polling for the 2018 Slovenian parliamentary election: dropped, median poll total 68% (not vote shares?)
+[SI] Opinion polling for the 2014 Slovenian parliamentary election  (rev 1369321757)  window 2011-12-04 .. 2014-07-13
+   + T00 rows=  36 [Party vote] selected
+     dropped rows: {'outside window': 2}
+     polls kept: 28  | start result: yes | end result: yes
+[SI] 2011 Slovenian parliamentary election  (rev 1304835452)  window 2008-09-21 .. 2011-12-04
+   + T00 rows=  37 [Opinion polls] selected
+     T01 rows=  28 [Results] no date column
+     polls kept: 35  | start result: yes | end result: MISSING
+[SI] 2008 Slovenian parliamentary election  (rev 1379525131)  window 2004-10-03 .. 2008-09-21
+   + T00 rows=   6 [Opinion polls] selected
+   + T01 rows=   3 [Opinion polls] selected
+     T02 rows=  25 [Results] no date column
+     polls kept: 8  | start result: MISSING | end result: MISSING
+[SI] 2004 Slovenian parliamentary election  (rev 1367374300)  window 2000-10-15 .. 2004-10-03
+     T00 rows=   7 [] no date column
+     T01 rows=  29 [Results] no date column
+   + T02 rows=   3 [Opinion polls] selected
+     polls kept: 3  | start result: MISSING | end result: MISSING
+     (history) 2004 Slovenian parliamentary election: dropped, median poll total 45% (not vote shares?)
+[SI] 2000 Slovenian parliamentary election  (rev 1367374660)  window 1996-11-10 .. 2000-10-15
+     T00 rows=   8 [] no date column
+     T01 rows=  25 [Results] no date column
+   + T02 rows=   4 [Opinion polls] selected
+     polls kept: 4  | start result: MISSING | end result: MISSING
+     (history) 2000 Slovenian parliamentary election: dropped, median poll total 51% (not vote shares?)
+     joint lists: New Slovenia + Slovenian People's Party + Focus of Marko Lot x35 -> New Slovenia; The Left (Slovenia) + Vesna – Green Party x47 -> The Left (Slovenia); Greens of Slovenia + Party of Generations x27 -> Greens of Slovenia; Slovenian People's Party + Concretely x6 -> None; Resni.ca + Good State (Slovenia) x1 -> None
+     joint lists: The Left (Slovenia) + Vesna – Green Party x13 -> The Left (Slovenia)
+[SI] history: 6 cycles, 486 polls, 28 series, 11 government periods (11 matched to a series)
+[HR] Opinion polling for the next Croatian parliamentary election  (rev 1382289595)  window 2024-04-17 .. open
+   + T01 rows=  83 [Party standings] selected
+     polls kept: 72  | start result: yes
+     joint lists: Homeland Movement (Croatia) + Home and National Rally x14 -> Homeland Movement (Croatia)
+[HR] Opinion polling for the next Croatian parliamentary election  (rev 1382289595)  window 2024-04-17 .. open
+   + T01 rows=  83 [Party standings] selected
+     polls kept: 72  | start result: yes
+[HR] Opinion polling for the 2024 Croatian parliamentary election  (rev 1277772685)  window 2020-07-05 .. 2024-04-17
+     T00 rows=   5 [Party standings] not similar to main table (overlap 0.00, same section True)
+   + T01 rows= 137 [Party standings] selected
+     T03 rows=   6 [Coalition standings > Seat projections (without Diaspora)] excluded heading
+     T04 rows=   5 [Coalition standings > Per electoral district > 1st Electoral district] excluded heading (weak)
+     T05 rows=   5 [Coalition standings > Per electoral district > 1st Electoral district ] excluded heading
+     T06 rows=   5 [Coalition standings > Per electoral district > 2nd Electoral district] excluded heading (weak)
+     T07 rows=   5 [Coalition standings > Per electoral district > 2nd Electoral district ] excluded heading
+     T08 rows=   5 [Coalition standings > Per electoral district > 3rd Electoral district] excluded heading (weak)
+     T09 rows=   5 [Coalition standings > Per electoral district > 3rd Electoral district ] excluded heading
+     T10 rows=   5 [Coalition standings > Per electoral district > 4th Electoral district] excluded heading (weak)
+     T11 rows=   5 [Coalition standings > Per electoral district > 4th Electoral district ] excluded heading
+     T12 rows=   5 [Coalition standings > Per electoral district > 5th Electoral district] excluded heading (weak)
+     T13 rows=   5 [Coalition standings > Per electoral district > 5th Electoral district ] excluded heading
+     T14 rows=   5 [Coalition standings > Per electoral district > 6th Electoral district] excluded heading (weak)
+     T15 rows=   5 [Coalition standings > Per electoral district > 6th Electoral district ] excluded heading
+     T16 rows=   5 [Coalition standings > Per electoral district > 7th Electoral district] excluded heading (weak)
+     T17 rows=   5 [Coalition standings > Per electoral district > 7th Electoral district ] excluded heading
+     T18 rows=   5 [Coalition standings > Per electoral district > 8th Electoral district] excluded heading (weak)
+     T19 rows=   5 [Coalition standings > Per electoral district > 8th Electoral district ] excluded heading
+     T20 rows=   5 [Coalition standings > Per electoral district > 9th Electoral district] excluded heading (weak)
+     T21 rows=   5 [Coalition standings > Per electoral district > 9th Electoral district ] excluded heading
+     T22 rows=   5 [Coalition standings > Per electoral district > 10th Electoral district] excluded heading (weak)
+     T23 rows=   5 [Coalition standings > Per electoral district > 10th Electoral district] excluded heading
+     T24 rows=   7 [Polling for prime minister] not similar to main table (overlap 0.00, same section False)
+     polls kept: 123  | start result: yes | end result: yes
+[HR] Opinion polling for the 2020 Croatian parliamentary election  (rev 1306356978)  window 2016-09-11 .. 2020-07-05
+     T01 rows=   5 [Coalition standings] excluded heading (weak, deepest)
+     T02 rows=   9 [Seat projections > National] excluded heading
+     T03 rows=   8 [Seat projections > Per electoral district > Electoral district I] excluded heading
+     T04 rows=   8 [Seat projections > Per electoral district > Electoral district II] excluded heading
+     T05 rows=   8 [Seat projections > Per electoral district > Electoral district III] excluded heading
+     T06 rows=   7 [Seat projections > Per electoral district > Electoral district IV] excluded heading
+     T07 rows=   7 [Seat projections > Per electoral district > Electoral district V] excluded heading
+     T08 rows=   7 [Seat projections > Per electoral district > Electoral district VI] excluded heading
+     T09 rows=   7 [Seat projections > Per electoral district > Electoral district VII] excluded heading
+     T10 rows=   8 [Seat projections > Per electoral district > Electoral district VIII] excluded heading
+     T11 rows=   8 [Seat projections > Per electoral district > Electoral district IX] excluded heading
+     T12 rows=   7 [Seat projections > Per electoral district > Electoral district X] excluded heading
+   + T13 rows= 151 [Individual party standings] selected
+     polls kept: 144  | start result: yes | end result: MISSING
+[HR] Opinion polling for the 2016 Croatian parliamentary election  (rev 1306307364)  window 2015-11-08 .. 2016-09-11
+     T01 rows=  27 [Coalition standings] excluded heading (weak, deepest)
+   + T02 rows=  19 [Individual party standings] selected
+     T03 rows=   7 [Seats projections] excluded heading
+     T04 rows=  10 [Polls of electoral districts > Coalition standings] no date column
+     T05 rows=  15 [Polls of electoral districts > Coalition standings] no date column
+     T06 rows=  10 [Polls of electoral districts > Individual party standings] not similar to main table (overlap 0.78, same section False)
+     dropped rows: {'outside window': 3}
+     polls kept: 15  | start result: MISSING | end result: MISSING
+[HR] Opinion polling for the 2015 Croatian parliamentary election  (rev 1306261991)  window 2011-12-04 .. 2015-11-08
+     T01 rows=  49 [Opinion polling > If the Elections Were Held Today?] not similar to main table (overlap 0.33, same section False)
+     T02 rows=   6 [Opinion polling > Seats projections (76 needed for majority)] excluded heading
+   + T03 rows=  47 [2014] selected
+     T04 rows=  70 [2013] not similar to main table (overlap 0.60, same section False)
+     T05 rows=  65 [2012] not similar to main table (overlap 0.50, same section False)
+     T06 rows=   9 [2011] only 0 party columns
+     polls kept: 13  | start result: MISSING | end result: MISSING
+     (history) Opinion polling for the 2015 Croatian parliamentary election: dropped, median poll total 31% (not vote shares?)
+[HR] Opinion polling for the 2011 Croatian parliamentary election  (rev 1345119723)  window 2007-11-25 .. 2011-12-04
+     T01 rows=  29 [Campaign poll results > Overall party rating] only 0 party columns
+     T02 rows=   8 [Campaign poll results > Seat projections] excluded heading
+   + T03 rows=  19 [Early polling > Overall party rating > 2011] selected
+   + T04 rows=  40 [Early polling > Overall party rating > 2010] selected
+   + T05 rows=  17 [Early polling > Overall party rating > 2009] selected
+   + T06 rows=   8 [Early polling > Overall party rating > 2008] selected
+     polls kept: 62  | start result: MISSING | end result: MISSING
+     (history) Opinion polling for the 2011 Croatian parliamentary election: dropped, median poll total 125% (not vote shares?)
+[HR] 2007 Croatian parliamentary election  (rev 1375064343)  window 2003-11-23 .. 2007-11-25
+     T00 rows=  14 [] no date column
+   + T01 rows=  53 [Opinion polls] selected
+     T02 rows=  47 [Results] no date column
+     T03 rows=   5 [Results > Turnout] no date column
+     T04 rows=   9 [Results > By electoral district] no date column
+     polls kept: 0  | start result: yes | end result: MISSING
+[HR] 2003 Croatian parliamentary election  (rev 1348476553)  window 2000-01-03 .. 2003-11-23
+     T00 rows=  15 [] no date column
+   + T01 rows=  13 [Opinion polls] selected
+     T02 rows=  48 [Results] no date column
+     dropped rows: {'outside window': 1}
+     polls kept: 11  | start result: MISSING | end result: MISSING
+     (history) 2003 Croatian parliamentary election: dropped, median poll total 65% (not vote shares?)
+[HR] 2000 Croatian parliamentary election  (rev 1382067769)  window 1995-10-29 .. 2000-01-03
+     T00 rows=  10 [] no date column
+     T01 rows=  45 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: We can! (Croatia) + Workers' Front (Croatia) x1 -> None
+     joint lists: Homeland Movement (Croatia) + Home and National Rally x14 -> Homeland Movement (Croatia)
+[HR] history: 4 cycles, 354 polls, 23 series, 4 government periods (3 matched to a series)
+[RO] Next Romanian parliamentary election  (rev 1383189003)  window 2024-12-01 .. open
+   + T00 rows=  45 [Opinion polls > Party polls] selected
+     T01 rows=   5 [Opinion polls > Age groups] excluded heading
+     T02 rows=   7 [Opinion polls > Politician approval ratings] excluded heading
+     T03 rows=   9 [Opinion polls > National approval rating] excluded heading
+     polls kept: 43  | start result: yes
+[RO] Next Romanian parliamentary election  (rev 1383189003)  window 2024-12-01 .. open
+   + T00 rows=  45 [Opinion polls > Party polls] selected
+     T01 rows=   5 [Opinion polls > Age groups] excluded heading
+     T02 rows=   7 [Opinion polls > Politician approval ratings] excluded heading
+     T03 rows=   9 [Opinion polls > National approval rating] excluded heading
+     polls kept: 43  | start result: yes
+[RO] Opinion polling for the 2024 Romanian parliamentary election  (rev 1348093600)  window 2020-12-06 .. 2024-12-01
+   + T00 rows=  21 [Polls > 2024] selected
+   + T01 rows=  25 [Polls > 2023] selected
+   + T02 rows=  21 [Polls > 2022] selected
+   + T03 rows=  48 [Polls > 2021] selected
+     T04 rows=  12 [Probable projection of seats in the next parliament] excluded heading
+     T05 rows=   9 [Approval ratings] excluded heading
+     T07 rows=   7 [2021 political crisis poll > Approval ratings of Florin Cîțu as prime ] excluded heading
+     polls kept: 100  | start result: yes | end result: yes
+[RO] 2020 Romanian parliamentary election  (rev 1373530576)  window 2016-12-11 .. 2020-12-06
+     T00 rows=  10 [Political parties] no date column
+   + T01 rows= 113 [Opinion polls > Party vote] selected
+     T02 rows=  31 [Results > Senate] no date column
+     T03 rows=  49 [Results > Chamber of Deputies] no date column
+     polls kept: 97  | start result: yes | end result: yes
+[RO] 2012 Romanian parliamentary election  (rev 1329989604)  window 2008-11-30 .. 2012-12-09
+     T00 rows=   9 [Opinion polling] only 0 party columns
+     T01 rows=  14 [Candidates > Contesting parties and alliances] no date column
+     T02 rows=  20 [Results > Senate] no date column
+     T03 rows=  38 [Results > Chamber of Deputies] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: Save Romania Union + Freedom, Unity and Solidarity Party x47 -> Save Romania Union; PRO Romania + Alliance of Liberals and Democrats (Romania) x17 -> PRO Romania
+     joint lists: People's Movement Party + Force of the Right x6 -> Force of the Right; Social Democratic Party (Romania) + National Liberal Party ( x1 -> None; National Liberal Party (Romania) + Force of the Right x29 -> National Liberal Party (Romania)
+[RO] history: 3 cycles, 240 polls, 13 series, 12 government periods (11 matched to a series)
+[BG] Next Bulgarian parliamentary election  (rev 1382908886)  window 2026-04-19 .. open
+     T00 rows=   6 [] no date column
+   + T01 rows=  10 [Opinion polls > Poll results] selected
+     polls kept: 9  | start result: yes
+     joint lists: We Continue the Change + Democratic Bulgaria x3 -> None
+[BG] Next Bulgarian parliamentary election  (rev 1382908886)  window 2026-04-19 .. open
+     T00 rows=   6 [] no date column
+   + T01 rows=  10 [Opinion polls > Poll results] selected
+     polls kept: 9  | start result: yes
+[BG] 2026 Bulgarian parliamentary election  (rev 1383448702)  window 2024-10-27 .. 2026-04-19
+     T00 rows=   5 [] no date column
+     T01 rows=   9 [Political parties > Parliamentary parties] no date column
+     T02 rows=  62 [Political parties > Contesting parties and coalitions] no date column
+   + T03 rows=  60 [Opinion polls] selected
+     T04 rows=  33 [Results] no date column
+     T05 rows=  32 [Results > Turnout] no date column
+     T06 rows=  21 [Results > Voter demographics] no date column
+     polls kept: 50  | start result: yes | end result: yes
+[BG] October 2024 Bulgarian parliamentary election  (rev 1383209152)  window 2024-06-09 .. 2024-10-27
+     T00 rows=   9 [] no date column
+     T02 rows=  63 [Parties > Contesting parties and coalitions] no date column
+     T03 rows=   8 [Campaign > Campaign finances] no date column
+     T04 rows=  27 [Campaign > Campaign slogans and websites] no date column
+   + T05 rows=  19 [Opinion polls] selected
+     T06 rows=  37 [Results > Results prior to the recalculation] no date column
+     T07 rows=  37 [Results > Results after the recalculation] no date column
+     T14 rows=   6 [Aftermath > Government formation] no date column
+     T15 rows=   7 [Aftermath > Government formation > First negotiation mandate] no date column
+     polls kept: 15  | start result: yes | end result: yes
+[BG] June 2024 Bulgarian parliamentary election  (rev 1382908562)  window 2023-04-02 .. 2024-06-09
+     T00 rows=   7 [] no date column
+     T01 rows=   6 [Parties > Parliamentary parties] no date column
+     T02 rows=  71 [Parties > Contesting parties and coalitions] no date column
+     T03 rows=  32 [Campaign > Campaign slogans and websites] no date column
+   + T04 rows=  44 [Opinion polls] selected
+     T05 rows=  39 [Results] no date column
+     T07 rows=   8 [Aftermath > Coalition negotiations > First negotiation mandate] no date column
+     polls kept: 39  | start result: yes | end result: yes
+[BG] 2023 Bulgarian parliamentary election  (rev 1382908075)  window 2022-10-02 .. 2023-04-02
+     T00 rows=   6 [] no date column
+     T01 rows=   7 [Parties > Parliamentary parties] no date column
+     T02 rows=  43 [Parties > Contesting parties and coalitions] no date column
+     T03 rows=   7 [Campaign > Campaign slogans] no date column
+   + T04 rows=  26 [Opinion polls] selected
+     T05 rows=  30 [Results] no date column
+     T06 rows=  22 [Results > Voter demographics] no date column
+     T07 rows=  34 [Results > By constituency] no date column
+     polls kept: 23  | start result: yes | end result: yes
+[BG] 2022 Bulgarian parliamentary election  (rev 1382908052)  window 2021-11-14 .. 2022-10-02
+     T00 rows=   7 [] no date column
+     T01 rows=   9 [Political groups] no date column
+     T02 rows=  43 [Competing parties] no date column
+   + T03 rows=  38 [Opinion polls] selected
+     T04 rows=  37 [Results] no date column
+     T05 rows=  22 [Results > Voter demographics] no date column
+     T06 rows=  34 [Results > By constituency] no date column
+     polls kept: 33  | start result: yes | end result: yes
+[BG] July 2021 Bulgarian parliamentary election  (rev 1382908543)  window 2021-04-04 .. 2021-07-11
+     T00 rows=   6 [] no date column
+     T01 rows=   6 [Parties and coalitions > Parliamentary parties] no date column
+     T02 rows=   6 [Parties and coalitions > Other parties] no date column
+   + T03 rows=  26 [Opinion polls] selected
+     T04 rows=  32 [Results] no date column
+     T05 rows=  22 [Results > Voter demographics] no date column
+     polls kept: 22  | start result: yes | end result: yes
+[BG] April 2021 Bulgarian parliamentary election  (rev 1382908371)  window 2017-03-26 .. 2021-04-04
+     T00 rows=   6 [] no date column
+     T01 rows=  67 [Parties and coalitions > List] no date column
+   + T02 rows=  50 [Opinion polls] selected
+     T03 rows=  39 [Results] no date column
+     T04 rows=  34 [Results > By constituency] no date column
+     T05 rows=  22 [Results > Voter demographics] no date column
+     polls kept: 50  | start result: MISSING | end result: MISSING
+[BG] 2017 Bulgarian parliamentary election  (rev 1382907991)  window 2014-10-05 .. 2017-03-26
+     T00 rows=   5 [] no date column
+     T01 rows=  44 [Participating parties] no date column
+   + T02 rows=  22 [Opinion polls] selected
+     T03 rows=  29 [Results] no date column
+     T04 rows=  26 [Results > Voter demographics] no date column
+     polls kept: 22  | start result: MISSING | end result: MISSING
+[BG] 2014 Bulgarian parliamentary election  (rev 1371553474)  window 2013-05-12 .. 2014-10-05
+     T00 rows=   8 [] no date column
+   + T01 rows=  31 [Opinion polls > Pre election campaign] selected
+   + T02 rows=   2 [Opinion polls > Election campaign] selected
+     T03 rows=  33 [Results] no date column
+     T04 rows=  22 [Results > Voter demographics] no date column
+     polls kept: 32  | start result: MISSING | end result: MISSING
+     (history) 2014 Bulgarian parliamentary election: dropped, median poll total 66% (not vote shares?)
+[BG] 2013 Bulgarian parliamentary election  (rev 1371569964)  window 2009-07-05 .. 2013-05-12
+   + T01 rows=  27 [Opinion polls] selected
+     T02 rows=  43 [Results] no date column
+     polls kept: 26  | start result: yes | end result: MISSING
+     (history) 2013 Bulgarian parliamentary election: dropped, median poll total 60% (not vote shares?)
+[BG] 2009 Bulgarian parliamentary election  (rev 1362814841)  window 2005-06-25 .. 2009-07-05
+     T00 rows=   6 [] no date column
+   + T01 rows=   2 [Opinion polls] selected
+     T02 rows=  26 [Results] no date column
+     T03 rows=  31 [Results] no date column
+     polls kept: 2  | start result: MISSING | end result: MISSING
+[BG] 2005 Bulgarian parliamentary election  (rev 1362814808)  window 2001-06-17 .. 2005-06-25
+     T00 rows=   7 [] no date column
+     T01 rows=  30 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[BG] 2001 Bulgarian parliamentary election  (rev 1382242973)  window 1997-04-19 .. 2001-06-17
+     T01 rows=  44 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: We Continue the Change + Democratic Bulgaria x1 -> None
+     joint lists: Bulgarian Rise + IMRO – Bulgarian National Movement x1 -> None
+     joint lists: We Continue the Change + Democratic Bulgaria x3 -> None
+     [BG] government parties not matched to a series: ['Gerdzhikov (National Movement Simeon II)']
+[BG] history: 9 cycles, 263 polls, 25 series, 13 government periods (7 matched to a series)
+[RS] Opinion polling for the 2026 Serbian parliamentary election  (rev 1383415522)  window 2023-12-17 .. 2026-10-25
+   + T00 rows=  10 [Poll results > 2026] selected
+   + T01 rows=   6 [Poll results > 2025] selected
+   + T02 rows=   5 [Poll results > 2024] selected
+     T03 rows=   9 [Scenario polls > United opposition and student-led list] excluded heading
+     polls kept: 17  | start result: yes | end result: yes
+     joint lists: Party of Freedom and Justice + Serbia Centre + People's Move x1 -> None; Serbia Must Not Stop + Socialist Party of Serbia x1 -> None; Party of Freedom and Justice + Serbia Centre x3 -> None; Green–Left Front + Democratic Party (Serbia) x2 -> None; New Democratic Party of Serbia + POKS + We – Power of the Pe x1 -> None
+[RS] Opinion polling for the 2026 Serbian parliamentary election  (rev 1383415522)  window 2023-12-17 .. 2026-10-25
+   + T00 rows=  10 [Poll results > 2026] selected
+   + T01 rows=   6 [Poll results > 2025] selected
+   + T02 rows=   5 [Poll results > 2024] selected
+     T03 rows=   9 [Scenario polls > United opposition and student-led list] excluded heading
+     polls kept: 17  | start result: yes | end result: yes
+[RS] Opinion polling for the 2023 Serbian parliamentary election  (rev 1306414611)  window 2020-06-21 .. 2023-12-17
+   + T00 rows=  20 [Poll results > 2023] selected
+   + T01 rows=   7 [Poll results > 2022] selected
+     polls kept: 23  | start result: MISSING | end result: yes
+[RS] 2020 Serbian parliamentary election  (rev 1382064052)  window 2016-04-24 .. 2020-06-21
+     T00 rows=   8 [] no date column
+     T01 rows=  21 [Electoral lists] no date column
+   + T02 rows=  10 [Opinion polls > Polls conducted after official start of campaign] selected
+   + T03 rows=  76 [Opinion polls > Polls conducted before official start of campaign] selected
+     T04 rows=  28 [Results] no date column
+     dropped rows: {'outside window': 10}
+     polls kept: 62  | start result: yes | end result: MISSING
+[RS] Opinion polling for the 2016 Serbian parliamentary election  (rev 1306313467)  window 2014-03-16 .. 2016-04-24
+   + T00 rows=  57 [Party vote] selected
+     dropped rows: {'outside window': 23}
+     polls kept: 30  | start result: yes | end result: yes
+[RS] Opinion polling for the 2014 Serbian parliamentary election  (rev 1226412171)  window 2012-05-06 .. 2014-03-16
+   + T00 rows=  37 [Party vote] selected
+     dropped rows: {'outside window': 11}
+     polls kept: 16  | start result: yes | end result: yes
+[RS] Opinion polling for the 2012 Serbian parliamentary election  (rev 1306224672)  window 2008-05-11 .. 2012-05-06
+   + T00 rows=  42 [Party vote] selected
+     dropped rows: {'outside window': 4}
+     polls kept: 28  | start result: yes | end result: yes
+[RS] 2008 Serbian parliamentary election  (rev 1327421594)  window 2007-01-21 .. 2008-05-11
+     T00 rows=   9 [] no date column
+     T01 rows=  22 [Electoral lists] no date column
+     T02 rows=   6 [Campaign] no date column
+     T03 rows=   7 [Opinion polls] no date column
+     T04 rows=  29 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[RS] 2007 Serbian parliamentary election  (rev 1375208380)  window 2003-12-28 .. 2007-01-21
+     T00 rows=  12 [] no date column
+     T01 rows=  20 [Electoral lists] no date column
+     T02 rows=  11 [Campaign > Slogans] no date column
+     T03 rows=  27 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[RS] 2003 Serbian parliamentary election  (rev 1375615857)  window 2000-12-23 .. 2003-12-28
+     T00 rows=   6 [] no date column
+     T01 rows=  19 [Electoral lists] no date column
+     T02 rows=  26 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[RS] 2000 Serbian parliamentary election  (rev 1375615956)  window 1993-12-19 .. 2000-12-23
+     T01 rows=   8 [Electoral lists] no date column
+     T02 rows=  15 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: Dveri + Democratic Party of Serbia x12 -> Dveri; Social Democratic Party (Serbia) + Liberal Democratic Party  x12 -> Social Democratic Party (Serbia)
+     joint lists: Party of Freedom and Justice + Movement of Free Citizens (Se x1 -> None; Do not let Belgrade drown + Together (Serbia) x1 -> None
+     joint lists: Party of Freedom and Justice + Serbia Centre + People's Move x1 -> None; Serbia Must Not Stop + Socialist Party of Serbia x1 -> None; Party of Freedom and Justice + Serbia Centre x3 -> None; Green–Left Front + Democratic Party (Serbia) x2 -> None; New Democratic Party of Serbia + POKS + We – Power of the Pe x1 -> None
+[RS] history: 6 cycles, 176 polls, 28 series, 9 government periods (9 matched to a series)
+[ME] Next Montenegrin parliamentary election  (rev 1383031887)  window 2023-06-11 .. open
+     T00 rows=  14 [] no date column
+   + T01 rows=  31 [Opinion polls] selected
+     polls kept: 27  | start result: yes
+[ME] Next Montenegrin parliamentary election  (rev 1383031887)  window 2023-06-11 .. open
+     T00 rows=  14 [] no date column
+   + T01 rows=  31 [Opinion polls] selected
+     polls kept: 27  | start result: yes
+[ME] 2023 Montenegrin parliamentary election  (rev 1382311364)  window 2020-08-30 .. 2023-06-11
+     T00 rows=   9 [] no date column
+     T01 rows=  15 [Electoral lists] no date column
+   + T02 rows=  18 [Opinion polls] selected
+     T03 rows=  22 [Results] no date column
+     polls kept: 16  | start result: yes | end result: MISSING
+[ME] 2020 Montenegrin parliamentary election  (rev 1305091096)  window 2016-10-16 .. 2020-08-30
+     T00 rows=   9 [] no date column
+     T01 rows=  13 [Campaign > Electoral lists] no date column
+   + T02 rows=  23 [Opinion polls] selected
+     T03 rows=  18 [Results] no date column
+     polls kept: 21  | start result: MISSING | end result: MISSING
+[ME] 2016 Montenegrin parliamentary election  (rev 1373264963)  window 2012-10-14 .. 2016-10-16
+     T00 rows=   9 [] no date column
+     T01 rows=  18 [Campaign > Electoral lists] no date column
+   + T02 rows=  14 [Opinion polls] selected
+     T03 rows=  24 [Results] no date column
+     dropped rows: {'outside window': 1}
+     polls kept: 12  | start result: MISSING | end result: MISSING
+[ME] 2012 Montenegrin parliamentary election  (rev 1331088822)  window 2009-03-29 .. 2012-10-14
+     T00 rows=   8 [] no date column
+     T01 rows=  12 [Electoral lists] no date column
+   + T02 rows=   9 [Opinion polls] selected
+     T03 rows=  20 [Results] no date column
+     dropped rows: {'outside window': 2}
+     polls kept: 6  | start result: MISSING | end result: MISSING
+[ME] 2009 Montenegrin parliamentary election  (rev 1369561125)  window 2006-09-10 .. 2009-03-29
+     T00 rows=   8 [] no date column
+     T01 rows=  23 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[ME] 2006 Montenegrin parliamentary election  (rev 1368721568)  window 2002-10-20 .. 2006-09-10
+     T00 rows=   8 [] no date column
+     T01 rows=  19 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[ME] 2002 Montenegrin parliamentary election  (rev 1305074132)  window 2001-04-22 .. 2002-10-20
+     T01 rows=   8 [Contesting parties] no date column
+     T02 rows=  17 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[ME] 2001 Montenegrin parliamentary election  (rev 1305074135)  window 1998-05-31 .. 2001-04-22
+     T00 rows=   5 [] no date column
+     T01 rows=   8 [Contesting parties] no date column
+     T02 rows=  23 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: Democratic Front (Montenegro) + True Montenegro + Socialist  x2 -> None; DEMOS (Montenegro) + Democratic Montenegro x3 -> None; New Democratic Force (Montenegro) + Albanian Alternative x10 -> Albanian Alternative; Democratic Front (Montenegro) + True Montenegro x1 -> None; Socialist People's Party of Montenegro + United Montenegro x4 -> None
+     joint lists: New Serb Democracy + Democratic People's Party (Montenegro)  x11 -> New Serb Democracy; Albanian Alternative + New Democratic Force (Montenegro) x6 -> Albanian Alternative; New Serb Democracy + Democratic People's Party (Montenegro)  x3 -> None; Socialist People's Party of Montenegro + DEMOS (Montenegro)  x3 -> None; DEMOS (Montenegro) + Democratic Montenegro x1 -> None
+[ME] history: 5 cycles, 82 polls, 16 series, 8 government periods (7 matched to a series)
+[MD] Next Moldovan parliamentary election  (rev 1377676021)  window 2025-09-28 .. open
+     T00 rows=   8 [] no date column
+     T01 rows=  10 [Parties and coalitions] no date column
+   + T02 rows=  13 [Opinion polls] selected
+     polls kept: 8  | start result: yes
+     joint lists: National Alternative Movement + Party of Development and Con x2 -> None
+[MD] Next Moldovan parliamentary election  (rev 1377676021)  window 2025-09-28 .. open
+     T00 rows=   8 [] no date column
+     T01 rows=  10 [Parties and coalitions] no date column
+   + T02 rows=  13 [Opinion polls] selected
+     polls kept: 8  | start result: yes
+[MD] 2025 Moldovan parliamentary election  (rev 1379361722)  window 2021-07-11 .. 2025-09-28
+     T00 rows=   5 [] no date column
+     T01 rows=  10 [Parties and coalitions] no date column
+     T02 rows=  23 [Parties and coalitions > Competing electoral lists] no date column
+   + T03 rows= 107 [Opinion polls] selected
+     T04 rows=  26 [Results] no date column
+     T05 rows=  45 [Results > Results by administrative-territorial units] no date column
+     T06 rows=  15 [Aftermath > Opening of the new parliament] no date column
+     T07 rows=  18 [Aftermath > Government formation] no date column
+     polls kept: 92  | start result: yes | end result: MISSING
+[MD] Opinion polling for the 2021 Moldovan parliamentary election  (rev 1322290174)  window 2019-02-24 .. 2021-07-11
+   + T00 rows=  85 [Party vote] selected
+     polls kept: 70  | start result: yes | end result: yes
+     (history) Opinion polling for the 2021 Moldovan parliamentary election: dropped, median poll total 60% (not vote shares?)
+[MD] 2019 Moldovan parliamentary election  (rev 1372862601)  window 2014-11-30 .. 2019-02-24
+     T01 rows=   7 [Parties and coalitions] no date column
+     T02 rows=  17 [Parties and coalitions > Competing electoral lists] no date column
+   + T03 rows=  66 [Opinion polls] selected
+     T04 rows=  23 [Results] no date column
+     T06 rows=  38 [Results > Results by administrative-territorial unit] no date column
+     polls kept: 58  | start result: yes | end result: MISSING
+[MD] 2014 Moldovan parliamentary election  (rev 1372861500)  window 2010-11-28 .. 2014-11-30
+     T00 rows=   5 [] no date column
+     T01 rows=   5 [Parties and coalitions] no date column
+     T02 rows=  26 [Campaign > Participating] no date column
+     T03 rows=  12 [Opinion polls] no date column
+     T04 rows=  28 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[MD] 2010 Moldovan parliamentary election  (rev 1372861184)  window 2009-07-29 .. 2010-11-28
+     T01 rows=   5 [Parties and coalitions] no date column
+   + T02 rows=   7 [Opinion polls] selected
+     T04 rows=  28 [Results] no date column
+     T05 rows=  38 [Results > By district] no date column
+     polls kept: 7  | start result: MISSING | end result: MISSING
+[MD] July 2009 Moldovan parliamentary election  (rev 1372860819)  window 2009-04-05 .. 2009-07-29
+     T00 rows=   5 [] no date column
+     T01 rows=  15 [Results] no date column
+     T02 rows=  37 [Results > By district] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[MD] April 2009 Moldovan parliamentary election  (rev 1372860367)  window 2005-03-06 .. 2009-04-05
+     T01 rows=  20 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[MD] 2005 Moldovan parliamentary election  (rev 1372859528)  window 2001-02-25 .. 2005-03-06
+     T01 rows=  19 [Results] no date column
+     T02 rows=  39 [Results > Results by administrative-territorial unit] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[MD] 2001 Moldovan parliamentary election  (rev 1361474414)  window 1998-03-22 .. 2001-02-25
+     T01 rows=  25 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: Party of Socialists of the Republic of Moldova + Party of Co x6 -> Party of Socialists of the Republic of Moldova; Chance Political Party + Șor Party + Revival Party (Moldova) x24 -> Șor Party; LOC + Dignity and Truth Platform + PS + Ecologist Green Part x8 -> LOC; LOC + Dignity and Truth Platform + PS x10 -> LOC; CUB + LOC + Dignity and Truth Platform + PS x7 -> CUB; Șor Party + Revival Party (Moldova) x1 -> None
+     joint lists: National Alternative Movement + Party of Development and Con x2 -> None
+[MD] history: 4 cycles, 165 polls, 19 series, 13 government periods (11 matched to a series)
+[BE] skipped: No nationwide parties or national polls (polls are by region); no English Wikipedia page for the next cycle.
+[CH] skipped: Collegial executive (Federal Council of all major parties): no single incumbent.
+[CY] skipped: Presidential system with an independent president; no incumbent party.

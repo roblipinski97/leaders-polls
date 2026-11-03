@@ -1,0 +1,79 @@
+# Re-scrape Wikipedia every morning (python -m polls update: new polls, elections held,
+# rollover) and publish the dashboard on GitHub Pages.
+# One-time setup in the GitHub repository: Settings -> Pages -> Source: "GitHub Actions".
+# Optional: Settings -> Secrets and variables -> Actions -> Variables -> POLLS_USER_AGENT
+#           (e.g. "EuropePollsDashboard/1.0 (you@example.com)"), as Wikimedia asks API users to.
+# Optional: a variable SITE_URL (e.g. "https://polls.example.org/") if the site has a custom
+#           domain; otherwise the link previews point at https://<owner>.github.io/<repository>/.
+name: Update polls and deploy
+
+on:
+  schedule:
+    - cron: "17 5 * * *"      # every day at 05:17 UTC
+  workflow_dispatch:           # "Run workflow" button
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Restore the page cache (old terms are refetched monthly, not daily)
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: wikipedia-raw-${{ github.run_id }}
+          restore-keys: wikipedia-raw-
+      - name: Refresh polls, roll over any election just held, build the data
+        env:
+          POLLS_USER_AGENT: ${{ vars.POLLS_USER_AGENT }}
+        run: python -m polls update
+      - name: Commit refreshed data (keeps a history of the numbers)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data data/processed config/rollover.yaml
+          if ! git diff --cached --quiet; then
+            git commit -m "Update polling data $(date -u +%F)"
+            git push
+          fi
+      - name: Redraw the link-preview image with today's map (if this fails, the saved one is used)
+        continue-on-error: true
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+          node tools/make_social.js preview
+      - name: Point the link previews at this site's address
+        run: |
+          URL="${{ vars.SITE_URL }}"
+          if [ -z "$URL" ]; then URL="https://${GITHUB_REPOSITORY_OWNER,,}.github.io/${GITHUB_REPOSITORY#*/}/"; fi
+          case "$URL" in */) ;; *) URL="$URL/" ;; esac
+          sed -i "s|__SITE_URL__|$URL|g" site/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,489 @@
+country_name_short,start_date,cabinet_name,caretaker,party_name_short,party_name_english,cabinet_id
+AUT,1986-06-16,Vranitzky I,0,SPO,Social Democratic Party of Austria,828
+AUT,1987-01-21,Vranitzky II,0,SPO,Social Democratic Party of Austria,873
+AUT,1990-12-17,Vranitzky III,0,SPO,Social Democratic Party of Austria,524
+AUT,1994-11-29,Vranitzky IV,0,SPO,Social Democratic Party of Austria,294
+AUT,1996-03-12,Vranitzky V,0,SPO,Social Democratic Party of Austria,323
+AUT,1997-01-28,Klima I,0,SPO,Social Democratic Party of Austria,412
+AUT,1999-10-03,Klima II,1,SPO,Social Democratic Party of Austria,1034
+AUT,2000-02-04,Schuessel I,0,OVP,Austrian People's Party,722
+AUT,2002-11-24,Schuessel II,1,OVP,Austrian People's Party,889
+AUT,2003-02-28,Schuessel III,0,OVP,Austrian People's Party,257
+AUT,2005-04-05,Schuessel IV,0,OVP,Austrian People's Party,888
+AUT,2007-01-11,Gusenbauer,0,SPO,Social Democratic Party of Austria,583
+AUT,2008-12-02,Faymann I,0,SPO,Social Democratic Party of Austria,268
+AUT,2013-12-16,Faymann II,0,SPO,Social Democratic Party of Austria,1070
+AUT,2016-05-17,Kern,0,SPO,Social Democratic Party of Austria,1485
+AUT,2017-12-18,Kurz I,0,OVP,Austrian People's Party,1521
+AUT,2019-06-03,Bierlein I,1,none,no party affiliation,1600
+AUT,2019-09-29,Bierlein II,1,none,no party affiliation,1608
+AUT,2020-01-07,Kurz II,0,OVP,Austrian People's Party,1609
+BGR,1991-11-05,Dimitrov,0,SDS,Union of Democratic Forces,348
+BGR,1992-12-30,Berov,0,none,no party affiliation,462
+BGR,1994-10-16,Indzhova,1,none,no party affiliation,109
+BGR,1995-01-26,Videnov,0,KzB|DL,Coalition for Bulgaria | Democratic Left,541
+BGR,1997-02-12,Sofiyanski,1,SDS,Union of Democratic Forces,714
+BGR,1997-05-21,Kostov,0,ODS,United Democratic Forces,792
+BGR,2001-07-24,Sakskoburggotski,0,NDSV,National Movement Simeon II,575
+BGR,2005-08-17,Stanishev,0,KzB|DL,Coalition for Bulgaria | Democratic Left,425
+BGR,2009-07-27,Borisov I,0,GERB,Citizens for European Development of Bulgaria,805
+BGR,2013-03-13,Raikov,1,none,no party affiliation,1045
+BGR,2013-05-29,Oresharski,1,none,no party affiliation,1058
+BGR,2014-08-05,Bliznashki,1,none,no party affiliation,1139
+BGR,2014-11-07,Borisov II,0,GERB,Citizens for European Development of Bulgaria,1153
+BGR,2017-01-25,Gerdzhikov,1,NDSV,National Movement Simeon II,1503
+BGR,2017-05-04,Borisov III,0,GERB,Citizens for European Development of Bulgaria,1505
+CZE,1990-06-29,Pithart,0,OF,Civic Forum,262
+CZE,1992-07-02,Klaus I,0,ODS,Civic Democratic Party,165
+CZE,1993-01-01,Klaus II,0,ODS,Civic Democratic Party,835
+CZE,1996-07-02,Klaus III,0,ODS,Civic Democratic Party,136
+CZE,1998-01-02,Tosovsky,1,none,no party affiliation,76
+CZE,1998-07-17,Zeman,0,CSSD,Czech Social Democratic Party,443
+CZE,2002-07-15,Spidla,0,CSSD,Czech Social Democratic Party,504
+CZE,2004-08-04,Gross,0,CSSD,Czech Social Democratic Party,580
+CZE,2005-04-25,Paroubek,0,CSSD,Czech Social Democratic Party,15
+CZE,2006-08-16,Topolanek I,0,ODS,Civic Democratic Party,600
+CZE,2007-01-09,Topolanek II,0,ODS,Civic Democratic Party,260
+CZE,2009-04-09,Fischer,1,none,no party affiliation,157
+CZE,2010-06-28,Necas I,0,ODS,Civic Democratic Party,708
+CZE,2012-04-27,Necas II,0,ODS,Civic Democratic Party,1030
+CZE,2013-07-10,Rusnok,1,none,no party affiliation,1062
+CZE,2014-01-17,Sobotka,0,CSSD,Czech Social Democratic Party,1072
+CZE,2017-12-13,Babis I,1,ANO,Action of Dissatisfied Citizens,1522
+CZE,2018-06-27,Babis II,0,ANO,Action of Dissatisfied Citizens,1534
+DEU,1987-03-11,Kohl III,0,CDU+CSU,Christian Democratic Union / Christian Social Union,286
+DEU,1991-01-18,Kohl IV,0,CDU+CSU,Christian Democratic Union / Christian Social Union,862
+DEU,1994-11-17,Kohl V,0,CDU+CSU,Christian Democratic Union / Christian Social Union,778
+DEU,1998-10-27,Schroeder I,0,SPD,Social Democratic Party of Germany,107
+DEU,2002-10-22,Schroeder II,0,SPD,Social Democratic Party of Germany,529
+DEU,2005-11-22,Merkel I,0,CDU+CSU,Christian Democratic Union / Christian Social Union,85
+DEU,2009-10-28,Merkel II,0,CDU+CSU,Christian Democratic Union / Christian Social Union,472
+DEU,2013-12-17,Merkel III,0,CDU+CSU,Christian Democratic Union / Christian Social Union,1071
+DEU,2017-09-24,Merkel IV,1,CDU+CSU,Christian Democratic Union / Christian Social Union,1515
+DEU,2018-03-14,Merkel V,0,CDU+CSU,Christian Democratic Union / Christian Social Union,1528
+DNK,1987-09-10,Schluter III,0,KF,Conservatives,837
+DNK,1988-06-03,Schluter IV,0,KF,Conservatives,57
+DNK,1990-12-18,Schluter V,0,KF,Conservatives,11
+DNK,1993-01-25,Rasmussen N I,0,Sd,Social Democrats,740
+DNK,1994-09-27,Rasmussen N II,0,Sd,Social Democrats,189
+DNK,1996-12-30,Rasmussen N III,0,Sd,Social Democrats,255
+DNK,1998-03-11,Rasmussen N IV,0,Sd,Social Democrats,630
+DNK,2001-11-27,Rasmussen F I,0,V,Liberal Party,482
+DNK,2005-02-18,Rasmussen F II,0,V,Liberal Party,316
+DNK,2007-11-23,Rasmussen F III,0,V,Liberal Party,788
+DNK,2009-04-05,Rasmussen L I,0,V,Liberal Party,71
+DNK,2011-10-02,Thorning-Schmidt I,0,Sd,Social Democrats,970
+DNK,2014-02-03,Thorning-Schmidt II,0,Sd,Social Democrats,1074
+DNK,2015-06-28,Rasmussen L II,0,V,Liberal Party,1172
+DNK,2016-11-28,Rasmussen L III,0,V,Liberal Party,1497
+DNK,2019-06-27,Frederiksen,0,Sd,Social Democrats,1598
+ESP,1986-07-25,Gonzalez II,0,PSOE,Spanish Socialist Workers Party,834
+ESP,1989-12-05,Gonzalez III,0,PSOE,Spanish Socialist Workers Party,37
+ESP,1993-07-09,Gonzalez IV,0,PSOE,Spanish Socialist Workers Party,654
+ESP,1996-05-05,Aznar I,0,AP-P,People's Alliance-Party,370
+ESP,2000-04-26,Aznar II,0,AP-P,People's Alliance-Party,309
+ESP,2004-04-17,Zapatero I,0,PSOE,Spanish Socialist Workers Party,806
+ESP,2008-04-12,Zapatero II,0,PSOE,Spanish Socialist Workers Party,497
+ESP,2011-12-21,Rajoy I,0,AP-P,People's Alliance-Party,988
+ESP,2015-12-20,Rajoy II,1,AP-P,People's Alliance-Party,1421
+ESP,2016-06-26,Rajoy III,1,AP-P,People's Alliance-Party,1493
+ESP,2016-10-29,Rajoy IV,0,AP-P,People's Alliance-Party,1494
+ESP,2018-06-02,Sanchez I,0,PSOE,Spanish Socialist Workers Party,1533
+ESP,2019-04-28,Sanchez II,1,PSOE,Spanish Socialist Workers Party,1601
+ESP,2020-01-07,Sanchez III,0,PSOE,Spanish Socialist Workers Party,1605
+EST,1992-10-21,Laar I,0,RKI,"National Coalition Party ""Pro Patria""",564
+EST,1994-11-03,Tarand,0,SDE|M,Social Democratic Party | Moderates,4
+EST,1995-04-17,Vahi I,0,EKK,Estonian Coalition Party,604
+EST,1995-11-03,Vahi II,0,EKK,Estonian Coalition Party,530
+EST,1996-12-01,Vahi III,0,EKK,Estonian Coalition Party,271
+EST,1997-03-14,Siimann,0,EKK,Estonian Coalition Party,303
+EST,1999-03-25,Laar II,0,I,Pro Patria Union,480
+EST,2002-01-28,Kallas,0,ERe,Estonian Reform Party,152
+EST,2003-04-10,Parts,0,ERP,Res Publica Party,138
+EST,2005-04-13,Ansip I,0,ERe,Estonian Reform Party,274
+EST,2007-04-05,Ansip II,0,ERe,Estonian Reform Party,686
+EST,2009-05-21,Ansip III,0,ERe,Estonian Reform Party,902
+EST,2011-04-05,Ansip IV,0,ERe,Estonian Reform Party,905
+EST,2014-03-26,Roivas I,0,ERe,Estonian Reform Party,1095
+EST,2015-04-09,Roivas II,0,ERe,Estonian Reform Party,1160
+EST,2016-11-20,Ratas I,0,EK,Estonian Centre Party,1495
+EST,2019-04-29,Ratas II,0,EK,Estonian Centre Party,1595
+FIN,1987-04-30,Holkeri I,0,KOK,National Coalition Party,614
+FIN,1990-08-28,Holkeri II,0,SSDP,Social Democratic Party of Finland,41
+FIN,1991-04-26,Aho I,0,KESK,Centre Party,831
+FIN,1994-06-26,Aho II,0,KESK,Centre Party,206
+FIN,1995-04-13,Lipponen I,0,SSDP,Social Democratic Party of Finland,100
+FIN,1999-04-15,Lipponen II,0,SSDP,Social Democratic Party of Finland,352
+FIN,2002-05-31,Lipponen III,0,SSDP,Social Democratic Party of Finland,663
+FIN,2003-04-17,Jaatteenmaki,0,KESK,Centre Party,877
+FIN,2003-06-24,Vanhanen I,0,KESK,Centre Party,759
+FIN,2007-04-19,Vanhanen II,0,KESK,Centre Party,277
+FIN,2010-06-22,Kiviniemi,0,KESK,Centre Party,383
+FIN,2011-06-22,Katainen I,0,KOK,National Coalition Party,918
+FIN,2014-03-25,Katainen II,0,KOK,National Coalition Party,1094
+FIN,2014-06-24,Stubb I,0,KOK,National Coalition Party,1110
+FIN,2014-09-20,Stubb II,0,KOK,National Coalition Party,1145
+FIN,2015-05-29,Sipilae I,0,KESK,Centre Party,1163
+FIN,2017-06-13,Sipilae II,0,KESK,Centre Party,1510
+FIN,2019-06-06,Rinne,0,SSDP,Social Democratic Party of Finland,1596
+FIN,2019-12-10,Marin,0,SSDP,Social Democratic Party of Finland,1607
+FRA,1986-03-20,Chirac II,0,RPR,Rally for the Republic,290
+FRA,1988-05-10,Rocard I,0,PS,Socialist Party,1150
+FRA,1988-06-23,Rocard II,0,PS,Socialist Party,712
+FRA,1991-05-16,Cresson,0,PS,Socialist Party,229
+FRA,1992-04-02,Beregovoy I,0,PS,Socialist Party,199
+FRA,1993-03-29,Balladur,0,RPR,Rally for the Republic,318
+FRA,1995-05-17,Juppe I,0,RPR,Rally for the Republic,244
+FRA,1995-11-07,Juppe II,0,RPR,Rally for the Republic,422
+FRA,1997-06-02,Jospin,0,PS,Socialist Party,481
+FRA,2002-05-07,Raffarin I,0,RPR,Rally for the Republic,711
+FRA,2002-06-17,Raffarin II,0,UMP|LR,Union for a Popular Movement | The Republicans,820
+FRA,2004-03-30,Raffarin III,0,UMP|LR,Union for a Popular Movement | The Republicans,802
+FRA,2005-05-31,Villepin,0,UMP|LR,Union for a Popular Movement | The Republicans,46
+FRA,2007-05-18,Fillon I,0,UMP|LR,Union for a Popular Movement | The Republicans,807
+FRA,2007-06-18,Fillon II,0,UMP|LR,Union for a Popular Movement | The Republicans,306
+FRA,2010-11-14,Fillon III,0,UMP|LR,Union for a Popular Movement | The Republicans,883
+FRA,2012-05-15,Ayrault I,0,PS,Socialist Party,1037
+FRA,2012-06-18,Ayrault II,0,PS,Socialist Party,1038
+FRA,2014-03-31,Valls I,0,PS,Socialist Party,1103
+FRA,2014-08-26,Valls II,0,PS,Socialist Party,1141
+FRA,2016-02-11,Valls III,0,PS,Socialist Party,1406
+FRA,2016-12-06,Cazeneuve,1,PS,Socialist Party,1498
+FRA,2017-06-14,Philippe I,0,UMP|LR,Union for a Popular Movement | The Republicans,1508
+FRA,2017-06-21,Philippe II,0,UMP|LR,Union for a Popular Movement | The Republicans,1509
+GBR,1987-06-11,Thatcher III,0,Con,Conservatives,297
+GBR,1990-11-28,Major I,0,Con,Conservatives,515
+GBR,1992-04-09,Major II,0,Con,Conservatives,678
+GBR,1997-05-02,Blair I,0,Lab,Labour,838
+GBR,2001-06-07,Blair II,0,Lab,Labour,19
+GBR,2005-05-06,Blair III,0,Lab,Labour,516
+GBR,2007-06-27,Brown,0,Lab,Labour,119
+GBR,2010-05-11,Cameron I,0,Con,Conservatives,874
+GBR,2015-05-08,Cameron II,0,Con,Conservatives,1162
+GBR,2016-07-13,May I,0,Con,Conservatives,1489
+GBR,2017-06-11,May II,0,Con,Conservatives,1507
+GBR,2019-07-24,Johnson I,0,Con,Conservatives,1599
+GBR,2019-12-13,Johnson II,0,Con,Conservatives,1606
+GRC,1985-06-05,Papandreou A II,0,PASOK,Panhellenic Socialist Movement,60
+GRC,1985-07-26,Papandreou A III,0,PASOK,Panhellenic Socialist Movement,39
+GRC,1989-07-02,Tzannetakis,0,ND,New Democracy,782
+GRC,1989-10-11,Grivas,1,none,no party affiliation,721
+GRC,1989-11-23,Zolotas I,1,none,no party affiliation,454
+GRC,1990-02-13,Zolotas II,1,none,no party affiliation,716
+GRC,1990-04-11,Mitsotakis Kon,0,ND,New Democracy,362
+GRC,1993-10-13,Papandreou A IV,0,PASOK,Panhellenic Socialist Movement,74
+GRC,1996-01-22,Simitis I,0,PASOK,Panhellenic Socialist Movement,281
+GRC,1996-09-24,Simitis II,0,PASOK,Panhellenic Socialist Movement,33
+GRC,2000-04-13,Simitis III,0,PASOK,Panhellenic Socialist Movement,190
+GRC,2004-03-10,Karamanlis Kos I,0,ND,New Democracy,876
+GRC,2007-10-01,Karamanlis Kos II,0,ND,New Democracy,581
+GRC,2009-10-06,Papandreou G,0,PASOK,Panhellenic Socialist Movement,224
+GRC,2011-11-11,Papademos,1,none,no party affiliation,984
+GRC,2012-05-16,Pikramenos,1,none,no party affiliation,1039
+GRC,2012-06-20,Samaras I,0,ND,New Democracy,1040
+GRC,2013-06-25,Samaras II,0,ND,New Democracy,1060
+GRC,2015-01-27,Tsipras I,0,SYRIZA,Coalition of the Radical Left,1157
+GRC,2015-09-21,Tsipras II,0,SYRIZA,Coalition of the Radical Left,1175
+GRC,2019-01-13,Tsipras III,0,SYRIZA,Coalition of the Radical Left,1593
+GRC,2019-07-08,Mitsotakis Kyr,0,ND,New Democracy,1597
+HRV,2000-01-27,Racan I,0,SPH,Social Democratic Party of Croatia,1049
+HRV,2001-06-04,Racan II,0,SPH,Social Democratic Party of Croatia,1050
+HRV,2002-07-30,Racan III,0,SPH,Social Democratic Party of Croatia,1051
+HRV,2003-12-23,Sanader I,0,HDZ,Croatian Democratic Union,1052
+HRV,2006-02-11,Sanader II,0,HDZ,Croatian Democratic Union,1053
+HRV,2008-01-12,Sanader III,0,HDZ,Croatian Democratic Union,1054
+HRV,2009-07-06,Kosor I,0,HDZ,Croatian Democratic Union,1055
+HRV,2010-07-10,Kosor II,0,HDZ,Croatian Democratic Union,1057
+HRV,2011-12-23,Milanovic,0,SPH,Social Democratic Party of Croatia,1056
+HRV,2016-01-22,Oreskovic,0,none,no party affiliation,1408
+HRV,2016-10-19,Plenkovic I,0,HDZ,Croatian Democratic Union,1500
+HRV,2017-07-09,Plenkovic II,0,HDZ,Croatian Democratic Union,1512
+HRV,2020-07-23,Plenkovic III,0,HDZ,Croatian Democratic Union,1637
+HUN,1990-05-23,Antall,0,MDF,Hungarian Democratic Forum,369
+HUN,1993-12-21,Boross,0,MDF,Hungarian Democratic Forum,13
+HUN,1994-07-15,Horn,0,MSZP,Hungarian Socialist Party,488
+HUN,1998-07-06,Orban I,0,Fi-MPSz,Fidesz -- Hungarian Civic Union,827
+HUN,2002-05-27,Medgyessy,0,MSZP,Hungarian Socialist Party,302
+HUN,2004-09-29,Gyurcsany I,0,MSZP,Hungarian Socialist Party,188
+HUN,2006-06-09,Gyurcsany II,0,MSZP,Hungarian Socialist Party,325
+HUN,2008-05-02,Gyurcsany III,0,MSZP,Hungarian Socialist Party,706
+HUN,2009-04-14,Bajnai,0,none,no party affiliation,162
+HUN,2010-05-29,Orban II,0,Fi-MPSz,Fidesz -- Hungarian Civic Union,846
+HUN,2014-05-10,Orban III,0,Fi-MPSz,Fidesz -- Hungarian Civic Union,1104
+HUN,2018-05-10,Orban IV,0,Fi-MPSz,Fidesz -- Hungarian Civic Union,1531
+IRL,1987-03-10,Haughey III,0,FF,Fianna Fail,77
+IRL,1989-07-12,Haughey IV,0,FF,Fianna Fail,215
+IRL,1992-02-11,Reynolds I,0,FF,Fianna Fail,870
+IRL,1993-01-12,Reynolds II,0,FF,Fianna Fail,748
+IRL,1994-12-15,Bruton,0,FG,Fine Gael (Familiy of the Irish),573
+IRL,1997-06-26,Ahern I,0,FF,Fianna Fail,126
+IRL,2002-06-06,Ahern II,0,FF,Fianna Fail,179
+IRL,2007-06-14,Ahern III,0,FF,Fianna Fail,864
+IRL,2008-05-07,Cowen,0,FF,Fianna Fail,173
+IRL,2011-03-09,Kenny I,0,FG,Fine Gael (Familiy of the Irish),904
+IRL,2016-05-06,Kenny II,0,FG,Fine Gael (Familiy of the Irish),1484
+IRL,2017-06-14,Varadkar I,0,FG,Fine Gael (Familiy of the Irish),1511
+IRL,2020-02-08,Varadkar II,1,FG,Fine Gael (Familiy of the Irish),1641
+IRL,2020-06-27,Martin,0,FF,Fianna Fail,1642
+ISL,1987-07-08,Palsson,0,Sj,Independence Party,279
+ISL,1988-09-28,Hermannsson II,0,F,Progressive Party,301
+ISL,1989-09-10,Hermannsson III,0,F,Progressive Party,127
+ISL,1991-04-30,Oddsson I,0,Sj,Independence Party,640
+ISL,1995-04-13,Oddsson II,0,Sj,Independence Party,158
+ISL,1999-05-28,Oddsson III,0,Sj,Independence Party,177
+ISL,2003-05-23,Oddsson IV,0,Sj,Independence Party,130
+ISL,2004-09-15,Asgrimsson,0,F,Progressive Party,555
+ISL,2006-06-15,Haarde I,0,Sj,Independence Party,246
+ISL,2007-05-24,Haarde II,0,Sj,Independence Party,558
+ISL,2009-02-01,Sigurdardottir I,1,Sam,Social Democratic Alliance,538
+ISL,2009-04-25,Sigurdardottir II,0,Sam,Social Democratic Alliance,651
+ISL,2013-05-23,Gunnlaugsson,0,F,Progressive Party,1059
+ISL,2016-04-07,Johannsson,0,F,Progressive Party,1482
+ISL,2017-01-10,Benediktsson III,0,Sj,Independence Party,1502
+ISL,2017-11-30,Jakobsdottir,0,Graen,Left-Green Movement,1524
+ITA,1986-08-01,Craxi II,0,PSI,Italian Socialist Party,293
+ITA,1987-04-17,Fanfani VI,0,DC,Christian Democrats,737
+ITA,1987-07-28,Goria,0,DC,Christian Democrats,756
+ITA,1988-04-13,De Mita,0,DC,Christian Democrats,809
+ITA,1989-07-23,Andreotti VI,0,DC,Christian Democrats,460
+ITA,1991-04-13,Andreotti VII,0,DC,Christian Democrats,202
+ITA,1992-06-28,Amato I,0,PSI,Italian Socialist Party,176
+ITA,1993-04-29,Ciampi,0,PC,Prime minister,801
+ITA,1994-05-11,Berlusconi I,0,FI-PdL,Go Italy -- The People of Freedom,672
+ITA,1995-01-17,Dini I,1,PC,Prime minister,382
+ITA,1996-01-11,Dini II,1,PC,Prime minister,991
+ITA,1996-05-18,Prodi I,0,PpP,Popular Party for Prodi,276
+ITA,1998-10-21,D'Alema I,0,DS,Democrats of the Left,214
+ITA,1999-12-21,D'Alema II,0,DS,Democrats of the Left,522
+ITA,2000-04-28,Amato II,0,PC,Prime minister,239
+ITA,2001-06-11,Berlusconi II,0,FI-PdL,Go Italy -- The People of Freedom,256
+ITA,2005-05-28,Berlusconi III,0,FI-PdL,Go Italy -- The People of Freedom,567
+ITA,2006-05-17,Prodi II,0,CeS,Centre Left,117
+ITA,2008-05-08,Berlusconi IV,0,FI-PdL,Go Italy -- The People of Freedom,823
+ITA,2011-11-16,Monti,1,PC,Prime minister,983
+ITA,2013-04-27,Letta I,0,PD,Democratic Party,1048
+ITA,2013-11-18,Letta II,0,PD,Democratic Party,1068
+ITA,2014-02-22,Renzi,0,PD,Democratic Party,1079
+ITA,2016-12-12,Gentiloni,0,PD,Democratic Party,1501
+ITA,2018-06-01,Conte I,0,PC,Prime minister,1532
+ITA,2019-09-05,Conte II,0,PC,Prime minister,1603
+LTU,1990-03-17,Prunskiene,0,TS-LK,Homeland Union,584
+LTU,1991-01-10,Simenas,0,TS-LK,Homeland Union,267
+LTU,1991-01-13,Vagnorius I,0,TS-LK,Homeland Union,546
+LTU,1992-07-21,Abisala,0,TS-LK,Homeland Union,512
+LTU,1992-12-02,Lubys,1,LDDP,Democratic Labour Party of Lithuania,684
+LTU,1993-03-10,Slezevicius,0,LDDP,Democratic Labour Party of Lithuania,811
+LTU,1996-02-15,Stankevicius,0,LDDP,Democratic Labour Party of Lithuania,91
+LTU,1996-12-10,Vagnorius II,0,TS-LK,Homeland Union,47
+LTU,1998-03-10,Vagnorius III,0,TS-LK,Homeland Union,1630
+LTU,1999-05-18,Paksas I,0,TS-LK,Homeland Union,444
+LTU,1999-10-29,Kubilius I,0,TS-LK,Homeland Union,735
+LTU,2000-10-26,Paksas II,0,LiCS,Liberal and Centre Union,304
+LTU,2001-07-12,Brazauskas I,0,LSDP,Lithuanian Social Democratic Party,405
+LTU,2003-03-04,Brazauskas II,0,LSDP,Lithuanian Social Democratic Party,1631
+LTU,2004-07-13,Brazauskas III,0,LSDP,Lithuanian Social Democratic Party,1634
+LTU,2004-12-14,Brazauskas IV,0,LSDP,Lithuanian Social Democratic Party,287
+LTU,2006-04-11,Brazauskas V,0,LSDP,Lithuanian Social Democratic Party,495
+LTU,2006-07-04,Kirkilas I,0,LSDP,Lithuanian Social Democratic Party,579
+LTU,2008-11-27,Kubilius II,0,TS-LK,Homeland Union,688
+LTU,2009-07-16,Kubilius III,0,TS-LK,Homeland Union,1632
+LTU,2010-09-21,Kubilius IV,0,TS-LK,Homeland Union,1026
+LTU,2012-12-13,Butkevicius I,0,LSDP,Lithuanian Social Democratic Party,1042
+LTU,2014-07-15,Butkevicius II,0,LSDP,Lithuanian Social Democratic Party,1633
+LTU,2016-11-22,Skvernelis I,0,LVLS,Lithuanian Peasant Union,1496
+LTU,2017-10-19,Skvernelis II,0,LVLS,Lithuanian Peasant Union,1614
+LTU,2019-07-23,Skvernelis III,0,LVLS,Lithuanian Peasant Union,1615
+LTU,2020-11-24,Simonyte,0,TS-LK,Homeland Union,1643
+LUX,1989-07-14,Santer II,0,CSV,Christian Social People's Party,418
+LUX,1994-07-13,Santer III,0,CSV,Christian Social People's Party,222
+LUX,1995-01-20,Juncker I,0,CSV,Christian Social People's Party,621
+LUX,1999-08-07,Juncker II,0,CSV,Christian Social People's Party,196
+LUX,2004-07-31,Juncker III,0,CSV,Christian Social People's Party,12
+LUX,2009-07-23,Juncker IV,0,CSV,Christian Social People's Party,601
+LUX,2013-07-11,Juncker V,1,CSV,Christian Social People's Party,1063
+LUX,2013-12-04,Bettel I,0,DP,Democratic Party,1069
+LUX,2018-12-05,Bettel II,0,DP,Democratic Party,1588
+LVA,1990-05-07,Godmanis I,0,LTF,Popular Front of Latvia,595
+LVA,1993-08-07,Birkavs,0,LC,Latvian Way,434
+LVA,1994-09-15,Gailis,0,LC,Latvian Way,201
+LVA,1995-12-21,Skele I,0,none,no party affiliation,235
+LVA,1997-02-13,Skele II,0,none,no party affiliation,377
+LVA,1997-08-07,Krasts I,0,NA/TB/LNNK,National Alliance / For Fatherland and Freedom / LNNK,878
+LVA,1998-04-08,Krasts II,0,NA/TB/LNNK,National Alliance / For Fatherland and Freedom / LNNK,2
+LVA,1998-11-26,Kristopans I,0,LC,Latvian Way,682
+LVA,1999-02-04,Kristopans II,0,LC,Latvian Way,469
+LVA,1999-07-16,Skele III,0,TP,People's Party,110
+LVA,2000-05-04,Berzins,0,LC,Latvian Way,23
+LVA,2002-11-07,Repse,0,JL,New Era,661
+LVA,2004-03-09,Emsis,0,ZZS,Green and Farmers' Union,153
+LVA,2004-12-02,Kalvitis I,0,TP,People's Party,228
+LVA,2006-04-08,Kalvitis II,0,TP,People's Party,535
+LVA,2006-11-07,Kalvitis III,0,TP,People's Party,680
+LVA,2007-12-20,Godmanis II,0,LPP/LC,Latvian First Party / Latvian Way Party,42
+LVA,2009-02-26,Dombrovskis I,0,JL,New Era,477
+LVA,2010-03-17,Dombrovskis II,0,JL,New Era,519
+LVA,2010-11-03,Dombrovskis III,0,V,Unity,882
+LVA,2011-10-25,Dombrovskis IV,0,V,Unity,971
+LVA,2014-01-22,Straujuma I,0,V,Unity,1073
+LVA,2014-11-05,Straujuma II,0,V,Unity,1152
+LVA,2016-02-11,Kucinskis I,0,ZZS,Green and Farmers' Union,1407
+LVA,2018-10-06,Kucinskis II,1,ZZS,Green and Farmers' Union,1591
+LVA,2019-01-23,Karins,0,V,Unity,1592
+MLT,1987-05-12,Fenech Adami I,0,PN,Nationalist Party,3
+MLT,1992-02-27,Fenech Adami II,0,PN,Nationalist Party,881
+MLT,1996-10-28,Sant,0,PL,Malta Labour Party,299
+MLT,1998-09-06,Fenech Adami III,0,PN,Nationalist Party,582
+MLT,2003-04-15,Fenech Adami IV,0,PN,Nationalist Party,160
+MLT,2004-03-23,Gonzi I,0,PN,Nationalist Party,298
+MLT,2008-03-12,Gonzi II,0,PN,Nationalist Party,468
+MLT,2013-03-11,Muscat I,0,PL,Malta Labour Party,1046
+MLT,2017-06-06,Muscat II,0,PL,Malta Labour Party,1504
+MLT,2020-01-13,Abela,0,PL,Malta Labour Party,1623
+NLD,1986-07-14,Lubbers II,0,CDA,Christian Democratic Appeal,550
+NLD,1989-11-07,Lubbers III,0,CDA,Christian Democratic Appeal,148
+NLD,1994-08-22,Kok I,0,PvdA,Labour Party,637
+NLD,1998-08-03,Kok II,0,PvdA,Labour Party,749
+NLD,2002-07-22,Balkenende I,0,CDA,Christian Democratic Appeal,763
+NLD,2002-10-16,Balkenende II,1,CDA,Christian Democratic Appeal,1105
+NLD,2003-05-27,Balkenende III,0,CDA,Christian Democratic Appeal,124
+NLD,2006-07-07,Balkenende IV,1,CDA,Christian Democratic Appeal,65
+NLD,2007-02-22,Balkenende V,0,CDA,Christian Democratic Appeal,69
+NLD,2010-02-23,Balkenende VI,1,CDA,Christian Democratic Appeal,652
+NLD,2010-10-14,Rutte I,0,VVD,People's Party for Freedom and Democracy,804
+NLD,2012-04-23,Rutte II,1,VVD,People's Party for Freedom and Democracy,1028
+NLD,2012-11-05,Rutte III,0,VVD,People's Party for Freedom and Democracy,1041
+NLD,2017-03-15,Rutte IV,1,VVD,People's Party for Freedom and Democracy,1506
+NLD,2017-10-26,Rutte V,0,VVD,People's Party for Freedom and Democracy,1530
+NOR,1985-09-08,Willoch III,0,H,Conservative Party,310
+NOR,1986-05-09,Brundtland II,0,DNA,Norwegian Labour Party,394
+NOR,1989-10-16,Syse,0,H,Conservative Party,94
+NOR,1990-11-03,Brundtland III,0,DNA,Norwegian Labour Party,588
+NOR,1993-09-13,Brundtland IV,0,DNA,Norwegian Labour Party,572
+NOR,1996-10-25,Jagland,0,DNA,Norwegian Labour Party,813
+NOR,1997-10-17,Bondevik I,0,KrF,Christian Democratic Party,45
+NOR,2000-03-17,Stoltenberg I,0,DNA,Norwegian Labour Party,333
+NOR,2001-10-19,Bondevik II,0,KrF,Christian Democratic Party,300
+NOR,2005-10-17,Stoltenberg II,0,DNA,Norwegian Labour Party,693
+NOR,2009-10-20,Stoltenberg III,0,DNA,Norwegian Labour Party,551
+NOR,2013-10-16,Solberg I,0,H,Conservative Party,1065
+NOR,2017-09-11,Solberg II,0,H,Conservative Party,1516
+NOR,2018-01-17,Solberg III,0,H,Conservative Party,1517
+NOR,2019-01-22,Solberg IV,0,H,Conservative Party,1594
+NOR,2020-01-24,Solberg V,0,H,Conservative Party,1617
+POL,1989-08-24,Mazowiecki,0,S,Solidarnosc,728
+POL,1991-01-12,Bielecki,0,KLD,Liberal Democratic Congress,75
+POL,1991-12-23,Olszewski,0,PC,Centre Agreement,132
+POL,1992-06-05,Pawlak I,1,PSL,Polish People's Party,605
+POL,1992-07-11,Suchocka I,0,D|W|U,Democratic | Freedom | Union,68
+POL,1993-05-28,Suchocka II,1,D|W|U,Democratic | Freedom | Union,730
+POL,1993-10-26,Pawlak II,0,PSL,Polish People's Party,226
+POL,1995-03-06,Oleksy,0,SLD,Democratic Left Alliance,409
+POL,1996-02-07,Cimoszewicz,0,SLD,Democratic Left Alliance,437
+POL,1997-10-31,Buzek I,0,AWS,Solidarity Electoral Action,517
+POL,2000-06-07,Buzek II,0,AWS,Solidarity Electoral Action,194
+POL,2001-10-19,Miller I,0,SLD,Democratic Left Alliance,357
+POL,2003-03-01,Miller II,0,SLD,Democratic Left Alliance,18
+POL,2004-05-02,Belka,0,SLD,Democratic Left Alliance,322
+POL,2005-10-31,Marcinkiewicz I,0,PiS,Law and Justice,312
+POL,2006-05-05,Marcinkiewicz II,0,PiS,Law and Justice,754
+POL,2006-07-14,Kaczynski,0,PiS,Law and Justice,356
+POL,2007-11-16,Tusk I,0,PO,Civic Platform,164
+POL,2011-11-18,Tusk II,0,PO,Civic Platform,985
+POL,2014-09-22,Kopacz,0,PO,Civic Platform,1146
+POL,2015-11-16,Szydlo,0,PiS,Law and Justice,1196
+POL,2017-12-11,Morawiecki I,0,PiS,Law and Justice,1526
+POL,2019-11-15,Morawiecki II,0,PiS,Law and Justice,1611
+PRT,1985-06-14,Soares IV,1,PS,Socialist Party,885
+PRT,1985-10-31,Silva I,0,PSD,Social Democratic Party,734
+PRT,1987-08-17,Silva II,0,PSD,Social Democratic Party,718
+PRT,1991-10-31,Silva III,0,PSD,Social Democratic Party,282
+PRT,1995-10-28,Guterres I,0,PS,Socialist Party,265
+PRT,1999-10-25,Guterres II,0,PS,Socialist Party,5
+PRT,2002-04-06,Barroso,0,PSD,Social Democratic Party,381
+PRT,2004-07-23,Santana Lopes,0,PSD,Social Democratic Party,755
+PRT,2005-03-12,Socrates I,0,PS,Socialist Party,169
+PRT,2009-10-26,Socrates II,0,PS,Socialist Party,858
+PRT,2011-06-15,Passos Coelho I,0,PSD,Social Democratic Party,917
+PRT,2015-10-30,Passos Coelho II,0,PSD,Social Democratic Party,1177
+PRT,2015-11-26,Costa I,0,PS,Socialist Party,1198
+PRT,2019-10-26,Costa II,0,PS,Socialist Party,1610
+ROU,1990-07-04,Roman II,0,PD,Democratic Party,715
+ROU,1991-10-16,Stolojan,1,none,no party affiliation,710
+ROU,1992-11-13,Vacaroiu I,0,none,no party affiliation,839
+ROU,1994-08-18,Vacaroiu II,0,none,no party affiliation,447
+ROU,1996-09-02,Vacaroiu III,0,none,no party affiliation,102
+ROU,1996-12-11,Ciorbea,0,PNT-CD,Christian-Democratic National Peasants' Party,73
+ROU,1998-04-15,Vasile,0,PNT-CD,Christian-Democratic National Peasants' Party,440
+ROU,1999-12-21,Isarescu,0,none,no party affiliation,171
+ROU,2000-12-20,Nastase I,0,PSD,Social Democratic Party,64
+ROU,2003-06-19,Nastase II,0,PSD,Social Democratic Party,1029
+ROU,2004-12-29,Popescu-Tariceanu I,0,PNL,National Liberal Party,509
+ROU,2006-12-07,Popescu-Tariceanu II,0,PNL,National Liberal Party,28
+ROU,2007-04-05,Popescu-Tariceanu III,0,PNL,National Liberal Party,118
+ROU,2008-12-22,Boc I,0,PD-L,Democratic Liberal Party,599
+ROU,2009-12-23,Boc II,0,PD-L,Democratic Liberal Party,993
+ROU,2010-05-19,Boc III,0,PD-L,Democratic Liberal Party,537
+ROU,2012-02-09,Ungureanu,0,PD-L,Democratic Liberal Party,992
+ROU,2012-05-07,Ponta I,0,PSD,Social Democratic Party,1033
+ROU,2012-12-21,Ponta II,0,PSD,Social Democratic Party,1043
+ROU,2014-03-04,Ponta III,0,PSD,Social Democratic Party,1085
+ROU,2014-12-15,Ponta IV,0,PSD,Social Democratic Party,1154
+ROU,2015-11-10,Ciolos,1,none,no party affiliation,1197
+ROU,2017-01-04,Grindeanu,0,PSD,Social Democratic Party,1513
+ROU,2017-06-29,Tudose,0,PSD,Social Democratic Party,1514
+ROU,2018-01-29,Dancila I,0,PSD,Social Democratic Party,1527
+ROU,2019-08-26,Dancila II,0,PSD,Social Democratic Party,1618
+ROU,2019-11-04,Orban I,0,PNL,National Liberal Party,1619
+ROU,2020-03-14,Orban II,0,PNL,National Liberal Party,1626
+ROU,2020-12-23,Citu,0,PNL,National Liberal Party,1636
+SVK,1990-06-27,Meciar I,0,VPN,Public against Violence,399
+SVK,1991-04-23,Carnogursky,0,KDH,Christian Democratic Movement,436
+SVK,1992-06-24,Meciar II,0,HZDS,Movement for a Democratic Slovakia,690
+SVK,1993-01-12,Meciar III,0,HZDS,Movement for a Democratic Slovakia,420
+SVK,1993-03-19,Meciar IV,0,HZDS,Movement for a Democratic Slovakia,592
+SVK,1993-11-17,Meciar V,0,HZDS,Movement for a Democratic Slovakia,719
+SVK,1994-03-16,Moravcik,0,DUS,Democratic Union,817
+SVK,1994-12-13,Meciar VI,0,HZDS,Movement for a Democratic Slovakia,26
+SVK,1998-10-30,Dzurinda I,0,SDK,Slovak Democratic Coalition,699
+SVK,2002-10-16,Dzurinda II,0,SDKU-DS,Slovak Democratic and Christian Union -- Democratic Party,547
+SVK,2006-02-08,Dzurinda III,1,SDKU-DS,Slovak Democratic and Christian Union -- Democratic Party,185
+SVK,2006-07-04,Fico I,0,Smer,Direction -- Social Democracy,269
+SVK,2010-07-08,Radicova I,0,SDKU-DS,Slovak Democratic and Christian Union -- Democratic Party,319
+SVK,2011-10-20,Radicova II,1,SDKU-DS,Slovak Democratic and Christian Union -- Democratic Party,982
+SVK,2012-04-04,Fico II,0,Smer,Direction -- Social Democracy,1027
+SVK,2016-03-23,Fico III,0,Smer,Direction -- Social Democracy,1483
+SVK,2016-09-01,Fico IV,0,Smer,Direction -- Social Democracy,1491
+SVK,2018-03-22,Pellegrini,0,Smer,Direction -- Social Democracy,1529
+SVK,2020-03-21,Matovic,0,OLaNO,Ordinary People and Independent,1625
+SVN,1990-05-16,Peterle,0,NSI,New Slovenia -- Christian People's Party,527
+SVN,1992-04-22,Drnovsek I,0,LDS,Liberal Democracy of Slovenia,9
+SVN,1993-01-12,Drnovsek II,0,LDS,Liberal Democracy of Slovenia,559
+SVN,1994-04-08,Drnovsek III,0,LDS,Liberal Democracy of Slovenia,145
+SVN,1996-01-26,Drnovsek IV,0,LDS,Liberal Democracy of Slovenia,562
+SVN,1997-02-27,Drnovsek V,0,LDS,Liberal Democracy of Slovenia,644
+SVN,2000-06-07,Bajuk,0,SLS,Slovenian People's Party,768
+SVN,2000-11-30,Drnovsek VI,0,LDS,Liberal Democracy of Slovenia,505
+SVN,2002-12-19,Rop I,0,LDS,Liberal Democracy of Slovenia,187
+SVN,2004-04-08,Rop II,0,LDS,Liberal Democracy of Slovenia,292
+SVN,2004-12-03,Jansa I,0,SDS,Slovenian Democratic Party,407
+SVN,2008-11-21,Pahor I,0,ZL-SD,United List -- Social Democrats,803
+SVN,2011-06-27,Pahor II,0,ZL-SD,United List -- Social Democrats,907
+SVN,2012-01-28,Jansa II,0,SDS,Slovenian Democratic Party,990
+SVN,2013-03-20,Bratusek,0,LZJ-PS,Zoran Jankovic's List -- Positive Slovenia,1047
+SVN,2014-08-25,Cerar,0,SMC,Party of Miro Cerar,1144
+SVN,2018-08-17,Sarec,0,LMS,List of Marjan Sarec,1555
+SVN,2020-03-03,Jansa III,0,SDS,Slovenian Democratic Party,1624
+SWE,1985-09-15,Palme V,0,SAP,Social Democrats,296
+SWE,1986-03-12,Carlsson I,0,SAP,Social Democrats,478
+SWE,1988-09-18,Carlsson II,0,SAP,Social Democrats,220
+SWE,1990-02-26,Carlsson III,0,SAP,Social Democrats,732
+SWE,1991-10-03,Bildt,0,M,Moderate Party,779
+SWE,1994-10-06,Carlsson IV,0,SAP,Social Democrats,528
+SWE,1996-03-21,Persson I,0,SAP,Social Democrats,156
+SWE,1998-10-07,Persson II,0,SAP,Social Democrats,503
+SWE,2002-10-21,Persson III,0,SAP,Social Democrats,641
+SWE,2006-10-05,Reinfeldt I,0,M,Moderate Party,475
+SWE,2010-09-19,Reinfeldt II,0,M,Moderate Party,854
+SWE,2014-10-02,Lofven I,0,SAP,Social Democrats,1149
+SWE,2018-09-09,Lofven II,1,SAP,Social Democrats,1587
+SWE,2019-01-18,Lofven III,0,SAP,Social Democrats,1590

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+dist/
+# raw Wikipedia HTML is re-downloaded by the pipeline (keeps the git history small)
+data/raw/
+# the Manifesto Project dataset is downloaded by each user after registering; the matches the
+# site needs are saved in data/processed/manifesto_cache.json instead
+data/external/MPDS_*
+# local files that do not belong in a public repository
+social/
+node_modules/
+*.tgz
+*.zip
+*.xls
+/flags (ALL)/

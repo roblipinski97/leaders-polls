@@ -1,0 +1,58 @@
+# Re-scrape Wikipedia every morning and publish the dashboard on GitHub Pages.
+# One-time setup in the GitHub repository: Settings -> Pages -> Source: "GitHub Actions".
+# Optional: Settings -> Secrets and variables -> Actions -> Variables -> POLLS_USER_AGENT
+#           (e.g. "EuropePollsDashboard/1.0 (you@example.com)"), as Wikimedia asks API users to.
+name: Update polls and deploy
+
+on:
+  schedule:
+    - cron: "17 5 * * *"      # every day at 05:17 UTC
+  workflow_dispatch:           # "Run workflow" button
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Scrape Wikipedia and build the data
+        env:
+          POLLS_USER_AGENT: ${{ vars.POLLS_USER_AGENT }}
+        run: python -m polls build
+      - name: Commit refreshed data (keeps a history of the numbers)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data data/processed
+          if ! git diff --cached --quiet; then
+            git commit -m "Update polling data $(date -u +%F)"
+            git push
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

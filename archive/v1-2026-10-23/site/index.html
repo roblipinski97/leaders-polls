@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leading and Laden Leaders</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="How are Europe's incumbents faring in the polls? Polling trends for every party since the last election, from Wikipedia's opinion-polling pages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@500;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!--CONTENT-START-->
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <p class="kicker">European polling tracker · <span id="asof">loading…</span></p>
+    <h1>Leading and laden leaders</h1>
+    <p class="deck">How are incumbents faring in the polls? Each chart runs from a country's last election to its next one. The thick line is the party of the head of government, and the shading shows whether it is ahead of its strongest rival or behind it.</p>
+    <nav class="tabs" role="tablist" aria-label="Views">
+      <button class="tab" role="tab" id="tab-incumbents" aria-controls="view-incumbents" aria-selected="true" data-view="incumbents">Incumbents</button>
+      <button class="tab" role="tab" id="tab-longrun" aria-controls="view-longrun" aria-selected="false" data-view="longrun">Long view</button>
+      <button class="tab" role="tab" id="tab-method" aria-controls="view-method" aria-selected="false" data-view="method">Method &amp; sources</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ======================================================== incumbents -->
+  <section id="view-incumbents" class="view" role="tabpanel" aria-labelledby="tab-incumbents">
+    <div class="wrap">
+      <div class="summary">
+        <div class="hero">
+          <p class="hero-figure"><span id="hero-trailing">–</span><span class="hero-of"> of <span id="hero-total">–</span></span></p>
+          <p class="hero-label">governing parties are behind a rival in the polls</p>
+          <div class="extremes">
+            <div><p class="ex-title">Furthest behind</p><ul id="most-behind"></ul></div>
+            <div><p class="ex-title">Furthest ahead</p><ul id="most-ahead"></ul></div>
+          </div>
+          <dl class="tiles">
+            <div class="tile"><dt>Median change since their election</dt><dd id="tile-median">–</dd></div>
+            <div class="tile"><dt>Gained support since the election</dt><dd id="tile-gained">–</dd></div>
+            <div class="tile"><dt>Polls read from Wikipedia</dt><dd id="tile-polls">–</dd></div>
+          </dl>
+        </div>
+        <figure class="quadrant-card">
+          <figcaption>
+            <span class="fig-title">Change since the election vs. distance to the leader</span>
+            <span class="fig-sub">Each dot is a governing party, in percentage points. Hover or tap for detail.</span>
+          </figcaption>
+          <div id="quadrant" class="quadrant"></div>
+        </figure>
+      </div>
+
+      <div class="controls" role="group" aria-label="Filters">
+        <div class="control-group" id="region-chips" role="radiogroup" aria-label="Region"></div>
+        <div class="control-row">
+          <label class="select">
+            <span>Sort</span>
+            <select id="sort">
+              <option value="gap">Furthest behind first</option>
+              <option value="gap-desc">Furthest ahead first</option>
+              <option value="change">Biggest loss since election</option>
+              <option value="next">Next election soonest</option>
+              <option value="term">Most of term elapsed</option>
+              <option value="name">Country name</option>
+            </select>
+          </label>
+          <label class="switch"><input type="checkbox" id="opt-shared"><span>Same scale</span></label>
+          <label class="switch"><input type="checkbox" id="opt-minor"><span>Minor parties</span></label>
+          <label class="switch"><input type="checkbox" id="opt-polls"><span>Individual polls</span></label>
+          <div class="seg" role="radiogroup" aria-label="Display">
+            <button id="show-charts" class="seg-btn" aria-pressed="true">Charts</button>
+            <button id="show-table" class="seg-btn" aria-pressed="false">Table</button>
+          </div>
+        </div>
+        <details class="country-picker" id="country-picker">
+          <summary>Countries <span id="country-count"></span></summary>
+          <div class="picker-actions">
+            <button type="button" id="pick-all">Select all</button>
+            <button type="button" id="pick-none">Clear</button>
+          </div>
+          <div id="country-chips" class="country-chips"></div>
+        </details>
+      </div>
+
+      <div class="legend-key" aria-hidden="true">
+        <span class="lk"><svg width="28" height="10"><line x1="2" y1="5" x2="26" y2="5" class="lk-inc"/></svg>Governing party</span>
+        <span class="lk"><svg width="28" height="10"><line x1="2" y1="5" x2="26" y2="5" class="lk-other"/></svg>Other parties</span>
+        <span class="lk"><i class="sw sw-lead"></i>Ahead of the strongest rival</span>
+        <span class="lk"><i class="sw sw-trail"></i>Behind</span>
+        <span class="lk"><i class="sw sw-future"></i>Time left until the election</span>
+      </div>
+
+      <div id="grid" class="grid" aria-live="polite"></div>
+      <div id="table-wrap" class="table-wrap" hidden></div>
+      <p id="not-shown" class="not-shown"></p>
+    </div>
+  </section>
+
+  <!-- ======================================================== long run -->
+  <section id="view-longrun" class="view" role="tabpanel" aria-labelledby="tab-longrun" hidden>
+    <div class="wrap">
+      <div class="lr-head">
+        <div>
+          <h2 id="lr-title">Poland since 1997</h2>
+          <p class="lr-deck" id="lr-deck">Every Sejm voting-intention poll on English Wikipedia across seven parliamentary terms, joined into continuous lines. Party lineages follow renames, mergers and joint lists (PO to KO, SLD to Lewica, KNP to Konfederacja). The band above the chart shows which camp held the prime minister's office.</p>
+        </div>
+        <label class="select"><span>Country</span><select id="lr-country"></select></label>
+      </div>
+      <div class="controls lr-controls">
+        <div class="control-group" id="lr-ranges" role="group" aria-label="Period"></div>
+        <div class="control-row">
+          <label class="switch"><input type="checkbox" id="lr-polls" checked><span>Individual polls</span></label>
+          <label class="switch"><input type="checkbox" id="lr-govt" checked><span>Government shading</span></label>
+        </div>
+      </div>
+      <figure class="lr-card">
+        <div id="lr-chart" class="lr-chart"></div>
+        <div id="lr-overview" class="lr-overview" aria-label="Drag to zoom"></div>
+        <figcaption class="lr-legend" id="lr-legend"></figcaption>
+      </figure>
+      <div id="lr-lineages" class="lr-lineages"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================== method -->
+  <section id="view-method" class="view" role="tabpanel" aria-labelledby="tab-method" hidden>
+    <div class="wrap prose">
+      <h2>How this is made</h2>
+      <h3>Data</h3>
+      <p>All numbers come from the opinion-polling articles on English Wikipedia, e.g. <a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Polish_parliamentary_election" target="_blank" rel="noopener">Opinion polling for the next Polish parliamentary election</a>. A Python pipeline downloads each page through the MediaWiki API. It then finds the national voting-intention tables, skipping seat projections, regional polls, hypothetical scenarios and approval ratings, and reads every row. Each chart links to the exact page revision used. Wikipedia text and tables are available under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+      <h3>Incumbents</h3>
+      <p>The highlighted party is the party of the head of government (prime minister, chancellor, taoiseach) on each date. When the office changed hands within a term, the thick line switches party at the handover; examples are Romania 2025 and France 2024. Caretaker and non-party prime ministers draw no thick line. Where the prime minister is formally non-party, the governing camp is used (Serbia's SNS-led list, Moldova's PAS, Romania's PSD since October 2026). Belgium has no national polls, Switzerland has a collegial executive and Cyprus a presidential one, so they are left out.</p>
+      <h3>Trend lines</h3>
+      <p>Lines are a local linear regression (a LOESS-type smoother) through the individual polls. Each poll is weighted by the square root of its sample size and by a Gaussian kernel in time. The bandwidth widens where polls are sparse: about three weeks in Germany, several months in Luxembourg. The election result counts as a very heavy poll, so each line starts at the actual result. Where a pollster reports undecided voters inside the 100%, shares are rescaled to decided voters. Polled joint lists (for example Third Way in Poland) are joined to their continuing party.</p>
+      <h3>Colours</h3>
+      <p>Each party keeps the colour Wikipedia uses for it, because readers already know those colours. A party can share a colour family with another, like Poland's two navy-blue parties or the many Nordic reds. Then the smaller party is nudged in lightness or hue until the pair is clearly distinguishable in a perceptual colour space (OKLab). Colours that are too pale for a white or dark background are darkened or lifted. Colour is never the only cue: the governing party is drawn thicker, line ends carry labels, and every chart has a legend, a tooltip and a table view.</p>
+      <h3>Caveats</h3>
+      <p>Wikipedia tables are maintained by volunteers. Pollsters differ in method and in whether they report undecided voters, and some rows carry errors. The tracker reports the trend, not a forecast. Election dates marked "latest" are legal deadlines, and an early election can be called at any time.</p>
+      <p class="generated" id="generated"></p>
+    </div>
+  </section>
+</main>
+
+<div id="tooltip" class="tooltip" role="status" hidden></div>
+<dialog id="detail" class="detail" aria-labelledby="detail-title">
+  <div class="detail-head">
+    <div>
+      <p class="kicker" id="detail-kicker"></p>
+      <h2 id="detail-title"></h2>
+    </div>
+    <button type="button" class="close" id="detail-close" aria-label="Close">×</button>
+  </div>
+  <div id="detail-body"></div>
+</dialog>
+<!--CONTENT-END-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
