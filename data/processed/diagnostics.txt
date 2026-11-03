@@ -12,22 +12,115 @@
      T03 rows=  15 [Sub-national poll results > Wales] excluded heading
      T06 rows=   9 [Sub-national poll results > England > London] excluded heading
      polls kept: 606  | start result: yes
-[GB] history FAILED: UnboundLocalError("cannot access local variable 'j' where it is not associated with a value")
-Traceback (most recent call last):
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 788, in build_all
-    h = build_history(code, ccfg, raw_dir, offline, diag, today, governments.get(code))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 539, in build_history
-    r = read_cycle(code, c, raw_dir, offline, diag, today)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 99, in read_cycle
-    html, meta = fetch_page(page, raw_dir, max_age_hours=24 * 30 if closed_long_ago else 20)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/fetch.py", line 82, in fetch_page
-    if "error" in j:
-                  ^
-UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
-
+[GB] Opinion polling for the 2024 United Kingdom general election  (rev 1363820081)  window 2019-12-12 .. 2024-07-04
+   + T00 rows= 329 [National poll results > 2024] selected
+   + T01 rows= 403 [National poll results > 2023] selected
+   + T02 rows= 369 [National poll results > 2022] selected
+   + T03 rows= 277 [National poll results > 2021] selected
+   + T04 rows= 171 [National poll results > 2020] selected
+     T05 rows=   7 [Non-geographical samples > Ethnic minority voters] not similar to main table (overlap 1.00, same section False)
+     T06 rows=   9 [Non-geographical samples > Muslim voters] not similar to main table (overlap 1.00, same section False)
+     T09 rows=   6 [Non-geographical samples > Young voters] not similar to main table (overlap 1.00, same section False)
+     T12 rows=  49 [Seat projections > National seat projections] excluded heading
+     T13 rows=   9 [Exit poll] no date column
+     T14 rows=   9 [Exit poll > BBC updated forecasts] no date column
+     polls kept: 1510  | start result: yes | end result: yes
+[GB] Opinion polling for the 2019 United Kingdom general election  (rev 1374586459)  window 2017-06-08 .. 2019-12-12
+   + T00 rows= 271 [National poll results > 2019] selected
+   + T01 rows= 147 [National poll results > 2018] selected
+   + T02 rows=  64 [National poll results > 2017] selected
+     T03 rows=  24 [Seat projections] excluded heading
+     T05 rows=   9 [Exit poll] no date column
+     T06 rows=  42 [Sub-national poll results > Scotland] excluded heading
+     T07 rows=  27 [Sub-national poll results > Wales] excluded heading
+     T08 rows=  10 [Sub-national poll results > Northern Ireland] excluded heading
+     T09 rows=  13 [Sub-national poll results > London] excluded heading
+     T10 rows=   5 [Sub-national poll results > North East England] excluded heading
+     T11 rows=   5 [Sub-national poll results > North West England] excluded heading
+     T12 rows=   5 [Sub-national poll results > Yorkshire and the Humber] excluded heading
+     T13 rows=   5 [Sub-national poll results > East Midlands] excluded heading
+     T14 rows=   5 [Sub-national poll results > West Midlands] excluded heading
+     T27 rows=   5 [Individual constituency polling > London > Cities of London and Westmi] excluded heading
+     T28 rows=   7 [Individual constituency polling > London > Finchley and Golders Green] excluded heading
+     T30 rows=   5 [Individual constituency polling > London > Kensington] excluded heading
+     T31 rows=   5 [Individual constituency polling > London > Putney] excluded heading
+     polls kept: 451  | start result: yes | end result: yes
+[GB] Opinion polling for the 2017 United Kingdom general election  (rev 1369302253)  window 2015-05-07 .. 2017-06-08
+   + T00 rows= 127 [National poll results > 2017] selected
+   + T01 rows= 108 [National poll results > 2016] selected
+   + T02 rows=  47 [National poll results > 2015] selected
+     T03 rows=   9 [YouGov model] not similar to main table (overlap 1.00, same section False)
+     T04 rows=  10 [Seat projections > Final projections from aggregators] no date column
+     T05 rows=   9 [Exit poll] no date column
+     T06 rows=  25 [Sub-national poll results > Scotland] excluded heading
+     T07 rows=  21 [Sub-national poll results > Wales] excluded heading
+     T08 rows=   7 [Sub-national poll results > Northern Ireland] excluded heading
+     T10 rows=   5 [Sub-national poll results > English regions > North West England] excluded heading
+     T11 rows=   5 [Sub-national poll results > English regions > Yorkshire and the Humber] excluded heading
+     T15 rows=  11 [Sub-national poll results > English regions > London] excluded heading
+     T23 rows=  51 [Preferred prime minister polling > May vs Corbyn > 2017] excluded heading
+     T24 rows=  21 [Preferred prime minister polling > May vs Corbyn > 2016] excluded heading
+     polls kept: 257  | start result: yes | end result: yes
+[GB] Opinion polling for the 2015 United Kingdom general election  (rev 1373535755)  window 2010-05-06 .. 2015-05-07
+   + T00 rows= 233 [National poll results > 2015] selected
+   + T01 rows= 486 [National poll results > 2014] selected
+   + T02 rows= 410 [National poll results > 2013] selected
+   + T03 rows= 340 [National poll results > 2012] selected
+   + T04 rows= 325 [National poll results > 2011] selected
+   + T05 rows= 196 [National poll results > 2010] selected
+     T06 rows=   8 [Exit poll] no date column
+     polls kept: 1967  | start result: yes | end result: yes
+[GB] Opinion polling for the 2010 United Kingdom general election  (rev 1378009101)  window 2005-05-05 .. 2010-05-06
+   + T00 rows= 175 [National poll results > 2010] selected
+   + T01 rows= 136 [National poll results > 2009] selected
+   + T02 rows= 110 [National poll results > 2008] selected
+   + T03 rows=  96 [National poll results > 2007] selected
+   + T04 rows=  82 [National poll results > 2006] selected
+   + T05 rows=  42 [National poll results > 2005] selected
+     T06 rows=  26 [Seat projections] only 1 party columns
+     T07 rows=   5 [Exit poll] no date column
+     T08 rows=  37 [Sub-national poll results > Scotland] excluded heading
+     T09 rows=  12 [Sub-national poll results > Wales] excluded heading
+     T17 rows=   6 [Individual constituency poll results > Crewe and Nantwich] excluded heading
+     T18 rows=   5 [Individual constituency poll results > Glasgow East] excluded heading
+     T23 rows=   7 [Hypothetical scenarios > Alternative Labour Party leaders] excluded heading
+     polls kept: 614  | start result: yes | end result: yes
+[GB] Opinion polling for the 2005 United Kingdom general election  (rev 1360328940)  window 2001-06-07 .. 2005-05-05
+   + T00 rows=  97 [National poll results > 2005] selected
+   + T01 rows=  75 [National poll results > 2004] selected
+   + T02 rows=  80 [National poll results > 2003] selected
+   + T03 rows=  57 [National poll results > 2002] selected
+   + T04 rows=  17 [National poll results > 2001] selected
+     T05 rows=   5 [Exit poll] no date column
+     T06 rows=  42 [Sub-national poll results > Scotland] excluded heading
+     T07 rows=   5 [Sub-national poll results > Wales] excluded heading
+     T08 rows=   5 [Sub-national poll results > South West England] excluded heading
+     polls kept: 310  | start result: yes | end result: yes
+[GB] Opinion polling for the 2001 United Kingdom general election  (rev 1367908352)  window 1997-05-01 .. 2001-06-07
+   + T00 rows=  59 [National poll results > 2001] selected
+   + T01 rows=  69 [National poll results > 2000] selected
+   + T02 rows=  46 [National poll results > 1999] selected
+   + T03 rows=  43 [National poll results > 1998] selected
+   + T04 rows=  26 [National poll results > 1997] selected
+     T05 rows=   5 [Exit polls] no date column
+     T06 rows=   7 [Sub-national poll results > Northern Ireland] only 0 party columns
+     T07 rows=  34 [Sub-national poll results > Scotland] excluded heading
+     T08 rows=  18 [Sub-national poll results > Wales] excluded heading
+     polls kept: 217  | start result: yes | end result: yes
+[GB] Opinion polling for the 1997 United Kingdom general election  (rev 1370461330)  window 1992-04-09 .. 1997-05-01
+   + T00 rows=  87 [National poll results > 1997] selected
+   + T01 rows=  74 [National poll results > 1996] selected
+   + T02 rows=  58 [National poll results > 1995] selected
+   + T03 rows=  58 [National poll results > 1994] selected
+   + T04 rows=  49 [National poll results > 1993] selected
+   + T05 rows=  48 [National poll results > 1992] selected
+     T06 rows=  15 [Sub-national poll results > Scotland] excluded heading
+     T12 rows=   6 [Individual constituency poll results > Wirral South] excluded heading
+     polls kept: 347  | start result: yes | end result: yes
+     joint lists: United Kingdom Independence Party + Green parties in the Uni x30 -> None
+     joint lists: Scottish National Party + Green Parties in the United Kingdo x1 -> None
+     joint lists: Scottish National Party + UK Independence Party + Green part x14 -> None; Scottish National Party + Plaid Cymru x70 -> Scottish National Party
+[GB] history: 9 cycles, 6279 polls, 11 series, 10 government periods (10 matched to a series)
 [IE] Next Irish general election  (rev 1383111583)  window 2024-11-29 .. open
    + T01 rows=  46 [Opinion polls > Polls] selected
      polls kept: 45  | start result: yes
@@ -327,22 +420,48 @@ UnboundLocalError: cannot access local variable 'j' where it is not associated w
    + T01 rows=  51 [Opinion polls > Nationwide > 2025] selected
    + T02 rows=  20 [Opinion polls > Nationwide > 2024] selected
      polls kept: 110  | start result: yes
-[AT] history FAILED: UnboundLocalError("cannot access local variable 'j' where it is not associated with a value")
-Traceback (most recent call last):
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 788, in build_all
-    h = build_history(code, ccfg, raw_dir, offline, diag, today, governments.get(code))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 539, in build_history
-    r = read_cycle(code, c, raw_dir, offline, diag, today)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 99, in read_cycle
-    html, meta = fetch_page(page, raw_dir, max_age_hours=24 * 30 if closed_long_ago else 20)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/fetch.py", line 82, in fetch_page
-    if "error" in j:
-                  ^
-UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
-
+[AT] Opinion polling for the 2024 Austrian legislative election  (rev 1322567643)  window 2019-09-29 .. 2024-09-29
+   + T00 rows=  33 [Poll results > From June 2024 to now] selected
+   + T01 rows= 122 [Poll results > From April 2023 to June 2024] selected
+   + T02 rows=  58 [Poll results > October 2022 to April 2023] selected
+   + T03 rows=  70 [Poll results > September 2021 to October 2022] selected
+   + T04 rows=  55 [Poll results > January to September 2021] selected
+   + T05 rows=  95 [Poll results > 2019 to 2020] selected
+     T11 rows=  37 [Preferred Chancellor] excluded heading
+     T12 rows=  13 [Preferred coalition] excluded heading
+     polls kept: 399  | start result: yes | end result: yes
+[AT] Opinion polling for the 2019 Austrian legislative election  (rev 1306341504)  window 2017-10-15 .. 2019-09-29
+   + T00 rows= 147 [Poll results] selected
+     T01 rows= 108 [Preferred Chancellor] excluded heading
+     T02 rows=  20 [Preferred coalition] excluded heading
+     polls kept: 145  | start result: yes | end result: yes
+[AT] Opinion polling for the 2017 Austrian legislative election  (rev 1335280764)  window 2013-09-29 .. 2017-10-15
+   + T00 rows=  84 [Poll results > 2017] selected
+   + T01 rows= 178 [Poll results > 2016 and earlier] selected
+     T02 rows=   8 [Hypothetical polls with Kurz as ÖVP leader] excluded heading
+     polls kept: 242  | start result: yes | end result: yes
+[AT] 2013 Austrian legislative election  (rev 1369094764)  window 2008-09-28 .. 2013-09-29
+     T00 rows=   5 [Contesting parties] no date column
+   + T01 rows=  25 [Opinion polling > Recent opinion polls] selected
+   + T02 rows=  76 [Opinion polling > Older opinion polls] selected
+     T03 rows=  21 [Results] no date column
+     T04 rows=  12 [Results > Results by state] no date column
+     T05 rows=  10 [Results > Preference votes] no date column
+     polls kept: 101  | start result: MISSING | end result: MISSING
+[AT] Opinion polling for the 2008 Austrian legislative election  (rev 1370229829)  window 2006-10-01 .. 2008-09-28
+   + T00 rows=  50 [Opinion polling] selected
+     T01 rows=  23 [Opinion polling] not similar to main table (overlap 0.00, same section True)
+     polls kept: 48  | start result: yes | end result: yes
+[AT] 2006 Austrian legislative election  (rev 1368722235)  window 2002-11-24 .. 2006-10-01
+   + T01 rows=  23 [Opinion polling] selected
+     T02 rows=  19 [Results] no date column
+     T03 rows=  12 [Results > Results by state] no date column
+     polls kept: 21  | start result: yes | end result: yes
+[AT] 2002 Austrian legislative election  (rev 1361912725)  window 1999-10-03 .. 2002-11-24
+     T01 rows=  16 [Results] no date column
+     T02 rows=  12 [Results > Results by state] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[AT] history: 7 cycles, 1066 polls, 15 series, 12 government periods (11 matched to a series)
 [DK] Next Danish general election  (rev 1383373027)  window 2026-03-24 .. open
    + T01 rows=  38 [Opinion polls > Nationwide polls] selected
      polls kept: 37  | start result: yes
@@ -580,22 +699,30 @@ UnboundLocalError: cannot access local variable 'j' where it is not associated w
    + T02 rows=  27 [National opinion polls > Vote share > 2024] selected
    + T03 rows=  23 [National opinion polls > Vote share > 2023] selected
      polls kept: 81  | start result: yes
-[FI] history FAILED: UnboundLocalError("cannot access local variable 'j' where it is not associated with a value")
-Traceback (most recent call last):
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 788, in build_all
-    h = build_history(code, ccfg, raw_dir, offline, diag, today, governments.get(code))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 539, in build_history
-    r = read_cycle(code, c, raw_dir, offline, diag, today)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 99, in read_cycle
-    html, meta = fetch_page(page, raw_dir, max_age_hours=24 * 30 if closed_long_ago else 20)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/fetch.py", line 82, in fetch_page
-    if "error" in j:
-                  ^
-UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
-
+[FI] Opinion polling for the 2023 Finnish parliamentary election  (rev 1306405566)  window 2019-04-14 .. 2023-04-02
+   + T00 rows= 102 [Opinion polls > Vote share] selected
+     polls kept: 96  | start result: yes | end result: yes
+[FI] Opinion polling for the 2019 Finnish parliamentary election  (rev 1306346731)  window 2015-04-19 .. 2019-04-14
+   + T00 rows= 113 [Poll results] selected
+     T01 rows=   6 [Poll results > Seats] excluded heading
+     T02 rows=   9 [Preferred prime minister polling] excluded heading
+     polls kept: 107  | start result: yes | end result: MISSING
+[FI] Opinion polling for the 2015 Finnish parliamentary election  (rev 1231841854)  window 2011-04-17 .. 2015-04-19
+   + T00 rows=  71 [Poll results] selected
+     T01 rows=   8 [Poll results > Seats] excluded heading
+     polls kept: 66  | start result: yes | end result: MISSING
+[FI] Opinion polling for the 2011 Finnish parliamentary election  (rev 1367022740)  window 2007-03-18 .. 2011-04-17
+     T00 rows=   9 [Polls] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[FI] 2007 Finnish parliamentary election  (rev 1375208812)  window 2003-03-16 .. 2007-03-18
+     T00 rows=  28 [Results] no date column
+     T01 rows=  20 [Results > By region] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[FI] 2003 Finnish parliamentary election  (rev 1375614037)  window 1999-03-21 .. 2003-03-16
+     T00 rows=  30 [Results] no date column
+     T01 rows=  21 [Results > By region] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[FI] history: 4 cycles, 350 polls, 10 series, 8 government periods (8 matched to a series)
 [IS] Next Icelandic parliamentary election  (rev 1372389405)  window 2024-11-30 .. open
    + T00 rows=  37 [Opinion polls] selected
      polls kept: 36  | start result: yes
@@ -761,22 +888,12 @@ UnboundLocalError: cannot access local variable 'j' where it is not associated w
      T00 rows=  26 [Results] no date column
      T01 rows= 101 [Results > List of elected Deputies] no date column
      polls kept: 0  | start result: MISSING | end result: MISSING
-[LV] history FAILED: UnboundLocalError("cannot access local variable 'j' where it is not associated with a value")
-Traceback (most recent call last):
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 788, in build_all
-    h = build_history(code, ccfg, raw_dir, offline, diag, today, governments.get(code))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 539, in build_history
-    r = read_cycle(code, c, raw_dir, offline, diag, today)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 99, in read_cycle
-    html, meta = fetch_page(page, raw_dir, max_age_hours=24 * 30 if closed_long_ago else 20)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/fetch.py", line 82, in fetch_page
-    if "error" in j:
-                  ^
-UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
-
+[LV] 2002 Latvian parliamentary election  (rev 1368945735)  window 1998-10-03 .. 2002-10-05
+     T00 rows=  27 [Results] no date column
+     T01 rows= 101 [Results > List of elected Deputies] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: The Progressives (Latvia) + Movement For! x5 -> The Progressives (Latvia)
+[LV] history: 2 cycles, 132 polls, 22 series, 5 government periods (5 matched to a series)
 [LT] 2028 Lithuanian parliamentary election  (rev 1381156943)  window 2024-10-13 .. open
      T00 rows=  10 [Political parties] no date column
    + T01 rows=  22 [Opinion polls > 2026] selected
@@ -1181,23 +1298,27 @@ UnboundLocalError: cannot access local variable 'j' where it is not associated w
      T01 rows=  56 [Election polling > Seat projections] excluded heading
      T02 rows= 236 [Voting preferences] excluded heading
      polls kept: 299  | start result: yes | end result: yes
-[GR] history FAILED: UnboundLocalError("cannot access local variable 'j' where it is not associated with a value")
-Traceback (most recent call last):
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 788, in build_all
-    h = build_history(code, ccfg, raw_dir, offline, diag, today, governments.get(code))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 539, in build_history
-    r = read_cycle(code, c, raw_dir, offline, diag, today)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 99, in read_cycle
-    html, meta = fetch_page(page, raw_dir, max_age_hours=24 * 30 if closed_long_ago else 20)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/fetch.py", line 82, in fetch_page
-    if "error" in j:
-                  ^
-UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
-
-[PL] Opinion polling for the next Polish parliamentary election  (rev 1383572395)  window 2023-10-15 .. open
+[GR] Opinion polling for the June 2012 Greek parliamentary election  (rev 1306504448)  window 2012-05-06 .. 2012-06-17
+   + T00 rows=  45 [Voting intention estimates] selected
+     polls kept: 39  | start result: yes | end result: yes
+[GR] Opinion polling for the May 2012 Greek parliamentary election  (rev 1344591318)  window 2009-10-04 .. 2012-05-06
+   + T00 rows= 203 [Voting intention estimates] selected
+     polls kept: 196  | start result: yes | end result: yes
+[GR] Opinion polling for the 2009 Greek parliamentary election  (rev 1341665500)  window 2007-09-16 .. 2009-10-04
+   + T00 rows= 192 [Voting intention estimates > Polling] selected
+     polls kept: 185  | start result: yes | end result: yes
+[GR] Opinion polling for the 2007 Greek parliamentary election  (rev 1267595523)  window 2004-03-07 .. 2007-09-16
+   + T00 rows= 157 [Voting intention estimates > Polling] selected
+     polls kept: 151  | start result: yes | end result: yes
+[GR] Opinion polling for the 2004 Greek parliamentary election  (rev 1296346301)  window 2000-04-09 .. 2004-03-07
+   + T00 rows=  68 [Voting intention estimates > Polling] selected
+     polls kept: 62  | start result: yes | end result: yes
+[GR] 2000 Greek parliamentary election  (rev 1366879426)  window 1996-09-22 .. 2000-04-09
+   + T00 rows=  42 [Opinion polls] selected
+     T01 rows=  32 [Results] no date column
+     polls kept: 29  | start result: yes | end result: yes
+[GR] history: 12 cycles, 1935 polls, 31 series, 10 government periods (7 matched to a series)
+[PL] Opinion polling for the next Polish parliamentary election  (rev 1383607490)  window 2023-10-15 .. open
    + T02 rows= 121 [Poll results > 2026] selected
    + T03 rows= 141 [Poll results > 2025] selected
    + T04 rows= 108 [Poll results > 2024] selected
@@ -1213,7 +1334,7 @@ UnboundLocalError: cannot access local variable 'j' where it is not associated w
      T15 rows=  14 [Leadership polling > Law and Justice prime ministerial candidate prefe] excluded heading
      T16 rows=   6 [Leadership polling > Right-wing prime ministerial candidate preference] excluded heading
      polls kept: 360  | start result: yes
-[PL] Opinion polling for the next Polish parliamentary election  (rev 1383572395)  window 2023-10-15 .. open
+[PL] Opinion polling for the next Polish parliamentary election  (rev 1383607490)  window 2023-10-15 .. open
    + T02 rows= 121 [Poll results > 2026] selected
    + T03 rows= 141 [Poll results > 2025] selected
    + T04 rows= 108 [Poll results > 2024] selected
@@ -1403,22 +1524,19 @@ UnboundLocalError: cannot access local variable 'j' where it is not associated w
      T02 rows=  25 [Results] no date column
      T03 rows=  13 [Results > Results by region] no date column
      polls kept: 0  | start result: MISSING | end result: MISSING
-[SK] history FAILED: UnboundLocalError("cannot access local variable 'j' where it is not associated with a value")
-Traceback (most recent call last):
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 788, in build_all
-    h = build_history(code, ccfg, raw_dir, offline, diag, today, governments.get(code))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 539, in build_history
-    r = read_cycle(code, c, raw_dir, offline, diag, today)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 99, in read_cycle
-    html, meta = fetch_page(page, raw_dir, max_age_hours=24 * 30 if closed_long_ago else 20)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/fetch.py", line 82, in fetch_page
-    if "error" in j:
-                  ^
-UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
-
+[SK] 2006 Slovak parliamentary election  (rev 1374206850)  window 2002-09-20 .. 2006-06-17
+     T00 rows=   6 [Participating parties] no date column
+     T01 rows=  28 [Results] no date column
+     T02 rows=  13 [Results > Results by region] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[SK] 2002 Slovak parliamentary election  (rev 1378175140)  window 1998-09-25 .. 2002-09-20
+     T00 rows=   7 [Participating parties] no date column
+     T01 rows=  32 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: Progressive Slovakia + TOGETHER - Civic Democracy x38 -> Progressive Slovakia
+     joint lists: Party of the Hungarian Community + Hungarian Community Co-op x20 -> Most–Híd; Modrí + Democrats (Slovakia) x4 -> None; Party of the Hungarian Community + Ö-S + Most–Híd x18 -> Most–Híd; Hungarian Forum + Party of the Hungarian Community + Ö-S x2 -> None
+     joint lists: Slovakia (political party) + For the People (Slovakia) x6 -> For the People (Slovakia)
+[SK] history: 4 cycles, 367 polls, 20 series, 8 government periods (6 matched to a series)
 [HU] Opinion polling for the 2030 Hungarian parliamentary election  (rev 1381579412)  window 2026-04-12 .. open
      T00 rows=  16 [Pollster bias] no date column
    + T01 rows=  31 [Polling > 2026] selected
@@ -1750,35 +1868,60 @@ UnboundLocalError: cannot access local variable 'j' where it is not associated w
      T03 rows=  32 [Results] no date column
      T04 rows=  22 [Results > Voter demographics] no date column
      polls kept: 22  | start result: yes | end result: yes
-[BG] history FAILED: UnboundLocalError("cannot access local variable 'j' where it is not associated with a value")
-Traceback (most recent call last):
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 788, in build_all
-    h = build_history(code, ccfg, raw_dir, offline, diag, today, governments.get(code))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 539, in build_history
-    r = read_cycle(code, c, raw_dir, offline, diag, today)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 99, in read_cycle
-    html, meta = fetch_page(page, raw_dir, max_age_hours=24 * 30 if closed_long_ago else 20)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/fetch.py", line 82, in fetch_page
-    if "error" in j:
-                  ^
-UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
-
-[RS] Opinion polling for the 2026 Serbian parliamentary election  (rev 1383591293)  window 2023-12-17 .. open
+[BG] April 2021 Bulgarian parliamentary election  (rev 1382908371)  window 2017-03-26 .. 2021-04-04
+     T00 rows=  67 [Parties and coalitions > List] no date column
+   + T01 rows=  50 [Opinion polls] selected
+     T02 rows=  39 [Results] no date column
+     T03 rows=  34 [Results > By constituency] no date column
+     T04 rows=  22 [Results > Voter demographics] no date column
+     polls kept: 50  | start result: MISSING | end result: MISSING
+[BG] 2017 Bulgarian parliamentary election  (rev 1382907991)  window 2014-10-05 .. 2017-03-26
+     T00 rows=  44 [Participating parties] no date column
+   + T01 rows=  22 [Opinion polls] selected
+     T02 rows=  29 [Results] no date column
+     T03 rows=  26 [Results > Voter demographics] no date column
+     polls kept: 22  | start result: MISSING | end result: MISSING
+[BG] 2014 Bulgarian parliamentary election  (rev 1371553474)  window 2013-05-12 .. 2014-10-05
+   + T00 rows=  31 [Opinion polls > Pre election campaign] selected
+   + T01 rows=   2 [Opinion polls > Election campaign] selected
+     T02 rows=  33 [Results] no date column
+     T03 rows=  22 [Results > Voter demographics] no date column
+     polls kept: 32  | start result: MISSING | end result: MISSING
+     (history) 2014 Bulgarian parliamentary election: dropped, median poll total 66% (not vote shares?)
+[BG] 2013 Bulgarian parliamentary election  (rev 1371569964)  window 2009-07-05 .. 2013-05-12
+   + T00 rows=  27 [Opinion polls] selected
+     T01 rows=  43 [Results] no date column
+     polls kept: 26  | start result: yes | end result: MISSING
+     (history) 2013 Bulgarian parliamentary election: dropped, median poll total 60% (not vote shares?)
+[BG] 2009 Bulgarian parliamentary election  (rev 1362814841)  window 2005-06-25 .. 2009-07-05
+   + T00 rows=   2 [Opinion polls] selected
+     T01 rows=  26 [Results] no date column
+     T02 rows=  31 [Results] no date column
+     polls kept: 2  | start result: MISSING | end result: MISSING
+[BG] 2005 Bulgarian parliamentary election  (rev 1362814808)  window 2001-06-17 .. 2005-06-25
+     T00 rows=  30 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[BG] 2001 Bulgarian parliamentary election  (rev 1382242973)  window 1997-04-19 .. 2001-06-17
+     T00 rows=  44 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: We Continue the Change + Democratic Bulgaria x1 -> None
+     joint lists: Bulgarian Rise + IMRO – Bulgarian National Movement x1 -> None
+     joint lists: We Continue the Change + Democratic Bulgaria x3 -> None
+     [BG] government parties not matched to a series: ['Gerdzhikov (National Movement Simeon II)']
+[BG] history: 9 cycles, 263 polls, 25 series, 13 government periods (7 matched to a series)
+[RS] Opinion polling for the 2026 Serbian parliamentary election  (rev 1383591293)  window 2023-12-17 .. 2026-10-25
    + T00 rows=  10 [Poll results > 2026] selected
    + T01 rows=   6 [Poll results > 2025] selected
    + T02 rows=   5 [Poll results > 2024] selected
      T03 rows=   9 [Scenario polls > United opposition and student-led list] excluded heading
-     polls kept: 17  | start result: yes
+     polls kept: 17  | start result: yes | end result: yes
      joint lists: Party of Freedom and Justice + Serbia Centre + People's Move x1 -> None; Serbia Must Not Stop + Socialist Party of Serbia x1 -> None; Party of Freedom and Justice + Serbia Centre x3 -> None; Green–Left Front + Democratic Party (Serbia) x2 -> None; New Democratic Party of Serbia + POKS + We – Power of the Pe x1 -> None
-[RS] Opinion polling for the 2026 Serbian parliamentary election  (rev 1383591293)  window 2023-12-17 .. open
+[RS] Opinion polling for the 2026 Serbian parliamentary election  (rev 1383591293)  window 2023-12-17 .. 2026-10-25
    + T00 rows=  10 [Poll results > 2026] selected
    + T01 rows=   6 [Poll results > 2025] selected
    + T02 rows=   5 [Poll results > 2024] selected
      T03 rows=   9 [Scenario polls > United opposition and student-led list] excluded heading
-     polls kept: 17  | start result: yes
+     polls kept: 17  | start result: yes | end result: yes
 [RS] Opinion polling for the 2023 Serbian parliamentary election  (rev 1306414611)  window 2020-06-21 .. 2023-12-17
    + T00 rows=  20 [Poll results > 2023] selected
    + T01 rows=   7 [Poll results > 2022] selected
@@ -1824,7 +1967,7 @@ UnboundLocalError: cannot access local variable 'j' where it is not associated w
      joint lists: Dveri + Democratic Party of Serbia x12 -> Dveri; Social Democratic Party (Serbia) + Liberal Democratic Party  x12 -> Social Democratic Party (Serbia)
      joint lists: Party of Freedom and Justice + Movement of Free Citizens (Se x1 -> None; Do not let Belgrade drown + Together (Serbia) x1 -> None
      joint lists: Party of Freedom and Justice + Serbia Centre + People's Move x1 -> None; Serbia Must Not Stop + Socialist Party of Serbia x1 -> None; Party of Freedom and Justice + Serbia Centre x3 -> None; Green–Left Front + Democratic Party (Serbia) x2 -> None; New Democratic Party of Serbia + POKS + We – Power of the Pe x1 -> None
-[RS] history: 6 cycles, 176 polls, 28 series, 8 government periods (8 matched to a series)
+[RS] history: 6 cycles, 176 polls, 28 series, 9 government periods (9 matched to a series)
 [ME] Next Montenegrin parliamentary election  (rev 1383031887)  window 2023-06-11 .. open
    + T00 rows=  31 [Opinion polls] selected
      polls kept: 27  | start result: yes
@@ -1836,22 +1979,40 @@ UnboundLocalError: cannot access local variable 'j' where it is not associated w
    + T01 rows=  18 [Opinion polls] selected
      T02 rows=  22 [Results] no date column
      polls kept: 16  | start result: yes | end result: MISSING
-[ME] history FAILED: UnboundLocalError("cannot access local variable 'j' where it is not associated with a value")
-Traceback (most recent call last):
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 788, in build_all
-    h = build_history(code, ccfg, raw_dir, offline, diag, today, governments.get(code))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 539, in build_history
-    r = read_cycle(code, c, raw_dir, offline, diag, today)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/build.py", line 99, in read_cycle
-    html, meta = fetch_page(page, raw_dir, max_age_hours=24 * 30 if closed_long_ago else 20)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/Elections-polling/Elections-polling/polls/fetch.py", line 82, in fetch_page
-    if "error" in j:
-                  ^
-UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
-
+[ME] 2020 Montenegrin parliamentary election  (rev 1305091096)  window 2016-10-16 .. 2020-08-30
+     T00 rows=  13 [Campaign > Electoral lists] no date column
+   + T01 rows=  23 [Opinion polls] selected
+     T02 rows=  18 [Results] no date column
+     polls kept: 21  | start result: MISSING | end result: MISSING
+[ME] 2016 Montenegrin parliamentary election  (rev 1373264963)  window 2012-10-14 .. 2016-10-16
+     T00 rows=  18 [Campaign > Electoral lists] no date column
+   + T01 rows=  14 [Opinion polls] selected
+     T02 rows=  24 [Results] no date column
+     dropped rows: {'outside window': 1}
+     polls kept: 12  | start result: MISSING | end result: MISSING
+[ME] 2012 Montenegrin parliamentary election  (rev 1331088822)  window 2009-03-29 .. 2012-10-14
+     T00 rows=  12 [Electoral lists] no date column
+   + T01 rows=   9 [Opinion polls] selected
+     T02 rows=  20 [Results] no date column
+     dropped rows: {'outside window': 2}
+     polls kept: 6  | start result: MISSING | end result: MISSING
+[ME] 2009 Montenegrin parliamentary election  (rev 1369561125)  window 2006-09-10 .. 2009-03-29
+     T00 rows=  23 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[ME] 2006 Montenegrin parliamentary election  (rev 1368721568)  window 2002-10-20 .. 2006-09-10
+     T00 rows=  19 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[ME] 2002 Montenegrin parliamentary election  (rev 1305074132)  window 2001-04-22 .. 2002-10-20
+     T00 rows=   8 [Contesting parties] no date column
+     T01 rows=  17 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+[ME] 2001 Montenegrin parliamentary election  (rev 1305074135)  window 1998-05-31 .. 2001-04-22
+     T00 rows=   8 [Contesting parties] no date column
+     T01 rows=  23 [Results] no date column
+     polls kept: 0  | start result: MISSING | end result: MISSING
+     joint lists: Democratic Front (Montenegro) + True Montenegro + Socialist  x2 -> None; DEMOS (Montenegro) + Democratic Montenegro x3 -> None; New Democratic Force (Montenegro) + Albanian Alternative x10 -> Albanian Alternative; Democratic Front (Montenegro) + True Montenegro x1 -> None; Socialist People's Party of Montenegro + United Montenegro x4 -> None
+     joint lists: New Serb Democracy + Democratic People's Party (Montenegro)  x11 -> New Serb Democracy; Albanian Alternative + New Democratic Force (Montenegro) x6 -> Albanian Alternative; New Serb Democracy + Democratic People's Party (Montenegro)  x3 -> None; Socialist People's Party of Montenegro + DEMOS (Montenegro)  x3 -> None; DEMOS (Montenegro) + Democratic Montenegro x1 -> None
+[ME] history: 5 cycles, 82 polls, 16 series, 8 government periods (7 matched to a series)
 [MD] Next Moldovan parliamentary election  (rev 1377676021)  window 2025-09-28 .. open
      T00 rows=  10 [Parties and coalitions] no date column
    + T01 rows=  13 [Opinion polls] selected
