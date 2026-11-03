@@ -73,6 +73,7 @@ const POSTER_CSS = `
   #poster .p-stat { font-size: 14.5px; line-height: 1.35; margin-top: 16px; color: var(--trail-ink); }
   #poster .p-stat b { font-weight: 700; }
   #poster .map-scale { font-size: 10.5px; white-space: nowrap; }
+  #poster .map-scale .k-pad { display: none; }
   #poster.landscape .map-scale { font-size: 11px; }
   #poster.landscape .map-scale .bar { flex: 1 1 60px; }
   #poster .map-scale .bar { flex-basis: 150px; }
@@ -109,7 +110,7 @@ async function buildPoster(page, kind, texts) {
     document.getElementById("poster")?.remove();
     const P = el("div", kind); P.id = "poster";
     const head = el("div", "p-head");
-    head.append(el("div", "p-title", texts.title || "Are leaders leading in the polls?"), el("div", "p-sub", texts.sub));
+    head.append(el("div", "p-title", texts.title || "Are leaders leading?"), el("div", "p-sub", texts.sub));
     const foot = el("div", "p-foot");
     foot.append(el("span", null, texts.source), el("span", null, credit));
     if (kind === "portrait") {
@@ -120,9 +121,8 @@ async function buildPoster(page, kind, texts) {
       P.append(left, el("div", "p-map"));
     }
     document.body.append(P);
-    // keep the hatching key from the latest map, so that every frame of a clip has the same rows
-    const hk = document.querySelector("#map-scale .hatch-key");
-    window.__hatchKey = hk ? hk.outerHTML : null;
+    // the hatching key (ideology clips), on every frame so that the rows never move
+    window.__hatchKey = texts.hatch ? '<span class="hatch-key"><svg width="16" height="10" aria-hidden="true"><defs><pattern id="hk-p" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="5" style="stroke: var(--ink-2)" stroke-width="1" opacity="0.5"/></pattern></defs><rect width="16" height="10" fill="url(#hk-p)" style="stroke: var(--rule)"/></svg>' + texts.hatch + "</span>" : null;
   }, { kind, texts, credit: CREDIT });
 }
 
@@ -147,7 +147,7 @@ async function goTo(page, i) {
     s.dispatchEvent(new Event("input", { bubbles: true }));
     for (let k = 0; k < 200 && document.querySelector("#map svg") === before; k++) await new Promise((r) => setTimeout(r, 10));
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-    return document.querySelector("#map-date").textContent;
+    return document.querySelector("#map-date").textContent;   // "25 Sep 2016: 25 of 31 countries with polls"
   }, i);
 }
 async function loadTimeline(page) {
@@ -162,7 +162,8 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
 const SOURCE = "Poll trends from Wikipedia's opinion-polling pages. Grey: no polls that week.";
 const MODES = {
   gov: { file: "leadlag", sub: "How far the head of government's party leads (+) or trails (−) its strongest rival in the polls, in percentage points" },
-  ideo: { file: "radical-right", title: "The radical right in the polls", sub: "Combined poll share of the parties in the Manifesto Project's nationalist and radical right family, in per cent", source: "Polls: Wikipedia's opinion-polling pages. Party families: Manifesto Project (MPDS 2026a). Grey: no polls." },
+  ideo: { file: "radical-right", title: "The radical right in the polls", sub: "Combined poll share of the parties in the Manifesto Project's nationalist and radical right family, in per cent", source: "Polls: Wikipedia's opinion-polling pages. Party families: Manifesto Project (MPDS 2026a). Grey: no polls.",
+    hatch: "Hatched: parties without Manifesto data poll 15% or more" },
 };
 
 async function preview(browser) {
@@ -179,9 +180,9 @@ async function preview(browser) {
 
 async function still(browser, mode = "gov") {
   const { ctx, page } = await openPage(browser, { width: 540, height: 675, mode });
-  const asof = await page.evaluate(() => document.querySelector("#asof").textContent.replace(/^Data as of /, "").replace(/\.$/, ""));
+  const asof = await page.evaluate(() => (document.querySelector("#asof").textContent.match(/\d{1,2} \w+ \d{4}/) || [""])[0]);
   const M = MODES[mode];
-  await buildPoster(page, "portrait", { title: M.title, sub: M.sub, source: M.source || SOURCE });
+  await buildPoster(page, "portrait", { title: M.title, sub: M.sub, source: M.source || SOURCE, hatch: M.hatch });
   await paint(page, asof, "latest polls");
   fs.mkdirSync(OUT, { recursive: true });
   const file = path.join(OUT, `map-${mode === "gov" ? "leadlag" + TAG : M.file}-${asof.replace(/ /g, "-")}.png`);
@@ -197,7 +198,7 @@ async function clip(browser, mode = "gov") {
   const { ctx, page } = await openPage(browser, { width: 540, height: 675, mode });
   await loadTimeline(page);
   const M = MODES[mode];
-  await buildPoster(page, "portrait", { title: M.title, sub: M.sub, source: M.source || SOURCE });
+  await buildPoster(page, "portrait", { title: M.title, sub: M.sub, source: M.source || SOURCE, hatch: M.hatch });
   const dir = fs.mkdtempSync(path.join(require("os").tmpdir(), "polls-frames-"));
   let n = 0;
   const frame = async () => { await page.locator("#poster").screenshot({ path: path.join(dir, `f${String(++n).padStart(5, "0")}.png`) }); };
@@ -207,7 +208,7 @@ async function clip(browser, mode = "gov") {
   for (const i of weeks) {
     const label = await goTo(page, i);
     const d = new Date(start + i * 7 * DAY);
-    const cov = (label.match(/\((\d+ of \d+) countries\)/) || [])[1];
+    const cov = (label.match(/(\d+ of \d+) countries/) || [])[1];
     await paint(page, `${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`, cov ? `${cov} countries with polls` : "");
     await frame();
     if (n % 50 === 0) process.stdout.write(`  ${n} frames\r`);

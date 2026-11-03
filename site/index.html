@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Are Leaders Leading in the Polls?</title>
+<title>Are Leaders Leading?</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Are leaders leading in the polls? How far each European governing party leads or trails its strongest rival, and the poll share of parties by ideology, from Wikipedia's opinion-polling pages and the Manifesto Project.">
+<meta name="description" content="Are leaders leading? How far each European governing party leads or trails its strongest rival, and the poll share of parties by ideology, from Wikipedia's opinion-polling pages and the Manifesto Project.">
 <!-- link previews on social media; the GitHub workflow replaces __SITE_URL__ with the site's address -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Are leaders leading in the polls?">
+<meta property="og:title" content="Are leaders leading?">
 <meta property="og:description" content="How are Europe's incumbents faring in the polls? A map of every governing party's lead or lag, and the poll share of parties by ideology, now and since the 1990s.">
 <meta property="og:url" content="__SITE_URL__">
 <meta property="og:image" content="__SITE_URL__assets/preview.png">
@@ -29,47 +29,57 @@
 <script>try { document.documentElement.dataset.theme = JSON.parse(localStorage.getItem("polls2:theme")) === "dark" ? "dark" : "light"; } catch (e) { document.documentElement.dataset.theme = "light"; }</script>
 <header class="masthead">
   <div class="wrap masthead-inner">
-    <div class="mast-text">
-      <h1>Are leaders leading in the polls?</h1>
-      <p class="deck">How are Europe's incumbents faring in the polls? <span id="asof"></span></p>
-    </div>
-    <nav class="tabs" role="tablist" aria-label="Views">
-      <button class="tab" role="tab" id="tab-map" aria-controls="view-map" aria-selected="true" data-view="map">Map</button>
-      <button class="tab" role="tab" id="tab-graphs" aria-controls="view-graphs" aria-selected="false" data-view="graphs">Country graphs</button>
-      <button class="tab" role="tab" id="tab-correlates" aria-controls="view-correlates" aria-selected="false" data-view="correlates">Correlates</button>
-      <button class="tab" role="tab" id="tab-timelines" aria-controls="view-timelines" aria-selected="false" data-view="timelines">Intra-country timelines</button>
-      <button class="tab" role="tab" id="tab-method" aria-controls="view-method" aria-selected="false" data-view="method">Method and sources</button>
-    </nav>
+    <h1>Are leaders leading?</h1>
+    <p class="deck">How are Europe's incumbents faring in the polls? <span id="asof"></span></p>
   </div>
 </header>
+
+<div class="wrap page">
+<aside class="side">
+  <nav class="tabs" role="tablist" aria-label="Views" aria-orientation="vertical">
+    <button class="tab" role="tab" id="tab-map" aria-controls="view-map" aria-selected="true" data-view="map">Map</button>
+    <button class="tab" role="tab" id="tab-graphs" aria-controls="view-graphs" aria-selected="false" data-view="graphs">Country graphs</button>
+    <button class="tab" role="tab" id="tab-correlates" aria-controls="view-correlates" aria-selected="false" data-view="correlates">Correlates</button>
+    <button class="tab" role="tab" id="tab-timelines" aria-controls="view-timelines" aria-selected="false" data-view="timelines">Intra-country timelines</button>
+    <button class="tab" role="tab" id="tab-method" aria-controls="view-method" aria-selected="false" data-view="method">Method and sources</button>
+  </nav>
+  <div class="summary box" id="summary">
+    <p class="s-line s-trail" id="s-trailing"></p>
+    <p class="s-line" id="s-median"></p>
+    <p class="s-line s-lead" id="s-gained"></p>
+    <p class="s-line" id="s-behind"></p>
+    <p class="s-line" id="s-ahead"></p>
+    <p class="s-line s-quiet" id="s-polls"></p>
+  </div>
+  <div class="palette-switch" role="group" aria-label="Colours and theme">
+    <span class="pick" id="pick-leadlag"><label for="palette">Incumbent lead/lag colours (divergent)</label><select id="palette"></select></span>
+    <span class="pick" id="pick-share"><label for="hue">Share of intended vote colours (unidirectional)</label><select id="hue"></select></span>
+    <span class="pick" id="pick-theme"><label for="theme">Theme</label><select id="theme"><option value="light">Light</option><option value="dark">Dark</option></select></span>
+  </div>
+</aside>
 
 <main>
   <!-- ======================================================== map -->
   <section id="view-map" class="view" role="tabpanel" aria-labelledby="tab-map">
-    <div class="wrap map-layout">
-      <div class="summary box" id="summary">
-        <p class="s-line s-trail" id="s-trailing"></p>
-        <p class="s-line" id="s-median"></p>
-        <p class="s-line s-lead" id="s-gained"></p>
-        <p class="s-line" id="s-behind"></p>
-        <p class="s-line" id="s-ahead"></p>
-        <p class="s-line s-quiet" id="s-polls"></p>
-      </div>
+    <div class="map-layout">
       <figure class="map-box box">
         <div class="map-head">
-          <div class="map-row1">
-            <div class="textlinks" id="map-mode" role="radiogroup" aria-label="What the map shows"></div>
-            <div class="map-scale" id="map-scale" aria-hidden="true"></div>
-          </div>
+          <div class="textlinks" id="map-mode" role="radiogroup" aria-label="What the map shows"></div>
           <div class="textlinks place-host" id="map-place" role="radiogroup" aria-label="Which party's poll share" hidden></div>
           <div id="map-ideo" class="ideo-host" hidden></div>
-          <div class="time-row" id="time-row">
-            <button type="button" class="playbtn" id="map-play" aria-label="Time lapse: play the map through the years">Time lapse</button>
-            <input type="range" id="map-time" min="0" max="1" step="1" value="1" aria-label="Date shown on the map">
-            <output id="map-date" for="map-time"></output>
+          <!-- colour key and time slider share one grid, so the bar and the slider have the same length -->
+          <div class="scale-time">
+            <div class="map-scale" id="map-scale" aria-hidden="true"></div>
+            <div class="time-row" id="time-row">
+              <button type="button" class="playbtn" id="map-play" aria-label="Time lapse: play the map through the years">Time lapse</button>
+              <span class="t-end t-start" id="time-start"></span>
+              <input type="range" id="map-time" min="0" max="1" step="1" value="1" aria-label="Date shown on the map">
+              <span class="t-end" id="time-end"></span>
+            </div>
           </div>
         </div>
         <figcaption class="map-cap">
+          <output class="map-when" id="map-date" for="map-time" hidden></output>
           <p class="note" id="map-note"></p>
         </figcaption>
         <div id="map" class="map"></div>
@@ -79,10 +89,9 @@
 
   <!-- ======================================================== country graphs -->
   <section id="view-graphs" class="view" role="tabpanel" aria-labelledby="tab-graphs" hidden>
-    <div class="wrap">
+    <div>
 
       <div class="controls" role="group" aria-label="Filters">
-        <div class="textlinks" id="region-links" role="radiogroup" aria-label="Region"></div>
         <div class="control-row">
           <label class="select" for="sort">
             <span>Sort</span>
@@ -134,9 +143,9 @@
 
   <!-- ======================================================== correlates -->
   <section id="view-correlates" class="view" role="tabpanel" aria-labelledby="tab-correlates" hidden>
-    <div class="wrap">
+    <div>
       <div class="controls sc-controls">
-        <div class="control-row">
+        <div class="sc-axes">
           <label class="select" for="sc-y"><span>Up the side</span><select id="sc-y"></select></label>
           <label class="select" for="sc-x"><span>Along the bottom</span><select id="sc-x"></select></label>
           <button type="button" class="tl" id="sc-swap">Swap axes</button>
@@ -156,13 +165,11 @@
 
   <!-- ======================================================== intra-country timelines -->
   <section id="view-timelines" class="view" role="tabpanel" aria-labelledby="tab-timelines" hidden>
-    <div class="wrap">
+    <div>
+      <label class="select lr-pick" for="lr-country"><span>Country</span><select id="lr-country"></select></label>
       <div class="lr-head">
-        <div class="lr-head-text">
-          <h2 id="lr-title">Intra-country timelines</h2>
-          <p class="lr-deck" id="lr-deck"></p>
-        </div>
-        <label class="select" for="lr-country"><span>Country</span><select id="lr-country"></select></label>
+        <h2 id="lr-title">Intra-country timelines</h2>
+        <p class="lr-deck" id="lr-deck"></p>
       </div>
       <div class="controls lr-controls">
         <div class="textlinks" id="lr-ranges" role="radiogroup" aria-label="Period"></div>
@@ -184,7 +191,7 @@
 
   <!-- ======================================================== method -->
   <section id="view-method" class="view" role="tabpanel" aria-labelledby="tab-method" hidden>
-    <div class="wrap prose">
+    <div class="prose">
       <h2>How this is made</h2>
       <h3>Data</h3>
       <p>All poll numbers come from the opinion-polling articles on English Wikipedia, for example <a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Polish_parliamentary_election" target="_blank" rel="noopener">Opinion polling for the next Polish parliamentary election</a>. A Python pipeline downloads each page through the MediaWiki API, finds the national voting-intention tables and reads every row. It skips seat projections, regional polls, hypothetical line-ups, exit polls and approval ratings. Each chart links to the exact page revision it used. Wikipedia text and tables are available under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
@@ -213,7 +220,7 @@
       <h3>Correlates</h3>
       <p>Population and GDP per capita at purchasing power parity (current international dollars) are the World Bank's World Development Indicators for 2025. Days to the next election count to the scheduled date or, where none is set, the legal deadline. The correlation shown is Pearson's r on the plotted values (on the logarithm for population), across the countries shown; with about 30 countries it describes these data and says nothing about cause.</p>
       <h3>Colours, map and flags</h3>
-      <p>Each party keeps the colour Wikipedia uses for it, because readers already know those colours. When two parties share a colour family, the smaller one is nudged in lightness or hue until the pair is clearly distinguishable in a perceptual colour space (OKLab). The two pickers at the bottom left change only the other colours: <i>incumbent lead/lag colours</i>, a diverging pair for a government's lead or lag, and <i>share of intended vote colours</i>, a single colour for the poll share of an ideology group, which runs from white (0%) to the full colour (60% or more). Each picker appears only when its colours are on screen. Colour is never the only cue: the governing party is drawn thicker, line ends carry labels, and every chart has a legend, a tooltip and a table view. Map shapes are Natural Earth (public domain) at 1:50 million.</p>
+      <p>Each party keeps the colour Wikipedia uses for it, because readers already know those colours. When two parties share a colour family, the smaller one is nudged in lightness or hue until the pair is clearly distinguishable in a perceptual colour space (OKLab). The colour menus under the list of views change only the other colours: <i>incumbent lead/lag colours</i>, a diverging pair for a government's lead or lag, and <i>share of intended vote colours</i>, a single colour for the poll share of an ideology group, which runs from white (0%) to the full colour (60% or more). Each picker appears only when its colours are on screen. Colour is never the only cue: the governing party is drawn thicker, line ends carry labels, and every chart has a legend, a tooltip and a table view. Map shapes are Natural Earth (public domain) at 1:50 million.</p>
       <h3>Keeping it current</h3>
       <p>Running <code>python -m polls update</code> refetches every page, notices elections held since the configuration was written, closes that polling window, opens the next one when Wikipedia has a page for it, and rebuilds the data. The project's README has the details.</p>
       <h3>Caveats</h3>
@@ -222,12 +229,8 @@
     </div>
   </section>
 </main>
-
-<div class="palette-switch">
-  <span class="pick" id="pick-leadlag"><label for="palette">Incumbent lead/lag colours (divergent)</label><select id="palette"></select></span>
-  <span class="pick" id="pick-share"><label for="hue">Share of intended vote colours (unidirectional)</label><select id="hue"></select></span>
-  <span class="pick" id="pick-theme"><label for="theme">Theme</label><span aria-hidden="true"></span><select id="theme"><option value="light">Light</option><option value="dark">Dark</option></select></span>
 </div>
+
 <div id="tooltip" class="tooltip" role="status" hidden></div>
 <dialog id="detail" class="detail" aria-labelledby="detail-title">
   <div class="detail-head">

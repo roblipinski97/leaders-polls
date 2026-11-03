@@ -1,4 +1,4 @@
-/* Are leaders leading in the polls? Dashboard script.
+/* Are leaders leading? Dashboard script.
  * Reads data/europe.json, data/europe-map.json and data/history/<CC>.json (built by
  * `python -m polls build`). Plain browser JavaScript and D3 v7; no build step.
  */
@@ -403,7 +403,7 @@
         ? "The party family recorded by the Manifesto Project, one per party. Tick one family or several; the figure after each is how many of its parties poll 3% or more."
         : MEASURES[mode].about;
       ctl.sync();
-      note.textContent = groupNote();
+      note.textContent = groupNote(host.id === "map-ideo");
     };
     ideoSyncs.add(sync);
     sync();
@@ -455,7 +455,7 @@
     };
   }
   /** One sentence on who is in the group today, and who cannot be placed. */
-  function groupNote() {
+  function groupNote(onMap) {
     const by = state.cls.by, now = [];
     let none = 0;
     state.countries.forEach((c) => c.parties.forEach((p) => {
@@ -465,8 +465,9 @@
     now.sort((x, y) => y.v - x.v);
     const ex = now.slice(0, 5).map((x) => `${shortLabel(x.p.label)} (${x.c.code}${by === "family" ? "" : ", " + fmtM(by, x.p.mp[by])})`).join(", ");
     return (now.length ? `The group takes in ${now.length} ${now.length === 1 ? "party" : "parties"} polling 3% or more, for example ${ex}. ` : "No party polling 3% or more is in the group. ")
-      + `${none} parties polling 3% or more have ${missingWord()} and are never counted.`
-      + (by === "family" ? "" : ` Each mark below is a party polling 2% or more, placed by its latest manifesto${by === "rile" ? "" : "; quarters and tenths divide the parties polled today"}.`);
+      + `${none} parties polling 3% or more have ${missingWord()} and are never counted`
+      + (onMap ? `; where such parties poll ${UNPLACED_HATCH}% or more together, the country is hatched on the map, because its figure may be too low.` : ".")
+      + (by === "family" ? "" : ` Each mark above is a party polling 2% or more, placed by its latest manifesto${by === "rile" ? "" : "; quarters and tenths divide the parties polled today"}.`);
   }
   function drawStrip(host, k) {
     const m = MEASURES[k], r = rangeOf(k);
@@ -713,7 +714,7 @@
         .forEach((r) => tipRow(t, pcolor(r.p), `   ${r.p.label}${partyTag(r.p.mp, r.p.family, r.p.mp_inherited)}`, fmt1(r.v)));
       if (c.incVal[i] != null && cmp.vals[i] != null) {
         const d = c.incVal[i] - cmp.vals[i];
-        const gap = el("div", "tt-gap", d >= 0 ? `Governing party ${fmt1(d)} points ahead of the group` : `Governing party ${fmt1(-d)} points behind the group`);
+        const gap = el("div", "tt-gap", d >= 0 ? `Governing party ${fmt1(d)} pp ahead of the group` : `Governing party ${fmt1(-d)} pp behind the group`);
         gap.style.color = d >= 0 ? "var(--lead-ink)" : "var(--trail-ink)";
         t.append(gap);
       }
@@ -729,7 +730,7 @@
       const ip = c.byKey.get(c.incKeyAt[i]), rp = c.byKey.get(c.rivalKey[i]);
       const d = a - b;
       const gap = el("div", "tt-gap");
-      gap.textContent = d >= 0 ? `${ip.label} ${fmt1(d)} points ahead of ${rp.label}` : `${ip.label} ${fmt1(-d)} points behind ${rp.label}`;
+      gap.textContent = d >= 0 ? `${ip.label} ${fmt1(d)} pp ahead of ${rp.label}` : `${ip.label} ${fmt1(-d)} pp behind ${rp.label}`;
       gap.style.color = d >= 0 ? "var(--lead-ink)" : "var(--trail-ink)";
       t.append(gap);
     }
@@ -740,8 +741,8 @@
     if (c.status === "none") return c.incumbent && c.incumbent.caretaker ? "Caretaker government, no party line" : "No governing party to follow";
     const inc = shortLabel(c.inc.label), r = c.rival ? shortLabel(c.rival.label) : "the strongest rival";
     const g = c.stats.gap_now;
-    if (c.completed) return g >= 0 ? `${inc} finished ${fmt1(g)} points ahead of ${r}` : `${inc} finished ${fmt1(-g)} points behind ${r}`;
-    return g >= 0 ? `${inc} ${fmt1(g)} points ahead of ${r}` : `${inc} ${fmt1(-g)} points behind ${r}`;
+    if (c.completed) return g >= 0 ? `${inc} finished ${fmt1(g)} pp ahead of ${r}` : `${inc} finished ${fmt1(-g)} pp behind ${r}`;
+    return g >= 0 ? `${inc} ${fmt1(g)} pp ahead of ${r}` : `${inc} ${fmt1(-g)} pp behind ${r}`;
   }
 
   function factsLine(parent, c) {
@@ -927,8 +928,11 @@
       arr.forEach((c, i) => {
         if (i) parts.push(i === arr.length - 1 ? " and " : ", ");
         const g = c.stats.gap_now;
-        const f = flagImg(c.code, "flag flag-inline"); if (f) parts.push(f);
-        parts.push(["button", c.name, "linkbtn " + (g >= 0 ? "up" : "down"), () => openDetail(c)]);
+        // flag and name kept together on one line
+        const who = el("span", "who-c"), f = flagImg(c.code, "flag flag-inline"), btn = el("button", "linkbtn " + (g >= 0 ? "up" : "down"), c.name);
+        btn.type = "button"; btn.addEventListener("click", () => openDetail(c));
+        if (f) who.append(f);
+        who.append(btn); parts.push(who);
         parts.push(` (${shortLabel(c.inc.label)}, ${fmt1(Math.abs(g))} pp ${word} ${c.rival ? shortLabel(c.rival.label) : "the rival"})`);
       });
       return parts;
@@ -944,8 +948,8 @@
   // ------------------------------------------------------------------------------- scatterplot
   const fmtPop = (v) => (v >= 1e6 ? `${d3.format(".3~")(v / 1e6)} million` : `${d3.format(",")(Math.round(v / 1000))} thousand`);
   const SC_VARS = {
-    gap: { label: "Government's current poll lead over its strongest rival", unit: "points", signed: true, get: (c) => (c.stats && c.inc ? c.stats.gap_now : null), fmt: fmtSigned },
-    change: { label: "Government's poll change since the election", unit: "points", signed: true, get: (c) => (c.stats && c.inc ? c.stats.change : null), fmt: fmtSigned },
+    gap: { label: "Government's current poll lead over its strongest rival", unit: "pp", signed: true, get: (c) => (c.stats && c.inc ? c.stats.gap_now : null), fmt: fmtSigned },
+    change: { label: "Government's poll change since the election", unit: "pp", signed: true, get: (c) => (c.stats && c.inc ? c.stats.change : null), fmt: fmtSigned },
     now: { label: "Government's current poll share", unit: "%", get: (c) => (c.stats && c.inc ? c.stats.now : null), fmt: (v) => fmt1(v) + "%" },
     lead: { label: "Government's time in the lead", unit: "% of the term", get: (c) => (c.stats && c.stats.share_time_leading != null && c.inc ? c.stats.share_time_leading * 100 : null), fmt: (v) => Math.round(v) + "%" },
     days: { label: "Days to the next election", unit: "days", get: (c) => { const d = c.completed ? c.upcoming : c.end; return d ? Math.round((d - state.today) / DAY) : null; }, fmt: (v) => d3.format(",")(v) },
@@ -983,8 +987,8 @@
     const host = $("#quadrant");
     // drawn at the real width, so flags and labels keep their size on a phone
     const W = Math.max(320, Math.round(host.clientWidth || 980));
-    const H = Math.round(W < 640 ? W * 0.92 : clamp(W * 0.42, 300, 440));
-    const m = { t: 26, r: 18, b: 38, l: 58 };
+    const H = Math.round(W < 640 ? W * 0.92 : clamp(window.innerHeight - 170, 420, W * 0.66));
+    const m = { t: 14, r: 18, b: 46, l: 66 };
     const scaleFor = (V, vals, range) => {
       if (V.log) return d3.scaleLog([d3.min(vals) * 0.8, d3.max(vals) * 1.25], range);
       if (V.signed) { const r = Math.max(5, Math.ceil(d3.max(vals.map(Math.abs)) / 5) * 5); return d3.scaleLinear([-r, r], range); }
@@ -1015,8 +1019,10 @@
     const ax = svg.append("g").attr("class", "axis");
     ax.selectAll("text.x").data(gx).join("text").attr("class", "x").attr("x", (d) => x(d)).attr("y", H - m.b + 14).attr("text-anchor", "middle").text(tickTxt(X));
     ax.selectAll("text.y").data(gy).join("text").attr("class", "y").attr("x", m.l - 6).attr("y", (d) => y(d) + 3.5).attr("text-anchor", "end").text(tickTxt(Y));
-    ax.append("text").attr("x", W - m.r).attr("y", H - 4).attr("text-anchor", "end").text(`${X.label}, ${X.unit}`);
-    ax.append("text").attr("x", m.l - 44).attr("y", m.t - 12).attr("text-anchor", "start").text(`${Y.label}, ${Y.unit}`);
+    // axis titles centred on their axes, the vertical one turned to read upwards
+    ax.append("text").attr("class", "axis-title").attr("x", (m.l + W - m.r) / 2).attr("y", H - 8).attr("text-anchor", "middle").text(`${X.label}, ${X.unit}`);
+    ax.append("text").attr("class", "axis-title").attr("text-anchor", "middle")
+      .attr("transform", `translate(16, ${(m.t + H - m.b) / 2}) rotate(-90)`).text(`${Y.label}, ${Y.unit}`);
     if (state.scatter.x === "change" && state.scatter.y === "gap") {
       const corner = (tx, ty, anchor, label) => svg.append("text").attr("class", "q-corner").attr("x", tx).attr("y", ty).attr("text-anchor", anchor).text(label);
       corner(W - m.r - 6, m.t + 15, "end", "gaining and ahead");
@@ -1260,7 +1266,7 @@
       if (d.inc) tipRow(t, d.inc.color, d.inc.label, fmt1(d.inc.v) + "%", true);
       if (d.rival) tipRow(t, d.rival.color, d.rival.label, fmt1(d.rival.v) + "%");
       if (d.gap != null) {
-        const g = el("div", "tt-gap", d.gap >= 0 ? `Governing party ${fmt1(d.gap)} points ahead` : `Governing party ${fmt1(-d.gap)} points behind`);
+        const g = el("div", "tt-gap", d.gap >= 0 ? `Governing party ${fmt1(d.gap)} pp ahead` : `Governing party ${fmt1(-d.gap)} pp behind`);
         g.style.color = d.gap >= 0 ? "var(--lead-ink)" : "var(--trail-ink)"; t.append(g);
       } else t.append(el("div", "tt-sub", "No party line to follow (caretaker or non-party head of government)."));
     }
@@ -1291,9 +1297,8 @@
       return { proj: pr, H: Math.ceil(bb[1][1] - bb[0][1] + 14) };
     };
     let W = Wfull, L0 = layout(W);
-    // the height left under the controls when the page is first opened, but at least 520 pixels
-    const docTop = host.getBoundingClientRect().top + window.scrollY;
-    const maxH = window.__noFit ? Infinity : clamp(window.innerHeight - docTop - 12, 520, Math.max(520, window.innerHeight - 24));
+    // as tall as the window (less a small margin), so the whole map fits on screen once scrolled to
+    const maxH = window.__noFit ? Infinity : Math.max(520, window.innerHeight - 20);
     if (L0.H > maxH) { W = Math.max(420, Math.floor(W * maxH / L0.H)); L0 = layout(W); }
     const proj = L0.proj, H = L0.H, path = d3.geoPath(proj);
     const k = W / 1000;
@@ -1323,7 +1328,7 @@
           const d = datum.get(f.id);
           const pk = place ? placePick(d) : null;
           const lab = place ? `${c.name}: ${PLACES[state.mapPlace]}${pk ? `, ${pk.label}, ${fmt1(pk.v)}%` : ", none"}`
-            : ideo ? `${c.name}: ideology group ${fmt1(d.bloc)}%` : `${c.name}: ${at == null ? statusText(c) : d.gap == null ? "no party line" : fmtSigned(d.gap) + " points"}`;
+            : ideo ? `${c.name}: ideology group ${fmt1(d.bloc)}%` : `${c.name}: ${at == null ? statusText(c) : d.gap == null ? "no party line" : fmtSigned(d.gap) + " pp"}`;
           node.attr("tabindex", 0).attr("role", "button").attr("aria-label", lab + ".");
           node.on("pointermove", (evt) => showTip(evt, (t) => mapTip(t, d)))
             .on("pointerleave", hideTip)
@@ -1393,31 +1398,29 @@
     const sc = $("#map-scale");
     sc.replaceChildren();
     const bar = el("span", "bar");
+    // four cells, lined up with the time slider's row below: [ ] [left label] [bar] [right label]
+    const keyRow = (left, right) => sc.append(el("span", "k-pad"), el("span", "k-left", left), bar, el("span", "k-right", right));
     if (place) {
       const stops = [0, 10, 20, 30, 40, 50, 60].map((v, i, a) => `${blocFill(v)} ${(i / (a.length - 1)) * 100}%`).join(", ");
       bar.style.background = `linear-gradient(to right, ${stops})`;
-      sc.append(el("span", null, "0%"), bar, el("span", null, "60% or more of the vote"));
+      keyRow("0%", "60% or more of the vote");
       $("#map-note").textContent = `Big figures: poll share of each country's ${PLACES[state.mapPlace]}, in per cent of the poll trend` + (at == null ? " (the result where an election has just been held)" : "")
         + `. Small figures: the party${state.mapPlace === "gov" ? " and its place in the polls" : ""}. Read with the lead/lag map: the same lag weighs more where the largest party polls 22% than where two parties share 90%. Select a country for its polls.`;
     } else if (ideo) {
       const stops = [0, 10, 20, 30, 40, 50, 60].map((v, i, a) => `${blocFill(v)} ${(i / (a.length - 1)) * 100}%`).join(", ");
       bar.style.background = `linear-gradient(to right, ${stops})`;
-      sc.append(el("span", null, "0%"), bar, el("span", null, "60% or more of the vote"));
-      if (hatched.length) {
-        const hk = el("span", "hatch-key");
-        hk.innerHTML = '<svg width="16" height="10" aria-hidden="true"><defs><pattern id="hk-p" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="5" style="stroke: var(--ink-2)" stroke-width="1" opacity="0.5"/></pattern></defs><rect width="16" height="10" fill="url(#hk-p)" style="stroke: var(--rule)"/></svg>';
-        hk.append(document.createTextNode(`Hatched: parties without Manifesto data poll ${UNPLACED_HATCH}% or more`));
-        sc.append(hk);
-      }
-      $("#map-note").textContent = `Big figures: combined poll share of the ${groupPhrase()}, governing party included. Small figures: the largest of them. Parties with ${missingWord()} are not counted (hover a country to see them); where they poll ${UNPLACED_HATCH}% or more together, the country is hatched, because its figure may be too low. Select a country for its polls.`;
+      keyRow("0%", "60% or more of the vote");
+      $("#map-note").textContent = `Big figures: combined poll share of the ${groupPhrase()}, governing party included. Small figures: the largest of them. Hover a country for its parties; select it for its polls.`;
     } else {
       const stops = [-20, -10, -3, 0, 3, 10, 20].map((v, i, a) => `${gapFill(v)} ${(i / (a.length - 1)) * 100}%`).join(", ");
       bar.style.background = `linear-gradient(to right, ${stops})`;
-      sc.append(el("span", null, "20 points behind"), bar, el("span", null, "20 or more ahead"));
-      $("#map-note").textContent = "Big figures: the governing party's poll lead (+) or lag (−) against its strongest rival, in percentage points of the poll trend. Small figures: time until the next election, scheduled or legally due" + (at == null ? "" : ", counted from the date shown to the election that followed") + ". Select a country for its polls.";
+      keyRow("20 pp behind", "20 pp or more ahead");
+      $("#map-note").textContent = "Big figures: the governing party's poll lead (+) or lag (−) against its strongest rival, in percentage points (pp) of the poll trend. Small figures: time until the next election, scheduled or legally due" + (at == null ? "" : ", counted from the date shown to the election that followed") + ". Select a country for its polls.";
     }
     const covered = [...datum.values()].filter((d) => d.hasData).length;
-    $("#map-date").textContent = at == null ? `Latest polls, fetched ${fmtDate(parseISO(state.data.generated || state.data.today))}` : `${fmtDate(tlDate(at))} (${covered} of ${state.countries.length} countries)`;
+    const md = $("#map-date");
+    md.textContent = at == null ? "" : `${fmtDate(tlDate(at))}: ${covered} of ${state.countries.length} countries with polls`;
+    md.hidden = at == null;
   }
 
   // ---- the controls above the map: what it shows, the ideology group picker, the time slider
@@ -1447,10 +1450,13 @@
     const slider = $("#map-time"), play = $("#map-play");
     let sized = false;
     const ready = (tl) => {
-      if (!sized) { sized = true; slider.max = tl.n; if (state.mapAt == null) slider.value = tl.n; }
+      if (!sized) {
+        sized = true; slider.max = tl.n; if (state.mapAt == null) slider.value = tl.n;
+        $("#time-start").textContent = fmtMonYear(tl.startD);
+      }
       return tl;
     };
-    const ensure = () => loadTimeline().then(ready).catch((e) => { $("#map-date").textContent = "Earlier weeks could not be loaded"; throw e; });
+    const ensure = () => loadTimeline().then(ready).catch((e) => { const md = $("#map-date"); md.hidden = false; md.textContent = "Earlier weeks could not be loaded"; throw e; });
     slider.addEventListener("pointerdown", () => { ensure(); }, { once: true });
     slider.addEventListener("focus", () => { ensure(); }, { once: true });
     slider.addEventListener("input", async () => {
@@ -1564,10 +1570,7 @@
   }
 
   function initControls() {
-    const regions = ["All", ...new Set(state.countries.map((c) => c.region).filter(Boolean))];
-    if (!regions.includes(state.region)) state.region = "All";
-    textRadio($("#region-links"), regions.map((r) => ({ label: r === "All" ? "All countries" : r, value: r })), state.region,
-      (r) => { state.region = r; store.set("region", r); renderGrid(); });
+    state.region = "All";   // regions are no longer offered; "Choose countries" picks any set
     const sort = $("#sort"); sort.value = state.sort;
     sort.addEventListener("change", () => { state.sort = sort.value; store.set("sort", state.sort); renderGrid(); });
     const bind = (sel, k) => {
@@ -1684,6 +1687,7 @@
     });
     if (push) { try { history.replaceState(null, "", "#" + v); } catch (e) { /* sandboxed */ } }
     hideTip();
+    $("#summary").hidden = v !== "map";
     syncPaletteSwitch();
     if (v === "map") renderMap();
     if (v === "correlates") renderScatter();
@@ -1936,6 +1940,7 @@
     applyTheme();
     initPalette();
     $("#asof").textContent = `(data as of ${fmtDate(state.today)})`;
+    $("#time-end").textContent = fmtMonYear(state.today);
     $("#generated").textContent = `Data built ${data.generated.replace("T", " ").slice(0, 16)} UTC from the Wikipedia pages of ${state.countries.length} countries.`;
     const hidden = (data.not_shown || []).map((n) => `${n.name} (${n.note})`);
     $("#not-shown").textContent = hidden.length ? "Not shown: " + hidden.join("; ") : "";

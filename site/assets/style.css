@@ -1,6 +1,5 @@
-/* Layout: plain masthead and text tabs; map with a short written summary beside it; country
-   graphs (one bordered panel per country); correlates (flags on two chosen variables);
-   intra-country timelines. White paper, one typeface, hairline grey borders. Colour on the
+/* Layout: a plain masthead (title and question); below it a left column with the list of views,
+   the written summary (map only) and the colour and theme menus; the chosen view fills the rest. White paper, one typeface, hairline grey borders. Colour on the
    page means a party, the lead/lag pair, or the single ideology-share colour, and nothing else. */
 :root {
   --bg: #ffffff;
@@ -75,9 +74,7 @@ code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.9em; 
 
 /* ------------------------------------------------------------------ masthead */
 .masthead { border-bottom: 1px solid var(--rule); }
-/* title and question on the left, tabs on the right (below them on narrow screens) */
-.masthead-inner { padding-block: 18px 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 6px 28px; }
-.mast-text { display: grid; gap: 6px; padding-bottom: 10px; min-width: 0; }
+.masthead-inner { padding-block: 16px 14px; display: grid; gap: 4px; }
 h1 {
   margin: 0; font-weight: 800; font-size: var(--step-3);
   line-height: 1.05; letter-spacing: -0.015em; text-wrap: balance;
@@ -85,22 +82,24 @@ h1 {
 .deck { margin: 0; color: var(--ink-2); font-size: var(--step-2); line-height: 1.25; }
 #asof { font-size: 0.6em; white-space: nowrap; }
 #asof { color: var(--muted); }
-.tabs { display: flex; gap: 2px; overflow-x: auto; }
+/* the page: a left column (views, summary, colours) and the view itself */
+.page { display: grid; grid-template-columns: 236px minmax(0, 1fr); gap: 22px; align-items: start; padding-top: 16px; padding-bottom: 60px; }
+.side { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.side .tabs { margin-bottom: 14px; }   /* a clear break between the list of views and the summary */
+main { min-width: 0; }
+.tabs { display: flex; flex-direction: column; }
 .tab {
-  border: 0; background: none; padding: 10px 14px 11px; cursor: pointer; white-space: nowrap;
-  font-weight: 600; font-size: 0.95rem; color: var(--muted);
-  border-bottom: 2px solid transparent;
+  border: 0; background: none; padding: 7px 12px; cursor: pointer; text-align: left;
+  font-weight: 600; font-size: 0.98rem; color: var(--muted); border-left: 2px solid var(--rule);
 }
-.tab:first-child { padding-left: 0; }
-.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--ink); border-left-color: var(--ink); }
 .tab:hover { color: var(--ink); }
-main { padding-block: 14px 76px; }
 
 /* ------------------------------------------------------------------ map view */
-.map-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; align-items: start; }
-/* the written summary sits above the map, in columns, so the map can use the full width */
-.summary { padding: 8px 14px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 28px; }
-.s-line { margin: 0; font-size: 0.88rem; line-height: 1.35; color: var(--ink); }
+.map-layout { display: block; }
+.summary { padding: 14px 16px; display: grid; gap: 10px; }
+.s-line { margin: 0; font-size: 0.92rem; line-height: 1.4; color: var(--ink); }
+.s-line .who-c { white-space: nowrap; }
 .s-line .flag-inline { display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
 .s-line b { font-weight: 700; }
 .s-trail, .s-line.neg { color: var(--trail-ink); }
@@ -111,15 +110,24 @@ main { padding-block: 14px 76px; }
 .s-line .linkbtn { font-size: inherit; color: var(--ink); }
 .s-line .linkbtn.up { color: var(--lead-ink); }
 .s-line .linkbtn.down { color: var(--trail-ink); }
-.map-box { padding: 10px 6px 10px; min-width: 0; display: grid; gap: 8px; }
-.map-head { padding: 0 8px; display: grid; gap: 8px; }
-.map-row1 { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 24px; }
-.map-row1 .map-scale { flex-wrap: nowrap; white-space: nowrap; }
-.map-row1 .map-scale .bar { flex: 0 0 170px; }
-@media (max-width: 700px) { .map-row1 .map-scale { flex-wrap: wrap; white-space: normal; } .map-row1 .map-scale .bar { flex: 0 1 140px; } }
-.time-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 0 10px; }
-.time-row input[type="range"] { flex: 1 1 180px; min-width: 0; accent-color: var(--ink); }
-.time-row output { margin-left: auto; font-size: 0.92rem; font-weight: 600; text-align: right; }
+.map-box { padding: 12px 6px 10px; min-width: 0; display: grid; gap: 8px; }
+.map-head { padding: 0 8px; display: grid; gap: 10px; }
+/* the colour key and the time slider in one grid: [button] [start] [bar or slider] [end] [extra] */
+.scale-time { display: grid; grid-template-columns: auto auto minmax(120px, 360px) auto; justify-content: start; align-items: center; gap: 8px 10px; }
+.scale-time > .map-scale, .scale-time > .time-row { display: contents; }
+.scale-time .k-left, .scale-time .t-start { justify-self: end; }
+.scale-time .k-left, .scale-time .k-right, .scale-time .t-end { font-size: var(--step--1); color: var(--muted); white-space: nowrap; }
+.scale-time .bar { width: 100%; height: 10px; border: 1px solid var(--rule); box-sizing: border-box; }
+.scale-time input[type="range"] { width: 100%; min-width: 0; margin: 0; accent-color: var(--ink); }
+.map-when { display: block; font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+/* wide screens: the caption sits to the right of the map, in what would otherwise be empty space */
+@media (min-width: 1280px) {
+  .map-box { grid-template-columns: minmax(0, 1fr) 260px; grid-template-areas: "head cap" "map cap"; column-gap: 12px; }
+  .map-head { grid-area: head; }
+  .map-cap { grid-area: cap; align-self: start; padding: 2px 12px 0 14px; border-left: 1px solid var(--rule); }
+  .map-cap .note { font-size: 0.82rem; }
+  #map { grid-area: map; }
+}
 .playbtn { border: 1px solid var(--rule); background: var(--bg); padding: 4px 12px; cursor: pointer; font-size: 0.88rem; min-width: 4.6em; }
 .playbtn:hover { border-color: var(--axis); }
 .map-loading { font-size: var(--step--1); color: var(--muted); padding: 0 10px; }
@@ -149,26 +157,21 @@ main { padding-block: 14px 76px; }
 .status.bloc { color: var(--bloc-ink); }
 .map-num.bloc { fill: var(--bloc-ink); }
 
-/* colour palette picker, bottom left */
-.palette-switch {
-  position: fixed; z-index: 30; left: max(12px, env(safe-area-inset-left, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  display: flex; align-items: center; gap: 6px; background: var(--bg); border: 1px solid var(--rule);
-  padding: 4px 6px 4px 9px; font-size: 0.8rem; color: var(--ink-2);
-}
-/* one row per picker, in three columns (label, colour key, menu), so the keys line up under each other */
-.palette-switch { display: grid; grid-template-columns: auto auto auto; align-items: center; column-gap: 8px; row-gap: 3px; padding: 4px 8px 4px 9px; }
+/* colour and theme menus, in the left column: label above, then colour key and menu, keys aligned */
+.palette-switch { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; column-gap: 8px; row-gap: 3px; font-size: 0.8rem; color: var(--ink-2); border-top: 1px solid var(--rule); padding-top: 10px; }
 .palette-switch .pick { display: contents; }
-.palette-switch label { justify-self: end; }
-.palette-switch select { border: 0; background: var(--bg); color: var(--ink); font-size: 0.8rem; padding: 2px 0; }
+.palette-switch label { grid-column: 1 / -1; margin-top: 6px; }
+.palette-switch label:first-child { margin-top: 0; }
+.palette-switch select { border: 1px solid var(--rule); background: var(--bg); color: var(--ink); font-size: 0.8rem; padding: 3px 4px; min-width: 0; }
 .palette-switch .swatch { display: inline-flex; height: 8px; width: 40px; border: 1px solid var(--rule); }
+.palette-switch #theme { grid-column: 1 / -1; }
 .palette-switch .swatch i { flex: 1; }
 .map { width: 100%; position: relative; }
 .map svg { display: block; width: 100%; height: auto; margin: 0 auto; }
 .map-cap { padding: 0 10px 4px; display: grid; gap: 6px; }
-.map-scale { display: flex; align-items: center; gap: 8px; font-size: var(--step--1); color: var(--muted); }
+.map-scale { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: var(--step--1); color: var(--muted); }
 .map-scale .bar { flex: 0 1 260px; height: 9px; border: 1px solid var(--rule); }
-.map-scale { flex-wrap: wrap; }
-.hatch-key { display: inline-flex; align-items: center; gap: 6px; margin-left: 10px; }
+.hatch-key { display: inline-flex; align-items: center; gap: 6px; }
 .country { stroke: var(--land-line); stroke-width: 0.8; }
 .country.tracked { cursor: pointer; }
 svg.seq .country.tracked { stroke: var(--axis); }   /* white (0%) land needs an outline on white sea */
@@ -182,13 +185,18 @@ svg.seq .country.tracked { stroke: var(--axis); }   /* white (0%) land needs an 
 .map-leader { stroke: var(--ink-2); stroke-width: 0.8; opacity: 0.7; }
 
 /* ------------------------------------------------------------------ countries view */
-.quadrant-box { padding: 14px 16px 6px; max-width: 1040px; }
+.quadrant-box { padding: 14px 16px 6px; }
+.sc-axes { display: grid; grid-template-columns: auto minmax(0, 460px); align-items: center; gap: 6px 10px; justify-content: start; }
+.sc-axes .select { display: contents; }
+.sc-axes .select span { justify-self: start; }
+.sc-axes select { width: 100%; }
+.sc-axes #sc-swap { grid-column: 2; justify-self: start; }
 figcaption { display: grid; gap: 2px; }
 .fig-title { font-weight: 700; font-size: 1.02rem; }
 .fig-sub { font-size: var(--step--1); color: var(--muted); }
 .quadrant { width: 100%; }
 
-.controls { margin: 22px 0 10px; display: grid; gap: 10px; }
+.controls { margin: 0 0 12px; display: grid; gap: 10px; }
 .textlinks { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 0.92rem; }
 .tl {
   border: 0; background: none; padding: 2px 0; cursor: pointer; color: var(--ink-2);
@@ -273,6 +281,7 @@ figcaption { display: grid; gap: 2px; }
 .q-code { font-family: var(--font); font-size: 10px; fill: var(--ink-2); }
 .q-ring { fill: none; stroke: var(--rule); stroke-width: 1; }
 .q-corner { font-family: var(--font); font-size: 11px; fill: var(--muted); }
+.axis .axis-title { font-size: 11.5px; fill: var(--ink-2); }
 
 /* ------------------------------------------------------------------ tooltip */
 .tooltip {
@@ -322,8 +331,9 @@ td.up { color: var(--lead-ink); } td.down { color: var(--trail-ink); }
 .toggles button b { font-weight: 600; }
 
 /* ------------------------------------------------------------------ long run */
-.lr-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; }
-.lr-head-text { min-width: 0; max-width: 80ch; }
+.lr-pick { margin-bottom: 12px; }
+.lr-pick select { font-size: 1rem; font-weight: 600; }
+.lr-head { max-width: 90ch; }
 .lr-head h2 { margin: 0; font-weight: 800; font-size: var(--step-2); }
 .lr-deck { margin: 4px 0 0; color: var(--ink-2); }
 .lr-controls { margin-top: 14px; }
@@ -348,17 +358,25 @@ td.up { color: var(--lead-ink); } td.down { color: var(--trail-ink); }
 .prose li { margin-bottom: 4px; }
 .generated { color: var(--muted); font-size: var(--step--1); margin-top: 22px; }
 
-@media (max-width: 1150px) {
-  .masthead-inner { grid-template-columns: minmax(0, 1fr); }
-  .mast-text { padding-bottom: 2px; }
-}
-@media (max-width: 1000px) {
-  .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* narrow screens: the left column dissolves; views become a row of tabs, the summary goes above
+   the map and the colour menus to the end of the page */
+@media (max-width: 900px) {
+  .page { display: flex; flex-direction: column; gap: 14px; padding-top: 0; }
+  .side { display: contents; }
+  .side .tabs { order: 1; flex-direction: row; overflow-x: auto; border-bottom: 1px solid var(--rule); margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 0 max(16px, env(safe-area-inset-left, 0px)); max-width: 100vw; box-sizing: border-box; }
+  .side .tab { border-left: 0; border-bottom: 2px solid transparent; padding: 10px 14px 11px; white-space: nowrap; font-size: 0.95rem; }
+  .side .tab:first-child { padding-left: 0; }
+  .side .tab[aria-selected="true"] { border-bottom-color: var(--ink); }
+  #summary { order: 2; }
+  main { order: 3; }
+  .palette-switch { order: 4; grid-template-columns: 40px minmax(0, 280px); }
+  .masthead { border-bottom: 0; }
 }
 @media (max-width: 700px) {
-  .summary { grid-template-columns: minmax(0, 1fr); }
-  .palette-switch { position: static; margin: 0 max(16px, env(safe-area-inset-left, 0px)) 18px; width: max-content; max-width: calc(100% - 32px); }
   .view-switch { margin-left: 0; }
+  .scale-time { grid-template-columns: auto minmax(0, 1fr) auto; }
+  .scale-time .k-pad { display: none; }
+  .scale-time .playbtn { grid-column: 1 / -1; justify-self: start; }
   .map-box { padding: 2px 0 8px; border-left: 0; border-right: 0; }
 }
 @media (max-width: 520px) {
@@ -366,6 +384,5 @@ td.up { color: var(--lead-ink); } td.down { color: var(--trail-ink); }
   .deck { font-size: var(--step-1); }
   .fam-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 10px; }
   .fam-list .check { font-size: 0.84rem; }
-  .summary { padding: 14px 14px; }
-  .s-line { font-size: 1rem; }
+  .summary { padding: 12px 14px; }
 }

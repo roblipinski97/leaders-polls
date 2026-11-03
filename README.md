@@ -1,4 +1,4 @@
-# Are leaders leading in the polls? A European polling dashboard
+# Are leaders leading? A European polling dashboard
 
 An interactive dashboard built from the opinion-polling articles on English Wikipedia.
 
@@ -25,7 +25,7 @@ An interactive dashboard built from the opinion-polling articles on English Wiki
   regulation and planning, free market economy, welfare state and equality, peace and
   anti-militarism, European Union (for minus against), national way of life (for minus against),
   multiculturalism (for minus against), law and order, environmental protection.
-* **Colours.** Two pickers at the bottom left, each shown only when its colours are on screen:
+* **Colours.** Two menus in the left column, under the list of views, each shown only when its colours are on screen:
   *Incumbent lead/lag colours (divergent)*, the pair for a government's lead or lag (blue and orange,
   the default, then Bavarian blue and red, green and red, teal and plum, olive and violet), and *Share of intended
   vote colours (unidirectional)*, the single colour of an ideology group's poll share, from white to
@@ -265,6 +265,14 @@ Party positions: Lehmann et al. (2026), The Manifesto Data Collection, version 2
   header with the tabs beside the title; a compact summary with flags and "pp"; the colour key next
   to the map modes; the map sized to fit the window; *Time lapse* instead of *Play*; the date the
   latest polls were fetched.
+* Version 9: renamed "Are leaders leading?"; the views are a menu in a left column, with the
+  summary (on the map) and the colour and theme menus under it; the colour key and the time slider
+  share one length, with the first and last dates at its ends; Country graphs drop the region
+  filter (Choose countries covers it); Correlates stack the two menus and fill the window; the
+  Intra-country timelines start with the country menu; "pp" for percentage points throughout.
+* Version 10: the map fills the window's height, with its caption to the right on wide screens;
+  the date appears only when looking back in time; the hatching is explained in the ideology
+  group's note rather than in the colour key; Correlates' axis titles are centred on their axes.
 
 ## Known limitations
 
