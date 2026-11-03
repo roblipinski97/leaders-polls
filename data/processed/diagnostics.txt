@@ -946,27 +946,27 @@
      polls kept: 0  | start result: MISSING | end result: MISSING
      joint lists: Social Democratic Party of Lithuania + Social Democratic Lab x53 -> Social Democratic Party of Lithuania
 [LT] history: 3 cycles, 288 polls, 15 series, 7 government periods (7 matched to a series)
-[ES] Opinion polling for the 2026 Spanish general election  (rev 1383431757)  window 2023-07-23 .. open
-   + T00 rows=  18 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+[ES] Opinion polling for the 2026 Spanish general election  (rev 1383615793)  window 2023-07-23 .. open
+   + T00 rows=  19 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows= 158 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T02 rows= 178 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T03 rows= 169 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T04 rows=  74 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
-     T05 rows= 210 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
-     T07 rows=   6 [Electoral polling > Nationwide polling > Senate projections] excluded heading
+     T05 rows= 211 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T07 rows=   8 [Electoral polling > Nationwide polling > Senate projections] excluded heading
      T08 rows=   6 [Electoral polling > Nationwide polling > Hypothetical scenarios > Suma] excluded heading
-     polls kept: 586  | start result: yes
-     joint lists: FA + FV x8 -> None
-[ES] Opinion polling for the 2026 Spanish general election  (rev 1383431757)  window 2023-07-23 .. open
-   + T00 rows=  18 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+     polls kept: 587  | start result: yes
+     joint lists: FA + FV x9 -> None
+[ES] Opinion polling for the 2026 Spanish general election  (rev 1383615793)  window 2023-07-23 .. open
+   + T00 rows=  19 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows= 158 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T02 rows= 178 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T03 rows= 169 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T04 rows=  74 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
-     T05 rows= 210 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
-     T07 rows=   6 [Electoral polling > Nationwide polling > Senate projections] excluded heading
+     T05 rows= 211 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T07 rows=   8 [Electoral polling > Nationwide polling > Senate projections] excluded heading
      T08 rows=   6 [Electoral polling > Nationwide polling > Hypothetical scenarios > Suma] excluded heading
-     polls kept: 586  | start result: yes
+     polls kept: 587  | start result: yes
 [ES] Opinion polling for the 2023 Spanish general election  (rev 1381583414)  window 2019-11-10 .. 2023-07-23
    + T00 rows= 169 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows=  53 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
@@ -1041,8 +1041,8 @@
      T03 rows=  14 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
      T04 rows=   9 [Electoral polling > Sub-national polling > Catalonia] excluded heading
      polls kept: 83  | start result: yes | end result: yes
-     joint lists: FA + FV x8 -> None
-[ES] history: 11 cycles, 3344 polls, 14 series, 10 government periods (10 matched to a series)
+     joint lists: FA + FV x9 -> None
+[ES] history: 11 cycles, 3345 polls, 14 series, 10 government periods (10 matched to a series)
 [PT] Opinion polling for the next Portuguese legislative election  (rev 1383570101)  window 2025-05-18 .. open
    + T00 rows=  49 [Nationwide polling > Polling] selected
      T02 rows=  29 [Leadership polls > Preferred prime minister] excluded heading
