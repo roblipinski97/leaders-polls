@@ -946,7 +946,7 @@
      polls kept: 0  | start result: MISSING | end result: MISSING
      joint lists: Social Democratic Party of Lithuania + Social Democratic Lab x53 -> Social Democratic Party of Lithuania
 [LT] history: 3 cycles, 288 polls, 15 series, 7 government periods (7 matched to a series)
-[ES] Opinion polling for the 2026 Spanish general election  (rev 1384139779)  window 2023-07-23 .. open
+[ES] Opinion polling for the 2026 Spanish general election  (rev 1384156428)  window 2023-07-23 .. open
    + T00 rows=  22 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows= 158 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T02 rows= 178 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
@@ -955,9 +955,10 @@
      T05 rows= 211 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
      T07 rows=   8 [Electoral polling > Nationwide polling > Senate projections] excluded heading
      T08 rows=   6 [Electoral polling > Nationwide polling > Hypothetical scenarios > Suma] excluded heading
+     T11 rows=   5 [Preferred government] excluded heading
      polls kept: 590  | start result: yes
      joint lists: FA + FV x11 -> None
-[ES] Opinion polling for the 2026 Spanish general election  (rev 1384139779)  window 2023-07-23 .. open
+[ES] Opinion polling for the 2026 Spanish general election  (rev 1384156428)  window 2023-07-23 .. open
    + T00 rows=  22 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows= 158 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T02 rows= 178 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
@@ -966,6 +967,7 @@
      T05 rows= 211 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
      T07 rows=   8 [Electoral polling > Nationwide polling > Senate projections] excluded heading
      T08 rows=   6 [Electoral polling > Nationwide polling > Hypothetical scenarios > Suma] excluded heading
+     T11 rows=   5 [Preferred government] excluded heading
      polls kept: 590  | start result: yes
 [ES] Opinion polling for the 2023 Spanish general election  (rev 1381583414)  window 2019-11-10 .. 2023-07-23
    + T00 rows= 169 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
@@ -1914,7 +1916,7 @@
      T01 rows=  25 [Parliamentary elections] no date column
      T02 rows=  20 [Provincial elections] no date column
      polls kept: 0  | start result: yes
-[RS] Opinion polling for the 2026 Serbian parliamentary election  (rev 1384064922)  window 2023-12-17 .. 2026-10-25
+[RS] Opinion polling for the 2026 Serbian parliamentary election  (rev 1384143174)  window 2023-12-17 .. 2026-10-25
    + T00 rows=  10 [Poll results > 2026] selected
    + T01 rows=   6 [Poll results > 2025] selected
    + T02 rows=   5 [Poll results > 2024] selected
@@ -1927,7 +1929,7 @@
      T01 rows=  25 [Parliamentary elections] no date column
      T02 rows=  20 [Provincial elections] no date column
      polls kept: 0  | start result: yes
-[RS] Opinion polling for the 2026 Serbian parliamentary election  (rev 1384064922)  window 2023-12-17 .. 2026-10-25
+[RS] Opinion polling for the 2026 Serbian parliamentary election  (rev 1384143174)  window 2023-12-17 .. 2026-10-25
    + T00 rows=  10 [Poll results > 2026] selected
    + T01 rows=   6 [Poll results > 2025] selected
    + T02 rows=   5 [Poll results > 2024] selected
