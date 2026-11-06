@@ -183,7 +183,11 @@ def enrich(site_data: pathlib.Path | None = None, today: dt.date | None = None) 
             nxt = cur.get("upcoming_next_election") if cur.get("fallback_completed_cycle") else cur.get("next_election")
             if nxt and nxt not in elections:
                 elections.append(nxt)
-        tl["countries"][cc] = {"lineages": lin_out, "v": packed, "gov": gov, "elections": sorted(elections)}
+        # the weeks with at least one poll: the dashboard uses them to leave out stretches where polls
+        # are too far apart for a continuous line (the rule itself is in site/assets/app.js)
+        poll_weeks = sorted({idx(origin + dt.timedelta(days=t)) for t in (h.get("polls") or {}).get("t", [])
+                             if 0 <= idx(origin + dt.timedelta(days=t)) < n})
+        tl["countries"][cc] = {"lineages": lin_out, "v": packed, "gov": gov, "elections": sorted(elections), "pw": poll_weeks}
         (site_data / "history" / f"{cc}.json").write_text(json.dumps(h, ensure_ascii=False, separators=(",", ":")))
     (site_data / "timeline.json").write_text(json.dumps(tl, ensure_ascii=False, separators=(",", ":")))
     (site_data / "europe.json").write_text(json.dumps(europe, ensure_ascii=False, separators=(",", ":")))

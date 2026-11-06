@@ -662,6 +662,7 @@ def build_history(code: str, cfg: dict, raw_dir: pathlib.Path, offline: bool, di
     ids = [L["id"] for L in lin_out]
     polls_cols = {
         "t": [_days(p["end"] - (p["end"] - (p["start"] or p["end"])) / 2, origin) for p in all_polls],
+        "e": [_days(p["end"], origin) for p in all_polls],      # last day of fieldwork (polling errors)
         "p": [pidx[p["pollster"]] for p in all_polls],
         "n": [p["sample"] for p in all_polls],
         "v": {k: [round(p["norm"][k], 1) if k in p["norm"] else None for p in all_polls] for k in ids},

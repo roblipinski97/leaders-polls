@@ -70,14 +70,15 @@ const POSTER_CSS = `
   #poster.landscape .p-map { overflow: hidden; align-items: flex-start; }
   #poster.landscape .p-map svg { height: auto; width: 100%; max-width: none !important; margin-top: -6px; }
   #poster.landscape .p-map g[aria-hidden="true"] { display: none; }
-  #poster .p-stat { font-size: 14.5px; line-height: 1.35; margin-top: 16px; color: var(--trail-ink); }
+  #poster .p-stat { font-size: 14.5px; line-height: 1.35; margin-top: 16px; color: var(--ink); }
   #poster .p-stat b { font-weight: 700; }
   #poster .map-scale { font-size: 10.5px; white-space: nowrap; }
   #poster .map-scale .k-pad { display: none; }
-  #poster.landscape .map-scale { font-size: 11px; }
-  #poster.landscape .map-scale .bar { flex: 1 1 60px; }
+  #poster.landscape .map-scale { font-size: 10px; flex-wrap: nowrap; gap: 6px; }
+  #poster.landscape .map-scale .bar { flex: 1 1 50px; min-width: 40px; }
   #poster .map-scale .bar { flex-basis: 150px; }
   #poster .p-foot { display: flex; justify-content: space-between; gap: 10px; font-size: 9.5px; color: var(--muted); }
+  #poster .p-foot span:last-child:not(:first-child) { white-space: nowrap; }   /* the web address on one line */
   #poster.landscape .p-left { display: flex; flex-direction: column; min-width: 0; }
   #poster.landscape .p-left .p-foot { margin-top: auto; flex-direction: column; gap: 2px; font-size: 10px; }
   #poster.landscape .map-scale { margin-top: 14px; }
@@ -110,7 +111,7 @@ async function buildPoster(page, kind, texts) {
     document.getElementById("poster")?.remove();
     const P = el("div", kind); P.id = "poster";
     const head = el("div", "p-head");
-    head.append(el("div", "p-title", texts.title || "Are leaders leading?"), el("div", "p-sub", texts.sub));
+    head.append(el("div", "p-title", texts.title || "Are Leaders Leading?"), el("div", "p-sub", texts.sub));
     const foot = el("div", "p-foot");
     foot.append(el("span", null, texts.source), el("span", null, credit));
     if (kind === "portrait") {
@@ -147,7 +148,7 @@ async function goTo(page, i) {
     s.dispatchEvent(new Event("input", { bubbles: true }));
     for (let k = 0; k < 200 && document.querySelector("#map svg") === before; k++) await new Promise((r) => setTimeout(r, 10));
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-    return document.querySelector("#map-date").textContent;   // "25 Sep 2016: 25 of 31 countries with polls"
+    return document.querySelector("#map-date").textContent;   // "25 Sep 2016(25 of 31 countries with polls)"
   }, i);
 }
 async function loadTimeline(page) {
@@ -159,10 +160,10 @@ async function loadTimeline(page) {
 }
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const SOURCE = "Poll trends from Wikipedia's opinion-polling pages. Grey: no polls that week.";
+const SOURCE = "Poll trends from Wikipedia's opinion-polling pages. Dark grey: not covered; light grey: no polls that week.";
 const MODES = {
   gov: { file: "leadlag", sub: "How far the head of government's party leads (+) or trails (−) its strongest rival in the polls, in percentage points" },
-  ideo: { file: "radical-right", title: "The radical right in the polls", sub: "Combined poll share of the parties in the Manifesto Project's nationalist and radical right family, in per cent", source: "Polls: Wikipedia's opinion-polling pages. Party families: Manifesto Project (MPDS 2026a). Grey: no polls.",
+  ideo: { file: "radical-right", title: "The radical right in the polls", sub: "Combined poll share of the parties in the Manifesto Project's nationalist and radical right family, in per cent", source: "Polls: Wikipedia's opinion-polling pages. Party families: Manifesto Project (MPDS 2026a). Dark grey: not covered; light grey: no polls.",
     hatch: "Hatched: parties without Manifesto data poll 15% or more" },
 };
 

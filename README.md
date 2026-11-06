@@ -1,39 +1,48 @@
-# Are leaders leading? A European polling dashboard
+# Are Leaders Leading? A European polling dashboard
 
 An interactive dashboard built from the opinion-polling articles on English Wikipedia.
 
-* **Map.** Two modes. *Government poll lead/lag*: Europe coloured by how far the head of
+* **Map.** Three modes. *Government poll lead/lag*: Europe coloured by how far the head of
   government's party is ahead of its strongest rival (blue) or behind it (orange), with the gap in
-  points and the time left until the next election. *Poll share by party place*: the poll share of
+  points and the time left until the next election. *Party shares*: the poll share of
   the governing party (with its place in the polls) or of the first, second or third party.
   *Poll share of parties by ideology*: the
   combined poll share of an ideology group (see below). The slider and *Time lapse* button above the map
-  redraw it for any week since 1991 that the intra-country timelines cover. Selecting a country
-  opens its full chart.
+  redraw it for any week since 1991 that the historical data cover; the summary in the left column
+  follows the date. A small key at the top right explains the figures. Countries the dashboard does
+  not cover are dark grey, with the reason on hover. Selecting a country opens its full chart, at
+  the date the map shows.
 * **Country graphs.** One chart per country from the last election to the next. The thick line is
   the head of government's party; individual polls are shown unless you tick *Trends only*.
   *Compare with an ideology group* replaces the other parties with one dashed line: the combined
-  share of the group (the governing party itself excluded).
+  share of the group (the governing party itself excluded). A time slider, shared with the map's,
+  shows each country's term as it stood on any earlier date, with the polls up to that date.
 * **Correlates.** Any two of: lead over the rival, change since the election, governing
   party's support, time in the lead, days to the next election, population (log scale),
   GDP per capita PPP (World Bank), and the poll share of the ideology group.
-* **Intra-country timelines.** Every polling page back to the 1990s chained into continuous
-  lines, for all 31 countries, with a band showing who headed the government.
-* **Method and sources.** Every chart links to the exact Wikipedia revision it was built from.
+* **Historical data.** Every polling page back to the 1990s chained into continuous
+  lines, for all 31 countries, with a band showing who headed the government. Only stretches of
+  steady polling are drawn (see *Steady polling* below).
+* **Polling errors.** For any election in the historical data: each party's result (a square)
+  against every poll whose fieldwork ended in the chosen number of days before the vote (dots,
+  one week by default), with optional 95% intervals from the sample size, a pollster filter, the
+  poll average's error per party, a table of pollsters by their average miss, and the term's
+  polls over time.
+* **About and method.** Who made it, the credits, how to cite it, and how it is made. Every chart
+  links to the exact Wikipedia revision it was built from.
 * **Ideology groups.** Parties can be grouped by their Manifesto Project party family (one or
   several ticked) or by a range on one of ten Manifesto measures: left–right (RILE), market
   regulation and planning, free market economy, welfare state and equality, peace and
   anti-militarism, European Union (for minus against), national way of life (for minus against),
   multiculturalism (for minus against), law and order, environmental protection.
-* **Colours.** Two menus in the left column, under the list of views, each shown only when its colours are on screen:
-  *Incumbent lead/lag colours (divergent)*, the pair for a government's lead or lag (blue and orange,
-  the default, then Bavarian blue and red, green and red, teal and plum, olive and violet), and *Share of intended
-  vote colours (unidirectional)*, the single colour of an ideology group's poll share, from white to
-  full red, orange, blue or green. Party colours stay.
+* **Colours.** The *Map colours* menus in the left column, under the list of views, each shown only
+  when its colours are on screen: the pair for a government's lead or lag (blue and orange,
+  the default, then Bavarian blue and red, green and red, teal and plum, olive and violet), and the
+  single colour of a share of the vote, from white to full red, orange, blue or green. Party colours stay.
 
 ```
 config/countries.yaml       <- the file you normally edit (pages, incumbents, election dates)
-config/history_merges.yaml  <- hand-kept: which party names continue one line in the intra-country timelines
+config/history_merges.yaml  <- hand-kept: which party names continue one line in the historical data
 config/history.yaml         generated: past polling pages per country   (python -m polls discover --plan)
 config/rollover.yaml        generated: elections held since countries.yaml was edited (python -m polls update)
 config/governments.yaml     generated: heads of government since 1985   (python tools/make_governments.py)
@@ -44,12 +53,12 @@ polls/                      Python pipeline: fetch -> parse -> clean -> smooth -
   dates.py                     "19–21 Oct", "30 Sep – 2 Oct 2026", sort keys, missing years
   colors.py                    party colours: Wikipedia's, made distinguishable (OKLab)
   smooth.py                    local linear (LOESS-type) trend lines
-  build.py                     orchestration, incumbency periods, joint lists, intra-country timelines
+  build.py                     orchestration, incumbency periods, joint lists, historical data
   update.py                    detect held elections and roll the polling windows over
   discover.py                  find past polling pages on Wikipedia
 site/                       the dashboard (static HTML + CSS + JS with D3, no build step)
   data/europe.json             generated: every country's current term
-  data/history/<CC>.json       generated: intra-country timeline per country
+  data/history/<CC>.json       generated: historical data per country
   data/europe-map.json         map shapes (Natural Earth 1:50m, via tools/make_map.mjs)
   assets/flags.js              round flags, inlined as data URIs
 data/processed/
@@ -133,7 +142,7 @@ election is, and which pages to read. Update it when:
 
 The facts in the shipped config were checked on **3 November 2026**.
 
-### The intra-country timelines
+### The historical data
 
 `config/history.yaml` lists every past term per country: the dedicated "Opinion polling for
 the ... election" page where Wikipedia has one, otherwise the election article (whose "Opinion
@@ -162,7 +171,7 @@ replace the CSV and change `MPDS` at the top of `polls/ideology.py`.
 
 Population and GDP per capita come from `data/external/worldbank.json`; refresh it with
 `python -m polls worldbank`. The map's slider reads `site/data/timeline.json`, which
-`python -m polls enrich` (and every build) writes from the intra-country timelines' histories.
+`python -m polls enrich` (and every build) writes from the historical data.
 
 ## How the parser decides what to read
 
@@ -185,7 +194,7 @@ Each party keeps its Wikipedia colour, since readers recognise it. Within a coun
 are processed from largest to smallest. If a party's colour is closer than a set perceptual
 distance (in OKLab) to a colour already taken, it is nudged in lightness, then hue, by the
 smallest change that separates the two. Too-pale colours are darkened so they read on white,
-and a lighter variant is generated for dark mode. In the intra-country timelines, two lines only have to
+and a lighter variant is generated for dark mode. In the historical data, two lines only have to
 differ if they were ever on screen at the same time.
 
 ## Publishing
@@ -273,6 +282,57 @@ Party positions: Lehmann et al. (2026), The Manifesto Data Collection, version 2
 * Version 10: the map fills the window's height, with its caption to the right on wide screens;
   the date appears only when looking back in time; the hatching is explained in the ideology
   group's note rather than in the colour key; Correlates' axis titles are centred on their axes.
+* Version 11: publication pass. A small "how to read" key at the top right of the map and of the
+  country graphs replaces the caption and the legend row; the map takes the full width, its colour
+  key sits on the left and *Time lapse* to the right of the slider, with the date and the number of
+  countries polled under the slider's thumb; figures on the map without a halo, in an ink chosen
+  for contrast; countries not covered in darker grey with the reason on hover; Africa, Turkey and
+  the Caucasus left out, Ukraine shown; segmented tabs; a thinner slider; a time slider on the
+  country graphs, shared with the map, and charts opened from the map at the map's date; the
+  summary as one row per country with arrow icons that turn with the majority; icons in the list
+  of views; About section, credits in the header and a footer; *Historical data*, *Party shares* and
+  *Map colours* as names; lighter blue shading for "ahead"; "2 years, 186 days"; the historical
+  data open on Austria, with the flag by the title and the party lineages folded away.
+### Steady polling
+
+Where polls are months apart the smoothed lines have nothing to follow and run flat. After the
+data are loaded, `POLL_RULE` at the top of `site/assets/app.js` keeps only stretches of steady
+polling: a gap of more than `maxGapDays` (91) between two polls breaks a series, except after an
+election, when polls may pause for up to `afterElectionDays` (183); stretches shorter than
+`minRunDays` (365) between two breaks are dropped. It applies to the historical data, the country
+graphs at earlier dates and the map through time (which reads the weeks with polls, `pw`, from
+`timeline.json`); the Polling errors view uses every poll. Set `POLL_RULE = null` to switch it off.
+With the default settings Austria starts in 2012, Luxembourg has no continuous line, and France,
+Malta, Montenegro and Serbia lose their sparsest years.
+
+* Version 12: a small *Time lapse* button right after the slider's end date; the summary's
+  "furthest behind" and "furthest ahead" lists on very light tints of the two map colours; no lead
+  strip under the country charts; the elections named in vertical text in the charts' key; the
+  About section links the author's website and says the views are not those of any institution.
+* Version 13: a *Polling errors* view (results against the final polls, pollster filter, 95%
+  intervals, pollster table, the term's polls); stretches of sparse polling left out of the
+  historical lines and the map through time; the map's key placed in the empty space east of
+  Finland when it fits; "Are Leaders Leading?" in title case; "Incumbent ahead of the strongest
+  rival" in the country graphs' key. The history files now carry each poll's last day of
+  fieldwork (`polls.e`) and the timeline the weeks with polls (`pw`).
+* Version 14: design pass after Adam Kucharski's "Ten reasons your vibe-coded dashboard looks
+  vibe-coded". One set of design tokens in `site/assets/style.css` (seven type sizes, three line
+  heights, a 4 px spacing grid, one control height); the summary is the only framed element, charts
+  and tables sit on the page, the keys on a light grey ground; each country graph leads with its
+  lead or lag as a large signed figure, labels its main lines directly instead of a legend, and
+  no longer repeats names and values; the table puts the lead or lag next to the party, with units
+  in the headers; the Correlates axes follow the data; the footer and the Polling errors text
+  state each fact once.
+* Version 15: every view opens with its name and a short plain explanation above its controls;
+  the map's key grows with the map on big screens, its mode buttons, colour bar (25% thicker) and
+  time slider (40% thicker track) are centred; the keys sit on a neutral grey with black-edged
+  swatches, and the ahead and behind shading in the country graphs is stronger; hovering over a
+  flag in Correlates draws the path that government took since its election; Polling errors opens
+  on the last two weeks before the vote, with its title and explanation above the controls and
+  see-through result squares; charts line up with the text above them; map labels keep a halo in
+  the dark theme.
+* Version 16: a shorter subtitle, "Opinion polling for the next parliamentary elections across
+  Europe", also used in the link previews.
 
 ## Known limitations
 
