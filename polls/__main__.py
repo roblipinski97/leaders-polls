@@ -17,7 +17,7 @@ import argparse
 import pathlib
 import sys
 
-from .build import ROOT, build_all, load_config
+from .build import ROOT, build_site, load_config
 
 
 def main(argv=None):
@@ -43,8 +43,9 @@ def main(argv=None):
     args = ap.parse_args(argv)
 
     if args.cmd == "build":
-        build_all(args.config, offline=args.offline, only=set(args.only) if args.only else None)
-        print("\nWrote site/data/europe.json, site/data/history/*.json, data/processed/polls_long.csv")
+        build_site(args.config, offline=args.offline, only=set(args.only) if args.only else None)
+        print("\nWrote site/data/europe.json, site/data/history/*.json (and the same with \"don't know\""
+              " answers kept in site/data/with-dk/), data/processed/polls_long.csv")
         print("Check data/processed/diagnostics.txt for what was read from each page.")
     elif args.cmd == "fetch":
         from .fetch import fetch_page
@@ -58,11 +59,11 @@ def main(argv=None):
     elif args.cmd == "worldbank":
         from .worldbank import refresh
         refresh()
-        from .enrich import enrich
-        enrich()
+        from .enrich import enrich_both
+        enrich_both()
     elif args.cmd == "enrich":
-        from .enrich import enrich
-        enrich()
+        from .enrich import enrich_both
+        enrich_both()
     elif args.cmd == "discover":
         import datetime as dt, json
         from .discover import discover_online, make_history_plan, newest_discovery, write_history_yaml

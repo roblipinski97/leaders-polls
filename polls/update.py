@@ -252,7 +252,7 @@ def write_rollover(roll: dict, today: dt.date) -> pathlib.Path:
 
 
 def run_update(offline: bool = False, build: bool = True, only=None, today: dt.date | None = None):
-    from .build import build_all, load_config
+    from .build import build_site, load_config
     from .fetch import fetch_page
     today = today or dt.date.today()
     base = load_config(generated=False)
@@ -277,4 +277,4 @@ def run_update(offline: bool = False, build: bool = True, only=None, today: dt.d
                 for cyc in (c.get("cycles") or [])[:2]:
                     fetch_page(cyc["page"], RAW, max_age_hours=0)
     if build:
-        build_all(offline=offline, today=today)
+        build_site(offline=offline, today=today)

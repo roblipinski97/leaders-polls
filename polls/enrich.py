@@ -34,7 +34,49 @@ def _d(s):
     return dt.date.fromisoformat(str(s)[:10])
 
 
-def enrich(site_data: pathlib.Path | None = None, today: dt.date | None = None) -> dict:
+def latest_sources(h: dict, ids: list[str], start: dt.date) -> dict:
+    """The figures the map shows through time: on any date, the latest poll then.
+
+    Polls are grouped by their last day of fieldwork, several on the same day averaged without
+    weights; an election result counts as the latest figures from election day until the next
+    poll. Returned column-wise: "d" days since `start`, "r" the indices that are results, "m" those
+    that average several polls, "v" one entry per line (in `ids` order): [first source index, values
+    from there to the line's last source] (most lines exist only for part of the period).
+    """
+    origin = _d(h["origin"])
+    P = h.get("polls") or {}
+    ends = P.get("e") or P.get("t") or []
+    by_day: dict[int, list[int]] = {}
+    for j, e in enumerate(ends):
+        by_day.setdefault(e, []).append(j)
+    sources = []
+    for e, js in by_day.items():
+        vals = {}
+        for lid in ids:
+            arr = (P.get("v") or {}).get(lid) or []
+            xs = [arr[j] for j in js if j < len(arr) and arr[j] is not None]
+            if xs:
+                vals[lid] = round(sum(xs) / len(xs), 2)
+        if vals:
+            sources.append((origin + dt.timedelta(days=e), 0, vals, len(js)))
+    for d, res in (h.get("elections") or {}).items():
+        vals = {lid: round(v, 2) for lid, v in (res or {}).items() if lid in ids and v is not None}
+        if vals:
+            sources.append((_d(d), 1, vals, 1))
+    sources.sort(key=lambda x: (x[0], x[1]))   # a result after the polls of the same day
+    return {"d": [(x[0] - start).days for x in sources],
+            "r": [k for k, x in enumerate(sources) if x[1] == 1],
+            "m": [k for k, x in enumerate(sources) if x[3] > 1],
+            "v": [_span([x[2].get(lid) for x in sources]) for lid in ids]}
+
+
+def _span(arr: list) -> list:
+    """[index of the first value, the values up to the last one]; [0, []] when there are none."""
+    nz = [i for i, v in enumerate(arr) if v is not None]
+    return [nz[0], arr[nz[0]:nz[-1] + 1]] if nz else [0, []]
+
+
+def enrich(site_data: pathlib.Path | None = None, today: dt.date | None = None, write_processed: bool = True) -> dict:
     site_data = pathlib.Path(site_data or ROOT / "site" / "data")
     europe = json.loads((site_data / "europe.json").read_text(encoding="utf-8"))
     today = _d(europe.get("today") or dt.date.today())
@@ -112,52 +154,14 @@ def enrich(site_data: pathlib.Path | None = None, today: dt.date | None = None) 
         origin = _d(h["origin"])
         lin = h["lineages"]
         lid_index = {L["id"]: i for i, L in enumerate(lin)}
-        values = [[None] * n for _ in lin]
-        last_seen = [None] * len(lin)
-        for s in sorted(h["segments"], key=lambda s: s["start"]):
-            s0, s1 = _d(s["start"]), _d(s["end"])
-            days = s["days"]
-            open_seg = s is h["segments"][-1] and s1 >= today - dt.timedelta(days=120)
-            for li, L in enumerate(lin):
-                arr = s["series"].get(L["id"])
-                if not arr:
-                    continue
-                for k, dd in enumerate(days):
-                    v = arr[k]
-                    if v is None:
-                        continue
-                    d = origin + dt.timedelta(days=dd)
-                    i = idx(d)
-                    if 0 <= i < n:
-                        values[li][i] = round(v, 1)
-                        last_seen[li] = i
-                # fill weekly gaps inside the segment (segment grids are weekly from their own start)
-            # carry the last values of the running term forward to today (polls end before today)
-            if open_seg:
-                for li in range(len(lin)):
-                    j = last_seen[li]
-                    if j is not None and idx(s1) - 2 <= j:
-                        for i in range(j + 1, min(n, j + 1 + 13)):
-                            values[li][i] = values[li][j]
-        # bridge short holes (up to 26 weeks) by straight lines: the smoother leaves a gap where polls
-        # are far apart, and the map would otherwise blink on and off between polls
-        for arr in values:
-            last = None
-            for i in range(n):
-                if arr[i] is None:
-                    continue
-                if last is not None and 1 < i - last <= 27:
-                    for k in range(last + 1, i):
-                        arr[k] = round(arr[last] + (arr[i] - arr[last]) * (k - last) / (i - last), 1)
-                last = i
-        packed, lin_out = [], []
+        # a line is on the map through time if it has a trend somewhere in the historical data
+        has_line = [any(v is not None for sg in h["segments"] for v in (sg["series"].get(L["id"]) or [])) for L in lin]
+        # the lines on the map through time: those with a trend somewhere in the data (their values
+        # on each date come from latest_sources)
+        lin_out = []
         for li, L in enumerate(lin):
-            arr = values[li]
-            nz = [i for i, v in enumerate(arr) if v is not None]
-            if not nz:
+            if not has_line[li]:
                 continue
-            a, b = nz[0], nz[-1]
-            packed.append([a, arr[a:b + 1]])
             pos = position(cc, L["id"], [L.get("short") or L["label"], L["label"]], L.get("max") or 0, kind="l")
             lin_out.append({"id": L["id"], "label": L["label"], "short": L.get("short") or L["label"],
                             "color": L["color"], "color_dark": L["color_dark"],
@@ -187,15 +191,26 @@ def enrich(site_data: pathlib.Path | None = None, today: dt.date | None = None) 
         # are too far apart for a continuous line (the rule itself is in site/assets/app.js)
         poll_weeks = sorted({idx(origin + dt.timedelta(days=t)) for t in (h.get("polls") or {}).get("t", [])
                              if 0 <= idx(origin + dt.timedelta(days=t)) < n})
-        tl["countries"][cc] = {"lineages": lin_out, "v": packed, "gov": gov, "elections": sorted(elections), "pw": poll_weeks}
+        tl["countries"][cc] = {"lineages": lin_out, "src": latest_sources(h, keep_ids, start), "gov": gov,
+                               "elections": sorted(elections), "pw": poll_weeks}
         (site_data / "history" / f"{cc}.json").write_text(json.dumps(h, ensure_ascii=False, separators=(",", ":")))
     (site_data / "timeline.json").write_text(json.dumps(tl, ensure_ascii=False, separators=(",", ":")))
     (site_data / "europe.json").write_text(json.dumps(europe, ensure_ascii=False, separators=(",", ":")))
-    path = write_report(report) if report else None
-    if matcher:
+    # the match report and the saved matches are written once, from the default copy of the data
+    path = write_report(report) if report and write_processed else None
+    if matcher and write_processed:
         cache_path.write_text(json.dumps(cache, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
     matched = sum(1 for r in report if r["rile_latest"] != "")
     print(f"enrich: timeline {n} weeks x {len(tl['countries'])} countries; "
           + (f"{matched}/{len(report)} party entries have a Manifesto position" + (f" (see {path})" if path else "")
              if matcher else f"Manifesto data from {len(cache)} saved matches"))
+    return europe
+
+
+def enrich_both() -> dict:
+    """Enrich site/data/ and, when it has been built, the copy with "don't know" answers kept."""
+    europe = enrich()
+    dk = ROOT / "site" / "data" / "with-dk"
+    if (dk / "europe.json").exists():
+        enrich(dk, write_processed=False)
     return europe

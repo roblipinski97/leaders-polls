@@ -184,9 +184,12 @@ main { min-width: 0; container-type: inline-size; container-name: view; }
 .s-list { display: grid; gap: 2px; margin: 0 calc(-1 * var(--sp-4)); padding: var(--sp-2) var(--sp-4); }
 .s-list + .s-list { margin-top: calc(-1 * var(--sp-3)); }
 .s-list:last-child { margin-bottom: calc(-1 * var(--sp-3)); }
+.s-list { border-top: 1px solid var(--axis); }   /* thin rules between the summary's three parts, as its frame */
 .s-list.behind { background: var(--trail-tint); }
 .s-list.ahead { background: var(--lead-tint); }
-.s-head { margin: 0 0 2px; font-size: var(--fs-xs); font-weight: 600; color: var(--muted); }
+.s-head { margin: 0 0 2px; font-size: var(--fs-xs); font-weight: 600; color: var(--muted); display: flex; align-items: center; gap: var(--sp-1); }
+/* the lists' icons, drawn like the arrows above them: a crown (ahead), a crown tipping off (behind) */
+.s-hico svg { display: block; width: 16px; height: 16px; fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .s-list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
 .s-c { width: 100%; border: 0; background: none; padding: 2px 0; cursor: pointer; text-align: left; color: var(--ink);
   display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; column-gap: var(--sp-2); align-items: center; line-height: var(--lh-snug); }
@@ -224,7 +227,7 @@ main { min-width: 0; container-type: inline-size; container-name: view; }
 .howto-keys span { display: inline-flex; align-items: center; gap: var(--sp-1); }
 .howto-keys i { width: 14px; height: 10px; display: inline-block; border: 1px solid var(--ink); }   /* legend glyphs: edged in black */
 .howto-keys .hidden-key { visibility: hidden; }
-.howto-foot { margin: var(--sp-1) 0 0; font-size: var(--fs-xs); line-height: var(--lh-snug); color: var(--muted); }
+.howto-foot { margin: var(--sp-1) 0 0; font-size: var(--fs-xs); line-height: var(--lh-snug); color: var(--muted); max-width: 386px; }   /* wraps at the drawing's width */
 
 /* ------------------------------------------------------------------ map view */
 .map-layout { display: block; }
@@ -244,13 +247,13 @@ figure { margin-inline: 0; }
 .scale-time > .map-scale, .scale-time > .time-row { display: contents; }
 .scale-time .k-left, .scale-time .t-start { justify-self: end; }
 .scale-time .k-left, .scale-time .k-right, .scale-time .t-end { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
-.scale-time .bar { width: 100%; height: 12.5px; border: 1px solid var(--rule); box-sizing: border-box; }
+.scale-time .bar { width: 100%; height: 16.25px; border: 1px solid var(--rule); box-sizing: border-box; }
 .slider-wrap { min-width: 0; display: flex; align-items: center; height: 18px; }
 /* thin grey track, dark round thumb */
 .time-slider { -webkit-appearance: none; appearance: none; width: 100%; min-width: 0; margin: 0; height: 18px; background: transparent; cursor: pointer; }
-.time-slider::-webkit-slider-runnable-track { height: 4.2px; background: var(--axis); }
-.time-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 13px; height: 13px; border-radius: 50%; background: var(--ink); border: 2px solid var(--bg); margin-top: -4.4px; box-shadow: 0 0 0 1px var(--ink); }
-.time-slider::-moz-range-track { height: 4.2px; background: var(--axis); }
+.time-slider::-webkit-slider-runnable-track { height: 5.46px; background: var(--axis); }
+.time-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 13px; height: 13px; border-radius: 50%; background: var(--ink); border: 2px solid var(--bg); margin-top: -3.77px; box-shadow: 0 0 0 1px var(--ink); }
+.time-slider::-moz-range-track { height: 5.46px; background: var(--axis); }
 .time-slider::-moz-range-thumb { width: 10px; height: 10px; border-radius: 50%; background: var(--ink); border: 2px solid var(--bg); box-shadow: 0 0 0 1px var(--ink); }
 .time-slider:focus-visible { outline: none; }
 .time-slider:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 1px var(--ink), 0 0 0 4px var(--focus); }
@@ -316,6 +319,11 @@ svg.seq .country.tracked { stroke: var(--axis); }   /* white (0%) land needs an 
 .palette-switch .swatch { display: inline-flex; height: 8px; width: 40px; border: 1px solid var(--rule); }
 .palette-switch #theme { grid-column: 1 / -1; }
 .palette-switch .swatch i { flex: 1; }
+/* the "don't know" menu: two buttons across the column, a note in small grey type beneath */
+.palette-switch .dk-seg { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+.palette-switch .dk-seg .seg-b { justify-content: center; font-size: var(--fs-xs); }
+.palette-switch .pick-note { grid-column: 1 / -1; margin: 0 0 var(--sp-2); font-size: var(--fs-xs); line-height: var(--lh-snug); color: var(--muted); }
+body.is-loading main { opacity: 0.55; transition: opacity 0.2s; }
 
 /* ------------------------------------------------------------------ correlates */
 .quadrant-box { padding: 0; }
@@ -332,6 +340,8 @@ figcaption { display: grid; gap: 2px; }
 /* ------------------------------------------------------------------ country graphs: small multiples */
 /* a sheet of small multiples: a rule above each, whitespace between them, no boxes */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: var(--sp-6) var(--sp-5); }
+/* fewer panels than columns: they share the whole width (the charts are drawn at that width) */
+.grid.fit { grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); }
 .panel { border-top: 1px solid var(--axis); padding-top: var(--sp-3); display: flex; flex-direction: column; gap: var(--sp-1); min-width: 0; }
 .panel-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--sp-2); min-width: 0; }
 .panel-head .flag { width: 22px; height: 22px; }
@@ -370,6 +380,9 @@ figcaption { display: grid; gap: 2px; }
 
 /* chart internals: two text sizes (chart, and xs for emphasis) and one stroke weight per role */
 .gridline { stroke: var(--grid); stroke-width: 1; }
+/* the latest poll, whose figures label the line ends: a ring in the party's colour */
+.latest-dot { fill: var(--bg); stroke-width: 2; }
+.latest-src { margin: 0; font-size: var(--fs-xs); line-height: var(--lh-snug); color: var(--muted); }
 .axis text, .axis-y { fill: var(--muted); font-family: var(--font); font-size: var(--fs-chart); }
 .axis line, .axis path { stroke: var(--axis); }
 .future { fill: var(--future); }
@@ -399,6 +412,7 @@ figcaption { display: grid; gap: 2px; }
   padding: var(--sp-2) var(--sp-3); font-size: var(--fs-sm); line-height: var(--lh-snug); min-width: 160px; max-width: 290px;
 }
 .tooltip .tt-head { font-weight: 700; margin-bottom: 2px; }
+.tooltip .tt-when { white-space: nowrap; font-weight: 400; font-size: var(--fs-xs); color: var(--muted); margin-left: var(--sp-1); }   /* the poll's date */
 .tooltip .tt-sub { color: var(--muted); font-size: var(--fs-xs); margin: 0 0 var(--sp-1); }
 .tooltip .tt-row { display: grid; grid-template-columns: 14px minmax(0,1fr) auto; gap: var(--sp-2); align-items: center; line-height: var(--lh-body); }
 .tooltip .tt-row i { height: 3px; }
@@ -415,12 +429,24 @@ table { border-collapse: collapse; width: auto; min-width: min(100%, 640px); fon
 th, td { padding: var(--sp-2) var(--sp-4); text-align: left; border-bottom: 1px solid var(--rule); white-space: nowrap; vertical-align: baseline; }
 th:first-child, td:first-child { padding-left: 0; }
 th { font-weight: 600; color: var(--muted); font-size: var(--fs-xs); position: sticky; top: 0; background: var(--bg); border-bottom-color: var(--ink-2); vertical-align: bottom; }
-tbody tr:hover td { background: var(--key-bg); }
+tbody tr:not(.polls-row):hover > td { background: var(--key-bg); }   /* the polls list under a row keeps its own hover */
 td.num, th.num { text-align: right; }
 td.key-col { font-weight: 700; }
 td .sub { display: block; font-size: var(--fs-xs); color: var(--muted); white-space: normal; max-width: 26ch; }
 td .key { display: inline-block; width: 12px; height: 3px; vertical-align: middle; margin-right: var(--sp-2); }
 td .flag { display: inline-block; width: 16px; height: 16px; vertical-align: -3px; margin-right: var(--sp-2); }
+/* every poll of a term, unfolded under its country's row, laid out like Wikipedia's tables */
+tr.polls-row > td { padding: 0 0 var(--sp-5); white-space: normal; }
+.polls-list { position: sticky; left: 0; }   /* width set in the script: the visible table area */
+.polls-note { margin: var(--sp-3) 0 var(--sp-2); font-size: var(--fs-xs); line-height: var(--lh-snug); color: var(--muted); max-width: 100ch; }
+.polls-scroll { max-height: 70vh; overflow: auto; border: 1px solid var(--rule); }
+.polls-table { min-width: 100%; font-size: var(--fs-xs); }
+.polls-table th, .polls-table td { padding: var(--sp-1) var(--sp-2); }
+.polls-table th:first-child, .polls-table td:first-child { padding-left: var(--sp-2); }
+.polls-table td:first-child { white-space: normal; min-width: 12ch; max-width: 22ch; }
+.polls-table th.party-col { box-shadow: inset 0 -4px 0 var(--party); color: var(--ink); }   /* a strip of the party's colour */
+.polls-table td.lead-cell { font-weight: 700; color: var(--ink); }
+.polls-table td.lead-col { font-weight: 700; }
 td.up { color: var(--lead-ink); } td.down { color: var(--trail-ink); }
 
 /* ------------------------------------------------------------------ detail dialog */
@@ -521,7 +547,7 @@ td.up { color: var(--lead-ink); } td.down { color: var(--trail-ink); }
   #summary { order: 2; }
   .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--sp-6); }
   .summary > .s-when, .summary > .s-row { grid-column: 1 / -1; }
-  .summary .s-list { margin: 0; padding: var(--sp-2) var(--sp-3); }
+  .summary .s-list { margin: 0; padding: var(--sp-2) var(--sp-3); border: 1px solid var(--axis); }
   .summary .s-list + .s-list, .summary .s-list:last-child { margin-top: 0; margin-bottom: 0; }
   main { order: 3; }
   .palette-switch { order: 4; grid-template-columns: 40px minmax(0, 280px); }
@@ -546,7 +572,7 @@ td.up { color: var(--lead-ink); } td.down { color: var(--trail-ink); }
   .deck { font-size: var(--fs-lg); }
   .fam-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-1) var(--sp-3); }
   .summary { padding: var(--sp-3) var(--sp-4); grid-template-columns: minmax(0, 1fr); }
-  .summary .s-list { margin: 0 calc(-1 * var(--sp-4)); padding: var(--sp-2) var(--sp-4); }
+  .summary .s-list { margin: 0 calc(-1 * var(--sp-4)); padding: var(--sp-2) var(--sp-4); border-width: 1px 0 0; }
   .summary .s-list + .s-list { margin-top: calc(-1 * var(--sp-3)); }
   .summary .s-list:last-child { margin-bottom: calc(-1 * var(--sp-3)); }
 }

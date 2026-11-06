@@ -186,7 +186,11 @@ Population and GDP per capita come from `data/external/worldbank.json`; refresh 
    main table's section are kept, including per-year tables whose party list changed.
 4. Dates: a year written in the cell is used first, then the section heading's year ("2025"),
    then Wikipedia's hidden sort key.
-5. Shares are re-based to decided voters when a poll reports undecided voters inside its base.
+5. Shares are re-based to decided voters when a poll reports undecided ("don't know") answers
+   inside its base. The build writes a second copy of the data with those answers kept, as printed
+   on Wikipedia, to `site/data/with-dk/` (same files; there the lines are not tied to the election
+   result, which counts decided voters only). The site's left column switches between the two; the
+   polling errors always use the first.
 
 ## How the colours work
 
@@ -333,6 +337,22 @@ Malta, Montenegro and Serbia lose their sparsest years.
   the dark theme.
 * Version 16: a shorter subtitle, "Opinion polling for the next parliamentary elections across
   Europe", also used in the link previews.
+* Version 17: a menu in the left column to include or exclude "don't know" answers (the data now
+  comes in two copies, `site/data/` and `site/data/with-dk/`); the colour menus stay in every view,
+  under "Colours"; a crown marks the countries furthest ahead and a tumbling crown those furthest
+  behind.
+* Version 18: "Furthest ahead" listed above "Furthest behind"; a note that the figure at the end
+  of a line was its trend (replaced in version 19).
+* Version 19: today's figures (shares, lead or lag, change since the election, the map) are the
+  latest poll's, so they match the Wikipedia table; polls whose fieldwork ended on the same day are
+  averaged, without weights. The lines stay the trend, with the latest poll ringed at their ends.
+  The country table can unfold every poll of the term, laid out like Wikipedia's table; one or two
+  selected countries fill the width. Polls are stored to two decimals and with their "don't know"
+  share (`polls.u`).
+* Version 20: "don't know" answers included by default; the time sliders show the latest poll on
+  or before the chosen date too (the timeline's `src`: polls by their last day of fieldwork, and
+  election results), with that poll's date next to the date in the map's tooltip; thin rules
+  between the summary's parts; the map's colour bar and time slider 30% thicker.
 
 ## Known limitations
 

@@ -1,9 +1,9 @@
 """Package the site as one self-contained HTML page (CSS + JS inlined) plus its data files.
 
     python tools/build_artifact.py --full     -> dist/standalone/index.html (+ data/), a normal web page
-    python tools/build_artifact.py            -> dist/artifact-v16/index.html: body content only, for
+    python tools/build_artifact.py            -> dist/artifact-v20/index.html: body content only, for
                                                  hosts that wrap the page themselves (Claude artifacts)
-(dist/artifact/ and dist/artifact-v2/ to -v15/ hold the published versions 1 to 15 and are left alone.)
+(dist/artifact/ and dist/artifact-v2/ to -v19/ hold the published versions 1 to 19 and are left alone.)
 
 Useful for hosts that want a single page, e.g. sharing as a Claude artifact.
 GitHub Pages does NOT need this: it serves the `site/` folder as it is.
@@ -17,7 +17,7 @@ SITE = ROOT / "site"
 
 
 def main(content_only: bool = True):
-    OUT = ROOT / "dist" / ("artifact-v16" if content_only else "standalone")
+    OUT = ROOT / "dist" / ("artifact-v20" if content_only else "standalone")
     html = (SITE / "index.html").read_text(encoding="utf-8")
     css = (SITE / "assets" / "style.css").read_text(encoding="utf-8")
     js = (SITE / "assets" / "app.js").read_text(encoding="utf-8")
@@ -42,6 +42,14 @@ def main(content_only: bool = True):
     shutil.copy(SITE / "data" / "timeline.json", OUT / "data" / "timeline.json")
     for f in (SITE / "data" / "history").glob("*.json"):
         shutil.copy(f, OUT / "data" / "history" / f.name)
+    # the copy with "don't know" answers kept (the menu in the left column), when it has been built
+    dk = SITE / "data" / "with-dk"
+    if (dk / "europe.json").exists():
+        (OUT / "data" / "with-dk" / "history").mkdir(parents=True)
+        for name in ("europe.json", "timeline.json"):
+            shutil.copy(dk / name, OUT / "data" / "with-dk" / name)
+        for f in (dk / "history").glob("*.json"):
+            shutil.copy(f, OUT / "data" / "with-dk" / "history" / f.name)
     print(f"wrote {OUT / 'index.html'} ({len(page):,} bytes) and data/")
 
 

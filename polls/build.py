@@ -29,6 +29,10 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 STEP_DAYS = 7
 ELECTION_WEIGHT = 12.0   # election result counts like ~12 large polls in the smoother
 MINOR_MAX = 3.0          # parties never above this (trend) are "minor"
+# "Don't know" answers. By default they are left out where a pollster counts them inside its 100%,
+# so shares are of decided voters, as in an election. build_all(keep_undecided=True) keeps them, as
+# printed on Wikipedia, for the second copy of the data in site/data/with-dk/ (the site's menu).
+KEEP_UNDECIDED = False
 
 
 # ----------------------------------------------------------------------------------------------
@@ -190,10 +194,15 @@ def read_cycle(code: str, cyc: dict, raw_dir: pathlib.Path, offline: bool, diag:
             "name": cyc.get("name") or f"{start.year}–"}
 
 
-def normalise(rec: dict) -> dict[str, float]:
-    """Shares excluding undecided, when the poll reports undecided inside the 100%."""
+def normalise(rec: dict, keep_undecided: bool | None = None) -> dict[str, float]:
+    """Shares excluding undecided, when the poll reports undecided inside the 100%.
+
+    With `keep_undecided` (default: the module setting KEEP_UNDECIDED) the shares stay as printed.
+    """
     vals = dict(rec["values"])
     vals.update(rec["joint"])
+    if KEEP_UNDECIDED if keep_undecided is None else keep_undecided:
+        return vals
     und = rec.get("undecided")
     # math.fsum: exact float addition, so results are identical on every Python version
     tot = math.fsum(list(vals.values()) + [rec.get("others") or 0])
@@ -275,7 +284,9 @@ def trends_for(polls: list[dict], start: dt.date, last: dt.date, keys: list[str]
             mid = p["end"] - (p["end"] - (p["start"] or p["end"])) / 2
             t.append(_days(mid, start)); y.append(v); w.append(p["w"])
         n_polls = len(t)
-        for res, when in ((res_start, start), (res_end, end)):
+        # the election result anchors the line, but only when polls are on the same base (decided
+        # voters): with "don't know" answers kept, the line follows the polls alone
+        for res, when in (() if KEEP_UNDECIDED else ((res_start, start), (res_end, end))):
             if res and k in res["norm"]:
                 t.append(_days(when, start)); y.append(res["norm"][k]); w.append(ELECTION_WEIGHT)
         if n_polls < 3:
@@ -382,7 +393,10 @@ def build_country(code: str, cfg: dict, raw_dir: pathlib.Path, offline: bool, di
         "e": [_days(p["end"], use["start"]) for p in polls_sorted],
         "p": [pidx[p["pollster"]] for p in polls_sorted],
         "n": [p["sample"] for p in polls_sorted],
-        "v": {k: [round(p["norm"][k], 1) if k in p["norm"] else None for p in polls_sorted] for k in pk},
+        # two decimals, as some pollsters print them, so the site's table of all polls matches Wikipedia's
+        "v": {k: [round(p["norm"][k], 2) if k in p["norm"] else None for p in polls_sorted] for k in pk},
+        # "don't know" as printed (the table of all polls shows it when they are included)
+        "u": [round(p["undecided"], 2) if p.get("undecided") is not None else None for p in polls_sorted],
     }
     for p in polls_sorted:
         for k, v in p["norm"].items():
@@ -542,7 +556,8 @@ def build_history(code: str, cfg: dict, raw_dir: pathlib.Path, offline: bool, di
             continue
         if len(r["polls"]) < 3:
             continue
-        sums = sorted(math.fsum(normalise(p).values()) + (p.get("others") or 0) for p in r["polls"])
+        # checked on decided voters in both copies of the data, so both keep the same pages
+        sums = sorted(math.fsum(normalise(p, keep_undecided=False).values()) + (p.get("others") or 0) for p in r["polls"])
         med = sums[len(sums) // 2]
         if med < 70 or med > 115:
             diag.append(f"     (history) {r['page']}: dropped, median poll total {med:.0f}% (not vote shares?)")
@@ -753,7 +768,27 @@ def governments_for(code, cfg, lin_out, origin, today, diag, governments, member
 
 
 # ----------------------------------------------------------------------------------------------
-def build_all(config_path=None, offline=False, only=None, out_dir=None, raw_dir=None, today=None):
+def build_site(config_path=None, offline=False, only=None, out_dir=None, raw_dir=None, today=None):
+    """Both copies of the data: site/data/ (decided voters, the default) and site/data/with-dk/
+    ("don't know" answers kept, as on Wikipedia), which the site's menu switches between."""
+    payload = build_all(config_path, offline, only, out_dir, raw_dir, today)
+    base = pathlib.Path(out_dir or ROOT / "site" / "data")
+    print("\nThe same with \"don't know\" answers kept (site/data/with-dk/) ...")
+    build_all(config_path, True, only, base / "with-dk", raw_dir, today, keep_undecided=True)
+    return payload
+
+
+def build_all(config_path=None, offline=False, only=None, out_dir=None, raw_dir=None, today=None,
+              keep_undecided=False):
+    global KEEP_UNDECIDED
+    KEEP_UNDECIDED = keep_undecided
+    try:
+        return _build_all(config_path, offline, only, out_dir, raw_dir, today, keep_undecided)
+    finally:
+        KEEP_UNDECIDED = False
+
+
+def _build_all(config_path, offline, only, out_dir, raw_dir, today, keep_undecided):
     cfg = load_config(config_path)
     raw_dir = pathlib.Path(raw_dir or ROOT / "data" / "raw")
     out_dir = pathlib.Path(out_dir or ROOT / "site" / "data")
@@ -801,15 +836,17 @@ def build_all(config_path=None, offline=False, only=None, out_dir=None, raw_dir=
                  for code, c in cfg["countries"].items() if c.get("skip")]
     payload = {"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                "today": today.isoformat(), "title": cfg.get("title"), "countries": countries,
-               "history": history_codes, "history_polls": history_polls, "not_shown": not_shown}
+               "history": history_codes, "history_polls": history_polls, "not_shown": not_shown,
+               "undecided": "kept" if keep_undecided else "left out"}
     (out_dir / "europe.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")))
-    with open(proc / "polls_long.csv", "w", newline="", encoding="utf-8") as f:
-        if csv_rows:
-            wr = csv.DictWriter(f, fieldnames=list(csv_rows[0].keys()))
-            wr.writeheader()
-            wr.writerows(csv_rows)
-    (proc / "diagnostics.txt").write_text("\n".join(diag), encoding="utf-8")
+    if not keep_undecided:   # the tidy table and the log describe the default copy
+        with open(proc / "polls_long.csv", "w", newline="", encoding="utf-8") as f:
+            if csv_rows:
+                wr = csv.DictWriter(f, fieldnames=list(csv_rows[0].keys()))
+                wr.writeheader()
+                wr.writerows(csv_rows)
+        (proc / "diagnostics.txt").write_text("\n".join(diag), encoding="utf-8")
     # context (Manifesto positions, World Bank figures) and the weekly timeline for the map slider
     from .enrich import enrich
-    payload = enrich(out_dir)
+    payload = enrich(out_dir, write_processed=not keep_undecided)
     return payload

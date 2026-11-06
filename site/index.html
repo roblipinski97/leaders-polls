@@ -51,13 +51,19 @@
     <p class="s-when" id="s-when" hidden></p>
     <p class="s-row" id="s-row-lead"><span class="s-ico" id="s-ico-lead" aria-hidden="true"></span><span class="s-text" id="s-trailing"></span></p>
     <p class="s-row" id="s-row-change"><span class="s-ico" id="s-ico-change" aria-hidden="true"></span><span class="s-text" id="s-gained"></span></p>
-    <div class="s-list behind"><h2 class="s-head">Furthest behind</h2><ul id="s-behind"></ul></div>
-    <div class="s-list ahead"><h2 class="s-head">Furthest ahead</h2><ul id="s-ahead"></ul></div>
+    <div class="s-list ahead"><h2 class="s-head"><span class="s-hico" id="s-ico-ahead" aria-hidden="true"></span>Furthest ahead</h2><ul id="s-ahead"></ul></div>
+    <div class="s-list behind"><h2 class="s-head"><span class="s-hico" id="s-ico-behind" aria-hidden="true"></span>Furthest behind</h2><ul id="s-behind"></ul></div>
   </div>
-  <div class="palette-switch" role="group" aria-label="Colours and theme">
-    <span class="pick-head" id="pick-head">Map colours</span>
-    <span class="pick" id="pick-leadlag"><select id="palette" aria-label="Map colours for a lead or lag"></select></span>
-    <span class="pick" id="pick-share"><select id="hue" aria-label="Map colours for a share of the vote"></select></span>
+  <div class="palette-switch" role="group" aria-label="Data, colours and theme">
+    <span class="pick-head" id="dk-head">"Don't know" answers</span>
+    <div class="seg seg-sm dk-seg" id="dk-seg" role="radiogroup" aria-labelledby="dk-head">
+      <button type="button" class="seg-b" role="radio" data-dk="include" aria-checked="false">Include</button>
+      <button type="button" class="seg-b" role="radio" data-dk="exclude" aria-checked="true">Exclude</button>
+    </div>
+    <p class="pick-note" id="dk-note">(Include: shares of all respondents, as seen on Wikipedia. Exclude: shares of decided voters only, as pollsters often report them.)</p>
+    <span class="pick-head" id="pick-head">Colours</span>
+    <span class="pick" id="pick-leadlag"><select id="palette" aria-label="Colours for a lead or lag"></select></span>
+    <span class="pick" id="pick-share"><select id="hue" aria-label="Colours for a share of the vote"></select></span>
     <span class="pick" id="pick-theme"><label for="theme">Theme</label><select id="theme"><option value="light">Light</option><option value="dark">Dark</option></select></span>
   </div>
 </aside>
@@ -281,7 +287,8 @@
       <h3>When an election has just been held</h3>
       <p>The polling window then closes at the election and the result becomes the final point. Until the next page has five polls, the country shows the completed term, with the result in place of the trend (Serbia after its 25 October 2026 election, for example). The outgoing government counts as caretaker until a new one is entered.</p>
       <h3>Trend lines</h3>
-      <p>Lines are a local linear regression (a LOESS-type smoother) through the individual polls. Each poll is weighted by the square root of its sample size and by a Gaussian kernel in time. The bandwidth widens where polls are sparse: about three weeks in Germany, several months in Luxembourg. Where polls are far apart the line holds its level instead of extending a slope, and it never leaves the range of the polls around it. The election result counts as a very heavy poll, so each line starts at the actual result. Where a pollster reports undecided voters inside the 100%, shares are re-based to decided voters. Polled joint lists (for example Third Way in Poland) are joined to their continuing party.</p>
+      <p>Lines are a local linear regression (a LOESS-type smoother) through the individual polls. Each poll is weighted by the square root of its sample size and by a Gaussian kernel in time. The bandwidth widens where polls are sparse: about three weeks in Germany, several months in Luxembourg. Where polls are far apart the line holds its level instead of extending a slope, and it never leaves the range of the polls around it. Where a pollster counts "don't know" answers inside its 100%, they are kept by default, so the figures are as printed on Wikipedia; the lines then follow the polls alone, without the election result, and shares and changes since the election read lower wherever pollsters count undecided respondents. The menu on the left can leave them out instead: the other shares are then re-based to decided voters, as an election counts valid votes only, and each line starts at the result. The polling errors always leave them out. Polled joint lists (for example Third Way in Poland) are joined to their continuing party.</p>
+      <p>The figures are the latest poll's: the governing party's share, its lead or lag on the strongest party in that poll, the change since the election and the shares on the map, so they can be checked against the Wikipedia table. The latest poll is the one whose fieldwork ended last, on or before the date shown (today, or the date chosen on a time slider); when several ended on the same day, their plain average, party by party, without weighting by sample size. Between an election and the first poll after it, the map shows the result. The latest poll's figures are ringed at the end of the lines; the lines themselves, and the share of the term spent ahead, are the trend through all the polls.</p>
       <h3>Historical data</h3>
       <p>The historical data chain every polling page back to the 1990s where Wikipedia has one, and the "Opinion polls" section of election articles where it does not. Parties keep one line through renames and direct successors (PO to KO, the Brexit Party to Reform UK, SYRIZA's predecessor Synaspismos); the list of these joins is kept by hand. Pages that report seat projections instead of vote shares are converted to shares of seats for the Netherlands and left out elsewhere; pages whose numbers do not add up to vote shares are left out too. The band above the chart shows the head of government's party: from <a href="https://www.parlgov.org/" target="_blank" rel="noopener">ParlGov</a> (Döring, Huber and Manow) up to 2020, then from Wikipedia's lists of heads of government.</p>
       <h3>Steady polling only</h3>

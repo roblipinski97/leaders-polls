@@ -1,6 +1,7 @@
 /* Are Leaders Leading? Dashboard script.
  * Reads data/europe.json, data/europe-map.json and data/history/<CC>.json (built by
- * `python -m polls build`). Plain browser JavaScript and D3 v7; no build step.
+ * `python -m polls build`), or the same files in data/with-dk/ when "don't know" answers are
+ * included. Plain browser JavaScript and D3 v7; no build step.
  */
 (() => {
   "use strict";
@@ -41,9 +42,15 @@
     mapPlace: store.get("mapPlace", "gov"),        // "place" mode: "gov" (governing party) or "1", "2", "3"
     hue: store.get("hue", "blue"),
     theme: store.get("theme", "light"),                // light by default, whatever the system setting
+    // "don't know" answers: "include" (as printed on Wikipedia, the default, from the copy of the
+    // data in data/with-dk/) or "exclude" (shares of decided voters, from data/)
+    dk: store.get("dk", "include") === "exclude" ? "exclude" : "include",
     // polling errors: country, election (ISO date; null = the latest), days before it, options
     pe: { code: "AT", date: null, days: clamp(Math.round(+store.get("peDays14", 14)) || 14, 1, 365), ci: false, term: false, off: new Set() },
   };
+
+  /** Where the poll data is read from, by the "don't know" choice (the map's outline is shared). */
+  const dataDir = () => (state.dk === "include" ? "data/with-dk/" : "data/");
 
   function isDark() {
     const t = document.documentElement.dataset.theme;
@@ -193,7 +200,46 @@
     c.upcoming = c.upcoming_next_election ? parseISO(c.upcoming_next_election) : null;
     c.lastData = c.last_poll ? parseISO(c.last_poll) : c.start;
     c.pollDates = c.polls.t.map((t) => addDays(c.start, t));
+    c.pollEnds = (c.polls.e || c.polls.t).map((d) => addDays(c.start, d));
+    c.pollStarts = c.polls.s ? c.polls.s.map((d) => addDays(c.start, d)) : null;
+    c.pollNames = c.polls.p ? c.polls.p.map((i) => cleanPollster((c.pollsters || [])[i])) : null;
+    // the figures shown come from the latest poll (see latestOf), except right after an election,
+    // where they are the result
+    c.latest = c.completed ? null : latestOf(c.polls.v, c.pollEnds, c.pollStarts, c.pollNames);
     return derive(c, false);
+  }
+
+  /** The latest poll: the one whose fieldwork ended last. When several ended on the same day,
+   *  their plain average, party by party (no weighting by sample size). Today's figures (shares,
+   *  lead or lag, change since the election) come from it, so they can be checked against the
+   *  Wikipedia table; the lines stay the trend through all the polls.
+   *  v: {party: [value per poll]}, ends / starts: Date per poll, names: pollster per poll. */
+  function latestOf(v, ends, starts, names) {
+    if (!ends || !ends.length) return null;
+    const last = d3.max(ends, (d) => +d);
+    const idx = []; ends.forEach((d, i) => { if (+d === last) idx.push(i); });
+    const vals = new Map();
+    for (const [k, arr] of Object.entries(v || {})) {
+      const xs = idx.map((i) => (arr || [])[i]).filter((x) => x != null);
+      if (xs.length) vals.set(k, d3.mean(xs));
+    }
+    const first = starts ? d3.min(idx, (i) => +starts[i]) : last;
+    return { end: new Date(last), start: new Date(first), idx, vals,
+      pollsters: names ? [...new Set(idx.map((i) => names[i]).filter(Boolean))] : [] };
+  }
+  /** "2–4 Nov 2026", "28 Sep–2 Oct 2026", "4 Nov 2026": fieldwork dates as Wikipedia writes them. */
+  function fieldworkText(a, b) {
+    const f = (d, y) => `${d.getUTCDate()} ${d3.utcFormat("%b")(d)}${y ? " " + d.getUTCFullYear() : ""}`;
+    if (!a || +a === +b) return f(b, true);
+    if (a.getUTCFullYear() !== b.getUTCFullYear()) return `${f(a, true)}–${f(b, true)}`;
+    if (a.getUTCMonth() !== b.getUTCMonth()) return `${f(a, false)}–${f(b, true)}`;
+    return `${a.getUTCDate()}–${f(b, true)}`;
+  }
+  /** One line saying which poll today's figures come from. */
+  function latestText(c) {
+    const L = c.latest; if (!L) return "";
+    const who = L.pollsters.length ? L.pollsters.join(" and ") + ", " : "";
+    return `Latest poll: ${who}${fieldworkText(L.start, L.end)}${L.idx.length > 1 ? ", averaged" : ""}.`;
   }
 
   /** The derived fields of a term: who governs on each date, the governing party's share and its
@@ -221,15 +267,43 @@
       c.stats = statsAt(c);
     } else {
       c.inc = c.incumbent && c.incumbent.key ? c.byKey.get(c.incumbent.key) : null;
+      useLatest(c);
     }
     c.rival = c.stats && c.stats.rival ? c.byKey.get(c.stats.rival) : null;
     c.termFrac = clamp(((c.asOf || state.today) - c.start) / (c.end - c.start), 0, 1);
     c.status = !c.inc || !c.stats || c.stats.gap_now == null ? "none" : c.stats.gap_now >= 0 ? "lead" : "trail";
     return c;
   }
+  /** Today's summary figures from the latest poll: the governing party's share, its strongest
+   *  rival in that poll, the lead or lag and the change since the election. The share of the term
+   *  spent ahead stays the trend's. Without the governing party in the latest poll: the trend. */
+  function useLatest(c) {
+    const L = c.latest;
+    if (!L) return;
+    if (c.stats && c.stats.final === "result") { c.latest = null; return; }
+    if (!c.inc || !c.stats) return;      // no party to follow: the latest poll still gives the shares
+    const now = L.vals.get(c.inc.key);
+    if (now == null) { c.latest = null; return; }
+    let rk = null, rv = null;
+    for (const [k, v] of L.vals) if (k !== c.inc.key && (rv == null || v > rv)) { rk = k; rv = v; }
+    const res = c.inc.result;
+    c.stats = { ...c.stats, now, rival: rk, rival_now: rv, gap_now: rv != null ? now - rv : null,
+      change: res != null ? now - res : null, rank_now: 1 + [...L.vals.values()].filter((v) => v > now).length, latest: true };
+  }
   /** The summary figures of a term cut at an earlier date, as the data file has them for today. */
   function statsAt(c) {
     if (!c.inc) return null;
+    if (c.latest && c.latest.vals.has(c.inc.key)) {
+      // the latest poll by that date (the share of the term spent ahead stays the trend's)
+      const now = c.latest.vals.get(c.inc.key);
+      let rk = null, rv = null;
+      for (const [k, v] of c.latest.vals) if (k !== c.inc.key && (rv == null || v > rv)) { rk = k; rv = v; }
+      let lead = 0, tot = 0;
+      for (let i = 0; i < c.dates.length; i++) if (c.incVal[i] != null && c.rivalVal[i] != null) { tot++; if (c.incVal[i] >= c.rivalVal[i]) lead++; }
+      const result = c.inc.result;
+      return { now, result, change: result != null ? now - result : null, rival: rk, rival_now: rv,
+        gap_now: rv != null ? now - rv : null, share_time_leading: tot ? lead / tot : null, final: null, latest: true };
+    }
     let j = c.dates.length - 1; while (j >= 0 && c.incVal[j] == null) j--;
     if (j < 0 || c.dates[c.dates.length - 1] - c.dates[j] > 45 * DAY) return null;
     const now = c.incVal[j], rv = c.rivalVal[j];
@@ -248,17 +322,20 @@
     if (k < 0) return null;
     const series = {};
     for (const key of Object.keys(c.trend.series)) { const a = c.trend.series[key]; series[key] = a ? a.slice(0, k + 1) : a; }
-    const keep = []; c.pollDates.forEach((d, i) => { if (d <= D) keep.push(i); });
+    // the polls whose fieldwork had ended by D (the day itself included)
+    const keep = []; c.pollEnds.forEach((d, i) => { if (d <= D) keep.push(i); });
     const pv = {};
     for (const key of Object.keys(c.polls.v)) { const a = c.polls.v[key]; pv[key] = a ? keep.map((i) => a[i]) : a; }
+    const col = (a) => (a ? keep.map((i) => a[i]) : a);
     const o = {
       ...c, asOf: D, completed: false, note: null,
       trend: { ...c.trend, days: c.trend.days.slice(0, k + 1), series },
       dates: c.dates.slice(0, k + 1),
-      polls: { ...c.polls, t: keep.map((i) => c.polls.t[i]), v: pv },
-      pollDates: keep.map((i) => c.pollDates[i]), n_polls: keep.length,
+      polls: { ...c.polls, t: col(c.polls.t), s: col(c.polls.s), e: col(c.polls.e), p: col(c.polls.p), n: col(c.polls.n), u: col(c.polls.u), v: pv },
+      pollDates: col(c.pollDates), pollEnds: col(c.pollEnds), pollStarts: col(c.pollStarts), pollNames: col(c.pollNames), n_polls: keep.length,
       periods: c.periods.filter((pp) => pp.fromD <= D),
     };
+    o.latest = latestOf(pv, o.pollEnds, o.pollStarts, o.pollNames);
     o.lastData = keep.length ? o.pollDates[o.pollDates.length - 1] : c.start;
     const per = o.periods[o.periods.length - 1];
     o.incumbent = per ? { ...per } : null;
@@ -285,7 +362,7 @@
     };
     const res0 = resNear(sg.start), res1 = resNear(sg.end);
     const first = (lid) => { const a = sg.series[lid]; return a && a[0] != null ? a[0] : null; };
-    const keep = []; h.pollDates.forEach((d, i) => { if (d >= sg.startD && d < sg.endD && d <= D) keep.push(i); });
+    const keep = []; h.pollDates.forEach((d, i) => { if (d >= sg.startD && d < sg.endD && h.pollEnds[i] <= D) keep.push(i); });
     const pv = {}; ids.forEach((lid) => { const a = h.polls.v[lid]; if (a) pv[lid] = keep.map((i) => a[i]); });
     const parties = ids.map((lid) => {
       const L = h.byId.get(lid) || { id: lid, label: lid };
@@ -307,6 +384,8 @@
       periods, source: { page: sg.page, url: sg.url, revid: sg.revid },
     };
     o.lastData = o.pollDates.length ? o.pollDates[o.pollDates.length - 1] : o.start;
+    o.pollEnds = keep.map((i) => h.pollEnds[i]);
+    o.latest = latestOf(pv, o.pollEnds, null, h.polls.p ? keep.map((i) => cleanPollster((h.pollsterNames || [])[h.polls.p[i]])) : null);
     const per = periods[periods.length - 1];
     o.incumbent = per ? { leader: per.leader, title: per.title, key: per.key, caretaker: per.caretaker } : null;
     return derive(o, true);
@@ -355,6 +434,7 @@
   // term's grid (the line can stop a few days short after the last poll), otherwise null (a party
   // no longer polled, such as a dissolved list)
   const lastVal = (c, k) => {
+    if (c.latest) return c.latest.vals.has(k) ? c.latest.vals.get(k) : null;   // the latest poll (today or by the slider's date)
     const s = c.trend.series[k] || [], d = c.trend.days;
     for (let i = s.length - 1; i >= 0; i--) if (s[i] != null) return d[d.length - 1] - d[i] <= 45 ? s[i] : null;
     return null;
@@ -405,6 +485,7 @@
       n: (h.polls.n || []).length ? keep.map((i) => h.polls.n[i]) : h.polls.n,
       e: h.polls.e ? keep.map((i) => h.polls.e[i]) : h.polls.e, v };
     h.pollDates = keep.map((i) => h.raw.pollDates[i]);
+    h.pollEnds = keep.map((i) => h.raw.pollEnds[i]);
     h.segments = h.segments.map((sg) => {
       const series = {};
       let any = false;
@@ -731,7 +812,7 @@
     const endW = endLabel.length * 6.6 + 6;
     const startW = o.compact ? 0 : ("Election " + fmtMonYear(c.start)).length * 6.6 + 6;
     const years = d3.utcYear.range(addDays(c.start, 1), c.end)
-      .filter((d) => x(d) - x(c.start) > startW / 2 + 14 && x(c.end) - x(d) > endW + 14);
+      .filter((d) => x(d) - x(c.start) > startW + 18 && x(c.end) - x(d) > endW + 18);   // clear of both end labels
     ax.selectAll("text.yr").data(years).join("text").attr("class", "yr")
       .attr("x", (d) => x(d)).attr("y", H - 6).attr("text-anchor", "middle").text(d3.utcFormat("%Y"));
     ax.selectAll("line.yt").data(years).join("line").attr("class", "yt")
@@ -839,16 +920,32 @@
     // small charts: the other main parties too (5% or more, four labels at most), instead of a legend
     if (o.compact && !cmp) keys.filter((k) => !labels.some((l) => l.k === k) && !c.byKey.get(k).minor && lastVal(c, k) >= 5)
       .sort((k1, k2) => lastVal(c, k2) - lastVal(c, k1)).slice(0, Math.max(0, 4 - labels.length)).forEach((k) => labels.push({ k, strong: false }));
+    // the figures are the latest poll's (today, or by the date on the slider), ringed at its date
+    const useL = !!c.latest;
     labels.forEach((l) => {
+      if (useL) {
+        const v = c.latest.vals.get(l.k);
+        l.i = v == null ? -1 : 0; if (v == null) return;
+        l.x = x(c.latest.end); l.y = y(v); l.v = v; l.ring = pcolor(c.byKey.get(l.k));
+        return;
+      }
       const i = lastIdx(l.k); l.i = i;
       if (i < 0) return;
       l.x = x(c.dates[i]); l.y = y(c.trend.series[l.k][i]); l.v = c.trend.series[l.k][i];
     });
     if (cmp) {
-      let i = cmp.vals.length - 1; while (i >= 0 && cmp.vals[i] == null) i--;
-      if (i >= 0) labels.push({ k: "__bloc", i, x: x(c.dates[i]), y: y(cmp.vals[i]), v: cmp.vals[i], strong: true });
+      const inL = useL ? cmp.keys.filter((k) => c.latest.vals.has(k)) : [];
+      if (useL && inL.length) {
+        const v = d3.sum(inL, (k) => c.latest.vals.get(k));
+        labels.push({ k: "__bloc", i: 0, x: x(c.latest.end), y: y(v), v, strong: true, ring: "var(--bloc)" });
+      } else if (!useL) {
+        let i = cmp.vals.length - 1; while (i >= 0 && cmp.vals[i] == null) i--;
+        if (i >= 0) labels.push({ k: "__bloc", i, x: x(c.dates[i]), y: y(cmp.vals[i]), v: cmp.vals[i], strong: true });
+      }
     }
     const placed = labels.filter((l) => l.i >= 0);
+    for (const l of placed) if (l.ring) svg.append("circle").attr("class", "latest-dot").attr("cx", l.x).attr("cy", l.y)
+      .attr("r", o.compact ? 3.2 : 4).attr("stroke", l.ring);
     for (let it = 0; it < 300; it++) {     // simple vertical de-collision
       let moved = false;
       placed.sort((p1, p2) => p1.y - p2.y);
@@ -965,7 +1062,9 @@
   }
 
   // ------------------------------------------------------------------------------- panels
-  function panel(c, yMax) {
+  /** size: the chart's width and height in pixels when the panels are fewer than the grid's
+   *  columns and so wider than usual (null: the usual small chart, scaled to the column). */
+  function panel(c, yMax, size) {
     const a = el("article", "panel"); a.id = "p-" + c.code;
     const head = el("div", "panel-head");
     const f = flagImg(c.code);
@@ -1005,6 +1104,7 @@
       a.append(el("p", "status " + c.status, statusWords(c)));
       if (c.stats) { const fl = el("p", "facts"); factsLine(fl, c, true); a.append(fl); }
     }
+    if (c.latest) a.append(el("p", "latest-src", latestText(c)));
 
     const chart = el("div", "chart");
     a.append(chart);
@@ -1014,7 +1114,7 @@
     const polls = !state.trendsOnly;
     let ymax = yMax || niceMax(maxValue(c, keys, polls));
     if (cmpOn && !yMax) ymax = niceMax(Math.max(maxValue(c, keys, polls), d3.max(cmp.vals) || 0, polls ? d3.max(cmp.polls) || 0 : 0));
-    drawCycleChart(chart, c, { width: 360, height: 196, compact: true, keys, yMax: ymax, polls, aria, compare: cmp });
+    drawCycleChart(chart, c, { width: size ? size.width : 360, height: size ? size.height : 196, compact: size ? size.compact : true, keys, yMax: ymax, polls, aria, compare: cmp });
 
 
     if (!c.completed && (c.asOf || state.today) - c.lastData > 75 * DAY) a.append(el("p", "note stale", `Wikipedia lists no polls ${c.asOf ? "between " + fmtDate(c.lastData) + " and " + fmtDate(c.asOf) : "after " + fmtDate(c.lastData)}.`));
@@ -1084,7 +1184,18 @@
     let shared = null;
     if (state.shared) shared = niceMax(d3.max(cs, (c) => state.cls.cmp ? Math.max(maxValue(c, visibleKeys(c), !state.trendsOnly), d3.max(blocSeries(c, new Set(c.inc ? [c.inc.key] : [])).vals) || 0) : maxValue(c, visibleKeys(c), !state.trendsOnly)) || 40);
     if (state.table) { renderTable(cs); return; }
-    grid.replaceChildren(...cs.map((c) => panel(c, shared)));
+    // fewer panels than the grid has columns: they share the whole width (one country: one wide
+    // chart), drawn at that width so the text keeps its size; otherwise the usual columns
+    const gw = grid.clientWidth || 0, gap = parseFloat(getComputedStyle(grid).columnGap) || 24;
+    const cols = Math.max(1, Math.floor((gw + gap) / (330 + gap)));
+    let size = null;
+    if (cs.length && cs.length < cols) {
+      const w = Math.floor((gw - gap * (cs.length - 1)) / cs.length);
+      size = w < 700 ? { width: w, height: Math.round(w * 196 / 360), compact: true }
+        : { width: w, height: Math.round(clamp(w * 0.42, 260, Math.max(320, window.innerHeight * 0.62))), compact: false };
+    }
+    grid.classList.toggle("fit", !!size);
+    grid.replaceChildren(...cs.map((c) => panel(c, shared, size)));
     if (!cs.length) grid.append(el("p", "note", D && !list.length ? `No polls on Wikipedia for ${fmtDate(D)}.` : "No country matches the current filters."));
   }
   let gridTimer = null;
@@ -1095,7 +1206,7 @@
     const head = el("thead"); const hr = el("tr");
     const D = atDate();
     const cols = [["Country"], ["Governing party"], ["Lead or lag, pp", "num"], ["Strongest rival"], [D ? `Share on ${fmtDate(D)}, %` : "Share now, %", "num"],
-      ["At election, %", "num"], ["Change, pp", "num"], ["Ahead, % of term", "num"], ["Next election"], ["Polls", "num"]];
+      ["At election, %", "num"], ["Change, pp", "num"], ["Ahead, % of term", "num"], ["Next election"], ["Polls", "num"], [""]];
     cols.forEach(([h, cls]) => hr.append(el("th", cls || null, h)));
     head.append(hr); t.append(head);
     const body = el("tbody");
@@ -1118,10 +1229,80 @@
       td(s.share_time_leading != null ? String(Math.round(s.share_time_leading * 100)) : "–", "num");
       td(c.completed ? `held ${fmtDate(c.end)}` : fmtDate(c.end));
       td(String(c.n_polls), "num");
+      // every poll of the term, under the row, as in the Wikipedia table
+      const tog = td("");
+      const base = c.historic ? null : state.countries.find((x) => x.code === c.code);
+      if (base && base.polls.p) {
+        const b = el("button", "linkbtn", "Show all polls"); b.type = "button"; b.setAttribute("aria-expanded", "false");
+        let open = null;
+        b.addEventListener("click", () => {
+          if (open) { open.remove(); open = null; b.textContent = "Show all polls"; b.setAttribute("aria-expanded", "false"); return; }
+          open = el("tr", "polls-row"); const cell = el("td"); cell.colSpan = cols.length;
+          cell.append(pollTable(base, c.asOf || null)); open.append(cell); r.after(open);
+          b.textContent = "Hide the polls"; b.setAttribute("aria-expanded", "true");
+        });
+        tog.append(b);
+      }
       body.append(r);
     }
     t.append(body);
     $("#table-wrap").replaceChildren(t);
+  }
+
+  /** All the polls of a country's current term, newest first, laid out like Wikipedia's table:
+   *  pollster, fieldwork dates, sample size, one column per party, "don't know" (when included)
+   *  and the lead. The leading party's cell is shaded in its colour. upTo: only polls ended by then. */
+  function pollTable(c, upTo) {
+    const P = c.polls, ends = (P.e || P.t).map((d) => addDays(c.start, d)), starts = P.s ? P.s.map((d) => addDays(c.start, d)) : ends;
+    const idx = ends.map((d, i) => i).filter((i) => !upTo || ends[i] <= upTo).sort((a, b) => ends[b] - ends[a] || starts[b] - starts[a]);
+    // parties with at least one figure, largest in the latest poll first, then by most polls
+    const parties = c.parties.filter((p) => (P.v[p.key] || []).some((v) => v != null))
+      .sort((a, b) => (lastVal(c, b.key) ?? -1) - (lastVal(c, a.key) ?? -1) || (b.n || 0) - (a.n || 0));
+    const dk = state.dk === "include" && P.u && P.u.some((v) => v != null);
+    // included: the figures as printed (up to two decimals); left out: re-based, to one decimal
+    const fmtV = state.dk === "include" ? (v) => d3.format("~f")(Math.round(v * 100) / 100) : fmt1;
+    const wrap = el("div", "polls-list");
+    // as wide as the visible table area, and held there while the country table scrolls sideways
+    wrap.style.width = Math.max(280, $("#table-wrap").clientWidth) + "px";
+    wrap.append(el("p", "polls-note", (state.dk === "include"
+      ? "As printed on Wikipedia, with \"don't know\" answers included. "
+      : "Shares of decided voters: where a pollster counts \"don't know\" answers, they are left out and the rest re-based to 100 (choose Include in the left column for the figures as printed). ")
+      + `${idx.length} polls, newest first. Source: `));
+    const src = el("a", null, c.source.page); src.href = sourceHref(c.source); src.target = "_blank"; src.rel = "noopener";
+    wrap.lastChild.append(src, document.createTextNode("."));
+    const scroller = el("div", "polls-scroll");
+    const t = el("table", "polls-table");
+    const hr = el("tr");
+    hr.append(el("th", null, "Polling firm"), el("th", null, "Fieldwork date"), el("th", "num", "Sample size"));
+    parties.forEach((p) => {
+      const th = el("th", "num party-col", shortLabel(p.label)); th.title = p.article || p.label;
+      th.style.setProperty("--party", pcolor(p)); hr.append(th);
+    });
+    if (dk) hr.append(el("th", "num", "Don't know"));
+    hr.append(el("th", "num", "Lead"));
+    const thead = el("thead"); thead.append(hr); t.append(thead);
+    const body = el("tbody");
+    for (const i of idx) {
+      const r = el("tr");
+      r.append(el("td", null, cleanPollster((c.pollsters || [])[P.p[i]]) || "–"), el("td", null, fieldworkText(starts[i], ends[i])),
+        el("td", "num", P.n && P.n[i] ? d3.format(",")(P.n[i]) : "–"));
+      const vals = parties.map((p) => (P.v[p.key] || [])[i]);
+      const sorted = vals.filter((v) => v != null).sort((a, b) => b - a);
+      const top = sorted.length ? sorted[0] : null;
+      vals.forEach((v, j) => {
+        const d = el("td", "num", v == null ? "" : fmtV(v));
+        if (v != null && v === top && sorted[1] !== top) {
+          d.classList.add("lead-cell");
+          const col = d3.color(pcolor(parties[j])); if (col) { col.opacity = 0.28; d.style.background = col.formatRgb(); }
+        }
+        r.append(d);
+      });
+      if (dk) r.append(el("td", "num", P.u[i] != null ? fmtV(P.u[i]) : ""));
+      r.append(el("td", "num lead-col", sorted.length > 1 ? fmtV(sorted[0] - sorted[1]) : ""));
+      body.append(r);
+    }
+    t.append(body); scroller.append(t); wrap.append(scroller);
+    return wrap;
   }
 
   // ------------------------------------------------------------------------------- summary
@@ -1132,6 +1313,10 @@
     down: '<svg viewBox="0 0 20 20"><path d="M10 3v13.5M4.8 11.3 10 16.5l5.2-5.2"/></svg>',
     trendUp: '<svg viewBox="0 0 20 20"><path d="M2.2 14.6 7.6 9.2l3.2 3.2 6.6-6.6"/><path d="M11.8 5.8h5.6v5.6"/></svg>',
     trendDown: '<svg viewBox="0 0 20 20"><path d="M2.2 5.4 7.6 10.8l3.2-3.2 6.6 6.6"/><path d="M11.8 14.2h5.6V8.6"/></svg>',
+    // furthest ahead: a crown; furthest behind: the same crown tipping off, as a government that
+    // trails far behind risks losing power at the next election
+    crown: '<svg viewBox="0 0 20 20"><path d="M3.6 15.6 2.6 6.4l4.3 3.7L10 4.2l3.1 5.9 4.3-3.7-1 9.2z"/><path d="M3.9 13h12.2"/></svg>',
+    crownFall: '<svg viewBox="0 0 20 20"><g transform="translate(11.9 11.4) rotate(30) scale(0.78) translate(-10 -9.9)"><path d="M3.6 15.6 2.6 6.4l4.3 3.7L10 4.2l3.1 5.9 4.3-3.7-1 9.2z"/><path d="M3.9 13h12.2"/></g><path d="M2.4 3.6l2.2 1.1M1.6 7.4l2.2.5"/></svg>',
   };
   /** One row per country with a governing party to follow: today, or in the week the map shows. */
   function summaryRows() {
@@ -1155,6 +1340,8 @@
     const lead = rows.filter((r) => r.gap >= 0).length;
     const up = n > 0 && lead * 2 >= n;
     $("#s-ico-lead").innerHTML = up ? ICONS.up : ICONS.down;
+    $("#s-ico-behind").innerHTML = ICONS.crownFall;
+    $("#s-ico-ahead").innerHTML = ICONS.crown;
     rich($("#s-trailing"), up
       ? [["b", `${lead} of ${n}`], ` governing parties ${past ? "led" : "lead"} their strongest rival in the polls.`]
       : [["b", `${n - lead} of ${n}`], ` governing parties ${past ? "were" : "are"} behind a rival in the polls.`]);
@@ -1389,6 +1576,7 @@
     const nx = el("div", "tt-gap", nextElectionText(c, true));
     nx.style.color = "var(--ink-2)";
     t.append(nx);
+    if (c.latest) t.append(el("div", "tt-sub", latestText(c)));
   }
 
   // ------------------------------------------------------------------------------- map
@@ -1458,7 +1646,7 @@
   function loadTimeline() {
     if (state.timeline) return Promise.resolve(state.timeline);
     if (!state.timelinePromise) {
-      state.timelinePromise = fetch("data/timeline.json").then((r) => { if (!r.ok) throw new Error("timeline not found"); return r.json(); })
+      state.timelinePromise = fetch(dataDir() + "timeline.json").then((r) => { if (!r.ok) throw new Error("timeline not found"); return r.json(); })
         .then((tl) => {
           tl.startD = parseISO(tl.start);
           const order = tl.measures || [];
@@ -1472,6 +1660,16 @@
             }
             // manifesto measures arrive as arrays in tl.measures order; turn them into objects once
             for (const L of tc.lineages) L.mpObj = (L.mp || []).map(([w, arr]) => [w, Object.fromEntries(order.map((k, j) => [k, arr[j]]))]);
+            // the latest poll (or election result) on or before each week's date, as an index into tc.src
+            if (tc.src) {
+              tc.srcAt = new Int32Array(tl.n).fill(-1);
+              let k = -1;
+              for (let i = 0; i < tl.n; i++) {
+                while (k + 1 < tc.src.d.length && tc.src.d[k + 1] <= i * tl.step) k++;
+                tc.srcAt[i] = k;
+              }
+              tc.srcR = new Set(tc.src.r); tc.srcM = new Set(tc.src.m);
+            }
           }
           state.timeline = tl; return tl;
         });
@@ -1479,9 +1677,20 @@
     return state.timelinePromise;
   }
   const tlDate = (i) => addDays(state.timeline.startD, i * state.timeline.step);
+  /** A line's figure in week i: the latest poll on or before that date (older data files: the
+   *  weekly trend). Nothing outside the stretches of steady polling. */
   function tlValue(tc, li, i) {
     if (tc.runs && !tc.runs.some(([a, b]) => i >= a && i <= b)) return null;
-    const pk = tc.v[li]; if (!pk) return null; const j = i - pk[0]; return j >= 0 && j < pk[1].length ? pk[1][j] : null;
+    if (tc.src) { const k = tc.srcAt[i]; return k < 0 ? null : srcVal(tc, li, k); }
+    const pk = tc.v && tc.v[li]; if (!pk) return null; const j = i - pk[0]; return j >= 0 && j < pk[1].length ? pk[1][j] : null;
+  }
+  /** Line li's figure in source k of the timeline (each line's values are stored from its first source). */
+  function srcVal(tc, li, k) { const sp = tc.src.v[li]; if (!sp) return null; const j = k - sp[0]; return j >= 0 && j < sp[1].length ? sp[1][j] ?? null : null; }
+  /** Where week i's figures come from: { date, result (an election), several (polls averaged) }. */
+  function tlSource(tc, i) {
+    if (!tc.src || (tc.runs && !tc.runs.some(([a, b]) => i >= a && i <= b))) return null;
+    const k = tc.srcAt[i]; if (k < 0) return null;
+    return { date: addDays(state.timeline.startD, tc.src.d[k]), result: tc.srcR.has(k), several: tc.srcM.has(k) };
   }
   /** The manifesto in force for a timeline line in week i (before its first coded manifesto: that one). */
   function tlMp(L, i) { if (!L.mpObj || !L.mpObj.length) return null; let r = L.mpObj[0][1]; for (const [k, v] of L.mpObj) { if (k <= i) r = v; else break; } return r; }
@@ -1508,6 +1717,7 @@
     const tc = state.timeline.countries[c.code];
     if (!tc) { out.hasData = false; return out; }
     const vals = tc.lineages.map((L, li) => tlValue(tc, li, i));
+    out.source = tlSource(tc, i);
     if (!vals.some((v) => v != null)) { out.hasData = false; return out; }
     let gov = null; for (const g of tc.gov) if (g[0] <= i && i <= g[1]) gov = g;
     const li = gov ? gov[2] : -1;
@@ -1520,11 +1730,18 @@
       out.inc = { label: L.short || L.label, short: shortLabel(L.short || L.label), full: full(L), color: col(L), v: vals[li] };
       let best = -1; vals.forEach((v, k) => { if (k !== li && v != null && (best < 0 || v > vals[best])) best = k; });
       if (best >= 0) { const R = tc.lineages[best]; out.rival = { label: R.short || R.label, short: shortLabel(R.short || R.label), full: full(R), color: col(R), v: vals[best] }; out.gap = vals[li] - vals[best]; }
-      // change since the election before this week: the line's value in the week of that election
+      // change since the election before this week: against that election's result
       const prev = tc.electionsD.filter((d) => d <= out.when).pop();
       if (prev) {
-        const ie = Math.round((prev - state.timeline.startD) / DAY / state.timeline.step);
-        let v0 = null; for (let j = ie; j <= ie + 3 && v0 == null; j++) v0 = tlValue(tc, li, j);
+        let v0 = null;
+        if (tc.src) {
+          const day = Math.round((prev - state.timeline.startD) / DAY);
+          const k = tc.src.r.find((r) => tc.src.d[r] === day);
+          if (k != null) v0 = srcVal(tc, li, k);
+        } else {
+          const ie = Math.round((prev - state.timeline.startD) / DAY / state.timeline.step);
+          for (let j = ie; j <= ie + 3 && v0 == null; j++) v0 = tlValue(tc, li, j);
+        }
         out.change = v0 != null ? vals[li] - v0 : null;
       }
     }
@@ -1563,7 +1780,11 @@
 
   function mapTip(t, d) {
     const c = d.c;
-    t.append(el("div", "tt-head", c.name + (state.mapAt == null ? "" : `, ${fmtDate(d.when)}`)));
+    const head = el("div", "tt-head", c.name + (state.mapAt == null ? "" : `, ${fmtDate(d.when)}`));
+    // on a date chosen on the slider: the date of the poll (or election) the figures come from
+    if (state.mapAt != null && d.source) head.append(el("span", "tt-when",
+      `(${d.source.result ? "election" : d.source.several ? "latest polls" : "latest poll"}: ${fmtDate(d.source.date)})`));
+    t.append(head);
     if (!d.hasData) { t.append(el("div", "tt-sub", "No polls on Wikipedia for this week.")); return; }
     if (d.leader) t.append(el("div", "tt-sub", `Head of government: ${d.leader}`));
     if (state.mapMode === "place") {
@@ -1589,6 +1810,7 @@
     }
     const nx = el("div", "tt-gap", state.mapAt == null ? nextElectionText(c, true) : d.nextElection ? `Next election ${fmtDate(d.nextElection)}` : "");
     nx.style.color = "var(--ink-2)"; t.append(nx);
+    if (state.mapAt == null && c.latest) t.append(el("div", "tt-sub", latestText(c)));
   }
 
   async function renderMap() {
@@ -1921,7 +2143,7 @@
       const sp = el("span"), i = el("i"); i.style.background = `var(--${w})`;
       sp.append(i, document.createTextNode(t)); keys.append(sp);
     });
-    host.replaceChildren(svg, keys, el("p", "howto-foot", "Hover over a chart for every party on that date."));
+    host.replaceChildren(svg, keys, el("p", "howto-foot", "Lines are trends through the polls; the figures at their ends, ringed, are the latest poll's (polls ending the same day averaged). Hover over a chart for every party on that date."));
   }
 
   // ---- the controls above the map: what it shows, the ideology group picker, the time slider
@@ -2174,17 +2396,9 @@
   /** Light or dark: the page follows the picker, not the system setting. */
   function applyTheme() { document.documentElement.dataset.theme = state.theme === "dark" ? "dark" : "light"; }
 
-  /** Show only the colour pickers whose colours are on screen: lead/lag where a government's lead or
-   *  lag is coloured, the ideology share colour where an ideology group is. */
+  /** Kept as a hook for the views that call it (earlier versions showed only the colour menu in use). */
   function syncPaletteSwitch() {
-    const v = state.view, X = SC_VARS[state.scatter.x] || {}, Y = SC_VARS[state.scatter.y] || {};
-    const lead = (v === "map" && state.mapMode === "gov") || v === "graphs"
-      || (v === "correlates" && (state.scatter.x === "gap" || state.scatter.y === "gap"));
-    const share = (v === "map" && state.mapMode !== "gov") || (v === "graphs" && state.cls.cmp)
-      || (v === "correlates" && !!(X.ideo || Y.ideo));
-    $("#pick-leadlag").hidden = !lead;
-    $("#pick-share").hidden = !share;
-    $("#pick-head").hidden = !lead && !share;
+    // both colour menus stay in every view, so the left column is the same throughout
   }
 
   function initPalette() {
@@ -2261,9 +2475,13 @@
   }));
 
   // ------------------------------------------------------------------------------- long run
-  async function loadHistory(code) {
-    if (state.lr.data[code]) return state.lr.data[code];
-    const res = await fetch(`data/history/${code}.json`);
+  /** One country's history; `decided` reads the default copy whatever the "don't know" choice
+   *  (the polling errors compare polls with results, which count decided voters only). */
+  async function loadHistory(code, decided) {
+    const base = decided ? "data/" : dataDir();
+    const cache = base === dataDir() ? state.lr.data : (state.lr.decided = state.lr.decided || {});
+    if (cache[code]) return cache[code];
+    const res = await fetch(`${base}history/${code}.json`);
     if (!res.ok) throw new Error(`history for ${code} not found`);
     const h = await res.json();
     h.origin = parseISO(h.origin);
@@ -2278,8 +2496,10 @@
     h.end = d3.max(h.segments, (s) => s.dates[s.dates.length - 1]);
     h.minorIds = new Set(h.auto ? h.lineages.filter((L) => L.max < 4).map((L) => L.id) : []);
     h.pollsterNames = h.pollsters || [];
+    // the latest poll (as for the country graphs), before steady polling trims the list
+    h.latest = latestOf(h.polls.v, h.pollEnds, null, null);
     applySteadyPolling(h);
-    state.lr.data[code] = h;
+    cache[code] = h;
     return h;
   }
   const lrHidden = (h, id) => state.lr.hidden.has(id) || (!state.lr.minor && h.minorIds.has(id));
@@ -2302,7 +2522,7 @@
       const gapNote = !POLL_RULE || !h.dropped ? "" : h.empty
         ? `Wikipedia's ${d3.format(",")(h.dropped)} polls for ${h.name} are more than three months apart throughout, too sparse for a continuous line; the Polling errors view still shows those before each election.`
         : `Stretches where polls are more than three months apart are left out (${d3.format(",")(h.dropped)} polls), because a line cannot follow them.`;
-      $("#lr-deck").textContent = h.empty ? gapNote : `Every national voting-intention poll on English Wikipedia across ${h.segments.length} parliamentary terms, ${d3.format(",")(nPolls)} polls in all, joined into continuous lines. `
+      $("#lr-deck").textContent = h.empty ? gapNote : `Every national voting-intention poll on English Wikipedia across ${h.segments.length} parliamentary terms, ${d3.format(",")(nPolls)} polls in all, joined into continuous lines; the figures at their ends, ringed, are the latest poll's (polls ending the same day averaged). `
         + (h.auto ? "Where a party was renamed or continued by a successor, its line carries on. " : "Party lineages follow renames, mergers and joint lists (PO to KO, SLD to Lewica, KNP to Konfederacja). ")
         + (h.govts.length ? "The band above the chart shows the head of government's party, and that party's line is drawn thicker while it governs. " : "") + gapNote;
       // period presets: whole span + each term
@@ -2430,16 +2650,25 @@
         if (gov.some((p) => p.v != null)) lg.append("path").attr("d", line(gov)).attr("stroke", lcolor(L)).attr("stroke-width", 3.6).attr("opacity", focus && focus !== lid ? 0.12 : 1);
       }
     }
-    // end labels for lineages alive at the right edge of the view
+    // end labels for lineages alive at the right edge of the view; when the view reaches today,
+    // the latest poll's figures, marked with a ring (as in the country graphs)
     const lastSeg = h.segments.filter((s) => s.startD <= dom[1]).slice(-1)[0];
     if (lastSeg) {
       const labs = [];
+      const useL = h.latest && lastSeg === h.segments[h.segments.length - 1] && +dom[1] >= +h.latest.end - 14 * DAY;
       for (const lid of ids) {
+        if (useL) {
+          const v = h.latest.vals.get(lid);
+          if (v == null || v < 2) continue;
+          labs.push({ L: h.byId.get(lid), x: x(h.latest.end), y: y(v), v, ring: true });
+          continue;
+        }
         const arr = lastSeg.series[lid]; if (!arr) continue;
         let i = arr.length - 1; while (i >= 0 && (arr[i] == null || lastSeg.dates[i] > dom[1])) i--;
         if (i < 0 || arr[i] < 2 || dom[1] - lastSeg.dates[i] > 400 * DAY) continue;
         labs.push({ L: h.byId.get(lid), x: x(lastSeg.dates[i]), y: y(arr[i]), v: arr[i] });
       }
+      labs.forEach((l) => { if (l.ring) svg.append("circle").attr("class", "latest-dot").attr("cx", l.x).attr("cy", l.y).attr("r", 3.6).attr("stroke", lcolor(l.L)); });
       labs.sort((a, b) => a.y - b.y);
       for (let it = 0; it < 300; it++) { let mv = false; for (let j = 1; j < labs.length; j++) if (labs[j].y - labs[j - 1].y < 11) { labs[j - 1].y -= 0.6; labs[j].y += 0.6; mv = true; } if (!mv) break; }
       labs.forEach((l) => svg.append("text").attr("class", "end-label label-halo strong").attr("x", l.x + 5).attr("y", l.y + 3.5).text(`${shortLabel(l.L.short || l.L.label)} ${fmt1(l.v)}`));
@@ -2675,7 +2904,7 @@
     const token = ++peToken;
     const code = state.pe.code;
     let h;
-    try { h = await loadHistory(code); } catch (e) { $("#pe-chart").replaceChildren(el("p", "note", "The data could not be loaded: " + e.message)); return; }
+    try { h = await loadHistory(code, true); } catch (e) { $("#pe-chart").replaceChildren(el("p", "note", "The data could not be loaded: " + e.message)); return; }
     if (token !== peToken) return;
     const c = state.countries.find((x) => x.code === code) || { code, name: h.name };
     const els = h.elections.filter((e) => e.res && Object.keys(e.res).length).slice().reverse();
@@ -2703,7 +2932,8 @@
       ? `Wikipedia lists no national poll in the ${span} before this election; the chart shows the results only. Try a longer period.`
       : !nUsed ? "No pollster is selected; the chart shows the results only."
       : `A single poll missed a party's result by ${fmt1(D.mae1)} points on average, and the average of the polls by ${fmt1(D.mae2)} `
-        + `(mean absolute errors across the parties, for polls with fieldwork ending in the ${span} before the vote).`;
+        + `(mean absolute errors across the parties, for polls with fieldwork ending in the ${span} before the vote).`
+        + (state.dk === "include" ? " Here polls always leave out \"don't know\" answers, as election results count decided voters only." : "");
     // pollster picker
     errorsKeysNow = () => D.pollsters.map((q) => q.key);
     const box = $("#pe-pollsters");
@@ -2782,26 +3012,63 @@
   let errorsKeysNow = () => [];
 
   // ------------------------------------------------------------------------------- boot
-  async function boot() {
-    let data;
-    try {
-      const res = await fetch("data/europe.json");
-      data = await res.json();
-    } catch (e) {
-      $("#summary").replaceChildren(el("p", "note", "The data file could not be loaded. Run `python -m polls build` and serve the site folder over HTTP."));
-      return;
-    }
+  /** Read europe.json from the copy the "don't know" choice names and reset everything built from
+   *  it (the weekly timeline and the histories are read again when next needed). */
+  async function loadData() {
+    const res = await fetch(dataDir() + "europe.json");
+    if (!res.ok) throw new Error("data not found");
+    const data = await res.json();
     state.data = data;
     state.today = data.today ? parseISO(data.today) : new Date();
     state.countries = data.countries.map(prepare);
-    applyTheme();
-    initPalette();
+    state.timeline = null; state.timelinePromise = null; state.lr.data = {};
     $("#asof").textContent = `(data as of ${fmtDate(state.today)})`;
     $("#time-end").textContent = $("#cn-time-end").textContent = fmtMonYear(state.today);
     $("#generated").textContent = `Data built ${data.generated.replace("T", " ").slice(0, 16)} UTC from the Wikipedia pages of ${state.countries.length} countries.`;
     const np = d3.sum(state.countries, (c) => c.n_polls), hp = data.history_polls;
     rich($("#s-polls"), [["b", `${d3.format(",")(np)} polls`], " read from Wikipedia for the current terms",
       ...(hp ? [", and ", ["b", d3.format(",")(hp)], " in the historical data back to the 1990s"] : []), "."]);
+  }
+
+  /** The "don't know" menu: two buttons; the choice is kept in this browser. Older builds of the
+   *  data have no copy with the answers kept, and then the menu says so and stays on "Exclude". */
+  function initDK(refresh) {
+    const btns = [...document.querySelectorAll("#dk-seg .seg-b")];
+    const sync = () => btns.forEach((b) => b.setAttribute("aria-checked", String(b.dataset.dk === state.dk)));
+    sync();
+    btns.forEach((b) => b.addEventListener("click", async () => {
+      const v = b.dataset.dk;
+      if (v === state.dk) return;
+      const prev = state.dk;
+      state.dk = v; sync();
+      document.body.classList.add("is-loading");
+      try {
+        await loadData();
+        if (state.mapAt != null) await loadTimeline();
+        store.set("dk", v);
+        refresh();
+      } catch (e) {
+        state.dk = prev; sync();
+        await loadData().catch(() => null);
+        $("#dk-note").textContent = "(The copy of the data with \"don't know\" answers is not available yet; it is built with the next data update.)";
+      } finally {
+        document.body.classList.remove("is-loading");
+      }
+    }));
+  }
+
+  async function boot() {
+    try {
+      try { await loadData(); } catch (e) {
+        if (state.dk !== "include") throw e;
+        state.dk = "exclude"; await loadData();   // no copy with the answers kept: use the default
+      }
+    } catch (e) {
+      $("#summary").replaceChildren(el("p", "note", "The data file could not be loaded. Run `python -m polls build` and serve the site folder over HTTP."));
+      return;
+    }
+    applyTheme();
+    initPalette();
     renderSummary();
     initControls();
     initMapControls();
@@ -2809,7 +3076,7 @@
     initErrorControls();
     // long-run country list
     const sel = $("#lr-country");
-    const hist = (data.history || ["PL"]).map((code) => ({ code, name: (state.countries.find((x) => x.code === code) || { name: code }).name }))
+    const hist = (state.data.history || ["PL"]).map((code) => ({ code, name: (state.countries.find((x) => x.code === code) || { name: code }).name }))
       .sort((a, b) => a.name.localeCompare(b.name));
     hist.forEach(({ code, name }) => { const o = el("option", null, name); o.value = code; sel.append(o); });
     state.lr.code = hist.length ? hist[0].code : state.lr.code;   // alphabetically first (Austria)
@@ -2831,6 +3098,15 @@
       ideoSyncs.forEach((f) => f());
     };
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", rerender);
+    initDK(() => {
+      renderSummary();
+      if (state.view === "map") renderMap();
+      if (state.view === "correlates") renderScatter();
+      if (state.view === "graphs") renderGrid();
+      if (state.view === "timelines") { $("#lr-ranges").dataset.code = ""; state.lr.domain = null; renderLongRun(); }
+      if (state.view === "errors") renderErrors();
+      ideoSyncs.forEach((f) => f());
+    });
     new MutationObserver(rerender).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     let rt, lastW = window.innerWidth, lastH = window.innerHeight;
     window.addEventListener("resize", () => {
@@ -2841,7 +3117,7 @@
         if (state.view === "map") renderMap();
         if (state.view === "correlates") renderScatter();
         if (state.view === "timelines") renderLongRun();
-        if (state.view === "graphs") howtoGraphs();
+        if (state.view === "graphs") renderGrid();
         if (state.view === "errors") renderErrors();
       }, 200);
     });
