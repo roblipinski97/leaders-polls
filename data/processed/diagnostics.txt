@@ -1116,7 +1116,7 @@
      polls kept: 76  | start result: yes | end result: yes
      joint lists: PSD + CDS–PP x4 -> None
 [PT] history: 9 cycles, 981 polls, 13 series, 9 government periods (9 matched to a series)
-[IT] Opinion polling for the next Italian general election  (rev 1384085746)  window 2022-09-25 .. open
+[IT] Opinion polling for the next Italian general election  (rev 1384172775)  window 2022-09-25 .. open
      T00 rows=  10 [Polling aggregations > Party vote aggregations] no pollster/sample column
    + T05 rows=  24 [Party vote > 2026] selected
    + T06 rows= 217 [Party vote > 2026] selected
@@ -1139,14 +1139,14 @@
      T45 rows=   5 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
      T47 rows=  10 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
      T48 rows=   5 [Hypothetical polls > Polling by age > Polling among 18–24-year-olds] excluded heading
-     T60 rows=   5 [Hypothetical polls > Polling by football team supported] excluded heading
      T61 rows=   5 [Hypothetical polls > Polling by football team supported] excluded heading
-     T72 rows=  11 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
-     T73 rows=   5 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
-     T74 rows=  25 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
-     T76 rows=  14 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T62 rows=   5 [Hypothetical polls > Polling by football team supported] excluded heading
+     T73 rows=  11 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T74 rows=   5 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T75 rows=  25 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T77 rows=  14 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
      polls kept: 1152  | start result: yes
-[IT] Opinion polling for the next Italian general election  (rev 1384085746)  window 2022-09-25 .. open
+[IT] Opinion polling for the next Italian general election  (rev 1384172775)  window 2022-09-25 .. open
      T00 rows=  10 [Polling aggregations > Party vote aggregations] no pollster/sample column
    + T05 rows=  24 [Party vote > 2026] selected
    + T06 rows= 217 [Party vote > 2026] selected
@@ -1169,12 +1169,12 @@
      T45 rows=   5 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
      T47 rows=  10 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
      T48 rows=   5 [Hypothetical polls > Polling by age > Polling among 18–24-year-olds] excluded heading
-     T60 rows=   5 [Hypothetical polls > Polling by football team supported] excluded heading
      T61 rows=   5 [Hypothetical polls > Polling by football team supported] excluded heading
-     T72 rows=  11 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
-     T73 rows=   5 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
-     T74 rows=  25 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
-     T76 rows=  14 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T62 rows=   5 [Hypothetical polls > Polling by football team supported] excluded heading
+     T73 rows=  11 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T74 rows=   5 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T75 rows=  25 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
+     T77 rows=  14 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
      polls kept: 1152  | start result: yes
 [IT] Opinion polling for the 2022 Italian general election  (rev 1382690771)  window 2018-03-04 .. 2022-09-25
      T00 rows=   5 [Polling aggregation] no date column
@@ -1432,12 +1432,12 @@
 [PL] history: unmapped party keys (top): [('Agreement (political party)', 210), ('United Poland', 175), ('Nonpartisan Local Government Activists', 69), ('AGROunia', 66), ('Poland Comes First', 55), ('Polish Coalition + Poland 2050', 53), ('Poland Together', 50), ('There is One Poland', 39), ('Solidarity (Polish trade union)', 36), ('AGROunia + Agreement (political party)', 36), ('Bezpartyjni Samorządowcy', 25), ('National Party of Retirees and Pensioners', 23), ('Centre Agreement', 17), ("Solidarity Citizens' Committee", 17), ('Liberal Democratic Congress', 17), ('Party X', 17), ('Movement for the Republic', 16), ("Peasants' Agreement", 16), ('Real Politics Union', 13), ('Nonpartisan local government activists', 13), ('Christian National Union', 11), ('Christian-Peasant Party', 9), ('Party of Christian Democrats', 9), ('Christian National Union + Christian-Peasant Party + Party of Christian Democrats + Conservative Party (Poland)', 6), ('Conservative Party (Poland)', 6)]
      [PL] government parties not matched to a series: ['Bielecki (Liberal Democratic Congress)']
 [PL] history: 10 cycles, 2767 polls, 22 series, 18 government periods (16 matched to a series)
-[CZ] Next Czech parliamentary election  (rev 1383959666)  window 2025-10-04 .. open
+[CZ] Next Czech parliamentary election  (rev 1384160253)  window 2025-10-04 .. open
      T00 rows=   9 [Background > 2025 election] no date column
    + T01 rows=  27 [Opinion polls > Party polls] selected
      T02 rows=   6 [Opinion polls > Coalition polls] excluded heading (weak, deepest)
      polls kept: 26  | start result: yes
-[CZ] Next Czech parliamentary election  (rev 1383959666)  window 2025-10-04 .. open
+[CZ] Next Czech parliamentary election  (rev 1384160253)  window 2025-10-04 .. open
      T00 rows=   9 [Background > 2025 election] no date column
    + T01 rows=  27 [Opinion polls > Party polls] selected
      T02 rows=   6 [Opinion polls > Coalition polls] excluded heading (weak, deepest)
