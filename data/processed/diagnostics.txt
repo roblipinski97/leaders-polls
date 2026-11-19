@@ -1,11 +1,11 @@
-[GB] Opinion polling for the next United Kingdom general election  (rev 1386416999)  window 2024-07-04 .. open
+[GB] Opinion polling for the next United Kingdom general election  (rev 1386437996)  window 2024-07-04 .. open
    + T00 rows= 289 [National poll results > 2026] selected
    + T01 rows= 290 [National poll results > 2025] selected
    + T02 rows=  54 [National poll results > 2024] selected
      T03 rows=  15 [Sub-national poll results > Wales] excluded heading
      T06 rows=   9 [Sub-national poll results > England > London] excluded heading
      polls kept: 619  | start result: yes
-[GB] Opinion polling for the next United Kingdom general election  (rev 1386416999)  window 2024-07-04 .. open
+[GB] Opinion polling for the next United Kingdom general election  (rev 1386437996)  window 2024-07-04 .. open
    + T00 rows= 289 [National poll results > 2026] selected
    + T01 rows= 290 [National poll results > 2025] selected
    + T02 rows=  54 [National poll results > 2024] selected
@@ -301,31 +301,31 @@
      T02 rows=  15 [Results] no date column
      polls kept: 0  | start result: MISSING | end result: MISSING
 [LU] history: 2 cycles, 14 polls, 8 series, 3 government periods (3 matched to a series)
-[DE] Opinion polling for the next German federal election  (rev 1386290200)  window 2025-02-23 .. open
+[DE] Opinion polling for the next German federal election  (rev 1386607080)  window 2025-02-23 .. open
    + T00 rows= 220 [Poll results > 2026] selected
    + T01 rows= 206 [Poll results > 2025] selected
-     T02 rows=  84 [Poll results > CDU and CSU] excluded heading
+     T02 rows=  85 [Poll results > CDU and CSU] excluded heading
      T07 rows=   6 [By state > Mecklenburg-Vorpommern] excluded heading
-     T09 rows=  31 [By Western and Eastern Germany > Western Germany] excluded heading
-     T10 rows=  32 [By Western and Eastern Germany > Eastern Germany] excluded heading
+     T09 rows=  32 [By Western and Eastern Germany > Western Germany] excluded heading
+     T10 rows=  33 [By Western and Eastern Germany > Eastern Germany] excluded heading
      T11 rows=   9 [Chancellor polling > Merz vs. Weidel] not similar to main table (overlap 0.00, same section False)
      T15 rows=   6 [Preferred coalition] excluded heading
-     T16 rows=  49 [Constituency projections > Constituency pluralities] excluded heading
-     T17 rows=  21 [Constituency projections > By probability] excluded heading
-     T18 rows=  21 [Constituency projections > Second place] excluded heading
+     T16 rows=  50 [Constituency projections > Constituency pluralities] excluded heading
+     T17 rows=  22 [Constituency projections > By probability] excluded heading
+     T18 rows=  22 [Constituency projections > Second place] excluded heading
      polls kept: 424  | start result: yes
-[DE] Opinion polling for the next German federal election  (rev 1386290200)  window 2025-02-23 .. open
+[DE] Opinion polling for the next German federal election  (rev 1386607080)  window 2025-02-23 .. open
    + T00 rows= 220 [Poll results > 2026] selected
    + T01 rows= 206 [Poll results > 2025] selected
-     T02 rows=  84 [Poll results > CDU and CSU] excluded heading
+     T02 rows=  85 [Poll results > CDU and CSU] excluded heading
      T07 rows=   6 [By state > Mecklenburg-Vorpommern] excluded heading
-     T09 rows=  31 [By Western and Eastern Germany > Western Germany] excluded heading
-     T10 rows=  32 [By Western and Eastern Germany > Eastern Germany] excluded heading
+     T09 rows=  32 [By Western and Eastern Germany > Western Germany] excluded heading
+     T10 rows=  33 [By Western and Eastern Germany > Eastern Germany] excluded heading
      T11 rows=   9 [Chancellor polling > Merz vs. Weidel] not similar to main table (overlap 0.00, same section False)
      T15 rows=   6 [Preferred coalition] excluded heading
-     T16 rows=  49 [Constituency projections > Constituency pluralities] excluded heading
-     T17 rows=  21 [Constituency projections > By probability] excluded heading
-     T18 rows=  21 [Constituency projections > Second place] excluded heading
+     T16 rows=  50 [Constituency projections > Constituency pluralities] excluded heading
+     T17 rows=  22 [Constituency projections > By probability] excluded heading
+     T18 rows=  22 [Constituency projections > Second place] excluded heading
      polls kept: 424  | start result: yes
 [DE] Opinion polling for the 2025 German federal election  (rev 1374042937)  window 2021-09-26 .. 2025-02-23
    + T00 rows=  70 [Poll results > 2025] selected
@@ -833,7 +833,7 @@
      polls kept: 23  | start result: yes | end result: yes
      [EE] government parties not matched to a series: ['Siimann (Estonian Coalition Party)']
 [EE] history: 6 cycles, 738 polls, 11 series, 10 government periods (9 matched to a series)
-[LV] 2026 Latvian parliamentary election  (rev 1386398575)  window 2022-10-01 .. 2026-10-03
+[LV] 2026 Latvian parliamentary election  (rev 1386444099)  window 2022-10-01 .. 2026-10-03
      T00 rows=   6 [Electoral system > Seat redistribution] no date column
      T01 rows=  14 [Parties > Overview] no date column
      T02 rows=  14 [Parties > Party candidates] no pollster/sample column
@@ -847,7 +847,7 @@
      T10 rows=   6 [Results > Seat distribution] no date column
      polls kept: 40  | start result: yes | end result: MISSING
      joint lists: The Progressives (Latvia) + Movement For! x5 -> The Progressives (Latvia)
-[LV] 2026 Latvian parliamentary election  (rev 1386398575)  window 2022-10-01 .. 2026-10-03
+[LV] 2026 Latvian parliamentary election  (rev 1386444099)  window 2022-10-01 .. 2026-10-03
      T00 rows=   6 [Electoral system > Seat redistribution] no date column
      T01 rows=  14 [Parties > Overview] no date column
      T02 rows=  14 [Parties > Party candidates] no pollster/sample column
@@ -946,25 +946,25 @@
      polls kept: 0  | start result: MISSING | end result: MISSING
      joint lists: Social Democratic Party of Lithuania + Social Democratic Lab x53 -> Social Democratic Party of Lithuania
 [LT] history: 3 cycles, 289 polls, 15 series, 7 government periods (7 matched to a series)
-[ES] Opinion polling for the 2026 Spanish general election  (rev 1386400645)  window 2023-07-23 .. open
-   + T00 rows=  80 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+[ES] Opinion polling for the 2026 Spanish general election  (rev 1386615025)  window 2023-07-23 .. open
+   + T00 rows=  87 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows= 159 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T02 rows= 178 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
-     T03 rows= 226 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T03 rows= 227 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
      T05 rows=   7 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
      T06 rows=   9 [Electoral polling > Nationwide polling > Senate projections] excluded heading
-     T07 rows=  21 [Preferred government] excluded heading
-     polls kept: 412  | start result: MISSING
-     joint lists: FA + FV x39 -> FA
-[ES] Opinion polling for the 2026 Spanish general election  (rev 1386400645)  window 2023-07-23 .. open
-   + T00 rows=  80 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+     T07 rows=  24 [Preferred government] excluded heading
+     polls kept: 419  | start result: MISSING
+     joint lists: FA + FV x42 -> FA
+[ES] Opinion polling for the 2026 Spanish general election  (rev 1386615025)  window 2023-07-23 .. open
+   + T00 rows=  87 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows= 159 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T02 rows= 178 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
-     T03 rows= 226 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
+     T03 rows= 227 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
      T05 rows=   7 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
      T06 rows=   9 [Electoral polling > Nationwide polling > Senate projections] excluded heading
-     T07 rows=  21 [Preferred government] excluded heading
-     polls kept: 412  | start result: MISSING
+     T07 rows=  24 [Preferred government] excluded heading
+     polls kept: 419  | start result: MISSING
 [ES] Opinion polling for the 2023 Spanish general election  (rev 1381583414)  window 2019-11-10 .. 2023-07-23
    + T00 rows= 169 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows=  53 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
@@ -1039,16 +1039,16 @@
      T03 rows=  14 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
      T04 rows=   9 [Electoral polling > Sub-national polling > Catalonia] excluded heading
      polls kept: 83  | start result: yes | end result: yes
-     joint lists: FA + FV x39 -> FA
-[ES] history: 11 cycles, 3170 polls, 14 series, 10 government periods (10 matched to a series)
-[PT] Opinion polling for the next Portuguese legislative election  (rev 1386414913)  window 2025-05-18 .. open
+     joint lists: FA + FV x42 -> FA
+[ES] history: 11 cycles, 3177 polls, 14 series, 10 government periods (10 matched to a series)
+[PT] Opinion polling for the next Portuguese legislative election  (rev 1386469519)  window 2025-05-18 .. open
    + T00 rows=  53 [Nationwide polling > Polling] selected
      T02 rows=  32 [Leadership polls > Preferred prime minister] excluded heading
      T03 rows=  28 [Leadership polls > Party leaders' approval/disapproval ratings] excluded heading
      T04 rows=  16 [Leadership polls > Party leaders' ratings] excluded heading
      T05 rows=  38 [Leadership polls > Cabinet approval/disapproval ratings] excluded heading
      polls kept: 49  | start result: yes
-[PT] Opinion polling for the next Portuguese legislative election  (rev 1386414913)  window 2025-05-18 .. open
+[PT] Opinion polling for the next Portuguese legislative election  (rev 1386469519)  window 2025-05-18 .. open
    + T00 rows=  53 [Nationwide polling > Polling] selected
      T02 rows=  32 [Leadership polls > Preferred prime minister] excluded heading
      T03 rows=  28 [Leadership polls > Party leaders' approval/disapproval ratings] excluded heading
@@ -1112,7 +1112,7 @@
      polls kept: 76  | start result: yes | end result: yes
      joint lists: PSD + CDS–PP x4 -> None
 [PT] history: 9 cycles, 985 polls, 13 series, 9 government periods (9 matched to a series)
-[IT] Opinion polling for the next Italian general election  (rev 1386430011)  window 2022-09-25 .. open
+[IT] Opinion polling for the next Italian general election  (rev 1386602663)  window 2022-09-25 .. open
      T00 rows=  10 [Polling aggregations > Party vote aggregations] no pollster/sample column
      T01 rows=   5 [Polling aggregations > Party seats aggregations > Chamber of Deputies] no pollster/sample column
    + T07 rows=  43 [Party vote > 2026] selected
@@ -1126,7 +1126,7 @@
      T15 rows=   7 [Seat projections > Seat projections with the Rosatellum electoral law ] excluded heading
      T18 rows=  28 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
      T19 rows=  13 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
-     T25 rows=  78 [Government approval rating > 2026] excluded heading
+     T25 rows=  79 [Government approval rating > 2026] excluded heading
      T26 rows=  59 [Government approval rating > 2025] excluded heading
      T27 rows=   5 [Government approval rating > 2024] excluded heading
      T28 rows=   5 [Giorgia Meloni approval rating > 2026] excluded heading
@@ -1144,7 +1144,7 @@
      T83 rows=  25 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
      T85 rows=  14 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
      polls kept: 1169  | start result: yes
-[IT] Opinion polling for the next Italian general election  (rev 1386430011)  window 2022-09-25 .. open
+[IT] Opinion polling for the next Italian general election  (rev 1386602663)  window 2022-09-25 .. open
      T00 rows=  10 [Polling aggregations > Party vote aggregations] no pollster/sample column
      T01 rows=   5 [Polling aggregations > Party seats aggregations > Chamber of Deputies] no pollster/sample column
    + T07 rows=  43 [Party vote > 2026] selected
@@ -1158,7 +1158,7 @@
      T15 rows=   7 [Seat projections > Seat projections with the Rosatellum electoral law ] excluded heading
      T18 rows=  28 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
      T19 rows=  13 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
-     T25 rows=  78 [Government approval rating > 2026] excluded heading
+     T25 rows=  79 [Government approval rating > 2026] excluded heading
      T26 rows=  59 [Government approval rating > 2025] excluded heading
      T27 rows=   5 [Government approval rating > 2024] excluded heading
      T28 rows=   5 [Giorgia Meloni approval rating > 2026] excluded heading
@@ -1275,11 +1275,11 @@
      joint lists: Democratic Party (Malta) + Democratic Alternative (Malta) x18 -> None
      joint lists: AD+PD + Momentum (political party) x15 -> AD+PD
 [MT] history: 4 cycles, 120 polls, 4 series, 4 government periods (4 matched to a series)
-[GR] Opinion polling for the next Greek parliamentary election  (rev 1386105180)  window 2023-06-25 .. open
+[GR] Opinion polling for the next Greek parliamentary election  (rev 1386454217)  window 2023-06-25 .. open
    + T00 rows= 343 [Voting intention estimates > Polling] selected
      T02 rows=   5 [Polling aggregations] no date column
      polls kept: 338  | start result: yes
-[GR] Opinion polling for the next Greek parliamentary election  (rev 1386105180)  window 2023-06-25 .. open
+[GR] Opinion polling for the next Greek parliamentary election  (rev 1386454217)  window 2023-06-25 .. open
    + T00 rows= 343 [Voting intention estimates > Polling] selected
      T02 rows=   5 [Polling aggregations] no date column
      polls kept: 338  | start result: yes
@@ -1630,12 +1630,12 @@
      joint lists: MSZP + P x68 -> None
      joint lists: DK + MSZP + Dialogue x24 -> DK
 [HU] history: 5 cycles, 863 polls, 17 series, 5 government periods (4 matched to a series)
-[SI] Opinion polling for the next Slovenian parliamentary election  (rev 1386419822)  window 2026-03-22 .. open
-   + T00 rows=  37 [Poll results > 2026] selected
+[SI] Opinion polling for the next Slovenian parliamentary election  (rev 1386595979)  window 2026-03-22 .. open
+   + T00 rows=  38 [Poll results > 2026] selected
      T01 rows=  10 [Seat projection > MRP polls] excluded heading
      polls kept: 28  | start result: yes
-[SI] Opinion polling for the next Slovenian parliamentary election  (rev 1386419822)  window 2026-03-22 .. open
-   + T00 rows=  37 [Poll results > 2026] selected
+[SI] Opinion polling for the next Slovenian parliamentary election  (rev 1386595979)  window 2026-03-22 .. open
+   + T00 rows=  38 [Poll results > 2026] selected
      T01 rows=  10 [Seat projection > MRP polls] excluded heading
      polls kept: 28  | start result: yes
 [SI] Opinion polling for the 2026 Slovenian parliamentary election  (rev 1361928969)  window 2022-04-24 .. 2026-03-22
@@ -1813,11 +1813,11 @@
      joint lists: Save Romania Union + Freedom, Unity and Solidarity Party x47 -> Save Romania Union; PRO Romania + Alliance of Liberals and Democrats (Romania) x17 -> PRO Romania
      joint lists: People's Movement Party + Force of the Right x6 -> Force of the Right; Social Democratic Party (Romania) + National Liberal Party ( x1 -> None; National Liberal Party (Romania) + Force of the Right x29 -> National Liberal Party (Romania)
 [RO] history: 3 cycles, 241 polls, 13 series, 12 government periods (11 matched to a series)
-[BG] Next Bulgarian parliamentary election  (rev 1386266045)  window 2026-04-19 .. open
+[BG] Next Bulgarian parliamentary election  (rev 1386493931)  window 2026-04-19 .. open
    + T00 rows=  10 [Opinion polls > Poll results] selected
      polls kept: 9  | start result: yes
      joint lists: We Continue the Change + Democratic Bulgaria x3 -> None
-[BG] Next Bulgarian parliamentary election  (rev 1386266045)  window 2026-04-19 .. open
+[BG] Next Bulgarian parliamentary election  (rev 1386493931)  window 2026-04-19 .. open
    + T00 rows=  10 [Opinion polls > Poll results] selected
      polls kept: 9  | start result: yes
 [BG] 2026 Bulgarian parliamentary election  (rev 1384993306)  window 2024-10-27 .. 2026-04-19
