@@ -45,10 +45,16 @@
     // "don't know" answers: "include" (as printed on Wikipedia, the default, from the copy of the
     // data in data/with-dk/) or "exclude" (shares of decided voters, from data/)
     dk: store.get("dk", "include") === "exclude" ? "exclude" : "include",
+    // the numbers shown: "latest" (the latest poll, the default) or "avg" (the plain average of the
+    // polls whose fieldwork ended in the last aggDays days up to the latest one, 0 to 30)
+    agg: store.get("agg", "latest") === "avg" ? "avg" : "latest",
+    aggDays: Math.max(0, Math.min(30, Math.round(+store.get("aggDays", 14)) || 0)),
     // polling errors: country, election (ISO date; null = the latest), days before it, options
     pe: { code: "AT", date: null, days: clamp(Math.round(+store.get("peDays14", 14)) || 14, 1, 365), ci: false, term: false, off: new Set() },
   };
 
+  /** The averaging window in days, or null for the latest poll alone. */
+  const aggWin = () => (state.agg === "avg" ? state.aggDays : null);
   /** Where the poll data is read from, by the "don't know" choice (the map's outline is shared). */
   const dataDir = () => (state.dk === "include" ? "data/with-dk/" : "data/");
 
@@ -205,26 +211,30 @@
     c.pollNames = c.polls.p ? c.polls.p.map((i) => cleanPollster((c.pollsters || [])[i])) : null;
     // the figures shown come from the latest poll (see latestOf), except right after an election,
     // where they are the result
-    c.latest = c.completed ? null : latestOf(c.polls.v, c.pollEnds, c.pollStarts, c.pollNames);
+    c.latest = c.completed ? null : latestOf(c.polls.v, c.pollEnds, c.pollStarts, c.pollNames, aggWin());
     return derive(c, false);
   }
 
-  /** The latest poll: the one whose fieldwork ended last. When several ended on the same day,
-   *  their plain average, party by party (no weighting by sample size). Today's figures (shares,
-   *  lead or lag, change since the election) come from it, so they can be checked against the
-   *  Wikipedia table; the lines stay the trend through all the polls.
-   *  v: {party: [value per poll]}, ends / starts: Date per poll, names: pollster per poll. */
-  function latestOf(v, ends, starts, names) {
+  /** The figures shown: by default the latest poll, the one whose fieldwork ended last (several
+   *  ending the same day averaged); with a window of `win` days (the menu in the left column), the
+   *  plain average of every poll whose fieldwork ended in the `win` days up to the latest one. Both
+   *  are plain averages, party by party, without weighting by sample size, so they can be checked
+   *  against the Wikipedia table; the lines stay the trend through all the polls.
+   *  v: {party: [value per poll]}, ends / starts: Date per poll, names: pollster per poll,
+   *  win: days or null, floor: no poll ending on or before this date (the last election) counts. */
+  function latestOf(v, ends, starts, names, win = null, floor = null) {
     if (!ends || !ends.length) return null;
     const last = d3.max(ends, (d) => +d);
-    const idx = []; ends.forEach((d, i) => { if (+d === last) idx.push(i); });
+    let lo = win == null ? last : last - win * DAY;
+    if (floor && win != null) lo = Math.max(lo, +floor + 1);
+    const idx = []; ends.forEach((d, i) => { if (+d >= lo && +d <= last) idx.push(i); });
     const vals = new Map();
     for (const [k, arr] of Object.entries(v || {})) {
       const xs = idx.map((i) => (arr || [])[i]).filter((x) => x != null);
       if (xs.length) vals.set(k, d3.mean(xs));
     }
     const first = starts ? d3.min(idx, (i) => +starts[i]) : last;
-    return { end: new Date(last), start: new Date(first), idx, vals,
+    return { end: new Date(last), start: new Date(first), firstEnd: new Date(d3.min(idx, (i) => +ends[i])), idx, vals, win,
       pollsters: names ? [...new Set(idx.map((i) => names[i]).filter(Boolean))] : [] };
   }
   /** "2–4 Nov 2026", "28 Sep–2 Oct 2026", "4 Nov 2026": fieldwork dates as Wikipedia writes them. */
@@ -238,6 +248,8 @@
   /** One line saying which poll today's figures come from. */
   function latestText(c) {
     const L = c.latest; if (!L) return "";
+    if (L.win != null && L.idx.length > 1)
+      return `Average of ${L.idx.length} polls ending ${fieldworkText(L.firstEnd, L.end)} (the last ${L.win} days up to the latest poll).`;
     const who = L.pollsters.length ? L.pollsters.join(" and ") + ", " : "";
     return `Latest poll: ${who}${fieldworkText(L.start, L.end)}${L.idx.length > 1 ? ", averaged" : ""}.`;
   }
@@ -335,7 +347,7 @@
       pollDates: col(c.pollDates), pollEnds: col(c.pollEnds), pollStarts: col(c.pollStarts), pollNames: col(c.pollNames), n_polls: keep.length,
       periods: c.periods.filter((pp) => pp.fromD <= D),
     };
-    o.latest = latestOf(pv, o.pollEnds, o.pollStarts, o.pollNames);
+    o.latest = latestOf(pv, o.pollEnds, o.pollStarts, o.pollNames, aggWin());
     o.lastData = keep.length ? o.pollDates[o.pollDates.length - 1] : c.start;
     const per = o.periods[o.periods.length - 1];
     o.incumbent = per ? { ...per } : null;
@@ -385,7 +397,7 @@
     };
     o.lastData = o.pollDates.length ? o.pollDates[o.pollDates.length - 1] : o.start;
     o.pollEnds = keep.map((i) => h.pollEnds[i]);
-    o.latest = latestOf(pv, o.pollEnds, null, h.polls.p ? keep.map((i) => cleanPollster((h.pollsterNames || [])[h.polls.p[i]])) : null);
+    o.latest = latestOf(pv, o.pollEnds, null, h.polls.p ? keep.map((i) => cleanPollster((h.pollsterNames || [])[h.polls.p[i]])) : null, aggWin());
     const per = periods[periods.length - 1];
     o.incumbent = per ? { leader: per.leader, title: per.title, key: per.key, caretaker: per.caretaker } : null;
     return derive(o, true);
@@ -1669,6 +1681,8 @@
                 tc.srcAt[i] = k;
               }
               tc.srcR = new Set(tc.src.r); tc.srcM = new Set(tc.src.m);
+              // how many polls each source stands for (several on one day): for plain poll averages
+              tc.srcN = new Map((tc.src.m || []).map((k, j) => [k, (tc.src.c || [])[j] || 2]));
             }
           }
           state.timeline = tl; return tl;
@@ -1681,16 +1695,34 @@
    *  weekly trend). Nothing outside the stretches of steady polling. */
   function tlValue(tc, li, i) {
     if (tc.runs && !tc.runs.some(([a, b]) => i >= a && i <= b)) return null;
-    if (tc.src) { const k = tc.srcAt[i]; return k < 0 ? null : srcVal(tc, li, k); }
+    if (tc.src) {
+      const k = tc.srcAt[i]; if (k < 0) return null;
+      const ks = srcWindow(tc, k);
+      if (ks.length === 1) return srcVal(tc, li, k);
+      let sum = 0, n = 0;
+      for (const j of ks) { const v = srcVal(tc, li, j); if (v != null) { const w = tc.srcN.get(j) || 1; sum += v * w; n += w; } }
+      return n ? sum / n : null;
+    }
     const pk = tc.v && tc.v[li]; if (!pk) return null; const j = i - pk[0]; return j >= 0 && j < pk[1].length ? pk[1][j] : null;
   }
   /** Line li's figure in source k of the timeline (each line's values are stored from its first source). */
   function srcVal(tc, li, k) { const sp = tc.src.v[li]; if (!sp) return null; const j = k - sp[0]; return j >= 0 && j < sp[1].length ? sp[1][j] ?? null : null; }
-  /** Where week i's figures come from: { date, result (an election), several (polls averaged) }. */
+  /** The sources averaged for a date whose latest source is k: k alone, or with a window, every poll
+   *  day in the window up to k (never back across an election result, which stands alone). */
+  function srcWindow(tc, k) {
+    const win = aggWin();
+    if (win == null || tc.srcR.has(k)) return [k];
+    const out = [k];
+    for (let j = k - 1; j >= 0 && tc.src.d[j] >= tc.src.d[k] - win && !tc.srcR.has(j); j--) out.push(j);
+    return out;
+  }
+  /** Where week i's figures come from: { date, from, n (polls), result (an election), several }. */
   function tlSource(tc, i) {
     if (!tc.src || (tc.runs && !tc.runs.some(([a, b]) => i >= a && i <= b))) return null;
     const k = tc.srcAt[i]; if (k < 0) return null;
-    return { date: addDays(state.timeline.startD, tc.src.d[k]), result: tc.srcR.has(k), several: tc.srcM.has(k) };
+    const ks = srcWindow(tc, k), n = d3.sum(ks, (j) => tc.srcN.get(j) || 1);
+    return { date: addDays(state.timeline.startD, tc.src.d[k]), from: addDays(state.timeline.startD, tc.src.d[ks[ks.length - 1]]),
+      n, result: tc.srcR.has(k), several: n > 1, avg: aggWin() != null && ks.length > 1 };
   }
   /** The manifesto in force for a timeline line in week i (before its first coded manifesto: that one). */
   function tlMp(L, i) { if (!L.mpObj || !L.mpObj.length) return null; let r = L.mpObj[0][1]; for (const [k, v] of L.mpObj) { if (k <= i) r = v; else break; } return r; }
@@ -1782,8 +1814,9 @@
     const c = d.c;
     const head = el("div", "tt-head", c.name + (state.mapAt == null ? "" : `, ${fmtDate(d.when)}`));
     // on a date chosen on the slider: the date of the poll (or election) the figures come from
-    if (state.mapAt != null && d.source) head.append(el("span", "tt-when",
-      `(${d.source.result ? "election" : d.source.several ? "latest polls" : "latest poll"}: ${fmtDate(d.source.date)})`));
+    if (state.mapAt != null && d.source) head.append(el("span", "tt-when", d.source.result ? `(election: ${fmtDate(d.source.date)})`
+      : d.source.avg ? `(average of ${d.source.n} polls: ${fieldworkText(d.source.from, d.source.date)})`
+      : `(${d.source.several ? "latest polls" : "latest poll"}: ${fmtDate(d.source.date)})`));
     t.append(head);
     if (!d.hasData) { t.append(el("div", "tt-sub", "No polls on Wikipedia for this week.")); return; }
     if (d.leader) t.append(el("div", "tt-sub", `Head of government: ${d.leader}`));
@@ -2143,7 +2176,7 @@
       const sp = el("span"), i = el("i"); i.style.background = `var(--${w})`;
       sp.append(i, document.createTextNode(t)); keys.append(sp);
     });
-    host.replaceChildren(svg, keys, el("p", "howto-foot", "Lines are trends through the polls; the figures at their ends, ringed, are the latest poll's (polls ending the same day averaged). Hover over a chart for every party on that date."));
+    host.replaceChildren(svg, keys, el("p", "howto-foot", "Lines are trends through the polls; the figures at their ends, ringed, are the latest poll's, or the average chosen in the left column. Hover over a chart for every party on that date."));
   }
 
   // ---- the controls above the map: what it shows, the ideology group picker, the time slider
@@ -2497,7 +2530,8 @@
     h.minorIds = new Set(h.auto ? h.lineages.filter((L) => L.max < 4).map((L) => L.id) : []);
     h.pollsterNames = h.pollsters || [];
     // the latest poll (as for the country graphs), before steady polling trims the list
-    h.latest = latestOf(h.polls.v, h.pollEnds, null, null);
+    h.latest = latestOf(h.polls.v, h.pollEnds, null, null, aggWin(),
+      h.segments && h.segments.length ? h.segments[h.segments.length - 1].startD : null);   // not across the last election
     applySteadyPolling(h);
     cache[code] = h;
     return h;
@@ -2522,7 +2556,7 @@
       const gapNote = !POLL_RULE || !h.dropped ? "" : h.empty
         ? `Wikipedia's ${d3.format(",")(h.dropped)} polls for ${h.name} are more than three months apart throughout, too sparse for a continuous line; the Polling errors view still shows those before each election.`
         : `Stretches where polls are more than three months apart are left out (${d3.format(",")(h.dropped)} polls), because a line cannot follow them.`;
-      $("#lr-deck").textContent = h.empty ? gapNote : `Every national voting-intention poll on English Wikipedia across ${h.segments.length} parliamentary terms, ${d3.format(",")(nPolls)} polls in all, joined into continuous lines; the figures at their ends, ringed, are the latest poll's (polls ending the same day averaged). `
+      $("#lr-deck").textContent = h.empty ? gapNote : `Every national voting-intention poll on English Wikipedia across ${h.segments.length} parliamentary terms, ${d3.format(",")(nPolls)} polls in all, joined into continuous lines; the figures at their ends, ringed, are the latest poll's, or the average chosen in the left column. `
         + (h.auto ? "Where a party was renamed or continued by a successor, its line carries on. " : "Party lineages follow renames, mergers and joint lists (PO to KO, SLD to Lewica, KNP to Konfederacja). ")
         + (h.govts.length ? "The band above the chart shows the head of government's party, and that party's line is drawn thicker while it governs. " : "") + gapNote;
       // period presets: whole span + each term
@@ -3030,6 +3064,33 @@
       ...(hp ? [", and ", ["b", d3.format(",")(hp)], " in the historical data back to the 1990s"] : []), "."]);
   }
 
+  /** The numbers-shown menu: the latest poll, or an average over the last 0 to 30 days (a slider
+   *  that appears with "Average"); kept in this browser. Every view's figures follow it. */
+  function initAgg(refresh) {
+    const btns = [...document.querySelectorAll("#agg-seg .seg-b")], days = $("#agg-n"), out = $("#agg-n-out");
+    const label = () => { const n = state.aggDays; out.textContent = n === 0 ? "the latest day only" : n === 1 ? "the last day" : `the last ${n} days`; };
+    const sync = () => {
+      btns.forEach((b) => b.setAttribute("aria-checked", String(b.dataset.agg === state.agg)));
+      $("#agg-days").hidden = state.agg !== "avg";
+      days.value = state.aggDays; label();
+    };
+    const apply = async () => {
+      document.body.classList.add("is-loading");
+      try {
+        await loadData();
+        if (state.mapAt != null) await loadTimeline();
+        refresh();
+      } finally { document.body.classList.remove("is-loading"); }
+    };
+    sync();
+    btns.forEach((b) => b.addEventListener("click", () => {
+      if (b.dataset.agg === state.agg) return;
+      state.agg = b.dataset.agg; store.set("agg", state.agg); sync(); apply();
+    }));
+    days.addEventListener("input", () => { state.aggDays = +days.value; label(); });
+    days.addEventListener("change", () => { state.aggDays = +days.value; store.set("aggDays", state.aggDays); apply(); });
+  }
+
   /** The "don't know" menu: two buttons; the choice is kept in this browser. Older builds of the
    *  data have no copy with the answers kept, and then the menu says so and stays on "Exclude". */
   function initDK(refresh) {
@@ -3098,7 +3159,7 @@
       ideoSyncs.forEach((f) => f());
     };
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", rerender);
-    initDK(() => {
+    const refreshViews = () => {
       renderSummary();
       if (state.view === "map") renderMap();
       if (state.view === "correlates") renderScatter();
@@ -3106,7 +3167,9 @@
       if (state.view === "timelines") { $("#lr-ranges").dataset.code = ""; state.lr.domain = null; renderLongRun(); }
       if (state.view === "errors") renderErrors();
       ideoSyncs.forEach((f) => f());
-    });
+    };
+    initDK(refreshViews);
+    initAgg(refreshViews);
     new MutationObserver(rerender).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     let rt, lastW = window.innerWidth, lastH = window.innerHeight;
     window.addEventListener("resize", () => {

@@ -324,6 +324,13 @@ svg.seq .country.tracked { stroke: var(--axis); }   /* white (0%) land needs an 
 .palette-switch .dk-seg .seg-b { justify-content: center; font-size: var(--fs-xs); }
 .palette-switch .pick-note { grid-column: 1 / -1; margin: 0 0 var(--sp-2); font-size: var(--fs-xs); line-height: var(--lh-snug); color: var(--muted); }
 body.is-loading main { opacity: 0.55; transition: opacity 0.2s; }
+/* the menus for which figures are shown, between the list of views and the summary */
+.data-switch { border-top: 0; padding-top: 0; }
+.data-switch #agg-head { margin-top: var(--sp-1); }
+.data-switch .agg-days { grid-column: 1 / -1; display: grid; gap: 2px; margin-top: var(--sp-1); }
+.data-switch .agg-days[hidden] { display: none; }
+.data-switch .agg-days label { margin: 0; color: var(--ink-2); }
+.data-switch .agg-days .time-slider { width: 100%; margin: 0; }
 
 /* ------------------------------------------------------------------ correlates */
 .quadrant-box { padding: 0; }
@@ -550,7 +557,8 @@ td.up { color: var(--lead-ink); } td.down { color: var(--trail-ink); }
   .summary .s-list { margin: 0; padding: var(--sp-2) var(--sp-3); border: 1px solid var(--axis); }
   .summary .s-list + .s-list, .summary .s-list:last-child { margin-top: 0; margin-bottom: 0; }
   main { order: 3; }
-  .palette-switch { order: 4; grid-template-columns: 40px minmax(0, 280px); }
+  .palette-switch { order: 5; grid-template-columns: 40px minmax(0, 280px); }
+  .data-switch { order: 4; border-top: 1px solid var(--rule); padding-top: var(--sp-3); }
   .masthead { border-bottom: 0; }
 }
 /* the how-to key drops below the options when there is no room beside them */

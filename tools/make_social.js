@@ -160,7 +160,7 @@ async function loadTimeline(page) {
 }
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const SOURCE = "Poll trends from Wikipedia's opinion-polling pages. Dark grey: not covered; light grey: no polls that week.";
+const SOURCE = "Latest polls on Wikipedia's opinion-polling pages, \"don't know\" included. Dark grey: not covered; light grey: too few polls at the time.";
 const MODES = {
   gov: { file: "leadlag", sub: "How far the head of government's party leads (+) or trails (−) its strongest rival in the polls, in percentage points" },
   ideo: { file: "radical-right", title: "The radical right in the polls", sub: "Combined poll share of the parties in the Manifesto Project's nationalist and radical right family, in per cent", source: "Polls: Wikipedia's opinion-polling pages. Party families: Manifesto Project (MPDS 2026a). Dark grey: not covered; light grey: no polls.",

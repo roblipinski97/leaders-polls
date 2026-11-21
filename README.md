@@ -353,6 +353,10 @@ Malta, Montenegro and Serbia lose their sparsest years.
   or before the chosen date too (the timeline's `src`: polls by their last day of fieldwork, and
   election results), with that poll's date next to the date in the map's tooltip; thin rules
   between the summary's parts; the map's colour bar and time slider 30% thicker.
+* Version 21: a "Numbers shown" menu: the latest poll (the default) or the plain average of the
+  polls ending in the last 0 to 30 days up to the latest one, followed by every view (the
+  timeline's `src.c` counts the polls behind each day's figures, for those averages); the
+  "don't know" and "Numbers shown" menus moved under the list of views.
 
 ## Known limitations
 

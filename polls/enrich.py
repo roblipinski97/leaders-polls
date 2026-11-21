@@ -40,7 +40,7 @@ def latest_sources(h: dict, ids: list[str], start: dt.date) -> dict:
     Polls are grouped by their last day of fieldwork, several on the same day averaged without
     weights; an election result counts as the latest figures from election day until the next
     poll. Returned column-wise: "d" days since `start`, "r" the indices that are results, "m" those
-    that average several polls, "v" one entry per line (in `ids` order): [first source index, values
+    that average several polls ("c" how many), "v" one entry per line (in `ids` order): [first source index, values
     from there to the line's last source] (most lines exist only for part of the period).
     """
     origin = _d(h["origin"])
@@ -67,6 +67,7 @@ def latest_sources(h: dict, ids: list[str], start: dt.date) -> dict:
     return {"d": [(x[0] - start).days for x in sources],
             "r": [k for k, x in enumerate(sources) if x[1] == 1],
             "m": [k for k, x in enumerate(sources) if x[3] > 1],
+            "c": [x[3] for x in sources if x[3] > 1],   # how many polls each of those averages
             "v": [_span([x[2].get(lid) for x in sources]) for lid in ids]}
 
 
