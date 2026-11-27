@@ -1,17 +1,17 @@
-[GB] Opinion polling for the next United Kingdom general election  (rev 1387851907)  window 2024-07-04 .. open
-   + T00 rows= 294 [National poll results > 2026] selected
+[GB] Opinion polling for the next United Kingdom general election  (rev 1388113309)  window 2024-07-04 .. open
+   + T00 rows= 295 [National poll results > 2026] selected
    + T01 rows= 290 [National poll results > 2025] selected
    + T02 rows=  54 [National poll results > 2024] selected
      T03 rows=  15 [Sub-national poll results > Wales] excluded heading
      T06 rows=   9 [Sub-national poll results > England > London] excluded heading
-     polls kept: 624  | start result: yes
-[GB] Opinion polling for the next United Kingdom general election  (rev 1387851907)  window 2024-07-04 .. open
-   + T00 rows= 294 [National poll results > 2026] selected
+     polls kept: 625  | start result: yes
+[GB] Opinion polling for the next United Kingdom general election  (rev 1388113309)  window 2024-07-04 .. open
+   + T00 rows= 295 [National poll results > 2026] selected
    + T01 rows= 290 [National poll results > 2025] selected
    + T02 rows=  54 [National poll results > 2024] selected
      T03 rows=  15 [Sub-national poll results > Wales] excluded heading
      T06 rows=   9 [Sub-national poll results > England > London] excluded heading
-     polls kept: 624  | start result: yes
+     polls kept: 625  | start result: yes
 [GB] Opinion polling for the 2024 United Kingdom general election  (rev 1363820081)  window 2019-12-12 .. 2024-07-04
    + T00 rows= 329 [National poll results > 2024] selected
    + T01 rows= 403 [National poll results > 2023] selected
@@ -120,7 +120,7 @@
      joint lists: United Kingdom Independence Party + Green parties in the Uni x30 -> None
      joint lists: Scottish National Party + Green Parties in the United Kingdo x1 -> None
      joint lists: Scottish National Party + UK Independence Party + Green part x14 -> None; Scottish National Party + Plaid Cymru x70 -> Scottish National Party
-[GB] history: 9 cycles, 6297 polls, 11 series, 10 government periods (10 matched to a series)
+[GB] history: 9 cycles, 6298 polls, 11 series, 10 government periods (10 matched to a series)
 [IE] Next Irish general election  (rev 1386790578)  window 2024-11-29 .. open
    + T01 rows=  46 [Opinion polls > Polls] selected
      polls kept: 45  | start result: yes
@@ -519,15 +519,17 @@
      T00 rows=  42 [Results] no date column
      polls kept: 0  | start result: MISSING | end result: MISSING
 [DK] history: 6 cycles, 1162 polls, 14 series, 6 government periods (6 matched to a series)
-[SE] 2030 Swedish general election  (rev 1387799160)  window 2026-09-13 .. open
+[SE] 2030 Swedish general election  (rev 1388282088)  window 2026-09-13 .. open
      T00 rows=   8 [Political parties] no date column
    + T01 rows=  15 [Opinion polls > 2026] selected
      T02 rows=   5 [Opinion polls > Seat projections] excluded heading
+     T03 rows=   5 [Opinion polls > Leadership polling] excluded heading
      polls kept: 14  | start result: yes
-[SE] 2030 Swedish general election  (rev 1387799160)  window 2026-09-13 .. open
+[SE] 2030 Swedish general election  (rev 1388282088)  window 2026-09-13 .. open
      T00 rows=   8 [Political parties] no date column
    + T01 rows=  15 [Opinion polls > 2026] selected
      T02 rows=   5 [Opinion polls > Seat projections] excluded heading
+     T03 rows=   5 [Opinion polls > Leadership polling] excluded heading
      polls kept: 14  | start result: yes
 [SE] Opinion polling for the 2026 Swedish general election  (rev 1383958946)  window 2022-09-11 .. 2026-09-13
    + T00 rows=  52 [Opinion polls > 2026] selected
@@ -948,25 +950,25 @@
      polls kept: 0  | start result: MISSING | end result: MISSING
      joint lists: Social Democratic Party of Lithuania + Social Democratic Lab x53 -> Social Democratic Party of Lithuania
 [LT] history: 3 cycles, 290 polls, 15 series, 7 government periods (7 matched to a series)
-[ES] Opinion polling for the 2026 Spanish general election  (rev 1388066087)  window 2023-07-23 .. open
-   + T00 rows= 149 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+[ES] Opinion polling for the 2026 Spanish general election  (rev 1388309467)  window 2023-07-23 .. open
+   + T00 rows= 151 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows= 159 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T02 rows= 178 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
      T03 rows= 237 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
-     T05 rows=  14 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     T05 rows=  15 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
      T06 rows=   9 [Electoral polling > Nationwide polling > Senate projections] excluded heading
      T07 rows=  35 [Preferred government] excluded heading
-     polls kept: 476  | start result: MISSING
-     joint lists: FA + FV x70 -> FA
-[ES] Opinion polling for the 2026 Spanish general election  (rev 1388066087)  window 2023-07-23 .. open
-   + T00 rows= 149 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
+     polls kept: 478  | start result: MISSING
+     joint lists: FA + FV x72 -> FA
+[ES] Opinion polling for the 2026 Spanish general election  (rev 1388309467)  window 2023-07-23 .. open
+   + T00 rows= 151 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows= 159 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T02 rows= 178 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
      T03 rows= 237 [Electoral polling > Nationwide polling > Voting preferences] excluded heading
-     T05 rows=  14 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
+     T05 rows=  15 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
      T06 rows=   9 [Electoral polling > Nationwide polling > Senate projections] excluded heading
      T07 rows=  35 [Preferred government] excluded heading
-     polls kept: 476  | start result: MISSING
+     polls kept: 478  | start result: MISSING
 [ES] Opinion polling for the 2023 Spanish general election  (rev 1381583414)  window 2019-11-10 .. 2023-07-23
    + T00 rows= 169 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
    + T01 rows=  53 [Electoral polling > Nationwide polling > Voting intention estimates > ] selected
@@ -1041,8 +1043,8 @@
      T03 rows=  14 [Electoral polling > Nationwide polling > Victory likelihood] excluded heading
      T04 rows=   9 [Electoral polling > Sub-national polling > Catalonia] excluded heading
      polls kept: 83  | start result: yes | end result: yes
-     joint lists: FA + FV x70 -> FA
-[ES] history: 11 cycles, 3234 polls, 14 series, 10 government periods (10 matched to a series)
+     joint lists: FA + FV x72 -> FA
+[ES] history: 11 cycles, 3236 polls, 14 series, 10 government periods (10 matched to a series)
 [PT] Opinion polling for the next Portuguese legislative election  (rev 1387780960)  window 2025-05-18 .. open
    + T00 rows=  56 [Nationwide polling > Polling] selected
      T02 rows=  34 [Leadership polls > Preferred prime minister] excluded heading
@@ -1114,10 +1116,10 @@
      polls kept: 76  | start result: yes | end result: yes
      joint lists: PSD + CDS–PP x4 -> None
 [PT] history: 9 cycles, 988 polls, 13 series, 9 government periods (9 matched to a series)
-[IT] Opinion polling for the next Italian general election  (rev 1388092717)  window 2022-09-25 .. open
+[IT] Opinion polling for the next Italian general election  (rev 1388291546)  window 2022-09-25 .. open
      T00 rows=  10 [Polling aggregations > Party vote aggregations] no pollster/sample column
      T01 rows=   5 [Polling aggregations > Party seats aggregations > Chamber of Deputies] no pollster/sample column
-   + T07 rows=  49 [Party vote > 2026] selected
+   + T07 rows=  53 [Party vote > 2026] selected
    + T08 rows= 218 [Party vote > 2026] selected
    + T09 rows= 220 [Party vote > 2025] selected
    + T10 rows= 114 [Party vote > 2024] selected
@@ -1128,14 +1130,14 @@
      T15 rows=   7 [Seat projections > Seat projections with the Rosatellum electoral law ] excluded heading
      T18 rows=  28 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
      T19 rows=  13 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
-     T25 rows=  84 [Government approval rating > 2026] excluded heading
+     T25 rows=  85 [Government approval rating > 2026] excluded heading
      T26 rows=  59 [Government approval rating > 2025] excluded heading
      T27 rows=   5 [Government approval rating > 2024] excluded heading
      T28 rows=   5 [Giorgia Meloni approval rating > 2026] excluded heading
      T35 rows=   5 [Preferred Prime Minister > Meloni vs. Schlein] excluded heading
-     T42 rows=  49 [Centre-left coalition primaries > Leadership election] excluded heading
+     T42 rows=  50 [Centre-left coalition primaries > Leadership election] excluded heading
      T43 rows=  24 [Centre-left coalition primaries > Leadership election] excluded heading
-     T44 rows=  17 [Centre-left coalition primaries > Under Schlein vs. Conte leadership] excluded heading
+     T44 rows=  19 [Centre-left coalition primaries > Under Schlein vs. Conte leadership] excluded heading
      T47 rows=   5 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
      T49 rows=  10 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
      T50 rows=   5 [Hypothetical polls > Polling by age > Polling among 18–24-year-olds] excluded heading
@@ -1145,11 +1147,11 @@
      T83 rows=   5 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
      T84 rows=  25 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
      T86 rows=  14 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
-     polls kept: 1175  | start result: yes
-[IT] Opinion polling for the next Italian general election  (rev 1388092717)  window 2022-09-25 .. open
+     polls kept: 1179  | start result: yes
+[IT] Opinion polling for the next Italian general election  (rev 1388291546)  window 2022-09-25 .. open
      T00 rows=  10 [Polling aggregations > Party vote aggregations] no pollster/sample column
      T01 rows=   5 [Polling aggregations > Party seats aggregations > Chamber of Deputies] no pollster/sample column
-   + T07 rows=  49 [Party vote > 2026] selected
+   + T07 rows=  53 [Party vote > 2026] selected
    + T08 rows= 218 [Party vote > 2026] selected
    + T09 rows= 220 [Party vote > 2025] selected
    + T10 rows= 114 [Party vote > 2024] selected
@@ -1160,14 +1162,14 @@
      T15 rows=   7 [Seat projections > Seat projections with the Rosatellum electoral law ] excluded heading
      T18 rows=  28 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
      T19 rows=  13 [Seat projections > Seat projections with the Stabilicum electoral law ] excluded heading
-     T25 rows=  84 [Government approval rating > 2026] excluded heading
+     T25 rows=  85 [Government approval rating > 2026] excluded heading
      T26 rows=  59 [Government approval rating > 2025] excluded heading
      T27 rows=   5 [Government approval rating > 2024] excluded heading
      T28 rows=   5 [Giorgia Meloni approval rating > 2026] excluded heading
      T35 rows=   5 [Preferred Prime Minister > Meloni vs. Schlein] excluded heading
-     T42 rows=  49 [Centre-left coalition primaries > Leadership election] excluded heading
+     T42 rows=  50 [Centre-left coalition primaries > Leadership election] excluded heading
      T43 rows=  24 [Centre-left coalition primaries > Leadership election] excluded heading
-     T44 rows=  17 [Centre-left coalition primaries > Under Schlein vs. Conte leadership] excluded heading
+     T44 rows=  19 [Centre-left coalition primaries > Under Schlein vs. Conte leadership] excluded heading
      T47 rows=   5 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
      T49 rows=  10 [Centre-left coalition primaries > How to choose the candidate for Prim] excluded heading
      T50 rows=   5 [Hypothetical polls > Polling by age > Polling among 18–24-year-olds] excluded heading
@@ -1177,7 +1179,7 @@
      T83 rows=   5 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
      T84 rows=  25 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
      T86 rows=  14 [Hypothetical polls > Polling for coalitions > Who should be part of th] excluded heading
-     polls kept: 1175  | start result: yes
+     polls kept: 1179  | start result: yes
 [IT] Opinion polling for the 2022 Italian general election  (rev 1382690771)  window 2018-03-04 .. 2022-09-25
      T00 rows=   5 [Polling aggregation] no date column
      T01 rows=   6 [Polling aggregation] no date column
@@ -1238,7 +1240,7 @@
      polls kept: 0  | start result: MISSING | end result: MISSING
      joint lists: Together (Italy) + Popular Civic List x1 -> None; More Europe + Together (Italy) + Popular Civic List x4 -> None; Article One (political party) + Progressive Camp x1 -> None
      joint lists: Italian Left + Green Europe x35 -> None; Article One (political party) + Italian Left x50 -> None
-[IT] history: 6 cycles, 5111 polls, 40 series, 12 government periods (7 matched to a series)
+[IT] history: 6 cycles, 5115 polls, 40 series, 12 government periods (7 matched to a series)
 [MT] Opinion polling for the 2026 Maltese general election  (rev 1362550523)  window 2022-03-26 .. 2026-05-30
    + T00 rows=  31 [Party polling > Expressing a Preference] selected
      T01 rows=  14 [Party polling > Complete Data] 
@@ -1322,12 +1324,12 @@
      T01 rows=  32 [Results] no date column
      polls kept: 29  | start result: yes | end result: yes
 [GR] history: 12 cycles, 1944 polls, 31 series, 10 government periods (7 matched to a series)
-[PL] Opinion polling for the next Polish parliamentary election  (rev 1387800065)  window 2023-10-15 .. open
+[PL] Opinion polling for the next Polish parliamentary election  (rev 1388272840)  window 2023-10-15 .. open
    + T02 rows= 132 [Poll results > 2026] selected
    + T03 rows= 141 [Poll results > 2025] selected
    + T04 rows= 108 [Poll results > 2024] selected
    + T05 rows=  18 [Poll results > 2023] selected
-     T06 rows=  19 [Poll results > Alternative scenarios] excluded heading
+     T06 rows=  20 [Poll results > Alternative scenarios] excluded heading
      T07 rows=   6 [Local sample > Kraków] excluded heading
      T09 rows= 122 [Seat projection] excluded heading
      T10 rows=   5 [Senate seats projection] excluded heading
@@ -1338,12 +1340,12 @@
      T15 rows=  14 [Leadership polling > Law and Justice prime ministerial candidate prefe] excluded heading
      T16 rows=   6 [Leadership polling > Right-wing prime ministerial candidate preference] excluded heading
      polls kept: 371  | start result: yes
-[PL] Opinion polling for the next Polish parliamentary election  (rev 1387800065)  window 2023-10-15 .. open
+[PL] Opinion polling for the next Polish parliamentary election  (rev 1388272840)  window 2023-10-15 .. open
    + T02 rows= 132 [Poll results > 2026] selected
    + T03 rows= 141 [Poll results > 2025] selected
    + T04 rows= 108 [Poll results > 2024] selected
    + T05 rows=  18 [Poll results > 2023] selected
-     T06 rows=  19 [Poll results > Alternative scenarios] excluded heading
+     T06 rows=  20 [Poll results > Alternative scenarios] excluded heading
      T07 rows=   6 [Local sample > Kraków] excluded heading
      T09 rows= 122 [Seat projection] excluded heading
      T10 rows=   5 [Senate seats projection] excluded heading
@@ -1488,14 +1490,14 @@
      joint lists: Christian and Democratic Union – Czechoslovak People's Party x2 -> None
      joint lists: Tricolour + Svobodní x1 -> None
 [CZ] history: 7 cycles, 742 polls, 27 series, 15 government periods (12 matched to a series)
-[SK] Opinion polling for the next Slovak parliamentary election  (rev 1388087246)  window 2023-09-30 .. open
+[SK] Opinion polling for the next Slovak parliamentary election  (rev 1388198843)  window 2023-09-30 .. open
    + T00 rows= 127 [Electoral polling > Voting intention estimates] selected
      T01 rows=   6 [Electoral polling > Voting intention estimates > Scenario Polls] excluded heading
      T02 rows=   6 [Electoral polling > Voting intention estimates > Scenario Polls] excluded heading
      T03 rows= 115 [Seat projections] excluded heading
      polls kept: 124  | start result: yes
      joint lists: Slovakia (political party) + For the People (Slovakia) x6 -> None
-[SK] Opinion polling for the next Slovak parliamentary election  (rev 1388087246)  window 2023-09-30 .. open
+[SK] Opinion polling for the next Slovak parliamentary election  (rev 1388198843)  window 2023-09-30 .. open
    + T00 rows= 127 [Electoral polling > Voting intention estimates] selected
      T01 rows=   6 [Electoral polling > Voting intention estimates > Scenario Polls] excluded heading
      T02 rows=   6 [Electoral polling > Voting intention estimates > Scenario Polls] excluded heading
@@ -1815,11 +1817,11 @@
      joint lists: Save Romania Union + Freedom, Unity and Solidarity Party x47 -> Save Romania Union; PRO Romania + Alliance of Liberals and Democrats (Romania) x17 -> PRO Romania
      joint lists: People's Movement Party + Force of the Right x6 -> Force of the Right; Social Democratic Party (Romania) + National Liberal Party ( x1 -> None; National Liberal Party (Romania) + Force of the Right x29 -> National Liberal Party (Romania)
 [RO] history: 3 cycles, 241 polls, 13 series, 12 government periods (11 matched to a series)
-[BG] Next Bulgarian parliamentary election  (rev 1388071475)  window 2026-04-19 .. open
+[BG] Next Bulgarian parliamentary election  (rev 1388141257)  window 2026-04-19 .. open
    + T00 rows=  12 [Opinion polls > Poll results] selected
      polls kept: 11  | start result: yes
      joint lists: We Continue the Change + Democratic Bulgaria x3 -> None
-[BG] Next Bulgarian parliamentary election  (rev 1388071475)  window 2026-04-19 .. open
+[BG] Next Bulgarian parliamentary election  (rev 1388141257)  window 2026-04-19 .. open
    + T00 rows=  12 [Opinion polls > Poll results] selected
      polls kept: 11  | start result: yes
 [BG] 2026 Bulgarian parliamentary election  (rev 1384993306)  window 2024-10-27 .. 2026-04-19
